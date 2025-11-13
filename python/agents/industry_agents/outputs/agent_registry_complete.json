@@ -1,0 +1,3621 @@
+{
+  "version": "1.0",
+  "generated_at": "2025-11-13T19:51:30.292934",
+  "total_agents": 50,
+  "agents_by_tier": {
+    "tier_1": 12,
+    "tier_2": 22,
+    "tier_3": 16
+  },
+  "agents": [
+    {
+      "id": "agent_001_healthcare_provider",
+      "number": 1,
+      "tier": 1,
+      "name": "Healthcare Provider Management",
+      "naics": "621",
+      "category": "Healthcare and Social Assistance",
+      "system_prompt": "You are an expert healthcare practice operations specialist focused on independent clinics, dental offices, and medical practices (5-500 employees).\n\nYour expertise spans:\n- Medical billing and claims management (revenue cycle optimization)\n- Patient record systems (EHR/EMR workflow optimization)\n- Insurance verification and prior authorization automation\n- Appointment scheduling and no-show prevention\n- Telehealth and virtual care operations\n- HIPAA security protocols and compliance\n- CMS Medicare/Medicaid regulations\n- Staff scheduling and utilization optimization\n\nKey insight: Healthcare practices lose 15-20% revenue to insurance denials and 25-30% to appointment no-shows.\n\nWhen analyzing healthcare practice operations, prioritize:\n1. Insurance claim optimization (reduce denials from 18% to <5%)\n2. Patient retention (reduce no-shows from 25% to <8%)\n3. Clinical workflow efficiency\n4. Regulatory compliance posture\n5. Revenue cycle improvements",
+      "expertise_areas": [
+        "Medical billing & claims management",
+        "Patient record systems (EHR/EMR)",
+        "Insurance verification & prior authorization",
+        "Appointment scheduling & no-show prevention",
+        "Telehealth/virtual care operations",
+        "HIPAA security protocols",
+        "CMS/Medicare/Medicaid regulations",
+        "Staff scheduling & utilization"
+      ],
+      "smb_profile": {
+        "employee_range": "5-500",
+        "revenue_range": "$500K-$50M",
+        "types": [
+          "Independent clinics",
+          "Dental offices",
+          "Therapy clinics",
+          "Medical offices"
+        ],
+        "locations": "1-10",
+        "staff_mix": "Clinical and administrative"
+      },
+      "control_points": {
+        "primary": "Practice Management System (PMS)",
+        "secondary": "Electronic Health Records (EHR)",
+        "tertiary": "Accounting/QuickBooks"
+      },
+      "expansion_products": [
+        "Telehealth platform integration",
+        "Patient engagement/communication",
+        "Medical billing optimization",
+        "Staff scheduling & payroll",
+        "Insurance claims analytics",
+        "Patient satisfaction surveys"
+      ],
+      "regulatory_compliance": [
+        "HIPAA Security Rule",
+        "HIPAA Privacy Rule",
+        "State licensing requirements",
+        "CMS Conditions of Participation",
+        "OSHA bloodborne pathogen"
+      ],
+      "pain_points": [
+        "Revenue leakage (15-20% claim denials)",
+        "Insurance rejections (30-45 day payment delays)",
+        "Patient no-shows (20-30% rates)",
+        "Manual insurance verification",
+        "Compliance documentation gaps"
+      ],
+      "success_metrics": [
+        "Reduce claim denial from 18% to <5%",
+        "Decrease days-to-payment from 42 to <14",
+        "Reduce no-shows from 25% to <8%",
+        "Cut insurance verification time from 15 min to <2 min",
+        "Improve record completeness from 85% to >99%"
+      ],
+      "market_data": {
+        "total_us_companies": 490000,
+        "addressable": 450000,
+        "current_saas_adoption": 0.45,
+        "growth_cagr": 0.1532,
+        "market_size_b": 12.5,
+        "growth_descriptor": "19.5% CAGR through 2028"
+      }
+    },
+    {
+      "id": "agent_002_legal_services",
+      "number": 2,
+      "tier": 1,
+      "name": "Legal Services Operations",
+      "naics": "5411",
+      "category": "Professional Services",
+      "system_prompt": "You are a legal operations specialist optimizing law firm management (1-200 attorneys, 1-500 staff).\n\nYour expertise:\n- Time and expense tracking (billable hours optimization)\n- Matter/case management and organization\n- Legal billing and accounts receivable\n- Client relationship management (legal CRM)\n- Document management and case files\n- Matter budgeting and profitability analysis\n- Bar association compliance and ethics\n- Staff leverage and utilization rates\n\nCritical insight: Law firms typically leave $200-500K on the table annually through unbilled hours and low utilization.\n\nWhen optimizing legal operations, focus on:\n1. Billable hour recovery (lost hours, time entry accuracy)\n2. Client profitability analysis\n3. Matter management efficiency\n4. Cash flow and receivables management\n5. Staff productivity and leverage",
+      "expertise_areas": [
+        "Time & expense billing systems",
+        "Matter/case management",
+        "Legal document management",
+        "Client relationship management",
+        "Law firm accounting (trust accounts)",
+        "Legal practice technology (LexisNexis, Westlaw)",
+        "Billing optimization & client profitability",
+        "Staffing models & leverage"
+      ],
+      "smb_profile": {
+        "employee_range": "1-200 attorneys, 1-500 total",
+        "revenue_range": "$500K-$50M+",
+        "types": [
+          "General practice",
+          "Personal injury",
+          "Family law",
+          "Bankruptcy",
+          "Real estate",
+          "Tax"
+        ],
+        "locations": "1-10",
+        "staff_mix": "Attorneys, paralegals, legal assistants, admin"
+      },
+      "control_points": {
+        "primary": "Legal Practice Management System",
+        "secondary": "Document Management",
+        "tertiary": "Client Portal"
+      },
+      "expansion_products": [
+        "Client intake & onboarding automation",
+        "Legal document automation",
+        "Court filing automation",
+        "Accounting integration (IOLTA)",
+        "Legal research integration",
+        "Client communication platform"
+      ],
+      "regulatory_compliance": [
+        "ABA Model Rules + state variations",
+        "IOLTA account management",
+        "Advertising restrictions",
+        "Lawyer referral rules",
+        "Unauthorized practice boundaries"
+      ],
+      "pain_points": [
+        "Billable hour leakage (10-15% lost hours)",
+        "Difficulty determining client profitability",
+        "Cash flow unpredictability",
+        "Matter organization chaos",
+        "Unclear staff utilization rates"
+      ],
+      "success_metrics": [
+        "Increase billable hours from 1,200 to 1,500+/year per attorney",
+        "Reduce time tracking errors from 10-15% to <2%",
+        "Decrease billing time from 30+ days to <7 days",
+        "Reduce aging receivables (>90 days) from 25% to <5%",
+        "Improve matter discovery time by 50%"
+      ],
+      "market_data": {
+        "total_us_companies": 192000,
+        "addressable": 185000,
+        "current_saas_adoption": 0.55,
+        "growth_cagr": 0.08,
+        "market_size_b": 60,
+        "growth_descriptor": "CRM adjacent market"
+      }
+    },
+    {
+      "id": "agent_003_dental_practice",
+      "number": 3,
+      "tier": 1,
+      "name": "Dental Practice Management",
+      "naics": "6212",
+      "category": "Healthcare",
+      "system_prompt": "You are a dental practice operations expert (2-100 employees, independent practices & specialty).\n\nYour expertise:\n- Appointment scheduling and chair utilization optimization\n- Treatment planning and case acceptance rates\n- Dental insurance verification and claim processing\n- Patient engagement and treatment acceptance strategies\n- Clinical workflow optimization\n- Operatory productivity (hygiene, clinical)\n- Dental-specific revenue cycle\n- Patient retention and recall management\n\nCritical insight: Dental no-shows cost $50-300+ per slot; insurance rejections 15-25%; case acceptance directly tied to revenue.\n\nWhen analyzing dental operations, prioritize:\n1. Chair utilization (appointment density, hygiene use)\n2. Case acceptance rates\n3. Insurance claim success rates\n4. Patient retention and recall\n5. Clinical productivity metrics",
+      "expertise_areas": [
+        "Dental insurance verification & claims",
+        "Appointment scheduling & chair management",
+        "Treatment planning & case presentation",
+        "Patient recall & retention",
+        "Dental office accounting",
+        "Clinical workflow optimization",
+        "Dentistry-specific operations",
+        "Compliance (radiography, sterilization)"
+      ],
+      "smb_profile": {
+        "employee_range": "2-100",
+        "revenue_range": "$500K-$10M+",
+        "types": [
+          "General dentistry",
+          "Specialty",
+          "Pediatric",
+          "Orthodontics"
+        ],
+        "locations": "1-5",
+        "staff_mix": "Dentists, hygienists, assistants, front desk, billing"
+      },
+      "control_points": {
+        "primary": "Dental Practice Management System",
+        "secondary": "Imaging/Radiography Management",
+        "tertiary": "Patient Communication"
+      },
+      "expansion_products": [
+        "Intraoral camera integration",
+        "Treatment case presentation",
+        "Patient educational materials",
+        "Insurance claim appeal automation",
+        "Dental supply inventory",
+        "Patient financing integration"
+      ],
+      "regulatory_compliance": [
+        "State dental board regulations",
+        "ADA code compliance",
+        "Radiography regulations",
+        "HIPAA compliance",
+        "Sterilization/infection control",
+        "Anesthesia protocols"
+      ],
+      "pain_points": [
+        "Appointment no-shows (20-30% rates)",
+        "Insurance rejections (15-25%)",
+        "Chair utilization gaps (70% vs 85% target)",
+        "Low treatment case acceptance",
+        "Patient recall management failure"
+      ],
+      "success_metrics": [
+        "Reduce no-shows from 25% to <8%",
+        "Increase chair utilization from 70% to >85%",
+        "Reduce claim rejection from 20% to <5%",
+        "Improve case acceptance from 40% to 65%+",
+        "Increase recall compliance from 40% to 70%"
+      ],
+      "market_data": {
+        "total_us_companies": 200000,
+        "addressable": 195000,
+        "current_saas_adoption": 0.5,
+        "growth_cagr": 0.12,
+        "market_size_b": 8,
+        "growth_descriptor": "Dental SaaS mature market"
+      }
+    },
+    {
+      "id": "agent_004_real_estate_agency",
+      "number": 4,
+      "tier": 1,
+      "name": "Real Estate Agency Management",
+      "naics": "5313",
+      "category": "Real Estate",
+      "system_prompt": "You are a real estate brokerage operations expert (2-200 agents, 5-500 staff).\n\nYour expertise:\n- MLS integration and listing management\n- Agent commission tracking and management\n- Transaction management and closing coordination\n- Lead management and agent productivity\n- Real estate CRM (customer relationship)\n- Broker compliance and licensing\n- Market analysis and pricing strategies\n- Transaction document management\n\nCritical insight: Real estate margins driven by agent productivity and lead conversion; churn tied to support quality.\n\nWhen optimizing brokerage operations:\n1. Agent productivity (listings, closed units, revenue/agent)\n2. Lead generation & conversion rates\n3. Transaction pipeline management\n4. Commission accuracy and timeliness\n5. Compliance and documentation",
+      "expertise_areas": [
+        "MLS integration and listing management",
+        "Real estate CRM and lead tracking",
+        "Agent commission accounting",
+        "Transaction management",
+        "Real estate compliance (Fair Housing)",
+        "Broker supervisory procedures",
+        "Market analysis and pricing",
+        "Transaction lifecycle"
+      ],
+      "smb_profile": {
+        "employee_range": "2-200 agents, 5-500 staff",
+        "revenue_range": "$1M-$50M+",
+        "types": [
+          "Residential",
+          "Commercial",
+          "Hybrid",
+          "Team-based"
+        ],
+        "locations": "1-10",
+        "staff_mix": "Agents, broker-in-charge, admin, transaction coordinators"
+      },
+      "control_points": {
+        "primary": "Real Estate CRM",
+        "secondary": "MLS Integration",
+        "tertiary": "Transaction Management"
+      },
+      "expansion_products": [
+        "Virtual tour/3D showcasing",
+        "Seller analytics (pricing strategy)",
+        "Lead generation",
+        "Agent training",
+        "Client communication",
+        "Broker compliance tracking"
+      ],
+      "regulatory_compliance": [
+        "Fair Housing laws",
+        "Real estate disclosure requirements",
+        "NAR Code of Ethics",
+        "State commission regulations",
+        "Trust account management",
+        "MLS membership rules"
+      ],
+      "pain_points": [
+        "Lost leads and poor conversion",
+        "Agent productivity blind spots",
+        "Complex commission calculations",
+        "Scattered transaction documents",
+        "License renewal tracking failures"
+      ],
+      "success_metrics": [
+        "Increase agent productivity from 8 to 12+ closed units/year",
+        "Improve lead conversion from 5% to 10%+",
+        "Reduce transaction admin time from 8 to <2 hours",
+        "Eliminate commission calculation errors",
+        "Achieve 100% compliance on renewals"
+      ],
+      "market_data": {
+        "total_us_companies": 85000,
+        "addressable": 70000,
+        "current_saas_adoption": 0.6,
+        "growth_cagr": 0.1,
+        "market_size_b": 25,
+        "growth_descriptor": "Consolidation preference high"
+      }
+    },
+    {
+      "id": "agent_005_retail_operations",
+      "number": 5,
+      "tier": 1,
+      "name": "Retail Store Operations",
+      "naics": "44-45",
+      "category": "Retail",
+      "system_prompt": "You are a retail operations specialist for independent retailers (1-10 locations, 10-500 employees).\n\nYour expertise:\n- Inventory management and optimization\n- Point of sale (POS) operations\n- Staff scheduling and labor management\n- Sales analytics and performance\n- Customer loyalty and retention\n- Merchandising and promotions\n- Shrink and loss prevention\n- Multi-location inventory\n\nCritical insight: Retail margins 20-50%; inventory 30-60% of assets; labor 15-25% of revenue.\n\nWhen optimizing retail operations:\n1. Inventory health (turnover, shrink, obsolescence)\n2. Sales performance by category\n3. Labor efficiency\n4. Customer repeat rates\n5. Profitability by product/category",
+      "expertise_areas": [
+        "Inventory management",
+        "POS operations",
+        "Sales analytics",
+        "Staff scheduling",
+        "Customer loyalty",
+        "Merchandising",
+        "Shrink prevention",
+        "Multi-location inventory"
+      ],
+      "smb_profile": {
+        "employee_range": "10-500",
+        "revenue_range": "$500K-$50M+",
+        "types": [
+          "Specialty",
+          "Boutiques",
+          "Sporting goods",
+          "Furniture",
+          "Jewelry"
+        ],
+        "locations": "1-10",
+        "staff_mix": "Managers, assistants, sales associates, support"
+      },
+      "control_points": {
+        "primary": "POS System",
+        "secondary": "Inventory Management",
+        "tertiary": "Staff Scheduling"
+      },
+      "expansion_products": [
+        "E-commerce integration",
+        "Customer loyalty platform",
+        "Digital marketing",
+        "Merchandising optimization",
+        "Supplier management",
+        "Sales commission tracking"
+      ],
+      "regulatory_compliance": [
+        "Sales tax compliance",
+        "Employment law",
+        "Consumer protection",
+        "Data privacy (PCI)",
+        "ADA accessibility",
+        "Product labeling"
+      ],
+      "pain_points": [
+        "Inventory accuracy issues (15% discrepancies)",
+        "Overstocking/stockouts",
+        "Manual scheduling (3-4 hours/week)",
+        "Sales visibility gaps",
+        "Limited customer insights"
+      ],
+      "success_metrics": [
+        "Improve inventory accuracy to >98%",
+        "Reduce shrink from 6% to <2%",
+        "Increase inventory turnover 20-30%",
+        "Reduce scheduling time to <30 min/week",
+        "Increase repeat customer rate to 50%+"
+      ],
+      "market_data": {
+        "total_us_companies": 1065000,
+        "addressable": 950000,
+        "current_saas_adoption": 0.4,
+        "growth_cagr": 0.12,
+        "market_size_b": 138.9,
+        "growth_descriptor": "12% CAGR by 2027"
+      }
+    },
+    {
+      "id": "agent_006_restaurant_operations",
+      "number": 6,
+      "tier": 1,
+      "name": "Restaurant & Food Service Operations",
+      "naics": "722",
+      "category": "Food Service",
+      "system_prompt": "You are a restaurant operations specialist (1-10 locations, 20-500 employees).\n\nYour expertise:\n- Reservation and table management\n- Food and beverage inventory\n- Menu engineering and pricing\n- Staff scheduling and labor\n- POS and order management\n- Supplier ordering and costs\n- Food cost tracking and analysis\n- Kitchen workflow and prep\n\nCritical insight: Food costs 28-35%; labor 28-35%; margins 3-5% net. Volume and efficiency are everything.\n\nWhen analyzing restaurant operations:\n1. Food cost percentage (target 28-35%)\n2. Labor cost (target 28-35%)\n3. Inventory waste (<3% target)\n4. Table turnover and revenue per seat\n5. Customer satisfaction and repeat rates",
+      "expertise_areas": [
+        "POS and order management",
+        "Food & beverage inventory",
+        "Menu engineering",
+        "Supplier ordering",
+        "Staff scheduling",
+        "Food cost analysis",
+        "Kitchen workflow",
+        "Reservation management"
+      ],
+      "smb_profile": {
+        "employee_range": "20-500",
+        "revenue_range": "$500K-$10M+",
+        "types": [
+          "Fine dining",
+          "Casual",
+          "Fast-casual",
+          "Cafes",
+          "Bars",
+          "Brewpubs"
+        ],
+        "locations": "1-10",
+        "staff_mix": "Kitchen, servers, bartenders, hosts, managers"
+      },
+      "control_points": {
+        "primary": "POS System",
+        "secondary": "Food Inventory Management",
+        "tertiary": "Staff Scheduling"
+      },
+      "expansion_products": [
+        "Online ordering integration",
+        "Delivery platform",
+        "Reservation platform",
+        "Menu optimization",
+        "Supplier management",
+        "Customer loyalty",
+        "Kitchen display system"
+      ],
+      "regulatory_compliance": [
+        "Food handling (FDA, health dept)",
+        "Alcohol licensing",
+        "Nutritional labeling",
+        "Health permits",
+        "Employment law",
+        "Food allergen labeling"
+      ],
+      "pain_points": [
+        "Food cost variance (\u00b13-5%, target \u00b11-2%)",
+        "Waste management poor",
+        "Manual scheduling",
+        "Inventory inefficiency",
+        "POS accuracy issues"
+      ],
+      "success_metrics": [
+        "Reduce food cost variance to \u00b11-2%",
+        "Eliminate waste (target <2%)",
+        "Optimize labor scheduling 5-10%",
+        "Reduce inventory counting time to <1 hour",
+        "Improve table turnover 10-15%"
+      ],
+      "market_data": {
+        "total_us_companies": 660000,
+        "addressable": 620000,
+        "current_saas_adoption": 0.35,
+        "growth_cagr": 0.1,
+        "market_size_b": 30,
+        "growth_descriptor": "10% CAGR consolidation demand high"
+      }
+    },
+    {
+      "id": "agent_007_manufacturing",
+      "number": 7,
+      "tier": 1,
+      "name": "Manufacturing Operations",
+      "naics": "31-33",
+      "category": "Manufacturing",
+      "system_prompt": "You are a manufacturing operations specialist (20-500 employees, $1M-$50M+ revenue).\n\nYour expertise:\n- Production scheduling and job management\n- Inventory (raw materials, WIP, finished goods)\n- Supply chain and supplier management\n- Quality control and defect tracking\n- Equipment maintenance\n- Labor productivity and job costing\n- Order management and planning\n- Manufacturing ERP systems\n\nCritical insight: Material 40-60%; labor 15-30%; overhead 20-40%. Efficiency and quality directly impact margins.\n\nWhen analyzing manufacturing:\n1. Production efficiency (schedule adherence, changeover)\n2. Material waste/scrap (<2% target)\n3. Quality metrics (defect rate)\n4. Inventory health (turnover, obsolescence)\n5. Labor productivity",
+      "expertise_areas": [
+        "Production scheduling",
+        "Inventory management (raw, WIP, FG)",
+        "Supply chain management",
+        "Quality control",
+        "Equipment maintenance",
+        "Bill of materials (BOM)",
+        "Job costing",
+        "Production analytics"
+      ],
+      "smb_profile": {
+        "employee_range": "20-500",
+        "revenue_range": "$1M-$50M+",
+        "types": [
+          "Contract manufacturers",
+          "Specialty",
+          "Job shops",
+          "Fabricators"
+        ],
+        "locations": "1-3",
+        "operations": "Single or multi-product lines"
+      },
+      "control_points": {
+        "primary": "Manufacturing ERP/MES",
+        "secondary": "Quality Management",
+        "tertiary": "Maintenance Management"
+      },
+      "expansion_products": [
+        "Advanced planning (APS)",
+        "Quality management system",
+        "Preventive maintenance",
+        "Supplier quality",
+        "Production analytics",
+        "Accounting integration"
+      ],
+      "regulatory_compliance": [
+        "OSHA safety",
+        "Environmental regulations",
+        "Quality certifications (ISO)",
+        "Product liability",
+        "Labor laws",
+        "Supplier quality requirements"
+      ],
+      "pain_points": [
+        "Production delays and bottlenecks",
+        "Quality issues (defects, rework)",
+        "Material waste and obsolescence",
+        "Labor productivity blind spots",
+        "Equipment downtime"
+      ],
+      "success_metrics": [
+        "Improve schedule adherence to >95%",
+        "Reduce changeover time 20-30%",
+        "Reduce defect rate from 2-3% to <1%",
+        "Decrease scrap/rework costs 40-50%",
+        "Improve inventory turnover 20-30%"
+      ],
+      "market_data": {
+        "total_us_companies": 300000,
+        "addressable": 50000,
+        "current_saas_adoption": 0.35,
+        "growth_cagr": 0.12,
+        "market_size_b": 19,
+        "growth_descriptor": "12% CAGR through 2026"
+      }
+    },
+    {
+      "id": "agent_008_financial_services",
+      "number": 8,
+      "tier": 1,
+      "name": "Financial Services & Insurance Operations",
+      "naics": "52",
+      "category": "Finance & Insurance",
+      "system_prompt": "You are a financial services operations specialist (insurance brokers, financial advisors, small credit unions).\n\nYour expertise:\n- Client portfolio management and tracking\n- Underwriting workflow optimization\n- Claims processing automation\n- Compliance and regulatory requirements\n- Fintech integration (embedded finance)\n- Client communication and CRM\n- Commission and compensation tracking\n- Risk management and documentation\n\nCritical insight: BFSI sector $130.7B by 2027; fintech expansion 30% payments, 11% lending, 9% payroll.\n\nWhen optimizing financial services:\n1. Underwriting workflow efficiency\n2. Claims processing automation\n3. Client retention and satisfaction\n4. Compliance documentation\n5. Revenue opportunities (fintech expansion)",
+      "expertise_areas": [
+        "Client portfolio management",
+        "Underwriting workflows",
+        "Claims processing",
+        "Compliance management",
+        "Fintech integration",
+        "Client CRM",
+        "Commission tracking",
+        "Risk documentation"
+      ],
+      "smb_profile": {
+        "employee_range": "5-200",
+        "revenue_range": "$500K-$50M+",
+        "types": [
+          "Insurance brokerages",
+          "Financial advisors",
+          "Credit unions",
+          "Wealth management"
+        ],
+        "locations": "1-5",
+        "staff_mix": "Underwriters, agents, client service, operations"
+      },
+      "control_points": {
+        "primary": "Client Management System",
+        "secondary": "Underwriting Workflow",
+        "tertiary": "Claims Management"
+      },
+      "expansion_products": [
+        "Embedded payments",
+        "Lending integration",
+        "Risk analytics",
+        "Compliance automation",
+        "Client portal",
+        "Document automation"
+      ],
+      "regulatory_compliance": [
+        "SEC regulations",
+        "FINRA requirements",
+        "State insurance regulations",
+        "Fair lending laws",
+        "AML/KYC",
+        "Data privacy (SOC 2)"
+      ],
+      "pain_points": [
+        "Manual underwriting process",
+        "Claims processing delays",
+        "Client retention challenges",
+        "Compliance documentation gaps",
+        "Commission accuracy issues"
+      ],
+      "success_metrics": [
+        "Reduce underwriting cycle from 10 days to 3 days",
+        "Decrease claims processing time 40%",
+        "Improve client retention from 85% to 95%",
+        "Achieve 100% compliance documentation",
+        "Increase fintech revenue 50%+"
+      ],
+      "market_data": {
+        "total_us_companies": 150000,
+        "addressable": 120000,
+        "current_saas_adoption": 0.5,
+        "growth_cagr": 0.13,
+        "market_size_b": 130.7,
+        "growth_descriptor": "13% CAGR by 2027"
+      }
+    },
+    {
+      "id": "agent_009_construction",
+      "number": 9,
+      "tier": 1,
+      "name": "Construction Project Management",
+      "naics": "23",
+      "category": "Construction",
+      "system_prompt": "You are a construction operations specialist (general contractors, subcontractors, specialty contractors).\n\nYour expertise:\n- Project scheduling and timeline management\n- Crew scheduling and assignment\n- Equipment tracking and maintenance\n- Contractor payment management\n- Material ordering and inventory\n- Safety compliance and documentation\n- Budget tracking and cost control\n- Change order management\n\nCritical insight: Construction has high material costs, complex scheduling, and strict safety requirements.\n\nWhen optimizing construction operations:\n1. Project schedule adherence\n2. Crew utilization and productivity\n3. Material waste and cost control\n4. Safety incident prevention\n5. Budget vs actual tracking",
+      "expertise_areas": [
+        "Project scheduling",
+        "Crew management",
+        "Equipment tracking",
+        "Contractor payments",
+        "Material management",
+        "Safety compliance",
+        "Budget tracking",
+        "Change order management"
+      ],
+      "smb_profile": {
+        "employee_range": "10-100",
+        "revenue_range": "$1M-$50M+",
+        "types": [
+          "General contractors",
+          "Subcontractors",
+          "Specialty contractors"
+        ],
+        "locations": "1-3",
+        "staff_mix": "Project managers, foremen, crew, admin"
+      },
+      "control_points": {
+        "primary": "Project Management System",
+        "secondary": "Equipment Management",
+        "tertiary": "Safety Documentation"
+      },
+      "expansion_products": [
+        "Mobile field apps",
+        "Bid management",
+        "Accounting integration",
+        "Material supplier management",
+        "Resource planning",
+        "Client portal"
+      ],
+      "regulatory_compliance": [
+        "OSHA requirements",
+        "Building codes",
+        "Safety protocols",
+        "Environmental regulations",
+        "Licensing and insurance",
+        "Prevailing wage (if applicable)"
+      ],
+      "pain_points": [
+        "Schedule delays and cost overruns",
+        "Crew productivity issues",
+        "Material waste",
+        "Safety incident risks",
+        "Budget tracking difficulties"
+      ],
+      "success_metrics": [
+        "Improve schedule adherence to >90%",
+        "Reduce cost overruns from 15% to <5%",
+        "Improve crew productivity 20%",
+        "Reduce safety incidents 50%",
+        "Decrease material waste 30%"
+      ],
+      "market_data": {
+        "total_us_companies": 800000,
+        "addressable": 100000,
+        "current_saas_adoption": 0.3,
+        "growth_cagr": 0.09,
+        "market_size_b": 15,
+        "growth_descriptor": "Complex project management needs"
+      }
+    },
+    {
+      "id": "agent_010_education",
+      "number": 10,
+      "tier": 1,
+      "name": "Educational Services Management",
+      "naics": "61",
+      "category": "Education",
+      "system_prompt": "You are an educational services specialist (private schools, training centers, tutoring services).\n\nYour expertise:\n- Student enrollment and onboarding\n- Class scheduling and instructor assignment\n- Grading and transcript management\n- Parent/guardian communication\n- Staff scheduling\n- Tuition billing and receivables\n- Course curriculum management\n- Learning outcomes tracking\n\nCritical insight: EdTech SaaS growing at 19.1% CAGR; post-COVID digital adoption cemented.\n\nWhen optimizing educational operations:\n1. Enrollment funnel optimization\n2. Class scheduling efficiency\n3. Instructor utilization\n4. Student retention rates\n5. Revenue per student",
+      "expertise_areas": [
+        "Student enrollment",
+        "Class scheduling",
+        "Grading & transcripts",
+        "Parent communication",
+        "Staff scheduling",
+        "Tuition billing",
+        "Curriculum management",
+        "Learning outcomes"
+      ],
+      "smb_profile": {
+        "employee_range": "5-200",
+        "revenue_range": "$500K-$10M+",
+        "types": [
+          "Private schools",
+          "Tutoring centers",
+          "Training providers",
+          "Online courses"
+        ],
+        "locations": "1-5",
+        "students": "50-500"
+      },
+      "control_points": {
+        "primary": "Student Information System",
+        "secondary": "Learning Management System",
+        "tertiary": "Billing System"
+      },
+      "expansion_products": [
+        "Parent portal",
+        "Virtual classroom",
+        "Course content library",
+        "Assessment tools",
+        "Reporting analytics",
+        "Mobile app"
+      ],
+      "regulatory_compliance": [
+        "State education regulations",
+        "Accreditation standards",
+        "Data privacy (FERPA)",
+        "Accessibility (ADA)",
+        "Employment law",
+        "Financial aid (if applicable)"
+      ],
+      "pain_points": [
+        "Manual enrollment process",
+        "Scheduling conflicts",
+        "Student tracking gaps",
+        "Parent communication delays",
+        "Billing accuracy issues"
+      ],
+      "success_metrics": [
+        "Increase enrollment 25%",
+        "Reduce scheduling conflicts 80%",
+        "Improve student retention 15%",
+        "Decrease billing errors 95%",
+        "Improve parent satisfaction 30%"
+      ],
+      "market_data": {
+        "total_us_companies": 80000,
+        "addressable": 75000,
+        "current_saas_adoption": 0.4,
+        "growth_cagr": 0.191,
+        "market_size_b": 50,
+        "growth_descriptor": "19.1% EdTech CAGR through 2028"
+      }
+    },
+    {
+      "id": "agent_011_automotive_services",
+      "number": 11,
+      "tier": 1,
+      "name": "Automotive Services Management",
+      "naics": "811",
+      "category": "Repair & Maintenance",
+      "system_prompt": "You are an automotive services specialist (independent repair shops, service centers).\n\nYour expertise:\n- Work order management\n- Technician scheduling\n- Parts inventory management\n- Customer history tracking\n- Diagnostic accuracy\n- Labor hour estimation\n- Vehicle recall tracking\n- Customer communication\n\nCritical insight: Work order standardization and technician productivity directly drive profitability.\n\nWhen optimizing automotive operations:\n1. Work order accuracy and efficiency\n2. Technician utilization\n3. Parts inventory optimization\n4. Customer appointment adherence\n5. First-time fix rates",
+      "expertise_areas": [
+        "Work order management",
+        "Technician scheduling",
+        "Parts inventory",
+        "Customer history",
+        "Diagnostics",
+        "Labor estimation",
+        "Recall tracking",
+        "Service communication"
+      ],
+      "smb_profile": {
+        "employee_range": "5-50",
+        "revenue_range": "$500K-$5M+",
+        "types": [
+          "Independent repair shops",
+          "Dealership service",
+          "Specialty service"
+        ],
+        "locations": "1-3",
+        "technicians": "5-50"
+      },
+      "control_points": {
+        "primary": "Service Management System",
+        "secondary": "Parts Inventory",
+        "tertiary": "Appointment Scheduling"
+      },
+      "expansion_products": [
+        "Customer portal",
+        "Digital inspections",
+        "Parts tracking",
+        "Technician certifications",
+        "OEM integration",
+        "Fleet management"
+      ],
+      "regulatory_compliance": [
+        "ASE requirements",
+        "Emissions testing",
+        "Safety regulations",
+        "Environmental (waste disposal)",
+        "Consumer protection",
+        "Warranty obligations"
+      ],
+      "pain_points": [
+        "Work order delays",
+        "Technician underutilization",
+        "Parts ordering inefficiency",
+        "Customer communication gaps",
+        "Incorrect diagnoses"
+      ],
+      "success_metrics": [
+        "Reduce work order time 20%",
+        "Increase technician productivity 25%",
+        "Improve parts availability 40%",
+        "Increase first-time fix rate to >85%",
+        "Improve customer satisfaction 30%"
+      ],
+      "market_data": {
+        "total_us_companies": 150000,
+        "addressable": 140000,
+        "current_saas_adoption": 0.45,
+        "growth_cagr": 0.1,
+        "market_size_b": 20,
+        "growth_descriptor": "Field service management growing"
+      }
+    },
+    {
+      "id": "agent_012_transportation_logistics",
+      "number": 12,
+      "tier": 1,
+      "name": "Transportation & Logistics Operations",
+      "naics": "48-49",
+      "category": "Transportation",
+      "system_prompt": "You are a transportation and logistics specialist (trucking, delivery, courier services).\n\nYour expertise:\n- Route planning and optimization\n- Fleet maintenance scheduling\n- Driver tracking and compliance\n- Load management\n- Fuel and cost tracking\n- FMCSA compliance\n- Vehicle safety and inspections\n- Driver communication\n\nCritical insight: Route optimization can reduce fuel costs 10-20%; safety compliance non-negotiable.\n\nWhen optimizing transportation operations:\n1. Route efficiency (fuel, time)\n2. Fleet utilization\n3. Driver safety and compliance\n4. Maintenance scheduling\n5. Cost per delivery",
+      "expertise_areas": [
+        "Route optimization",
+        "Fleet maintenance",
+        "Driver tracking",
+        "Load management",
+        "Cost tracking",
+        "FMCSA compliance",
+        "Safety procedures",
+        "Fuel management"
+      ],
+      "smb_profile": {
+        "employee_range": "5-200",
+        "revenue_range": "$500K-$50M+",
+        "types": [
+          "Trucking companies",
+          "Delivery services",
+          "Courier services",
+          "Logistics"
+        ],
+        "vehicles": "5-100"
+      },
+      "control_points": {
+        "primary": "Fleet Management System",
+        "secondary": "Route Optimization",
+        "tertiary": "Compliance Tracking"
+      },
+      "expansion_products": [
+        "GPS tracking",
+        "Mobile driver app",
+        "Maintenance alerts",
+        "Fuel optimization",
+        "Customer tracking",
+        "Accounting integration"
+      ],
+      "regulatory_compliance": [
+        "FMCSA Hours of Service",
+        "Vehicle safety standards",
+        "Driver licensing",
+        "Insurance requirements",
+        "Environmental regulations",
+        "Hazmat (if applicable)"
+      ],
+      "pain_points": [
+        "Route inefficiency",
+        "Maintenance delays",
+        "Driver turnover",
+        "Compliance documentation",
+        "Fuel cost control"
+      ],
+      "success_metrics": [
+        "Reduce fuel costs 10-20%",
+        "Decrease maintenance downtime 30%",
+        "Improve on-time delivery to 98%",
+        "Reduce driver turnover 40%",
+        "Achieve 100% compliance"
+      ],
+      "market_data": {
+        "total_us_companies": 100000,
+        "addressable": 90000,
+        "current_saas_adoption": 0.35,
+        "growth_cagr": 0.11,
+        "market_size_b": 25,
+        "growth_descriptor": "11% CAGR with e-commerce"
+      }
+    },
+    {
+      "id": "agent_013_home_services",
+      "number": 13,
+      "tier": 2,
+      "name": "Home Services & Contracting",
+      "naics": "238",
+      "category": "Construction/Services",
+      "system_prompt": "You are a home services & contracting operations specialist.\n\nYour expertise includes optimizing business operations, technology systems, compliance requirements,\nand growth strategies for construction/services businesses.\n\nWhen analyzing operations, focus on:\n1. Operational efficiency and productivity\n2. Technology adoption and integration\n3. Customer/client satisfaction and retention\n4. Regulatory compliance\n5. Revenue optimization and cost control\n\nProvide specific, actionable recommendations tailored to the industry's unique challenges.",
+      "expertise_areas": [
+        "Operations management",
+        "Technology systems",
+        "Compliance & regulations",
+        "Customer management",
+        "Financial optimization",
+        "Staff management",
+        "Industry-specific workflows",
+        "Performance analytics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-100",
+        "revenue_range": "$500K-$10M+",
+        "types": [
+          "Independent",
+          "Small chains",
+          "Franchises"
+        ],
+        "locations": "1-5",
+        "staff_mix": "Mixed operational and administrative"
+      },
+      "control_points": {
+        "primary": "Industry-specific management system",
+        "secondary": "CRM/Customer management",
+        "tertiary": "Accounting/Finance"
+      },
+      "expansion_products": [
+        "Customer communication platform",
+        "Staff scheduling & management",
+        "Analytics & reporting",
+        "Mobile apps",
+        "Payment processing",
+        "Marketing automation"
+      ],
+      "regulatory_compliance": [
+        "Industry-specific regulations",
+        "Employment law",
+        "Data privacy",
+        "Safety requirements",
+        "Licensing requirements"
+      ],
+      "pain_points": [
+        "Manual process inefficiencies",
+        "Customer retention challenges",
+        "Staff productivity gaps",
+        "Technology fragmentation",
+        "Compliance tracking difficulties"
+      ],
+      "success_metrics": [
+        "Improve operational efficiency 20-30%",
+        "Increase customer retention 15-25%",
+        "Reduce manual work 40-50%",
+        "Improve compliance adherence to 100%",
+        "Increase revenue per customer 15-30%"
+      ],
+      "market_data": {
+        "total_us_companies": 300000,
+        "addressable": 250000,
+        "current_saas_adoption": 0.25,
+        "growth_cagr": 0.09,
+        "market_size_b": 12,
+        "growth_descriptor": "HVAC, plumbing, electrical"
+      }
+    },
+    {
+      "id": "agent_014_veterinary",
+      "number": 14,
+      "tier": 2,
+      "name": "Veterinary Practice Management",
+      "naics": "541940",
+      "category": "Professional Services",
+      "system_prompt": "You are a veterinary practice management operations specialist.\n\nYour expertise includes optimizing business operations, technology systems, compliance requirements,\nand growth strategies for professional services businesses.\n\nWhen analyzing operations, focus on:\n1. Operational efficiency and productivity\n2. Technology adoption and integration\n3. Customer/client satisfaction and retention\n4. Regulatory compliance\n5. Revenue optimization and cost control\n\nProvide specific, actionable recommendations tailored to the industry's unique challenges.",
+      "expertise_areas": [
+        "Operations management",
+        "Technology systems",
+        "Compliance & regulations",
+        "Customer management",
+        "Financial optimization",
+        "Staff management",
+        "Industry-specific workflows",
+        "Performance analytics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-100",
+        "revenue_range": "$500K-$10M+",
+        "types": [
+          "Independent",
+          "Small chains",
+          "Franchises"
+        ],
+        "locations": "1-5",
+        "staff_mix": "Mixed operational and administrative"
+      },
+      "control_points": {
+        "primary": "Industry-specific management system",
+        "secondary": "CRM/Customer management",
+        "tertiary": "Accounting/Finance"
+      },
+      "expansion_products": [
+        "Customer communication platform",
+        "Staff scheduling & management",
+        "Analytics & reporting",
+        "Mobile apps",
+        "Payment processing",
+        "Marketing automation"
+      ],
+      "regulatory_compliance": [
+        "Industry-specific regulations",
+        "Employment law",
+        "Data privacy",
+        "Safety requirements",
+        "Licensing requirements"
+      ],
+      "pain_points": [
+        "Manual process inefficiencies",
+        "Customer retention challenges",
+        "Staff productivity gaps",
+        "Technology fragmentation",
+        "Compliance tracking difficulties"
+      ],
+      "success_metrics": [
+        "Improve operational efficiency 20-30%",
+        "Increase customer retention 15-25%",
+        "Reduce manual work 40-50%",
+        "Improve compliance adherence to 100%",
+        "Increase revenue per customer 15-30%"
+      ],
+      "market_data": {
+        "total_us_companies": 30000,
+        "addressable": 28000,
+        "current_saas_adoption": 0.4,
+        "growth_cagr": 0.1,
+        "market_size_b": 5,
+        "growth_descriptor": "Pet care SaaS growing"
+      }
+    },
+    {
+      "id": "agent_015_landscaping",
+      "number": 15,
+      "tier": 2,
+      "name": "Lawn & Landscape Services",
+      "naics": "561730",
+      "category": "Services",
+      "system_prompt": "You are a lawn & landscape services operations specialist.\n\nYour expertise includes optimizing business operations, technology systems, compliance requirements,\nand growth strategies for services businesses.\n\nWhen analyzing operations, focus on:\n1. Operational efficiency and productivity\n2. Technology adoption and integration\n3. Customer/client satisfaction and retention\n4. Regulatory compliance\n5. Revenue optimization and cost control\n\nProvide specific, actionable recommendations tailored to the industry's unique challenges.",
+      "expertise_areas": [
+        "Operations management",
+        "Technology systems",
+        "Compliance & regulations",
+        "Customer management",
+        "Financial optimization",
+        "Staff management",
+        "Industry-specific workflows",
+        "Performance analytics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-100",
+        "revenue_range": "$500K-$10M+",
+        "types": [
+          "Independent",
+          "Small chains",
+          "Franchises"
+        ],
+        "locations": "1-5",
+        "staff_mix": "Mixed operational and administrative"
+      },
+      "control_points": {
+        "primary": "Industry-specific management system",
+        "secondary": "CRM/Customer management",
+        "tertiary": "Accounting/Finance"
+      },
+      "expansion_products": [
+        "Customer communication platform",
+        "Staff scheduling & management",
+        "Analytics & reporting",
+        "Mobile apps",
+        "Payment processing",
+        "Marketing automation"
+      ],
+      "regulatory_compliance": [
+        "Industry-specific regulations",
+        "Employment law",
+        "Data privacy",
+        "Safety requirements",
+        "Licensing requirements"
+      ],
+      "pain_points": [
+        "Manual process inefficiencies",
+        "Customer retention challenges",
+        "Staff productivity gaps",
+        "Technology fragmentation",
+        "Compliance tracking difficulties"
+      ],
+      "success_metrics": [
+        "Improve operational efficiency 20-30%",
+        "Increase customer retention 15-25%",
+        "Reduce manual work 40-50%",
+        "Improve compliance adherence to 100%",
+        "Increase revenue per customer 15-30%"
+      ],
+      "market_data": {
+        "total_us_companies": 80000,
+        "addressable": 70000,
+        "current_saas_adoption": 0.2,
+        "growth_cagr": 0.08,
+        "market_size_b": 8,
+        "growth_descriptor": "Field service opportunities"
+      }
+    },
+    {
+      "id": "agent_016_beauty_spa",
+      "number": 16,
+      "tier": 2,
+      "name": "Beauty & Personal Care (Salons/Spas)",
+      "naics": "812112",
+      "category": "Personal Services",
+      "system_prompt": "You are a beauty & personal care (salons/spas) operations specialist.\n\nYour expertise includes optimizing business operations, technology systems, compliance requirements,\nand growth strategies for personal services businesses.\n\nWhen analyzing operations, focus on:\n1. Operational efficiency and productivity\n2. Technology adoption and integration\n3. Customer/client satisfaction and retention\n4. Regulatory compliance\n5. Revenue optimization and cost control\n\nProvide specific, actionable recommendations tailored to the industry's unique challenges.",
+      "expertise_areas": [
+        "Operations management",
+        "Technology systems",
+        "Compliance & regulations",
+        "Customer management",
+        "Financial optimization",
+        "Staff management",
+        "Industry-specific workflows",
+        "Performance analytics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-100",
+        "revenue_range": "$500K-$10M+",
+        "types": [
+          "Independent",
+          "Small chains",
+          "Franchises"
+        ],
+        "locations": "1-5",
+        "staff_mix": "Mixed operational and administrative"
+      },
+      "control_points": {
+        "primary": "Industry-specific management system",
+        "secondary": "CRM/Customer management",
+        "tertiary": "Accounting/Finance"
+      },
+      "expansion_products": [
+        "Customer communication platform",
+        "Staff scheduling & management",
+        "Analytics & reporting",
+        "Mobile apps",
+        "Payment processing",
+        "Marketing automation"
+      ],
+      "regulatory_compliance": [
+        "Industry-specific regulations",
+        "Employment law",
+        "Data privacy",
+        "Safety requirements",
+        "Licensing requirements"
+      ],
+      "pain_points": [
+        "Manual process inefficiencies",
+        "Customer retention challenges",
+        "Staff productivity gaps",
+        "Technology fragmentation",
+        "Compliance tracking difficulties"
+      ],
+      "success_metrics": [
+        "Improve operational efficiency 20-30%",
+        "Increase customer retention 15-25%",
+        "Reduce manual work 40-50%",
+        "Improve compliance adherence to 100%",
+        "Increase revenue per customer 15-30%"
+      ],
+      "market_data": {
+        "total_us_companies": 70000,
+        "addressable": 65000,
+        "current_saas_adoption": 0.35,
+        "growth_cagr": 0.09,
+        "market_size_b": 6,
+        "growth_descriptor": "Appointment-based services"
+      }
+    },
+    {
+      "id": "agent_017_fitness",
+      "number": 17,
+      "tier": 2,
+      "name": "Fitness & Recreation (Gyms/Wellness)",
+      "naics": "713940",
+      "category": "Recreation",
+      "system_prompt": "You are a fitness & recreation (gyms/wellness) operations specialist.\n\nYour expertise includes optimizing business operations, technology systems, compliance requirements,\nand growth strategies for recreation businesses.\n\nWhen analyzing operations, focus on:\n1. Operational efficiency and productivity\n2. Technology adoption and integration\n3. Customer/client satisfaction and retention\n4. Regulatory compliance\n5. Revenue optimization and cost control\n\nProvide specific, actionable recommendations tailored to the industry's unique challenges.",
+      "expertise_areas": [
+        "Operations management",
+        "Technology systems",
+        "Compliance & regulations",
+        "Customer management",
+        "Financial optimization",
+        "Staff management",
+        "Industry-specific workflows",
+        "Performance analytics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-100",
+        "revenue_range": "$500K-$10M+",
+        "types": [
+          "Independent",
+          "Small chains",
+          "Franchises"
+        ],
+        "locations": "1-5",
+        "staff_mix": "Mixed operational and administrative"
+      },
+      "control_points": {
+        "primary": "Industry-specific management system",
+        "secondary": "CRM/Customer management",
+        "tertiary": "Accounting/Finance"
+      },
+      "expansion_products": [
+        "Customer communication platform",
+        "Staff scheduling & management",
+        "Analytics & reporting",
+        "Mobile apps",
+        "Payment processing",
+        "Marketing automation"
+      ],
+      "regulatory_compliance": [
+        "Industry-specific regulations",
+        "Employment law",
+        "Data privacy",
+        "Safety requirements",
+        "Licensing requirements"
+      ],
+      "pain_points": [
+        "Manual process inefficiencies",
+        "Customer retention challenges",
+        "Staff productivity gaps",
+        "Technology fragmentation",
+        "Compliance tracking difficulties"
+      ],
+      "success_metrics": [
+        "Improve operational efficiency 20-30%",
+        "Increase customer retention 15-25%",
+        "Reduce manual work 40-50%",
+        "Improve compliance adherence to 100%",
+        "Increase revenue per customer 15-30%"
+      ],
+      "market_data": {
+        "total_us_companies": 35000,
+        "addressable": 32000,
+        "current_saas_adoption": 0.4,
+        "growth_cagr": 0.11,
+        "market_size_b": 7,
+        "growth_descriptor": "Membership & class mgmt"
+      }
+    },
+    {
+      "id": "agent_018_event_planning",
+      "number": 18,
+      "tier": 2,
+      "name": "Event Planning & Catering",
+      "naics": "561920",
+      "category": "Services",
+      "system_prompt": "You are a event planning & catering operations specialist.\n\nYour expertise includes optimizing business operations, technology systems, compliance requirements,\nand growth strategies for services businesses.\n\nWhen analyzing operations, focus on:\n1. Operational efficiency and productivity\n2. Technology adoption and integration\n3. Customer/client satisfaction and retention\n4. Regulatory compliance\n5. Revenue optimization and cost control\n\nProvide specific, actionable recommendations tailored to the industry's unique challenges.",
+      "expertise_areas": [
+        "Operations management",
+        "Technology systems",
+        "Compliance & regulations",
+        "Customer management",
+        "Financial optimization",
+        "Staff management",
+        "Industry-specific workflows",
+        "Performance analytics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-100",
+        "revenue_range": "$500K-$10M+",
+        "types": [
+          "Independent",
+          "Small chains",
+          "Franchises"
+        ],
+        "locations": "1-5",
+        "staff_mix": "Mixed operational and administrative"
+      },
+      "control_points": {
+        "primary": "Industry-specific management system",
+        "secondary": "CRM/Customer management",
+        "tertiary": "Accounting/Finance"
+      },
+      "expansion_products": [
+        "Customer communication platform",
+        "Staff scheduling & management",
+        "Analytics & reporting",
+        "Mobile apps",
+        "Payment processing",
+        "Marketing automation"
+      ],
+      "regulatory_compliance": [
+        "Industry-specific regulations",
+        "Employment law",
+        "Data privacy",
+        "Safety requirements",
+        "Licensing requirements"
+      ],
+      "pain_points": [
+        "Manual process inefficiencies",
+        "Customer retention challenges",
+        "Staff productivity gaps",
+        "Technology fragmentation",
+        "Compliance tracking difficulties"
+      ],
+      "success_metrics": [
+        "Improve operational efficiency 20-30%",
+        "Increase customer retention 15-25%",
+        "Reduce manual work 40-50%",
+        "Improve compliance adherence to 100%",
+        "Increase revenue per customer 15-30%"
+      ],
+      "market_data": {
+        "total_us_companies": 25000,
+        "addressable": 22000,
+        "current_saas_adoption": 0.3,
+        "growth_cagr": 0.1,
+        "market_size_b": 4,
+        "growth_descriptor": "Project-based services"
+      }
+    },
+    {
+      "id": "agent_019_nonprofit",
+      "number": 19,
+      "tier": 2,
+      "name": "Nonprofit Organization Management",
+      "naics": "813",
+      "category": "Nonprofit",
+      "system_prompt": "You are a nonprofit organization management operations specialist.\n\nYour expertise includes optimizing business operations, technology systems, compliance requirements,\nand growth strategies for nonprofit businesses.\n\nWhen analyzing operations, focus on:\n1. Operational efficiency and productivity\n2. Technology adoption and integration\n3. Customer/client satisfaction and retention\n4. Regulatory compliance\n5. Revenue optimization and cost control\n\nProvide specific, actionable recommendations tailored to the industry's unique challenges.",
+      "expertise_areas": [
+        "Operations management",
+        "Technology systems",
+        "Compliance & regulations",
+        "Customer management",
+        "Financial optimization",
+        "Staff management",
+        "Industry-specific workflows",
+        "Performance analytics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-100",
+        "revenue_range": "$500K-$10M+",
+        "types": [
+          "Independent",
+          "Small chains",
+          "Franchises"
+        ],
+        "locations": "1-5",
+        "staff_mix": "Mixed operational and administrative"
+      },
+      "control_points": {
+        "primary": "Industry-specific management system",
+        "secondary": "CRM/Customer management",
+        "tertiary": "Accounting/Finance"
+      },
+      "expansion_products": [
+        "Customer communication platform",
+        "Staff scheduling & management",
+        "Analytics & reporting",
+        "Mobile apps",
+        "Payment processing",
+        "Marketing automation"
+      ],
+      "regulatory_compliance": [
+        "Industry-specific regulations",
+        "Employment law",
+        "Data privacy",
+        "Safety requirements",
+        "Licensing requirements"
+      ],
+      "pain_points": [
+        "Manual process inefficiencies",
+        "Customer retention challenges",
+        "Staff productivity gaps",
+        "Technology fragmentation",
+        "Compliance tracking difficulties"
+      ],
+      "success_metrics": [
+        "Improve operational efficiency 20-30%",
+        "Increase customer retention 15-25%",
+        "Reduce manual work 40-50%",
+        "Improve compliance adherence to 100%",
+        "Increase revenue per customer 15-30%"
+      ],
+      "market_data": {
+        "total_us_companies": 1200000,
+        "addressable": 100000,
+        "current_saas_adoption": 0.25,
+        "growth_cagr": 0.12,
+        "market_size_b": 15,
+        "growth_descriptor": "Donor & program mgmt"
+      }
+    },
+    {
+      "id": "agent_020_accounting",
+      "number": 20,
+      "tier": 2,
+      "name": "Accounting & Bookkeeping Services",
+      "naics": "541211",
+      "category": "Professional Services",
+      "system_prompt": "You are a accounting & bookkeeping services operations specialist.\n\nYour expertise includes optimizing business operations, technology systems, compliance requirements,\nand growth strategies for professional services businesses.\n\nWhen analyzing operations, focus on:\n1. Operational efficiency and productivity\n2. Technology adoption and integration\n3. Customer/client satisfaction and retention\n4. Regulatory compliance\n5. Revenue optimization and cost control\n\nProvide specific, actionable recommendations tailored to the industry's unique challenges.",
+      "expertise_areas": [
+        "Operations management",
+        "Technology systems",
+        "Compliance & regulations",
+        "Customer management",
+        "Financial optimization",
+        "Staff management",
+        "Industry-specific workflows",
+        "Performance analytics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-100",
+        "revenue_range": "$500K-$10M+",
+        "types": [
+          "Independent",
+          "Small chains",
+          "Franchises"
+        ],
+        "locations": "1-5",
+        "staff_mix": "Mixed operational and administrative"
+      },
+      "control_points": {
+        "primary": "Industry-specific management system",
+        "secondary": "CRM/Customer management",
+        "tertiary": "Accounting/Finance"
+      },
+      "expansion_products": [
+        "Customer communication platform",
+        "Staff scheduling & management",
+        "Analytics & reporting",
+        "Mobile apps",
+        "Payment processing",
+        "Marketing automation"
+      ],
+      "regulatory_compliance": [
+        "Industry-specific regulations",
+        "Employment law",
+        "Data privacy",
+        "Safety requirements",
+        "Licensing requirements"
+      ],
+      "pain_points": [
+        "Manual process inefficiencies",
+        "Customer retention challenges",
+        "Staff productivity gaps",
+        "Technology fragmentation",
+        "Compliance tracking difficulties"
+      ],
+      "success_metrics": [
+        "Improve operational efficiency 20-30%",
+        "Increase customer retention 15-25%",
+        "Reduce manual work 40-50%",
+        "Improve compliance adherence to 100%",
+        "Increase revenue per customer 15-30%"
+      ],
+      "market_data": {
+        "total_us_companies": 50000,
+        "addressable": 45000,
+        "current_saas_adoption": 0.55,
+        "growth_cagr": 0.09,
+        "market_size_b": 10,
+        "growth_descriptor": "High SaaS adoption"
+      }
+    },
+    {
+      "id": "agent_021_insurance_agency",
+      "number": 21,
+      "tier": 2,
+      "name": "Insurance Agency Operations",
+      "naics": "524210",
+      "category": "Insurance",
+      "system_prompt": "You are a insurance agency operations operations specialist.\n\nYour expertise includes optimizing business operations, technology systems, compliance requirements,\nand growth strategies for insurance businesses.\n\nWhen analyzing operations, focus on:\n1. Operational efficiency and productivity\n2. Technology adoption and integration\n3. Customer/client satisfaction and retention\n4. Regulatory compliance\n5. Revenue optimization and cost control\n\nProvide specific, actionable recommendations tailored to the industry's unique challenges.",
+      "expertise_areas": [
+        "Operations management",
+        "Technology systems",
+        "Compliance & regulations",
+        "Customer management",
+        "Financial optimization",
+        "Staff management",
+        "Industry-specific workflows",
+        "Performance analytics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-100",
+        "revenue_range": "$500K-$10M+",
+        "types": [
+          "Independent",
+          "Small chains",
+          "Franchises"
+        ],
+        "locations": "1-5",
+        "staff_mix": "Mixed operational and administrative"
+      },
+      "control_points": {
+        "primary": "Industry-specific management system",
+        "secondary": "CRM/Customer management",
+        "tertiary": "Accounting/Finance"
+      },
+      "expansion_products": [
+        "Customer communication platform",
+        "Staff scheduling & management",
+        "Analytics & reporting",
+        "Mobile apps",
+        "Payment processing",
+        "Marketing automation"
+      ],
+      "regulatory_compliance": [
+        "Industry-specific regulations",
+        "Employment law",
+        "Data privacy",
+        "Safety requirements",
+        "Licensing requirements"
+      ],
+      "pain_points": [
+        "Manual process inefficiencies",
+        "Customer retention challenges",
+        "Staff productivity gaps",
+        "Technology fragmentation",
+        "Compliance tracking difficulties"
+      ],
+      "success_metrics": [
+        "Improve operational efficiency 20-30%",
+        "Increase customer retention 15-25%",
+        "Reduce manual work 40-50%",
+        "Improve compliance adherence to 100%",
+        "Increase revenue per customer 15-30%"
+      ],
+      "market_data": {
+        "total_us_companies": 40000,
+        "addressable": 35000,
+        "current_saas_adoption": 0.4,
+        "growth_cagr": 0.08,
+        "market_size_b": 8,
+        "growth_descriptor": "Independent agencies"
+      }
+    },
+    {
+      "id": "agent_022_property_leasing",
+      "number": 22,
+      "tier": 2,
+      "name": "Residential/Commercial Leasing",
+      "naics": "531110",
+      "category": "Real Estate",
+      "system_prompt": "You are a residential/commercial leasing operations specialist.\n\nYour expertise includes optimizing business operations, technology systems, compliance requirements,\nand growth strategies for real estate businesses.\n\nWhen analyzing operations, focus on:\n1. Operational efficiency and productivity\n2. Technology adoption and integration\n3. Customer/client satisfaction and retention\n4. Regulatory compliance\n5. Revenue optimization and cost control\n\nProvide specific, actionable recommendations tailored to the industry's unique challenges.",
+      "expertise_areas": [
+        "Operations management",
+        "Technology systems",
+        "Compliance & regulations",
+        "Customer management",
+        "Financial optimization",
+        "Staff management",
+        "Industry-specific workflows",
+        "Performance analytics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-100",
+        "revenue_range": "$500K-$10M+",
+        "types": [
+          "Independent",
+          "Small chains",
+          "Franchises"
+        ],
+        "locations": "1-5",
+        "staff_mix": "Mixed operational and administrative"
+      },
+      "control_points": {
+        "primary": "Industry-specific management system",
+        "secondary": "CRM/Customer management",
+        "tertiary": "Accounting/Finance"
+      },
+      "expansion_products": [
+        "Customer communication platform",
+        "Staff scheduling & management",
+        "Analytics & reporting",
+        "Mobile apps",
+        "Payment processing",
+        "Marketing automation"
+      ],
+      "regulatory_compliance": [
+        "Industry-specific regulations",
+        "Employment law",
+        "Data privacy",
+        "Safety requirements",
+        "Licensing requirements"
+      ],
+      "pain_points": [
+        "Manual process inefficiencies",
+        "Customer retention challenges",
+        "Staff productivity gaps",
+        "Technology fragmentation",
+        "Compliance tracking difficulties"
+      ],
+      "success_metrics": [
+        "Improve operational efficiency 20-30%",
+        "Increase customer retention 15-25%",
+        "Reduce manual work 40-50%",
+        "Improve compliance adherence to 100%",
+        "Increase revenue per customer 15-30%"
+      ],
+      "market_data": {
+        "total_us_companies": 60000,
+        "addressable": 55000,
+        "current_saas_adoption": 0.5,
+        "growth_cagr": 0.1,
+        "market_size_b": 12,
+        "growth_descriptor": "Property management"
+      }
+    },
+    {
+      "id": "agent_023_pest_control",
+      "number": 23,
+      "tier": 2,
+      "name": "Pest Control Operations",
+      "naics": "561710",
+      "category": "Services",
+      "system_prompt": "You are a pest control operations operations specialist.\n\nYour expertise includes optimizing business operations, technology systems, compliance requirements,\nand growth strategies for services businesses.\n\nWhen analyzing operations, focus on:\n1. Operational efficiency and productivity\n2. Technology adoption and integration\n3. Customer/client satisfaction and retention\n4. Regulatory compliance\n5. Revenue optimization and cost control\n\nProvide specific, actionable recommendations tailored to the industry's unique challenges.",
+      "expertise_areas": [
+        "Operations management",
+        "Technology systems",
+        "Compliance & regulations",
+        "Customer management",
+        "Financial optimization",
+        "Staff management",
+        "Industry-specific workflows",
+        "Performance analytics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-100",
+        "revenue_range": "$500K-$10M+",
+        "types": [
+          "Independent",
+          "Small chains",
+          "Franchises"
+        ],
+        "locations": "1-5",
+        "staff_mix": "Mixed operational and administrative"
+      },
+      "control_points": {
+        "primary": "Industry-specific management system",
+        "secondary": "CRM/Customer management",
+        "tertiary": "Accounting/Finance"
+      },
+      "expansion_products": [
+        "Customer communication platform",
+        "Staff scheduling & management",
+        "Analytics & reporting",
+        "Mobile apps",
+        "Payment processing",
+        "Marketing automation"
+      ],
+      "regulatory_compliance": [
+        "Industry-specific regulations",
+        "Employment law",
+        "Data privacy",
+        "Safety requirements",
+        "Licensing requirements"
+      ],
+      "pain_points": [
+        "Manual process inefficiencies",
+        "Customer retention challenges",
+        "Staff productivity gaps",
+        "Technology fragmentation",
+        "Compliance tracking difficulties"
+      ],
+      "success_metrics": [
+        "Improve operational efficiency 20-30%",
+        "Increase customer retention 15-25%",
+        "Reduce manual work 40-50%",
+        "Improve compliance adherence to 100%",
+        "Increase revenue per customer 15-30%"
+      ],
+      "market_data": {
+        "total_us_companies": 20000,
+        "addressable": 18000,
+        "current_saas_adoption": 0.35,
+        "growth_cagr": 0.09,
+        "market_size_b": 3,
+        "growth_descriptor": "Route-based services"
+      }
+    },
+    {
+      "id": "agent_024_medical_supplies",
+      "number": 24,
+      "tier": 2,
+      "name": "Medical & Dental Supplies Distribution",
+      "naics": "423450",
+      "category": "Distribution",
+      "system_prompt": "You are a medical & dental supplies distribution operations specialist.\n\nYour expertise includes optimizing business operations, technology systems, compliance requirements,\nand growth strategies for distribution businesses.\n\nWhen analyzing operations, focus on:\n1. Operational efficiency and productivity\n2. Technology adoption and integration\n3. Customer/client satisfaction and retention\n4. Regulatory compliance\n5. Revenue optimization and cost control\n\nProvide specific, actionable recommendations tailored to the industry's unique challenges.",
+      "expertise_areas": [
+        "Operations management",
+        "Technology systems",
+        "Compliance & regulations",
+        "Customer management",
+        "Financial optimization",
+        "Staff management",
+        "Industry-specific workflows",
+        "Performance analytics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-100",
+        "revenue_range": "$500K-$10M+",
+        "types": [
+          "Independent",
+          "Small chains",
+          "Franchises"
+        ],
+        "locations": "1-5",
+        "staff_mix": "Mixed operational and administrative"
+      },
+      "control_points": {
+        "primary": "Industry-specific management system",
+        "secondary": "CRM/Customer management",
+        "tertiary": "Accounting/Finance"
+      },
+      "expansion_products": [
+        "Customer communication platform",
+        "Staff scheduling & management",
+        "Analytics & reporting",
+        "Mobile apps",
+        "Payment processing",
+        "Marketing automation"
+      ],
+      "regulatory_compliance": [
+        "Industry-specific regulations",
+        "Employment law",
+        "Data privacy",
+        "Safety requirements",
+        "Licensing requirements"
+      ],
+      "pain_points": [
+        "Manual process inefficiencies",
+        "Customer retention challenges",
+        "Staff productivity gaps",
+        "Technology fragmentation",
+        "Compliance tracking difficulties"
+      ],
+      "success_metrics": [
+        "Improve operational efficiency 20-30%",
+        "Increase customer retention 15-25%",
+        "Reduce manual work 40-50%",
+        "Improve compliance adherence to 100%",
+        "Increase revenue per customer 15-30%"
+      ],
+      "market_data": {
+        "total_us_companies": 15000,
+        "addressable": 13000,
+        "current_saas_adoption": 0.45,
+        "growth_cagr": 0.1,
+        "market_size_b": 5,
+        "growth_descriptor": "B2B distribution"
+      }
+    },
+    {
+      "id": "agent_025_cleaning_services",
+      "number": 25,
+      "tier": 2,
+      "name": "Commercial & Residential Cleaning",
+      "naics": "561720",
+      "category": "Services",
+      "system_prompt": "You are a commercial & residential cleaning operations specialist.\n\nYour expertise includes optimizing business operations, technology systems, compliance requirements,\nand growth strategies for services businesses.\n\nWhen analyzing operations, focus on:\n1. Operational efficiency and productivity\n2. Technology adoption and integration\n3. Customer/client satisfaction and retention\n4. Regulatory compliance\n5. Revenue optimization and cost control\n\nProvide specific, actionable recommendations tailored to the industry's unique challenges.",
+      "expertise_areas": [
+        "Operations management",
+        "Technology systems",
+        "Compliance & regulations",
+        "Customer management",
+        "Financial optimization",
+        "Staff management",
+        "Industry-specific workflows",
+        "Performance analytics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-100",
+        "revenue_range": "$500K-$10M+",
+        "types": [
+          "Independent",
+          "Small chains",
+          "Franchises"
+        ],
+        "locations": "1-5",
+        "staff_mix": "Mixed operational and administrative"
+      },
+      "control_points": {
+        "primary": "Industry-specific management system",
+        "secondary": "CRM/Customer management",
+        "tertiary": "Accounting/Finance"
+      },
+      "expansion_products": [
+        "Customer communication platform",
+        "Staff scheduling & management",
+        "Analytics & reporting",
+        "Mobile apps",
+        "Payment processing",
+        "Marketing automation"
+      ],
+      "regulatory_compliance": [
+        "Industry-specific regulations",
+        "Employment law",
+        "Data privacy",
+        "Safety requirements",
+        "Licensing requirements"
+      ],
+      "pain_points": [
+        "Manual process inefficiencies",
+        "Customer retention challenges",
+        "Staff productivity gaps",
+        "Technology fragmentation",
+        "Compliance tracking difficulties"
+      ],
+      "success_metrics": [
+        "Improve operational efficiency 20-30%",
+        "Increase customer retention 15-25%",
+        "Reduce manual work 40-50%",
+        "Improve compliance adherence to 100%",
+        "Increase revenue per customer 15-30%"
+      ],
+      "market_data": {
+        "total_us_companies": 90000,
+        "addressable": 80000,
+        "current_saas_adoption": 0.3,
+        "growth_cagr": 0.09,
+        "market_size_b": 9,
+        "growth_descriptor": "Field service mgmt"
+      }
+    },
+    {
+      "id": "agent_026_childcare",
+      "number": 26,
+      "tier": 2,
+      "name": "Childcare & Daycare Centers",
+      "naics": "624410",
+      "category": "Social Services",
+      "system_prompt": "You are a childcare & daycare centers operations specialist.\n\nYour expertise includes optimizing business operations, technology systems, compliance requirements,\nand growth strategies for social services businesses.\n\nWhen analyzing operations, focus on:\n1. Operational efficiency and productivity\n2. Technology adoption and integration\n3. Customer/client satisfaction and retention\n4. Regulatory compliance\n5. Revenue optimization and cost control\n\nProvide specific, actionable recommendations tailored to the industry's unique challenges.",
+      "expertise_areas": [
+        "Operations management",
+        "Technology systems",
+        "Compliance & regulations",
+        "Customer management",
+        "Financial optimization",
+        "Staff management",
+        "Industry-specific workflows",
+        "Performance analytics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-100",
+        "revenue_range": "$500K-$10M+",
+        "types": [
+          "Independent",
+          "Small chains",
+          "Franchises"
+        ],
+        "locations": "1-5",
+        "staff_mix": "Mixed operational and administrative"
+      },
+      "control_points": {
+        "primary": "Industry-specific management system",
+        "secondary": "CRM/Customer management",
+        "tertiary": "Accounting/Finance"
+      },
+      "expansion_products": [
+        "Customer communication platform",
+        "Staff scheduling & management",
+        "Analytics & reporting",
+        "Mobile apps",
+        "Payment processing",
+        "Marketing automation"
+      ],
+      "regulatory_compliance": [
+        "Industry-specific regulations",
+        "Employment law",
+        "Data privacy",
+        "Safety requirements",
+        "Licensing requirements"
+      ],
+      "pain_points": [
+        "Manual process inefficiencies",
+        "Customer retention challenges",
+        "Staff productivity gaps",
+        "Technology fragmentation",
+        "Compliance tracking difficulties"
+      ],
+      "success_metrics": [
+        "Improve operational efficiency 20-30%",
+        "Increase customer retention 15-25%",
+        "Reduce manual work 40-50%",
+        "Improve compliance adherence to 100%",
+        "Increase revenue per customer 15-30%"
+      ],
+      "market_data": {
+        "total_us_companies": 50000,
+        "addressable": 45000,
+        "current_saas_adoption": 0.35,
+        "growth_cagr": 0.08,
+        "market_size_b": 6,
+        "growth_descriptor": "Parent communication"
+      }
+    },
+    {
+      "id": "agent_027_security_services",
+      "number": 27,
+      "tier": 2,
+      "name": "Security & Guard Services",
+      "naics": "561612",
+      "category": "Services",
+      "system_prompt": "You are a security & guard services operations specialist.\n\nYour expertise includes optimizing business operations, technology systems, compliance requirements,\nand growth strategies for services businesses.\n\nWhen analyzing operations, focus on:\n1. Operational efficiency and productivity\n2. Technology adoption and integration\n3. Customer/client satisfaction and retention\n4. Regulatory compliance\n5. Revenue optimization and cost control\n\nProvide specific, actionable recommendations tailored to the industry's unique challenges.",
+      "expertise_areas": [
+        "Operations management",
+        "Technology systems",
+        "Compliance & regulations",
+        "Customer management",
+        "Financial optimization",
+        "Staff management",
+        "Industry-specific workflows",
+        "Performance analytics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-100",
+        "revenue_range": "$500K-$10M+",
+        "types": [
+          "Independent",
+          "Small chains",
+          "Franchises"
+        ],
+        "locations": "1-5",
+        "staff_mix": "Mixed operational and administrative"
+      },
+      "control_points": {
+        "primary": "Industry-specific management system",
+        "secondary": "CRM/Customer management",
+        "tertiary": "Accounting/Finance"
+      },
+      "expansion_products": [
+        "Customer communication platform",
+        "Staff scheduling & management",
+        "Analytics & reporting",
+        "Mobile apps",
+        "Payment processing",
+        "Marketing automation"
+      ],
+      "regulatory_compliance": [
+        "Industry-specific regulations",
+        "Employment law",
+        "Data privacy",
+        "Safety requirements",
+        "Licensing requirements"
+      ],
+      "pain_points": [
+        "Manual process inefficiencies",
+        "Customer retention challenges",
+        "Staff productivity gaps",
+        "Technology fragmentation",
+        "Compliance tracking difficulties"
+      ],
+      "success_metrics": [
+        "Improve operational efficiency 20-30%",
+        "Increase customer retention 15-25%",
+        "Reduce manual work 40-50%",
+        "Improve compliance adherence to 100%",
+        "Increase revenue per customer 15-30%"
+      ],
+      "market_data": {
+        "total_us_companies": 12000,
+        "addressable": 10000,
+        "current_saas_adoption": 0.4,
+        "growth_cagr": 0.09,
+        "market_size_b": 4,
+        "growth_descriptor": "Scheduling & dispatch"
+      }
+    },
+    {
+      "id": "agent_028_printing",
+      "number": 28,
+      "tier": 2,
+      "name": "Printing & Publishing Services",
+      "naics": "323",
+      "category": "Manufacturing/Services",
+      "system_prompt": "You are a printing & publishing services operations specialist.\n\nYour expertise includes optimizing business operations, technology systems, compliance requirements,\nand growth strategies for manufacturing/services businesses.\n\nWhen analyzing operations, focus on:\n1. Operational efficiency and productivity\n2. Technology adoption and integration\n3. Customer/client satisfaction and retention\n4. Regulatory compliance\n5. Revenue optimization and cost control\n\nProvide specific, actionable recommendations tailored to the industry's unique challenges.",
+      "expertise_areas": [
+        "Operations management",
+        "Technology systems",
+        "Compliance & regulations",
+        "Customer management",
+        "Financial optimization",
+        "Staff management",
+        "Industry-specific workflows",
+        "Performance analytics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-100",
+        "revenue_range": "$500K-$10M+",
+        "types": [
+          "Independent",
+          "Small chains",
+          "Franchises"
+        ],
+        "locations": "1-5",
+        "staff_mix": "Mixed operational and administrative"
+      },
+      "control_points": {
+        "primary": "Industry-specific management system",
+        "secondary": "CRM/Customer management",
+        "tertiary": "Accounting/Finance"
+      },
+      "expansion_products": [
+        "Customer communication platform",
+        "Staff scheduling & management",
+        "Analytics & reporting",
+        "Mobile apps",
+        "Payment processing",
+        "Marketing automation"
+      ],
+      "regulatory_compliance": [
+        "Industry-specific regulations",
+        "Employment law",
+        "Data privacy",
+        "Safety requirements",
+        "Licensing requirements"
+      ],
+      "pain_points": [
+        "Manual process inefficiencies",
+        "Customer retention challenges",
+        "Staff productivity gaps",
+        "Technology fragmentation",
+        "Compliance tracking difficulties"
+      ],
+      "success_metrics": [
+        "Improve operational efficiency 20-30%",
+        "Increase customer retention 15-25%",
+        "Reduce manual work 40-50%",
+        "Improve compliance adherence to 100%",
+        "Increase revenue per customer 15-30%"
+      ],
+      "market_data": {
+        "total_us_companies": 25000,
+        "addressable": 20000,
+        "current_saas_adoption": 0.35,
+        "growth_cagr": 0.06,
+        "market_size_b": 3,
+        "growth_descriptor": "Order & production mgmt"
+      }
+    },
+    {
+      "id": "agent_029_moving_storage",
+      "number": 29,
+      "tier": 2,
+      "name": "Moving & Storage Services",
+      "naics": "484210",
+      "category": "Transportation",
+      "system_prompt": "You are a moving & storage services operations specialist.\n\nYour expertise includes optimizing business operations, technology systems, compliance requirements,\nand growth strategies for transportation businesses.\n\nWhen analyzing operations, focus on:\n1. Operational efficiency and productivity\n2. Technology adoption and integration\n3. Customer/client satisfaction and retention\n4. Regulatory compliance\n5. Revenue optimization and cost control\n\nProvide specific, actionable recommendations tailored to the industry's unique challenges.",
+      "expertise_areas": [
+        "Operations management",
+        "Technology systems",
+        "Compliance & regulations",
+        "Customer management",
+        "Financial optimization",
+        "Staff management",
+        "Industry-specific workflows",
+        "Performance analytics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-100",
+        "revenue_range": "$500K-$10M+",
+        "types": [
+          "Independent",
+          "Small chains",
+          "Franchises"
+        ],
+        "locations": "1-5",
+        "staff_mix": "Mixed operational and administrative"
+      },
+      "control_points": {
+        "primary": "Industry-specific management system",
+        "secondary": "CRM/Customer management",
+        "tertiary": "Accounting/Finance"
+      },
+      "expansion_products": [
+        "Customer communication platform",
+        "Staff scheduling & management",
+        "Analytics & reporting",
+        "Mobile apps",
+        "Payment processing",
+        "Marketing automation"
+      ],
+      "regulatory_compliance": [
+        "Industry-specific regulations",
+        "Employment law",
+        "Data privacy",
+        "Safety requirements",
+        "Licensing requirements"
+      ],
+      "pain_points": [
+        "Manual process inefficiencies",
+        "Customer retention challenges",
+        "Staff productivity gaps",
+        "Technology fragmentation",
+        "Compliance tracking difficulties"
+      ],
+      "success_metrics": [
+        "Improve operational efficiency 20-30%",
+        "Increase customer retention 15-25%",
+        "Reduce manual work 40-50%",
+        "Improve compliance adherence to 100%",
+        "Increase revenue per customer 15-30%"
+      ],
+      "market_data": {
+        "total_us_companies": 18000,
+        "addressable": 15000,
+        "current_saas_adoption": 0.3,
+        "growth_cagr": 0.08,
+        "market_size_b": 4,
+        "growth_descriptor": "Logistics operations"
+      }
+    },
+    {
+      "id": "agent_030_wholesale",
+      "number": 30,
+      "tier": 2,
+      "name": "Wholesale & Distribution",
+      "naics": "42",
+      "category": "Wholesale",
+      "system_prompt": "You are a wholesale & distribution operations specialist.\n\nYour expertise includes optimizing business operations, technology systems, compliance requirements,\nand growth strategies for wholesale businesses.\n\nWhen analyzing operations, focus on:\n1. Operational efficiency and productivity\n2. Technology adoption and integration\n3. Customer/client satisfaction and retention\n4. Regulatory compliance\n5. Revenue optimization and cost control\n\nProvide specific, actionable recommendations tailored to the industry's unique challenges.",
+      "expertise_areas": [
+        "Operations management",
+        "Technology systems",
+        "Compliance & regulations",
+        "Customer management",
+        "Financial optimization",
+        "Staff management",
+        "Industry-specific workflows",
+        "Performance analytics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-100",
+        "revenue_range": "$500K-$10M+",
+        "types": [
+          "Independent",
+          "Small chains",
+          "Franchises"
+        ],
+        "locations": "1-5",
+        "staff_mix": "Mixed operational and administrative"
+      },
+      "control_points": {
+        "primary": "Industry-specific management system",
+        "secondary": "CRM/Customer management",
+        "tertiary": "Accounting/Finance"
+      },
+      "expansion_products": [
+        "Customer communication platform",
+        "Staff scheduling & management",
+        "Analytics & reporting",
+        "Mobile apps",
+        "Payment processing",
+        "Marketing automation"
+      ],
+      "regulatory_compliance": [
+        "Industry-specific regulations",
+        "Employment law",
+        "Data privacy",
+        "Safety requirements",
+        "Licensing requirements"
+      ],
+      "pain_points": [
+        "Manual process inefficiencies",
+        "Customer retention challenges",
+        "Staff productivity gaps",
+        "Technology fragmentation",
+        "Compliance tracking difficulties"
+      ],
+      "success_metrics": [
+        "Improve operational efficiency 20-30%",
+        "Increase customer retention 15-25%",
+        "Reduce manual work 40-50%",
+        "Improve compliance adherence to 100%",
+        "Increase revenue per customer 15-30%"
+      ],
+      "market_data": {
+        "total_us_companies": 400000,
+        "addressable": 80000,
+        "current_saas_adoption": 0.3,
+        "growth_cagr": 0.08,
+        "market_size_b": 18,
+        "growth_descriptor": "B2B operations"
+      }
+    },
+    {
+      "id": "agent_031_hotels_lodging",
+      "number": 31,
+      "tier": 2,
+      "name": "Hotels & Lodging Operations",
+      "naics": "721",
+      "category": "Hospitality",
+      "system_prompt": "You are a hotels & lodging operations operations specialist.\n\nYour expertise includes optimizing business operations, technology systems, compliance requirements,\nand growth strategies for hospitality businesses.\n\nWhen analyzing operations, focus on:\n1. Operational efficiency and productivity\n2. Technology adoption and integration\n3. Customer/client satisfaction and retention\n4. Regulatory compliance\n5. Revenue optimization and cost control\n\nProvide specific, actionable recommendations tailored to the industry's unique challenges.",
+      "expertise_areas": [
+        "Operations management",
+        "Technology systems",
+        "Compliance & regulations",
+        "Customer management",
+        "Financial optimization",
+        "Staff management",
+        "Industry-specific workflows",
+        "Performance analytics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-100",
+        "revenue_range": "$500K-$10M+",
+        "types": [
+          "Independent",
+          "Small chains",
+          "Franchises"
+        ],
+        "locations": "1-5",
+        "staff_mix": "Mixed operational and administrative"
+      },
+      "control_points": {
+        "primary": "Industry-specific management system",
+        "secondary": "CRM/Customer management",
+        "tertiary": "Accounting/Finance"
+      },
+      "expansion_products": [
+        "Customer communication platform",
+        "Staff scheduling & management",
+        "Analytics & reporting",
+        "Mobile apps",
+        "Payment processing",
+        "Marketing automation"
+      ],
+      "regulatory_compliance": [
+        "Industry-specific regulations",
+        "Employment law",
+        "Data privacy",
+        "Safety requirements",
+        "Licensing requirements"
+      ],
+      "pain_points": [
+        "Manual process inefficiencies",
+        "Customer retention challenges",
+        "Staff productivity gaps",
+        "Technology fragmentation",
+        "Compliance tracking difficulties"
+      ],
+      "success_metrics": [
+        "Improve operational efficiency 20-30%",
+        "Increase customer retention 15-25%",
+        "Reduce manual work 40-50%",
+        "Improve compliance adherence to 100%",
+        "Increase revenue per customer 15-30%"
+      ],
+      "market_data": {
+        "total_us_companies": 55000,
+        "addressable": 50000,
+        "current_saas_adoption": 0.5,
+        "growth_cagr": 0.1,
+        "market_size_b": 14,
+        "growth_descriptor": "Property management"
+      }
+    },
+    {
+      "id": "agent_032_auto_sales",
+      "number": 32,
+      "tier": 2,
+      "name": "Automotive Sales & Dealerships",
+      "naics": "441",
+      "category": "Retail",
+      "system_prompt": "You are a automotive sales & dealerships operations specialist.\n\nYour expertise includes optimizing business operations, technology systems, compliance requirements,\nand growth strategies for retail businesses.\n\nWhen analyzing operations, focus on:\n1. Operational efficiency and productivity\n2. Technology adoption and integration\n3. Customer/client satisfaction and retention\n4. Regulatory compliance\n5. Revenue optimization and cost control\n\nProvide specific, actionable recommendations tailored to the industry's unique challenges.",
+      "expertise_areas": [
+        "Operations management",
+        "Technology systems",
+        "Compliance & regulations",
+        "Customer management",
+        "Financial optimization",
+        "Staff management",
+        "Industry-specific workflows",
+        "Performance analytics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-100",
+        "revenue_range": "$500K-$10M+",
+        "types": [
+          "Independent",
+          "Small chains",
+          "Franchises"
+        ],
+        "locations": "1-5",
+        "staff_mix": "Mixed operational and administrative"
+      },
+      "control_points": {
+        "primary": "Industry-specific management system",
+        "secondary": "CRM/Customer management",
+        "tertiary": "Accounting/Finance"
+      },
+      "expansion_products": [
+        "Customer communication platform",
+        "Staff scheduling & management",
+        "Analytics & reporting",
+        "Mobile apps",
+        "Payment processing",
+        "Marketing automation"
+      ],
+      "regulatory_compliance": [
+        "Industry-specific regulations",
+        "Employment law",
+        "Data privacy",
+        "Safety requirements",
+        "Licensing requirements"
+      ],
+      "pain_points": [
+        "Manual process inefficiencies",
+        "Customer retention challenges",
+        "Staff productivity gaps",
+        "Technology fragmentation",
+        "Compliance tracking difficulties"
+      ],
+      "success_metrics": [
+        "Improve operational efficiency 20-30%",
+        "Increase customer retention 15-25%",
+        "Reduce manual work 40-50%",
+        "Improve compliance adherence to 100%",
+        "Increase revenue per customer 15-30%"
+      ],
+      "market_data": {
+        "total_us_companies": 18000,
+        "addressable": 16000,
+        "current_saas_adoption": 0.6,
+        "growth_cagr": 0.07,
+        "market_size_b": 9,
+        "growth_descriptor": "DMS systems"
+      }
+    },
+    {
+      "id": "agent_033_marketing_agency",
+      "number": 33,
+      "tier": 2,
+      "name": "Marketing & Advertising Agencies",
+      "naics": "541810",
+      "category": "Professional Services",
+      "system_prompt": "You are a marketing & advertising agencies operations specialist.\n\nYour expertise includes optimizing business operations, technology systems, compliance requirements,\nand growth strategies for professional services businesses.\n\nWhen analyzing operations, focus on:\n1. Operational efficiency and productivity\n2. Technology adoption and integration\n3. Customer/client satisfaction and retention\n4. Regulatory compliance\n5. Revenue optimization and cost control\n\nProvide specific, actionable recommendations tailored to the industry's unique challenges.",
+      "expertise_areas": [
+        "Operations management",
+        "Technology systems",
+        "Compliance & regulations",
+        "Customer management",
+        "Financial optimization",
+        "Staff management",
+        "Industry-specific workflows",
+        "Performance analytics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-100",
+        "revenue_range": "$500K-$10M+",
+        "types": [
+          "Independent",
+          "Small chains",
+          "Franchises"
+        ],
+        "locations": "1-5",
+        "staff_mix": "Mixed operational and administrative"
+      },
+      "control_points": {
+        "primary": "Industry-specific management system",
+        "secondary": "CRM/Customer management",
+        "tertiary": "Accounting/Finance"
+      },
+      "expansion_products": [
+        "Customer communication platform",
+        "Staff scheduling & management",
+        "Analytics & reporting",
+        "Mobile apps",
+        "Payment processing",
+        "Marketing automation"
+      ],
+      "regulatory_compliance": [
+        "Industry-specific regulations",
+        "Employment law",
+        "Data privacy",
+        "Safety requirements",
+        "Licensing requirements"
+      ],
+      "pain_points": [
+        "Manual process inefficiencies",
+        "Customer retention challenges",
+        "Staff productivity gaps",
+        "Technology fragmentation",
+        "Compliance tracking difficulties"
+      ],
+      "success_metrics": [
+        "Improve operational efficiency 20-30%",
+        "Increase customer retention 15-25%",
+        "Reduce manual work 40-50%",
+        "Improve compliance adherence to 100%",
+        "Increase revenue per customer 15-30%"
+      ],
+      "market_data": {
+        "total_us_companies": 35000,
+        "addressable": 30000,
+        "current_saas_adoption": 0.5,
+        "growth_cagr": 0.11,
+        "market_size_b": 8,
+        "growth_descriptor": "Project & client mgmt"
+      }
+    },
+    {
+      "id": "agent_034_architecture",
+      "number": 34,
+      "tier": 2,
+      "name": "Architecture & Engineering Services",
+      "naics": "541310",
+      "category": "Professional Services",
+      "system_prompt": "You are a architecture & engineering services operations specialist.\n\nYour expertise includes optimizing business operations, technology systems, compliance requirements,\nand growth strategies for professional services businesses.\n\nWhen analyzing operations, focus on:\n1. Operational efficiency and productivity\n2. Technology adoption and integration\n3. Customer/client satisfaction and retention\n4. Regulatory compliance\n5. Revenue optimization and cost control\n\nProvide specific, actionable recommendations tailored to the industry's unique challenges.",
+      "expertise_areas": [
+        "Operations management",
+        "Technology systems",
+        "Compliance & regulations",
+        "Customer management",
+        "Financial optimization",
+        "Staff management",
+        "Industry-specific workflows",
+        "Performance analytics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-100",
+        "revenue_range": "$500K-$10M+",
+        "types": [
+          "Independent",
+          "Small chains",
+          "Franchises"
+        ],
+        "locations": "1-5",
+        "staff_mix": "Mixed operational and administrative"
+      },
+      "control_points": {
+        "primary": "Industry-specific management system",
+        "secondary": "CRM/Customer management",
+        "tertiary": "Accounting/Finance"
+      },
+      "expansion_products": [
+        "Customer communication platform",
+        "Staff scheduling & management",
+        "Analytics & reporting",
+        "Mobile apps",
+        "Payment processing",
+        "Marketing automation"
+      ],
+      "regulatory_compliance": [
+        "Industry-specific regulations",
+        "Employment law",
+        "Data privacy",
+        "Safety requirements",
+        "Licensing requirements"
+      ],
+      "pain_points": [
+        "Manual process inefficiencies",
+        "Customer retention challenges",
+        "Staff productivity gaps",
+        "Technology fragmentation",
+        "Compliance tracking difficulties"
+      ],
+      "success_metrics": [
+        "Improve operational efficiency 20-30%",
+        "Increase customer retention 15-25%",
+        "Reduce manual work 40-50%",
+        "Improve compliance adherence to 100%",
+        "Increase revenue per customer 15-30%"
+      ],
+      "market_data": {
+        "total_us_companies": 25000,
+        "addressable": 22000,
+        "current_saas_adoption": 0.45,
+        "growth_cagr": 0.09,
+        "market_size_b": 6,
+        "growth_descriptor": "Project management"
+      }
+    },
+    {
+      "id": "agent_035_renewable_energy",
+      "number": 35,
+      "tier": 3,
+      "name": "Renewable Energy Services",
+      "naics": "221114",
+      "category": "Utilities",
+      "system_prompt": "You are a renewable energy services operations specialist for emerging and specialized industries.\n\nYour expertise focuses on:\n- Modern technology adoption and digital transformation\n- Industry-specific operational challenges\n- Regulatory compliance and risk management\n- Growth strategies and market positioning\n- Customer/client acquisition and retention\n\nProvide forward-thinking, innovation-focused recommendations while maintaining\noperational excellence and compliance.",
+      "expertise_areas": [
+        "Digital transformation",
+        "Operations optimization",
+        "Compliance management",
+        "Growth strategies",
+        "Technology integration",
+        "Risk management",
+        "Industry best practices",
+        "Performance metrics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-50",
+        "revenue_range": "$500K-$5M+",
+        "types": [
+          "Specialized providers",
+          "Emerging businesses"
+        ],
+        "locations": "1-3",
+        "staff_mix": "Specialized and administrative"
+      },
+      "control_points": {
+        "primary": "Specialized management platform",
+        "secondary": "Customer/project management",
+        "tertiary": "Financial systems"
+      },
+      "expansion_products": [
+        "Industry-specific tools",
+        "Analytics platforms",
+        "Communication systems",
+        "Automation tools",
+        "Compliance tracking",
+        "Customer portals"
+      ],
+      "regulatory_compliance": [
+        "Industry regulations",
+        "Data protection",
+        "Safety standards",
+        "Professional licensing",
+        "Insurance requirements"
+      ],
+      "pain_points": [
+        "Technology adoption challenges",
+        "Market differentiation",
+        "Operational scalability",
+        "Compliance complexity",
+        "Resource constraints"
+      ],
+      "success_metrics": [
+        "Accelerate digital adoption 30-50%",
+        "Improve operational efficiency 25-40%",
+        "Increase market share 20-30%",
+        "Enhance compliance 100%",
+        "Reduce operational costs 15-25%"
+      ],
+      "market_data": {
+        "total_us_companies": 10000,
+        "addressable": 8000,
+        "current_saas_adoption": 0.2,
+        "growth_cagr": 0.15,
+        "market_size_b": 8,
+        "growth_descriptor": "Emerging market"
+      }
+    },
+    {
+      "id": "agent_036_telecom",
+      "number": 36,
+      "tier": 3,
+      "name": "Telecommunications Operations",
+      "naics": "517",
+      "category": "Telecom",
+      "system_prompt": "You are a telecommunications operations operations specialist for emerging and specialized industries.\n\nYour expertise focuses on:\n- Modern technology adoption and digital transformation\n- Industry-specific operational challenges\n- Regulatory compliance and risk management\n- Growth strategies and market positioning\n- Customer/client acquisition and retention\n\nProvide forward-thinking, innovation-focused recommendations while maintaining\noperational excellence and compliance.",
+      "expertise_areas": [
+        "Digital transformation",
+        "Operations optimization",
+        "Compliance management",
+        "Growth strategies",
+        "Technology integration",
+        "Risk management",
+        "Industry best practices",
+        "Performance metrics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-50",
+        "revenue_range": "$500K-$5M+",
+        "types": [
+          "Specialized providers",
+          "Emerging businesses"
+        ],
+        "locations": "1-3",
+        "staff_mix": "Specialized and administrative"
+      },
+      "control_points": {
+        "primary": "Specialized management platform",
+        "secondary": "Customer/project management",
+        "tertiary": "Financial systems"
+      },
+      "expansion_products": [
+        "Industry-specific tools",
+        "Analytics platforms",
+        "Communication systems",
+        "Automation tools",
+        "Compliance tracking",
+        "Customer portals"
+      ],
+      "regulatory_compliance": [
+        "Industry regulations",
+        "Data protection",
+        "Safety standards",
+        "Professional licensing",
+        "Insurance requirements"
+      ],
+      "pain_points": [
+        "Technology adoption challenges",
+        "Market differentiation",
+        "Operational scalability",
+        "Compliance complexity",
+        "Resource constraints"
+      ],
+      "success_metrics": [
+        "Accelerate digital adoption 30-50%",
+        "Improve operational efficiency 25-40%",
+        "Increase market share 20-30%",
+        "Enhance compliance 100%",
+        "Reduce operational costs 15-25%"
+      ],
+      "market_data": {
+        "total_us_companies": 5000,
+        "addressable": 4000,
+        "current_saas_adoption": 0.5,
+        "growth_cagr": 0.07,
+        "market_size_b": 12,
+        "growth_descriptor": "Service providers"
+      }
+    },
+    {
+      "id": "agent_037_cannabis",
+      "number": 37,
+      "tier": 3,
+      "name": "Cannabis Retail & Distribution",
+      "naics": "453",
+      "category": "Retail",
+      "system_prompt": "You are a cannabis retail & distribution operations specialist for emerging and specialized industries.\n\nYour expertise focuses on:\n- Modern technology adoption and digital transformation\n- Industry-specific operational challenges\n- Regulatory compliance and risk management\n- Growth strategies and market positioning\n- Customer/client acquisition and retention\n\nProvide forward-thinking, innovation-focused recommendations while maintaining\noperational excellence and compliance.",
+      "expertise_areas": [
+        "Digital transformation",
+        "Operations optimization",
+        "Compliance management",
+        "Growth strategies",
+        "Technology integration",
+        "Risk management",
+        "Industry best practices",
+        "Performance metrics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-50",
+        "revenue_range": "$500K-$5M+",
+        "types": [
+          "Specialized providers",
+          "Emerging businesses"
+        ],
+        "locations": "1-3",
+        "staff_mix": "Specialized and administrative"
+      },
+      "control_points": {
+        "primary": "Specialized management platform",
+        "secondary": "Customer/project management",
+        "tertiary": "Financial systems"
+      },
+      "expansion_products": [
+        "Industry-specific tools",
+        "Analytics platforms",
+        "Communication systems",
+        "Automation tools",
+        "Compliance tracking",
+        "Customer portals"
+      ],
+      "regulatory_compliance": [
+        "Industry regulations",
+        "Data protection",
+        "Safety standards",
+        "Professional licensing",
+        "Insurance requirements"
+      ],
+      "pain_points": [
+        "Technology adoption challenges",
+        "Market differentiation",
+        "Operational scalability",
+        "Compliance complexity",
+        "Resource constraints"
+      ],
+      "success_metrics": [
+        "Accelerate digital adoption 30-50%",
+        "Improve operational efficiency 25-40%",
+        "Increase market share 20-30%",
+        "Enhance compliance 100%",
+        "Reduce operational costs 15-25%"
+      ],
+      "market_data": {
+        "total_us_companies": 8000,
+        "addressable": 7000,
+        "current_saas_adoption": 0.35,
+        "growth_cagr": 0.25,
+        "market_size_b": 3,
+        "growth_descriptor": "Regulated emerging"
+      }
+    },
+    {
+      "id": "agent_038_funeral_services",
+      "number": 38,
+      "tier": 3,
+      "name": "Funeral & Mortuary Services",
+      "naics": "812210",
+      "category": "Personal Services",
+      "system_prompt": "You are a funeral & mortuary services operations specialist for emerging and specialized industries.\n\nYour expertise focuses on:\n- Modern technology adoption and digital transformation\n- Industry-specific operational challenges\n- Regulatory compliance and risk management\n- Growth strategies and market positioning\n- Customer/client acquisition and retention\n\nProvide forward-thinking, innovation-focused recommendations while maintaining\noperational excellence and compliance.",
+      "expertise_areas": [
+        "Digital transformation",
+        "Operations optimization",
+        "Compliance management",
+        "Growth strategies",
+        "Technology integration",
+        "Risk management",
+        "Industry best practices",
+        "Performance metrics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-50",
+        "revenue_range": "$500K-$5M+",
+        "types": [
+          "Specialized providers",
+          "Emerging businesses"
+        ],
+        "locations": "1-3",
+        "staff_mix": "Specialized and administrative"
+      },
+      "control_points": {
+        "primary": "Specialized management platform",
+        "secondary": "Customer/project management",
+        "tertiary": "Financial systems"
+      },
+      "expansion_products": [
+        "Industry-specific tools",
+        "Analytics platforms",
+        "Communication systems",
+        "Automation tools",
+        "Compliance tracking",
+        "Customer portals"
+      ],
+      "regulatory_compliance": [
+        "Industry regulations",
+        "Data protection",
+        "Safety standards",
+        "Professional licensing",
+        "Insurance requirements"
+      ],
+      "pain_points": [
+        "Technology adoption challenges",
+        "Market differentiation",
+        "Operational scalability",
+        "Compliance complexity",
+        "Resource constraints"
+      ],
+      "success_metrics": [
+        "Accelerate digital adoption 30-50%",
+        "Improve operational efficiency 25-40%",
+        "Increase market share 20-30%",
+        "Enhance compliance 100%",
+        "Reduce operational costs 15-25%"
+      ],
+      "market_data": {
+        "total_us_companies": 20000,
+        "addressable": 18000,
+        "current_saas_adoption": 0.25,
+        "growth_cagr": 0.05,
+        "market_size_b": 2,
+        "growth_descriptor": "Traditional industry"
+      }
+    },
+    {
+      "id": "agent_039_equipment_rental",
+      "number": 39,
+      "tier": 3,
+      "name": "Equipment Rental & Leasing",
+      "naics": "532",
+      "category": "Rental Services",
+      "system_prompt": "You are a equipment rental & leasing operations specialist for emerging and specialized industries.\n\nYour expertise focuses on:\n- Modern technology adoption and digital transformation\n- Industry-specific operational challenges\n- Regulatory compliance and risk management\n- Growth strategies and market positioning\n- Customer/client acquisition and retention\n\nProvide forward-thinking, innovation-focused recommendations while maintaining\noperational excellence and compliance.",
+      "expertise_areas": [
+        "Digital transformation",
+        "Operations optimization",
+        "Compliance management",
+        "Growth strategies",
+        "Technology integration",
+        "Risk management",
+        "Industry best practices",
+        "Performance metrics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-50",
+        "revenue_range": "$500K-$5M+",
+        "types": [
+          "Specialized providers",
+          "Emerging businesses"
+        ],
+        "locations": "1-3",
+        "staff_mix": "Specialized and administrative"
+      },
+      "control_points": {
+        "primary": "Specialized management platform",
+        "secondary": "Customer/project management",
+        "tertiary": "Financial systems"
+      },
+      "expansion_products": [
+        "Industry-specific tools",
+        "Analytics platforms",
+        "Communication systems",
+        "Automation tools",
+        "Compliance tracking",
+        "Customer portals"
+      ],
+      "regulatory_compliance": [
+        "Industry regulations",
+        "Data protection",
+        "Safety standards",
+        "Professional licensing",
+        "Insurance requirements"
+      ],
+      "pain_points": [
+        "Technology adoption challenges",
+        "Market differentiation",
+        "Operational scalability",
+        "Compliance complexity",
+        "Resource constraints"
+      ],
+      "success_metrics": [
+        "Accelerate digital adoption 30-50%",
+        "Improve operational efficiency 25-40%",
+        "Increase market share 20-30%",
+        "Enhance compliance 100%",
+        "Reduce operational costs 15-25%"
+      ],
+      "market_data": {
+        "total_us_companies": 15000,
+        "addressable": 12000,
+        "current_saas_adoption": 0.4,
+        "growth_cagr": 0.09,
+        "market_size_b": 5,
+        "growth_descriptor": "Asset management"
+      }
+    },
+    {
+      "id": "agent_040_environmental",
+      "number": 40,
+      "tier": 3,
+      "name": "Environmental Services & Waste Mgmt",
+      "naics": "562",
+      "category": "Services",
+      "system_prompt": "You are a environmental services & waste mgmt operations specialist for emerging and specialized industries.\n\nYour expertise focuses on:\n- Modern technology adoption and digital transformation\n- Industry-specific operational challenges\n- Regulatory compliance and risk management\n- Growth strategies and market positioning\n- Customer/client acquisition and retention\n\nProvide forward-thinking, innovation-focused recommendations while maintaining\noperational excellence and compliance.",
+      "expertise_areas": [
+        "Digital transformation",
+        "Operations optimization",
+        "Compliance management",
+        "Growth strategies",
+        "Technology integration",
+        "Risk management",
+        "Industry best practices",
+        "Performance metrics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-50",
+        "revenue_range": "$500K-$5M+",
+        "types": [
+          "Specialized providers",
+          "Emerging businesses"
+        ],
+        "locations": "1-3",
+        "staff_mix": "Specialized and administrative"
+      },
+      "control_points": {
+        "primary": "Specialized management platform",
+        "secondary": "Customer/project management",
+        "tertiary": "Financial systems"
+      },
+      "expansion_products": [
+        "Industry-specific tools",
+        "Analytics platforms",
+        "Communication systems",
+        "Automation tools",
+        "Compliance tracking",
+        "Customer portals"
+      ],
+      "regulatory_compliance": [
+        "Industry regulations",
+        "Data protection",
+        "Safety standards",
+        "Professional licensing",
+        "Insurance requirements"
+      ],
+      "pain_points": [
+        "Technology adoption challenges",
+        "Market differentiation",
+        "Operational scalability",
+        "Compliance complexity",
+        "Resource constraints"
+      ],
+      "success_metrics": [
+        "Accelerate digital adoption 30-50%",
+        "Improve operational efficiency 25-40%",
+        "Increase market share 20-30%",
+        "Enhance compliance 100%",
+        "Reduce operational costs 15-25%"
+      ],
+      "market_data": {
+        "total_us_companies": 18000,
+        "addressable": 15000,
+        "current_saas_adoption": 0.3,
+        "growth_cagr": 0.08,
+        "market_size_b": 6,
+        "growth_descriptor": "Route & compliance"
+      }
+    },
+    {
+      "id": "agent_041_testing_labs",
+      "number": 41,
+      "tier": 3,
+      "name": "Testing & Laboratory Services",
+      "naics": "541380",
+      "category": "Professional Services",
+      "system_prompt": "You are a testing & laboratory services operations specialist for emerging and specialized industries.\n\nYour expertise focuses on:\n- Modern technology adoption and digital transformation\n- Industry-specific operational challenges\n- Regulatory compliance and risk management\n- Growth strategies and market positioning\n- Customer/client acquisition and retention\n\nProvide forward-thinking, innovation-focused recommendations while maintaining\noperational excellence and compliance.",
+      "expertise_areas": [
+        "Digital transformation",
+        "Operations optimization",
+        "Compliance management",
+        "Growth strategies",
+        "Technology integration",
+        "Risk management",
+        "Industry best practices",
+        "Performance metrics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-50",
+        "revenue_range": "$500K-$5M+",
+        "types": [
+          "Specialized providers",
+          "Emerging businesses"
+        ],
+        "locations": "1-3",
+        "staff_mix": "Specialized and administrative"
+      },
+      "control_points": {
+        "primary": "Specialized management platform",
+        "secondary": "Customer/project management",
+        "tertiary": "Financial systems"
+      },
+      "expansion_products": [
+        "Industry-specific tools",
+        "Analytics platforms",
+        "Communication systems",
+        "Automation tools",
+        "Compliance tracking",
+        "Customer portals"
+      ],
+      "regulatory_compliance": [
+        "Industry regulations",
+        "Data protection",
+        "Safety standards",
+        "Professional licensing",
+        "Insurance requirements"
+      ],
+      "pain_points": [
+        "Technology adoption challenges",
+        "Market differentiation",
+        "Operational scalability",
+        "Compliance complexity",
+        "Resource constraints"
+      ],
+      "success_metrics": [
+        "Accelerate digital adoption 30-50%",
+        "Improve operational efficiency 25-40%",
+        "Increase market share 20-30%",
+        "Enhance compliance 100%",
+        "Reduce operational costs 15-25%"
+      ],
+      "market_data": {
+        "total_us_companies": 8000,
+        "addressable": 7000,
+        "current_saas_adoption": 0.45,
+        "growth_cagr": 0.1,
+        "market_size_b": 4,
+        "growth_descriptor": "Sample tracking"
+      }
+    },
+    {
+      "id": "agent_042_locksmith",
+      "number": 42,
+      "tier": 3,
+      "name": "Locksmith & Security Installation",
+      "naics": "561622",
+      "category": "Services",
+      "system_prompt": "You are a locksmith & security installation operations specialist for emerging and specialized industries.\n\nYour expertise focuses on:\n- Modern technology adoption and digital transformation\n- Industry-specific operational challenges\n- Regulatory compliance and risk management\n- Growth strategies and market positioning\n- Customer/client acquisition and retention\n\nProvide forward-thinking, innovation-focused recommendations while maintaining\noperational excellence and compliance.",
+      "expertise_areas": [
+        "Digital transformation",
+        "Operations optimization",
+        "Compliance management",
+        "Growth strategies",
+        "Technology integration",
+        "Risk management",
+        "Industry best practices",
+        "Performance metrics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-50",
+        "revenue_range": "$500K-$5M+",
+        "types": [
+          "Specialized providers",
+          "Emerging businesses"
+        ],
+        "locations": "1-3",
+        "staff_mix": "Specialized and administrative"
+      },
+      "control_points": {
+        "primary": "Specialized management platform",
+        "secondary": "Customer/project management",
+        "tertiary": "Financial systems"
+      },
+      "expansion_products": [
+        "Industry-specific tools",
+        "Analytics platforms",
+        "Communication systems",
+        "Automation tools",
+        "Compliance tracking",
+        "Customer portals"
+      ],
+      "regulatory_compliance": [
+        "Industry regulations",
+        "Data protection",
+        "Safety standards",
+        "Professional licensing",
+        "Insurance requirements"
+      ],
+      "pain_points": [
+        "Technology adoption challenges",
+        "Market differentiation",
+        "Operational scalability",
+        "Compliance complexity",
+        "Resource constraints"
+      ],
+      "success_metrics": [
+        "Accelerate digital adoption 30-50%",
+        "Improve operational efficiency 25-40%",
+        "Increase market share 20-30%",
+        "Enhance compliance 100%",
+        "Reduce operational costs 15-25%"
+      ],
+      "market_data": {
+        "total_us_companies": 12000,
+        "addressable": 10000,
+        "current_saas_adoption": 0.2,
+        "growth_cagr": 0.07,
+        "market_size_b": 2,
+        "growth_descriptor": "Field service"
+      }
+    },
+    {
+      "id": "agent_043_pool_service",
+      "number": 43,
+      "tier": 3,
+      "name": "Pool Service & Maintenance",
+      "naics": "561790",
+      "category": "Services",
+      "system_prompt": "You are a pool service & maintenance operations specialist for emerging and specialized industries.\n\nYour expertise focuses on:\n- Modern technology adoption and digital transformation\n- Industry-specific operational challenges\n- Regulatory compliance and risk management\n- Growth strategies and market positioning\n- Customer/client acquisition and retention\n\nProvide forward-thinking, innovation-focused recommendations while maintaining\noperational excellence and compliance.",
+      "expertise_areas": [
+        "Digital transformation",
+        "Operations optimization",
+        "Compliance management",
+        "Growth strategies",
+        "Technology integration",
+        "Risk management",
+        "Industry best practices",
+        "Performance metrics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-50",
+        "revenue_range": "$500K-$5M+",
+        "types": [
+          "Specialized providers",
+          "Emerging businesses"
+        ],
+        "locations": "1-3",
+        "staff_mix": "Specialized and administrative"
+      },
+      "control_points": {
+        "primary": "Specialized management platform",
+        "secondary": "Customer/project management",
+        "tertiary": "Financial systems"
+      },
+      "expansion_products": [
+        "Industry-specific tools",
+        "Analytics platforms",
+        "Communication systems",
+        "Automation tools",
+        "Compliance tracking",
+        "Customer portals"
+      ],
+      "regulatory_compliance": [
+        "Industry regulations",
+        "Data protection",
+        "Safety standards",
+        "Professional licensing",
+        "Insurance requirements"
+      ],
+      "pain_points": [
+        "Technology adoption challenges",
+        "Market differentiation",
+        "Operational scalability",
+        "Compliance complexity",
+        "Resource constraints"
+      ],
+      "success_metrics": [
+        "Accelerate digital adoption 30-50%",
+        "Improve operational efficiency 25-40%",
+        "Increase market share 20-30%",
+        "Enhance compliance 100%",
+        "Reduce operational costs 15-25%"
+      ],
+      "market_data": {
+        "total_us_companies": 15000,
+        "addressable": 13000,
+        "current_saas_adoption": 0.25,
+        "growth_cagr": 0.08,
+        "market_size_b": 3,
+        "growth_descriptor": "Route services"
+      }
+    },
+    {
+      "id": "agent_044_electrical_contracting",
+      "number": 44,
+      "tier": 3,
+      "name": "Electrical Contracting",
+      "naics": "238210",
+      "category": "Construction",
+      "system_prompt": "You are a electrical contracting operations specialist for emerging and specialized industries.\n\nYour expertise focuses on:\n- Modern technology adoption and digital transformation\n- Industry-specific operational challenges\n- Regulatory compliance and risk management\n- Growth strategies and market positioning\n- Customer/client acquisition and retention\n\nProvide forward-thinking, innovation-focused recommendations while maintaining\noperational excellence and compliance.",
+      "expertise_areas": [
+        "Digital transformation",
+        "Operations optimization",
+        "Compliance management",
+        "Growth strategies",
+        "Technology integration",
+        "Risk management",
+        "Industry best practices",
+        "Performance metrics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-50",
+        "revenue_range": "$500K-$5M+",
+        "types": [
+          "Specialized providers",
+          "Emerging businesses"
+        ],
+        "locations": "1-3",
+        "staff_mix": "Specialized and administrative"
+      },
+      "control_points": {
+        "primary": "Specialized management platform",
+        "secondary": "Customer/project management",
+        "tertiary": "Financial systems"
+      },
+      "expansion_products": [
+        "Industry-specific tools",
+        "Analytics platforms",
+        "Communication systems",
+        "Automation tools",
+        "Compliance tracking",
+        "Customer portals"
+      ],
+      "regulatory_compliance": [
+        "Industry regulations",
+        "Data protection",
+        "Safety standards",
+        "Professional licensing",
+        "Insurance requirements"
+      ],
+      "pain_points": [
+        "Technology adoption challenges",
+        "Market differentiation",
+        "Operational scalability",
+        "Compliance complexity",
+        "Resource constraints"
+      ],
+      "success_metrics": [
+        "Accelerate digital adoption 30-50%",
+        "Improve operational efficiency 25-40%",
+        "Increase market share 20-30%",
+        "Enhance compliance 100%",
+        "Reduce operational costs 15-25%"
+      ],
+      "market_data": {
+        "total_us_companies": 80000,
+        "addressable": 60000,
+        "current_saas_adoption": 0.25,
+        "growth_cagr": 0.09,
+        "market_size_b": 7,
+        "growth_descriptor": "Project-based"
+      }
+    },
+    {
+      "id": "agent_045_plumbing",
+      "number": 45,
+      "tier": 3,
+      "name": "Plumbing Services",
+      "naics": "238220",
+      "category": "Construction",
+      "system_prompt": "You are a plumbing services operations specialist for emerging and specialized industries.\n\nYour expertise focuses on:\n- Modern technology adoption and digital transformation\n- Industry-specific operational challenges\n- Regulatory compliance and risk management\n- Growth strategies and market positioning\n- Customer/client acquisition and retention\n\nProvide forward-thinking, innovation-focused recommendations while maintaining\noperational excellence and compliance.",
+      "expertise_areas": [
+        "Digital transformation",
+        "Operations optimization",
+        "Compliance management",
+        "Growth strategies",
+        "Technology integration",
+        "Risk management",
+        "Industry best practices",
+        "Performance metrics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-50",
+        "revenue_range": "$500K-$5M+",
+        "types": [
+          "Specialized providers",
+          "Emerging businesses"
+        ],
+        "locations": "1-3",
+        "staff_mix": "Specialized and administrative"
+      },
+      "control_points": {
+        "primary": "Specialized management platform",
+        "secondary": "Customer/project management",
+        "tertiary": "Financial systems"
+      },
+      "expansion_products": [
+        "Industry-specific tools",
+        "Analytics platforms",
+        "Communication systems",
+        "Automation tools",
+        "Compliance tracking",
+        "Customer portals"
+      ],
+      "regulatory_compliance": [
+        "Industry regulations",
+        "Data protection",
+        "Safety standards",
+        "Professional licensing",
+        "Insurance requirements"
+      ],
+      "pain_points": [
+        "Technology adoption challenges",
+        "Market differentiation",
+        "Operational scalability",
+        "Compliance complexity",
+        "Resource constraints"
+      ],
+      "success_metrics": [
+        "Accelerate digital adoption 30-50%",
+        "Improve operational efficiency 25-40%",
+        "Increase market share 20-30%",
+        "Enhance compliance 100%",
+        "Reduce operational costs 15-25%"
+      ],
+      "market_data": {
+        "total_us_companies": 120000,
+        "addressable": 90000,
+        "current_saas_adoption": 0.2,
+        "growth_cagr": 0.08,
+        "market_size_b": 9,
+        "growth_descriptor": "Service & installation"
+      }
+    },
+    {
+      "id": "agent_046_hvac",
+      "number": 46,
+      "tier": 3,
+      "name": "HVAC Services",
+      "naics": "238220",
+      "category": "Construction",
+      "system_prompt": "You are a hvac services operations specialist for emerging and specialized industries.\n\nYour expertise focuses on:\n- Modern technology adoption and digital transformation\n- Industry-specific operational challenges\n- Regulatory compliance and risk management\n- Growth strategies and market positioning\n- Customer/client acquisition and retention\n\nProvide forward-thinking, innovation-focused recommendations while maintaining\noperational excellence and compliance.",
+      "expertise_areas": [
+        "Digital transformation",
+        "Operations optimization",
+        "Compliance management",
+        "Growth strategies",
+        "Technology integration",
+        "Risk management",
+        "Industry best practices",
+        "Performance metrics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-50",
+        "revenue_range": "$500K-$5M+",
+        "types": [
+          "Specialized providers",
+          "Emerging businesses"
+        ],
+        "locations": "1-3",
+        "staff_mix": "Specialized and administrative"
+      },
+      "control_points": {
+        "primary": "Specialized management platform",
+        "secondary": "Customer/project management",
+        "tertiary": "Financial systems"
+      },
+      "expansion_products": [
+        "Industry-specific tools",
+        "Analytics platforms",
+        "Communication systems",
+        "Automation tools",
+        "Compliance tracking",
+        "Customer portals"
+      ],
+      "regulatory_compliance": [
+        "Industry regulations",
+        "Data protection",
+        "Safety standards",
+        "Professional licensing",
+        "Insurance requirements"
+      ],
+      "pain_points": [
+        "Technology adoption challenges",
+        "Market differentiation",
+        "Operational scalability",
+        "Compliance complexity",
+        "Resource constraints"
+      ],
+      "success_metrics": [
+        "Accelerate digital adoption 30-50%",
+        "Improve operational efficiency 25-40%",
+        "Increase market share 20-30%",
+        "Enhance compliance 100%",
+        "Reduce operational costs 15-25%"
+      ],
+      "market_data": {
+        "total_us_companies": 100000,
+        "addressable": 80000,
+        "current_saas_adoption": 0.3,
+        "growth_cagr": 0.09,
+        "market_size_b": 10,
+        "growth_descriptor": "Maintenance contracts"
+      }
+    },
+    {
+      "id": "agent_047_appliance_repair",
+      "number": 47,
+      "tier": 3,
+      "name": "Appliance Repair Services",
+      "naics": "811412",
+      "category": "Repair Services",
+      "system_prompt": "You are a appliance repair services operations specialist for emerging and specialized industries.\n\nYour expertise focuses on:\n- Modern technology adoption and digital transformation\n- Industry-specific operational challenges\n- Regulatory compliance and risk management\n- Growth strategies and market positioning\n- Customer/client acquisition and retention\n\nProvide forward-thinking, innovation-focused recommendations while maintaining\noperational excellence and compliance.",
+      "expertise_areas": [
+        "Digital transformation",
+        "Operations optimization",
+        "Compliance management",
+        "Growth strategies",
+        "Technology integration",
+        "Risk management",
+        "Industry best practices",
+        "Performance metrics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-50",
+        "revenue_range": "$500K-$5M+",
+        "types": [
+          "Specialized providers",
+          "Emerging businesses"
+        ],
+        "locations": "1-3",
+        "staff_mix": "Specialized and administrative"
+      },
+      "control_points": {
+        "primary": "Specialized management platform",
+        "secondary": "Customer/project management",
+        "tertiary": "Financial systems"
+      },
+      "expansion_products": [
+        "Industry-specific tools",
+        "Analytics platforms",
+        "Communication systems",
+        "Automation tools",
+        "Compliance tracking",
+        "Customer portals"
+      ],
+      "regulatory_compliance": [
+        "Industry regulations",
+        "Data protection",
+        "Safety standards",
+        "Professional licensing",
+        "Insurance requirements"
+      ],
+      "pain_points": [
+        "Technology adoption challenges",
+        "Market differentiation",
+        "Operational scalability",
+        "Compliance complexity",
+        "Resource constraints"
+      ],
+      "success_metrics": [
+        "Accelerate digital adoption 30-50%",
+        "Improve operational efficiency 25-40%",
+        "Increase market share 20-30%",
+        "Enhance compliance 100%",
+        "Reduce operational costs 15-25%"
+      ],
+      "market_data": {
+        "total_us_companies": 25000,
+        "addressable": 20000,
+        "current_saas_adoption": 0.25,
+        "growth_cagr": 0.06,
+        "market_size_b": 3,
+        "growth_descriptor": "Service calls"
+      }
+    },
+    {
+      "id": "agent_048_tree_services",
+      "number": 48,
+      "tier": 3,
+      "name": "Tree Service & Arborist",
+      "naics": "561730",
+      "category": "Services",
+      "system_prompt": "You are a tree service & arborist operations specialist for emerging and specialized industries.\n\nYour expertise focuses on:\n- Modern technology adoption and digital transformation\n- Industry-specific operational challenges\n- Regulatory compliance and risk management\n- Growth strategies and market positioning\n- Customer/client acquisition and retention\n\nProvide forward-thinking, innovation-focused recommendations while maintaining\noperational excellence and compliance.",
+      "expertise_areas": [
+        "Digital transformation",
+        "Operations optimization",
+        "Compliance management",
+        "Growth strategies",
+        "Technology integration",
+        "Risk management",
+        "Industry best practices",
+        "Performance metrics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-50",
+        "revenue_range": "$500K-$5M+",
+        "types": [
+          "Specialized providers",
+          "Emerging businesses"
+        ],
+        "locations": "1-3",
+        "staff_mix": "Specialized and administrative"
+      },
+      "control_points": {
+        "primary": "Specialized management platform",
+        "secondary": "Customer/project management",
+        "tertiary": "Financial systems"
+      },
+      "expansion_products": [
+        "Industry-specific tools",
+        "Analytics platforms",
+        "Communication systems",
+        "Automation tools",
+        "Compliance tracking",
+        "Customer portals"
+      ],
+      "regulatory_compliance": [
+        "Industry regulations",
+        "Data protection",
+        "Safety standards",
+        "Professional licensing",
+        "Insurance requirements"
+      ],
+      "pain_points": [
+        "Technology adoption challenges",
+        "Market differentiation",
+        "Operational scalability",
+        "Compliance complexity",
+        "Resource constraints"
+      ],
+      "success_metrics": [
+        "Accelerate digital adoption 30-50%",
+        "Improve operational efficiency 25-40%",
+        "Increase market share 20-30%",
+        "Enhance compliance 100%",
+        "Reduce operational costs 15-25%"
+      ],
+      "market_data": {
+        "total_us_companies": 28000,
+        "addressable": 24000,
+        "current_saas_adoption": 0.2,
+        "growth_cagr": 0.08,
+        "market_size_b": 4,
+        "growth_descriptor": "Project & route"
+      }
+    },
+    {
+      "id": "agent_049_flooring",
+      "number": 49,
+      "tier": 3,
+      "name": "Flooring Installation & Sales",
+      "naics": "238330",
+      "category": "Construction",
+      "system_prompt": "You are a flooring installation & sales operations specialist for emerging and specialized industries.\n\nYour expertise focuses on:\n- Modern technology adoption and digital transformation\n- Industry-specific operational challenges\n- Regulatory compliance and risk management\n- Growth strategies and market positioning\n- Customer/client acquisition and retention\n\nProvide forward-thinking, innovation-focused recommendations while maintaining\noperational excellence and compliance.",
+      "expertise_areas": [
+        "Digital transformation",
+        "Operations optimization",
+        "Compliance management",
+        "Growth strategies",
+        "Technology integration",
+        "Risk management",
+        "Industry best practices",
+        "Performance metrics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-50",
+        "revenue_range": "$500K-$5M+",
+        "types": [
+          "Specialized providers",
+          "Emerging businesses"
+        ],
+        "locations": "1-3",
+        "staff_mix": "Specialized and administrative"
+      },
+      "control_points": {
+        "primary": "Specialized management platform",
+        "secondary": "Customer/project management",
+        "tertiary": "Financial systems"
+      },
+      "expansion_products": [
+        "Industry-specific tools",
+        "Analytics platforms",
+        "Communication systems",
+        "Automation tools",
+        "Compliance tracking",
+        "Customer portals"
+      ],
+      "regulatory_compliance": [
+        "Industry regulations",
+        "Data protection",
+        "Safety standards",
+        "Professional licensing",
+        "Insurance requirements"
+      ],
+      "pain_points": [
+        "Technology adoption challenges",
+        "Market differentiation",
+        "Operational scalability",
+        "Compliance complexity",
+        "Resource constraints"
+      ],
+      "success_metrics": [
+        "Accelerate digital adoption 30-50%",
+        "Improve operational efficiency 25-40%",
+        "Increase market share 20-30%",
+        "Enhance compliance 100%",
+        "Reduce operational costs 15-25%"
+      ],
+      "market_data": {
+        "total_us_companies": 30000,
+        "addressable": 25000,
+        "current_saas_adoption": 0.25,
+        "growth_cagr": 0.08,
+        "market_size_b": 4,
+        "growth_descriptor": "Project management"
+      }
+    },
+    {
+      "id": "agent_050_roofing",
+      "number": 50,
+      "tier": 3,
+      "name": "Roofing Services",
+      "naics": "238160",
+      "category": "Construction",
+      "system_prompt": "You are a roofing services operations specialist for emerging and specialized industries.\n\nYour expertise focuses on:\n- Modern technology adoption and digital transformation\n- Industry-specific operational challenges\n- Regulatory compliance and risk management\n- Growth strategies and market positioning\n- Customer/client acquisition and retention\n\nProvide forward-thinking, innovation-focused recommendations while maintaining\noperational excellence and compliance.",
+      "expertise_areas": [
+        "Digital transformation",
+        "Operations optimization",
+        "Compliance management",
+        "Growth strategies",
+        "Technology integration",
+        "Risk management",
+        "Industry best practices",
+        "Performance metrics"
+      ],
+      "smb_profile": {
+        "employee_range": "5-50",
+        "revenue_range": "$500K-$5M+",
+        "types": [
+          "Specialized providers",
+          "Emerging businesses"
+        ],
+        "locations": "1-3",
+        "staff_mix": "Specialized and administrative"
+      },
+      "control_points": {
+        "primary": "Specialized management platform",
+        "secondary": "Customer/project management",
+        "tertiary": "Financial systems"
+      },
+      "expansion_products": [
+        "Industry-specific tools",
+        "Analytics platforms",
+        "Communication systems",
+        "Automation tools",
+        "Compliance tracking",
+        "Customer portals"
+      ],
+      "regulatory_compliance": [
+        "Industry regulations",
+        "Data protection",
+        "Safety standards",
+        "Professional licensing",
+        "Insurance requirements"
+      ],
+      "pain_points": [
+        "Technology adoption challenges",
+        "Market differentiation",
+        "Operational scalability",
+        "Compliance complexity",
+        "Resource constraints"
+      ],
+      "success_metrics": [
+        "Accelerate digital adoption 30-50%",
+        "Improve operational efficiency 25-40%",
+        "Increase market share 20-30%",
+        "Enhance compliance 100%",
+        "Reduce operational costs 15-25%"
+      ],
+      "market_data": {
+        "total_us_companies": 80000,
+        "addressable": 65000,
+        "current_saas_adoption": 0.25,
+        "growth_cagr": 0.09,
+        "market_size_b": 8,
+        "growth_descriptor": "Project-based"
+      }
+    }
+  ]
+}

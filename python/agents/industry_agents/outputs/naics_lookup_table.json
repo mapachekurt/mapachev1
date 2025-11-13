@@ -1,0 +1,338 @@
+{
+  "621": {
+    "agent_id": "agent_001_healthcare_provider",
+    "agent_name": "Healthcare Provider Management",
+    "agent_number": 1,
+    "tier": 1,
+    "category": "Healthcare and Social Assistance"
+  },
+  "5411": {
+    "agent_id": "agent_002_legal_services",
+    "agent_name": "Legal Services Operations",
+    "agent_number": 2,
+    "tier": 1,
+    "category": "Professional Services"
+  },
+  "6212": {
+    "agent_id": "agent_003_dental_practice",
+    "agent_name": "Dental Practice Management",
+    "agent_number": 3,
+    "tier": 1,
+    "category": "Healthcare"
+  },
+  "5313": {
+    "agent_id": "agent_004_real_estate_agency",
+    "agent_name": "Real Estate Agency Management",
+    "agent_number": 4,
+    "tier": 1,
+    "category": "Real Estate"
+  },
+  "44-45": {
+    "agent_id": "agent_005_retail_operations",
+    "agent_name": "Retail Store Operations",
+    "agent_number": 5,
+    "tier": 1,
+    "category": "Retail"
+  },
+  "722": {
+    "agent_id": "agent_006_restaurant_operations",
+    "agent_name": "Restaurant & Food Service Operations",
+    "agent_number": 6,
+    "tier": 1,
+    "category": "Food Service"
+  },
+  "31-33": {
+    "agent_id": "agent_007_manufacturing",
+    "agent_name": "Manufacturing Operations",
+    "agent_number": 7,
+    "tier": 1,
+    "category": "Manufacturing"
+  },
+  "52": {
+    "agent_id": "agent_008_financial_services",
+    "agent_name": "Financial Services & Insurance Operations",
+    "agent_number": 8,
+    "tier": 1,
+    "category": "Finance & Insurance"
+  },
+  "23": {
+    "agent_id": "agent_009_construction",
+    "agent_name": "Construction Project Management",
+    "agent_number": 9,
+    "tier": 1,
+    "category": "Construction"
+  },
+  "61": {
+    "agent_id": "agent_010_education",
+    "agent_name": "Educational Services Management",
+    "agent_number": 10,
+    "tier": 1,
+    "category": "Education"
+  },
+  "811": {
+    "agent_id": "agent_011_automotive_services",
+    "agent_name": "Automotive Services Management",
+    "agent_number": 11,
+    "tier": 1,
+    "category": "Repair & Maintenance"
+  },
+  "48-49": {
+    "agent_id": "agent_012_transportation_logistics",
+    "agent_name": "Transportation & Logistics Operations",
+    "agent_number": 12,
+    "tier": 1,
+    "category": "Transportation"
+  },
+  "238": {
+    "agent_id": "agent_013_home_services",
+    "agent_name": "Home Services & Contracting",
+    "agent_number": 13,
+    "tier": 2,
+    "category": "Construction/Services"
+  },
+  "541940": {
+    "agent_id": "agent_014_veterinary",
+    "agent_name": "Veterinary Practice Management",
+    "agent_number": 14,
+    "tier": 2,
+    "category": "Professional Services"
+  },
+  "561730": {
+    "agent_id": "agent_048_tree_services",
+    "agent_name": "Tree Service & Arborist",
+    "agent_number": 48,
+    "tier": 3,
+    "category": "Services"
+  },
+  "812112": {
+    "agent_id": "agent_016_beauty_spa",
+    "agent_name": "Beauty & Personal Care (Salons/Spas)",
+    "agent_number": 16,
+    "tier": 2,
+    "category": "Personal Services"
+  },
+  "713940": {
+    "agent_id": "agent_017_fitness",
+    "agent_name": "Fitness & Recreation (Gyms/Wellness)",
+    "agent_number": 17,
+    "tier": 2,
+    "category": "Recreation"
+  },
+  "561920": {
+    "agent_id": "agent_018_event_planning",
+    "agent_name": "Event Planning & Catering",
+    "agent_number": 18,
+    "tier": 2,
+    "category": "Services"
+  },
+  "813": {
+    "agent_id": "agent_019_nonprofit",
+    "agent_name": "Nonprofit Organization Management",
+    "agent_number": 19,
+    "tier": 2,
+    "category": "Nonprofit"
+  },
+  "541211": {
+    "agent_id": "agent_020_accounting",
+    "agent_name": "Accounting & Bookkeeping Services",
+    "agent_number": 20,
+    "tier": 2,
+    "category": "Professional Services"
+  },
+  "524210": {
+    "agent_id": "agent_021_insurance_agency",
+    "agent_name": "Insurance Agency Operations",
+    "agent_number": 21,
+    "tier": 2,
+    "category": "Insurance"
+  },
+  "531110": {
+    "agent_id": "agent_022_property_leasing",
+    "agent_name": "Residential/Commercial Leasing",
+    "agent_number": 22,
+    "tier": 2,
+    "category": "Real Estate"
+  },
+  "561710": {
+    "agent_id": "agent_023_pest_control",
+    "agent_name": "Pest Control Operations",
+    "agent_number": 23,
+    "tier": 2,
+    "category": "Services"
+  },
+  "423450": {
+    "agent_id": "agent_024_medical_supplies",
+    "agent_name": "Medical & Dental Supplies Distribution",
+    "agent_number": 24,
+    "tier": 2,
+    "category": "Distribution"
+  },
+  "561720": {
+    "agent_id": "agent_025_cleaning_services",
+    "agent_name": "Commercial & Residential Cleaning",
+    "agent_number": 25,
+    "tier": 2,
+    "category": "Services"
+  },
+  "624410": {
+    "agent_id": "agent_026_childcare",
+    "agent_name": "Childcare & Daycare Centers",
+    "agent_number": 26,
+    "tier": 2,
+    "category": "Social Services"
+  },
+  "561612": {
+    "agent_id": "agent_027_security_services",
+    "agent_name": "Security & Guard Services",
+    "agent_number": 27,
+    "tier": 2,
+    "category": "Services"
+  },
+  "323": {
+    "agent_id": "agent_028_printing",
+    "agent_name": "Printing & Publishing Services",
+    "agent_number": 28,
+    "tier": 2,
+    "category": "Manufacturing/Services"
+  },
+  "484210": {
+    "agent_id": "agent_029_moving_storage",
+    "agent_name": "Moving & Storage Services",
+    "agent_number": 29,
+    "tier": 2,
+    "category": "Transportation"
+  },
+  "42": {
+    "agent_id": "agent_030_wholesale",
+    "agent_name": "Wholesale & Distribution",
+    "agent_number": 30,
+    "tier": 2,
+    "category": "Wholesale"
+  },
+  "721": {
+    "agent_id": "agent_031_hotels_lodging",
+    "agent_name": "Hotels & Lodging Operations",
+    "agent_number": 31,
+    "tier": 2,
+    "category": "Hospitality"
+  },
+  "441": {
+    "agent_id": "agent_032_auto_sales",
+    "agent_name": "Automotive Sales & Dealerships",
+    "agent_number": 32,
+    "tier": 2,
+    "category": "Retail"
+  },
+  "541810": {
+    "agent_id": "agent_033_marketing_agency",
+    "agent_name": "Marketing & Advertising Agencies",
+    "agent_number": 33,
+    "tier": 2,
+    "category": "Professional Services"
+  },
+  "541310": {
+    "agent_id": "agent_034_architecture",
+    "agent_name": "Architecture & Engineering Services",
+    "agent_number": 34,
+    "tier": 2,
+    "category": "Professional Services"
+  },
+  "221114": {
+    "agent_id": "agent_035_renewable_energy",
+    "agent_name": "Renewable Energy Services",
+    "agent_number": 35,
+    "tier": 3,
+    "category": "Utilities"
+  },
+  "517": {
+    "agent_id": "agent_036_telecom",
+    "agent_name": "Telecommunications Operations",
+    "agent_number": 36,
+    "tier": 3,
+    "category": "Telecom"
+  },
+  "453": {
+    "agent_id": "agent_037_cannabis",
+    "agent_name": "Cannabis Retail & Distribution",
+    "agent_number": 37,
+    "tier": 3,
+    "category": "Retail"
+  },
+  "812210": {
+    "agent_id": "agent_038_funeral_services",
+    "agent_name": "Funeral & Mortuary Services",
+    "agent_number": 38,
+    "tier": 3,
+    "category": "Personal Services"
+  },
+  "532": {
+    "agent_id": "agent_039_equipment_rental",
+    "agent_name": "Equipment Rental & Leasing",
+    "agent_number": 39,
+    "tier": 3,
+    "category": "Rental Services"
+  },
+  "562": {
+    "agent_id": "agent_040_environmental",
+    "agent_name": "Environmental Services & Waste Mgmt",
+    "agent_number": 40,
+    "tier": 3,
+    "category": "Services"
+  },
+  "541380": {
+    "agent_id": "agent_041_testing_labs",
+    "agent_name": "Testing & Laboratory Services",
+    "agent_number": 41,
+    "tier": 3,
+    "category": "Professional Services"
+  },
+  "561622": {
+    "agent_id": "agent_042_locksmith",
+    "agent_name": "Locksmith & Security Installation",
+    "agent_number": 42,
+    "tier": 3,
+    "category": "Services"
+  },
+  "561790": {
+    "agent_id": "agent_043_pool_service",
+    "agent_name": "Pool Service & Maintenance",
+    "agent_number": 43,
+    "tier": 3,
+    "category": "Services"
+  },
+  "238210": {
+    "agent_id": "agent_044_electrical_contracting",
+    "agent_name": "Electrical Contracting",
+    "agent_number": 44,
+    "tier": 3,
+    "category": "Construction"
+  },
+  "238220": {
+    "agent_id": "agent_046_hvac",
+    "agent_name": "HVAC Services",
+    "agent_number": 46,
+    "tier": 3,
+    "category": "Construction"
+  },
+  "811412": {
+    "agent_id": "agent_047_appliance_repair",
+    "agent_name": "Appliance Repair Services",
+    "agent_number": 47,
+    "tier": 3,
+    "category": "Repair Services"
+  },
+  "238330": {
+    "agent_id": "agent_049_flooring",
+    "agent_name": "Flooring Installation & Sales",
+    "agent_number": 49,
+    "tier": 3,
+    "category": "Construction"
+  },
+  "238160": {
+    "agent_id": "agent_050_roofing",
+    "agent_name": "Roofing Services",
+    "agent_number": 50,
+    "tier": 3,
+    "category": "Construction"
+  }
+}
