@@ -1,0 +1,25 @@
+{
+  "execution_status": "SUCCESS",
+  "timestamp": "2025-11-13T19:51:30.300745",
+  "summary": {
+    "total_generated": 50,
+    "validation_passed": 50,
+    "validation_failed": 0,
+    "errors": []
+  },
+  "agents_by_tier": {
+    "tier_1": 12,
+    "tier_2": 22,
+    "tier_3": 16
+  },
+  "total_naics_codes": 48,
+  "output_files": {
+    "master_registry": "/home/user/mapachev1/python/agents/industry_agents/outputs/agent_registry_complete.json",
+    "naics_lookup": "/home/user/mapachev1/python/agents/industry_agents/outputs/naics_lookup_table.json",
+    "tier_files": [
+      "/home/user/mapachev1/python/agents/industry_agents/outputs/tier_1_agents.json",
+      "/home/user/mapachev1/python/agents/industry_agents/outputs/tier_2_agents.json",
+      "/home/user/mapachev1/python/agents/industry_agents/outputs/tier_3_agents.json"
+    ]
+  }
+}
