@@ -1,0 +1,512 @@
+agent_number,agent_file,agent_name,description,tools,model,sub_agents,capabilities,domain
+001,agent_001_ceo_root_coordinator.py,Ceo Root Coordinator,Agent 001: CEO Root Coordinator,,,,,Executive Leadership
+002,agent_002_coo_operations_coordinator.py,Coo Operations Coordinator,Agent 002: COO Operations Coordinator,,,,,Executive Leadership
+003,agent_003_cfo_financial_director.py,Cfo Financial Director,Agent 003: CFO Financial Director,,,,,Finance & Accounting
+004,agent_004_cto_technology_director.py,Cto Technology Director,Agent 004: CTO Technology Director,,,,,Technology & Engineering
+005,agent_005_cio_information_director.py,Cio Information Director,Agent 005: CIO Information Director,,,,,Technology & Engineering
+006,agent_006_cmo_marketing_director.py,Cmo Marketing Director,Agent 006: CMO Marketing Director,,,,web search,Marketing
+007,agent_007_chro_human_resources_director.py,Chro Human Resources Director,Agent 007: CHRO Human Resources Director,,,,,Human Resources
+008,agent_008_cso_sales_director.py,Cso Sales Director,Agent 008: CSO Sales Director,,,,,Sales & Revenue
+009,agent_009_cpo_product_director.py,Cpo Product Director,Agent 009: CPO Product Director,,,,,Technology & Engineering
+010,agent_010_cdo_data_director.py,Cdo Data Director,Agent 010: CDO Data Director,,,,,Technology & Engineering
+011,agent_011_ciso_security_director.py,Ciso Security Director,Agent 011: CISO Security Director,,,,,Technology & Engineering
+012,agent_012_cco_customer_director.py,Cco Customer Director,Agent 012: CCO Customer Director,,,,,Technology & Engineering
+013,agent_013_general_counsel.py,General Counsel,Agent 013: General Counsel,,,,web search,Legal
+014,agent_014_cro_revenue_director.py,Cro Revenue Director,Agent 014: CRO Revenue Director,,,,,Sales & Revenue
+015,agent_015_cco_compliance_director.py,Cco Compliance Director,Agent 015: CCO Compliance Director,,,,,Technology & Engineering
+016,agent_016_vp_corporate_strategy.py,Vp Corporate Strategy,Agent 016: VP Corporate Strategy,,,,,Strategy & Business Development
+017,agent_017_vp_investor_relations.py,Vp Investor Relations,Agent 017: VP Investor Relations,,,,,Communications & PR
+018,agent_018_vp_corporate_communications.py,Vp Corporate Communications,Agent 018: VP Corporate Communications,,,,,Communications & PR
+019,agent_019_vp_business_development.py,Vp Business Development,Agent 019: VP Business Development,,,,,Product Management
+020,agent_020_vp_enterprise_architecture.py,Vp Enterprise Architecture,Agent 020: VP Enterprise Architecture,,,,web search,Technology & Engineering
+021,agent_021_vp_financial_planning.py,Vp Financial Planning,Agent 021: VP Financial Planning & Analysis,,,,analysis,Finance & Accounting
+022,agent_022_controller.py,Controller,Agent 022: Corporate Controller,,,,,General Business
+023,agent_023_treasurer.py,Treasurer,Agent 023: Corporate Treasurer,,,,,General Business
+024,agent_024_vp_tax.py,Vp Tax,Agent 024: VP Tax,,,,web search,Finance & Accounting
+025,agent_025_vp_internal_audit.py,Vp Internal Audit,Agent 025: VP Internal Audit,,,,,Security & Compliance
+026,agent_026_director_accounts_payable.py,Director Accounts Payable,Agent 026: Director Accounts Payable,,,,,Finance & Accounting
+027,agent_027_director_accounts_receivable.py,Director Accounts Receivable,Agent 027: Director Accounts Receivable,,,,,Finance & Accounting
+028,agent_028_director_financial_reporting.py,Director Financial Reporting,Agent 028: Director Financial Reporting,,,,reporting,Finance & Accounting
+029,agent_029_director_procurement.py,Director Procurement,Agent 029: Director Procurement,,,,,Technology & Engineering
+030,agent_030_senior_financial_analyst.py,Senior Financial Analyst,Agent 030: Senior Financial Analyst,,,,,Finance & Accounting
+031,agent_031_budget_manager.py,Budget Manager,Agent 031: Budget Manager,,,,management,Finance & Accounting
+032,agent_032_cost_accountant.py,Cost Accountant,Agent 032: Cost Accountant,,,,,Sales & Revenue
+033,agent_033_revenue_accountant.py,Revenue Accountant,Agent 033: Revenue Accountant,,,,,Sales & Revenue
+034,agent_034_tax_analyst.py,Tax Analyst,Agent 034: Tax Analyst,,,,web search,Finance & Accounting
+035,agent_035_treasury_analyst.py,Treasury Analyst,Agent 035: Treasury Analyst,,,,,Finance & Accounting
+036,agent_036_internal_auditor.py,Internal Auditor,Agent 036: Internal Auditor,,,,,Security & Compliance
+037,agent_037_ap_specialist.py,Ap Specialist,Agent 037: AP Specialist,,,,,General Business
+038,agent_038_ar_specialist.py,Ar Specialist,Agent 038: AR Specialist,,,,,General Business
+039,agent_039_payroll_specialist.py,Payroll Specialist,Agent 039: Payroll Specialist,,,,,Finance & Accounting
+040,agent_040_financial_systems_analyst.py,Financial Systems Analyst,Agent 040: Financial Systems Analyst,,,,,Finance & Accounting
+041,agent_041_vp_talent_acquisition.py,Vp Talent Acquisition,Agent 041: VP Talent Acquisition,,,,,Human Resources
+042,agent_042_vp_compensation_benefits.py,Vp Compensation Benefits,Agent 042: VP Compensation & Benefits,,,,,Human Resources
+043,agent_043_vp_learning_development.py,Vp Learning Development,Agent 043: VP Learning & Development,,,,,Product Management
+044,agent_044_vp_employee_relations.py,Vp Employee Relations,Agent 044: VP Employee Relations,,,,,Human Resources
+045,agent_045_director_hr_operations.py,Director Hr Operations,Agent 045: Director HR Operations,,,,,Human Resources
+046,agent_046_director_talent_management.py,Director Talent Management,Agent 046: Director Talent Management,,,,management,Human Resources
+047,agent_047_director_organizational_development.py,Director Organizational Development,Agent 047: Director Organizational Development,,,,,Technology & Engineering
+048,agent_048_director_hr_business_partners.py,Director Hr Business Partners,Agent 048: Director HR Business Partners,,,,,Human Resources
+049,agent_049_director_diversity_inclusion.py,Director Diversity Inclusion,Agent 049: Director Diversity & Inclusion,,,,,Technology & Engineering
+050,agent_050_senior_recruiter.py,Senior Recruiter,Agent 050: Senior Recruiter,,,,,Human Resources
+051,agent_051_compensation_analyst.py,Compensation Analyst,Agent 051: Compensation Analyst,,,,web search,Human Resources
+052,agent_052_benefits_administrator.py,Benefits Administrator,Agent 052: Benefits Administrator,,,,,Human Resources
+053,agent_053_hr_generalist.py,Hr Generalist,Agent 053: HR Generalist,,,,,Human Resources
+054,agent_054_training_specialist.py,Training Specialist,Agent 054: Training Specialist,,,,,General Business
+055,agent_055_employee_relations_specialist.py,Employee Relations Specialist,Agent 055: Employee Relations Specialist,,,,,Human Resources
+056,agent_056_hris_analyst.py,Hris Analyst,Agent 056: HRIS Analyst,,,,,Human Resources
+057,agent_057_workforce_planning_analyst.py,Workforce Planning Analyst,Agent 057: Workforce Planning Analyst,,,,,General Business
+058,agent_058_performance_management_specialist.py,Performance Management Specialist,Agent 058: Performance Management Specialist,,,,management,General Business
+059,agent_059_onboarding_specialist.py,Onboarding Specialist,Agent 059: Onboarding Specialist,,,,,General Business
+060,agent_060_hr_compliance_specialist.py,Hr Compliance Specialist,Agent 060: HR Compliance Specialist,,,,,Human Resources
+061,agent_061_vp_enterprise_sales.py,Vp Enterprise Sales,Agent 061: VP Enterprise Sales,,,,,Sales & Revenue
+062,agent_062_vp_digital_marketing.py,Vp Digital Marketing,Agent 062: VP Digital Marketing,,,,,Marketing
+063,agent_063_vp_brand_marketing.py,Vp Brand Marketing,Agent 063: VP Brand Marketing,,,,,Marketing
+064,agent_064_vp_product_marketing.py,Vp Product Marketing,Agent 064: VP Product Marketing,,,,web search,Marketing
+065,agent_065_director_sales_operations.py,Director Sales Operations,Agent 065: Director Sales Operations,,,,,Sales & Revenue
+066,agent_066_director_demand_generation.py,Director Demand Generation,Agent 066: Director Demand Generation,,,,,Marketing
+067,agent_067_director_marketing_operations.py,Director Marketing Operations,Agent 067: Director Marketing Operations,,,,,Marketing
+068,agent_068_director_channel_sales.py,Director Channel Sales,Agent 068: Director Channel Sales,,,,,Sales & Revenue
+069,agent_069_director_customer_marketing.py,Director Customer Marketing,Agent 069: Director Customer Marketing,,,,,Marketing
+070,agent_070_enterprise_account_executive.py,Enterprise Account Executive,Agent 070: Enterprise Account Executive,,,,,Executive Leadership
+071,agent_071_sales_development_rep.py,Sales Development Rep,Agent 071: Sales Development Rep,,,,web search,Sales & Revenue
+072,agent_072_digital_marketing_manager.py,Digital Marketing Manager,Agent 072: Digital Marketing Manager,,,,management,Marketing
+073,agent_073_content_marketing_manager.py,Content Marketing Manager,Agent 073: Content Marketing Manager,,,,"web search, management",Marketing
+074,agent_074_product_marketing_manager.py,Product Marketing Manager,Agent 074: Product Marketing Manager,,,,"web search, management",Marketing
+075,agent_075_marketing_automation_specialist.py,Marketing Automation Specialist,Agent 075: Marketing Automation Specialist,,,,automation,Marketing
+076,agent_076_seo_sem_specialist.py,Seo Sem Specialist,Agent 076: SEO/SEM Specialist,,,,web search,Marketing
+077,agent_077_social_media_manager.py,Social Media Manager,Agent 077: Social Media Manager,,,,management,Marketing
+078,agent_078_sales_enablement_specialist.py,Sales Enablement Specialist,Agent 078: Sales Enablement Specialist,,,,,Sales & Revenue
+079,agent_079_crm_administrator.py,Crm Administrator,Agent 079: CRM Administrator,,,,,Sales & Revenue
+080,agent_080_sales_analyst.py,Sales Analyst,Agent 080: Sales Analyst,,,,,Sales & Revenue
+081,agent_081_field_marketing_manager.py,Field Marketing Manager,Agent 081: Field Marketing Manager,,,,management,Marketing
+082,agent_082_event_marketing_manager.py,Event Marketing Manager,Agent 082: Event Marketing Manager,,,,management,Marketing
+083,agent_083_partner_marketing_manager.py,Partner Marketing Manager,Agent 083: Partner Marketing Manager,,,,management,Marketing
+084,agent_084_marketing_analytics_manager.py,Marketing Analytics Manager,Agent 084: Marketing Analytics Manager,,,,"analysis, management",Marketing
+085,agent_085_brand_designer.py,Brand Designer,Agent 085: Brand Designer,,,,,Marketing
+086,agent_086_copywriter.py,Copywriter,Agent 086: Copywriter,,,,,General Business
+087,agent_087_video_producer.py,Video Producer,Agent 087: Video Producer,,,,,Communications & PR
+088,agent_088_email_marketing_specialist.py,Email Marketing Specialist,Agent 088: Email Marketing Specialist,,,,,Marketing
+089,agent_089_ppc_specialist.py,Ppc Specialist,Agent 089: PPC Specialist,,,,web search,General Business
+090,agent_090_conversion_rate_optimizer.py,Conversion Rate Optimizer,Agent 090: Conversion Rate Optimizer,,,,,General Business
+091,agent_091_market_research_analyst.py,Market Research Analyst,Agent 091: Market Research Analyst,,,,web search,Research & Innovation
+092,agent_092_competitive_intelligence_analyst.py,Competitive Intelligence Analyst,Agent 092: Competitive Intelligence Analyst,,,,web search,General Business
+093,agent_093_sales_ops_analyst.py,Sales Ops Analyst,Agent 093: Sales Ops Analyst,,,,,Sales & Revenue
+094,agent_094_revenue_operations_specialist.py,Revenue Operations Specialist,Agent 094: Revenue Operations Specialist,,,,,Sales & Revenue
+095,agent_095_sales_trainer.py,Sales Trainer,Agent 095: Sales Trainer,,,,,Sales & Revenue
+096,agent_096_presales_engineer.py,Presales Engineer,Agent 096: Presales Engineer,,,,,Sales & Revenue
+097,agent_097_solutions_architect.py,Solutions Architect,Agent 097: Solutions Architect,,,,,Technology & Engineering
+098,agent_098_inside_sales_rep.py,Inside Sales Rep,Agent 098: Inside Sales Rep,,,,,Sales & Revenue
+099,agent_099_account_manager.py,Account Manager,Agent 099: Account Manager,,,,management,Sales & Revenue
+100,agent_100_customer_success_manager.py,Customer Success Manager,Agent 100: Customer Success Manager,,,,management,Customer Experience
+101,agent_101_vp_supply_chain.py,Vp Supply Chain,Agent 101: VP Supply Chain,,,,,Operations
+102,agent_102_vp_manufacturing.py,Vp Manufacturing,Agent 102: VP Manufacturing,,,,,General Business
+103,agent_103_vp_logistics.py,Vp Logistics,Agent 103: VP Logistics,,,,,Operations
+104,agent_104_vp_quality_assurance.py,Vp Quality Assurance,Agent 104: VP Quality Assurance,,,,,General Business
+105,agent_105_director_procurement_operations.py,Director Procurement Operations,Agent 105: Director Procurement Operations,,,,,Technology & Engineering
+106,agent_106_director_warehouse_operations.py,Director Warehouse Operations,Agent 106: Director Warehouse Operations,,,,,Technology & Engineering
+107,agent_107_director_inventory_management.py,Director Inventory Management,Agent 107: Director Inventory Management,,,,management,Technology & Engineering
+108,agent_108_director_production_planning.py,Director Production Planning,Agent 108: Director Production Planning,,,,,Technology & Engineering
+109,agent_109_director_facilities_management.py,Director Facilities Management,Agent 109: Director Facilities Management,,,,management,Technology & Engineering
+110,agent_110_supply_chain_manager.py,Supply Chain Manager,Agent 110: Supply Chain Manager,,,,management,Operations
+111,agent_111_logistics_manager.py,Logistics Manager,Agent 111: Logistics Manager,,,,management,Operations
+112,agent_112_warehouse_manager.py,Warehouse Manager,Agent 112: Warehouse Manager,,,,management,General Business
+113,agent_113_quality_control_manager.py,Quality Control Manager,Agent 113: Quality Control Manager,,,,management,General Business
+114,agent_114_production_manager.py,Production Manager,Agent 114: Production Manager,,,,management,Product Management
+115,agent_115_materials_planner.py,Materials Planner,Agent 115: Materials Planner,,,,,General Business
+116,agent_116_demand_planner.py,Demand Planner,Agent 116: Demand Planner,,,,,Marketing
+117,agent_117_inventory_analyst.py,Inventory Analyst,Agent 117: Inventory Analyst,,,,,General Business
+118,agent_118_procurement_specialist.py,Procurement Specialist,Agent 118: Procurement Specialist,,,,,Operations
+119,agent_119_shipping_coordinator.py,Shipping Coordinator,Agent 119: Shipping Coordinator,,,,,Executive Leadership
+120,agent_120_receiving_coordinator.py,Receiving Coordinator,Agent 120: Receiving Coordinator,,,,,Executive Leadership
+121,agent_121_quality_assurance_specialist.py,Quality Assurance Specialist,Agent 121: Quality Assurance Specialist,,,,,General Business
+122,agent_122_production_scheduler.py,Production Scheduler,Agent 122: Production Scheduler,,,,,Product Management
+123,agent_123_maintenance_manager.py,Maintenance Manager,Agent 123: Maintenance Manager,,,,management,General Business
+124,agent_124_lean_manufacturing_specialist.py,Lean Manufacturing Specialist,Agent 124: Lean Manufacturing Specialist,,,,,General Business
+125,agent_125_continuous_improvement_manager.py,Continuous Improvement Manager,Agent 125: Continuous Improvement Manager,,,,management,Communications & PR
+126,agent_126_supplier_relationship_manager.py,Supplier Relationship Manager,Agent 126: Supplier Relationship Manager,,,,management,General Business
+127,agent_127_transportation_manager.py,Transportation Manager,Agent 127: Transportation Manager,,,,management,General Business
+128,agent_128_customs_compliance_specialist.py,Customs Compliance Specialist,Agent 128: Customs Compliance Specialist,,,,,Security & Compliance
+129,agent_129_import_export_coordinator.py,Import Export Coordinator,Agent 129: Import Export Coordinator,,,,,Executive Leadership
+130,agent_130_warehouse_operations_supervisor.py,Warehouse Operations Supervisor,Agent 130: Warehouse Operations Supervisor,,,,,Operations
+131,agent_131_forklift_operations_coordinator.py,Forklift Operations Coordinator,Agent 131: Forklift Operations Coordinator,,,,,Executive Leadership
+132,agent_132_inventory_control_specialist.py,Inventory Control Specialist,Agent 132: Inventory Control Specialist,,,,,General Business
+133,agent_133_cycle_count_specialist.py,Cycle Count Specialist,Agent 133: Cycle Count Specialist,,,,,General Business
+134,agent_134_returns_management_specialist.py,Returns Management Specialist,Agent 134: Returns Management Specialist,,,,management,General Business
+135,agent_135_packaging_engineer.py,Packaging Engineer,Agent 135: Packaging Engineer,,,,,General Business
+136,agent_136_process_engineer.py,Process Engineer,Agent 136: Process Engineer,,,,automation,Operations
+137,agent_137_industrial_engineer.py,Industrial Engineer,Agent 137: Industrial Engineer,,,,,General Business
+138,agent_138_ehs_manager.py,Ehs Manager,Agent 138: EHS Manager,,,,management,General Business
+139,agent_139_sustainability_manager.py,Sustainability Manager,Agent 139: Sustainability Manager,,,,management,Information & Data
+140,agent_140_business_continuity_manager.py,Business Continuity Manager,Agent 140: Business Continuity Manager,,,,management,Product Management
+141,agent_141_vp_infrastructure.py,Vp Infrastructure,Agent 141: VP Infrastructure,,,,,Technology & Engineering
+142,agent_142_vp_cloud_services.py,Vp Cloud Services,Agent 142: VP Cloud Services,,,,,Customer Experience
+143,agent_143_vp_it_security_operations.py,Vp It Security Operations,Agent 143: VP IT Security Operations,,,,,Security & Compliance
+144,agent_144_vp_application_development.py,Vp Application Development,Agent 144: VP Application Development,,,,,Product Management
+145,agent_145_director_network_engineering.py,Director Network Engineering,Agent 145: Director Network Engineering,,,,,Technology & Engineering
+146,agent_146_director_systems_engineering.py,Director Systems Engineering,Agent 146: Director Systems Engineering,,,,,Technology & Engineering
+147,agent_147_director_database_administration.py,Director Database Administration,Agent 147: Director Database Administration,,,,,Technology & Engineering
+148,agent_148_director_it_service_management.py,Director It Service Management,Agent 148: Director IT Service Management,,,,management,Technology & Engineering
+149,agent_149_director_devops.py,Director Devops,Agent 149: Director DevOps,,,,,Technology & Engineering
+150,agent_150_cloud_architect.py,Cloud Architect,Agent 150: Cloud Architect,,,,,Technology & Engineering
+151,agent_151_network_architect.py,Network Architect,Agent 151: Network Architect,,,,,Technology & Engineering
+152,agent_152_security_architect.py,Security Architect,Agent 152: Security Architect,,,,,Technology & Engineering
+153,agent_153_database_architect.py,Database Architect,Agent 153: Database Architect,,,,web search,Technology & Engineering
+154,agent_154_infrastructure_engineer.py,Infrastructure Engineer,Agent 154: Infrastructure Engineer,,,,,Technology & Engineering
+155,agent_155_systems_administrator.py,Systems Administrator,Agent 155: Systems Administrator,,,,,General Business
+156,agent_156_network_engineer.py,Network Engineer,Agent 156: Network Engineer,,,,,General Business
+157,agent_157_database_administrator.py,Database Administrator,Agent 157: Database Administrator,,,,,Information & Data
+158,agent_158_devops_engineer.py,Devops Engineer,Agent 158: DevOps Engineer,,,,,Technology & Engineering
+159,agent_159_site_reliability_engineer.py,Site Reliability Engineer,Agent 159: Site Reliability Engineer,,,,,Information & Data
+160,agent_160_cloud_engineer.py,Cloud Engineer,Agent 160: Cloud Engineer,,,,,General Business
+161,agent_161_it_service_desk_manager.py,It Service Desk Manager,Agent 161: IT Service Desk Manager,,,,management,Customer Experience
+162,agent_162_it_support_specialist.py,It Support Specialist,Agent 162: IT Support Specialist,,,,,Customer Experience
+163,agent_163_desktop_support_technician.py,Desktop Support Technician,Agent 163: Desktop Support Technician,,,,,Customer Experience
+164,agent_164_help_desk_analyst.py,Help Desk Analyst,Agent 164: Help Desk Analyst,,,,,General Business
+165,agent_165_it_asset_manager.py,It Asset Manager,Agent 165: IT Asset Manager,,,,management,General Business
+166,agent_166_software_license_manager.py,Software License Manager,Agent 166: Software License Manager,,,,management,Technology & Engineering
+167,agent_167_it_vendor_manager.py,It Vendor Manager,Agent 167: IT Vendor Manager,,,,management,General Business
+168,agent_168_it_project_manager.py,It Project Manager,Agent 168: IT Project Manager,,,,management,Communications & PR
+169,agent_169_scrum_master.py,Scrum Master,Agent 169: Scrum Master,,,,,General Business
+170,agent_170_agile_coach.py,Agile Coach,Agent 170: Agile Coach,,,,,General Business
+171,agent_171_release_manager.py,Release Manager,Agent 171: Release Manager,,,,management,General Business
+172,agent_172_configuration_manager.py,Configuration Manager,Agent 172: Configuration Manager,,,,management,General Business
+173,agent_173_change_manager.py,Change Manager,Agent 173: Change Manager,,,,management,General Business
+174,agent_174_it_compliance_analyst.py,It Compliance Analyst,Agent 174: IT Compliance Analyst,,,,,Security & Compliance
+175,agent_175_it_auditor.py,It Auditor,Agent 175: IT Auditor,,,,,Security & Compliance
+176,agent_176_backup_recovery_specialist.py,Backup Recovery Specialist,Agent 176: Backup Recovery Specialist,,,,,General Business
+177,agent_177_disaster_recovery_specialist.py,Disaster Recovery Specialist,Agent 177: Disaster Recovery Specialist,,,,,General Business
+178,agent_178_storage_administrator.py,Storage Administrator,Agent 178: Storage Administrator,,,,,General Business
+179,agent_179_virtualization_engineer.py,Virtualization Engineer,Agent 179: Virtualization Engineer,,,,,General Business
+180,agent_180_container_orchestration_specialist.py,Container Orchestration Specialist,Agent 180: Container Orchestration Specialist,,,,,General Business
+181,agent_181_monitoring_engineer.py,Monitoring Engineer,Agent 181: Monitoring Engineer,,,,,General Business
+182,agent_182_observability_engineer.py,Observability Engineer,Agent 182: Observability Engineer,,,,,Information & Data
+183,agent_183_performance_engineer.py,Performance Engineer,Agent 183: Performance Engineer,,,,,General Business
+184,agent_184_capacity_planner.py,Capacity Planner,Agent 184: Capacity Planner,,,,,General Business
+185,agent_185_automation_engineer.py,Automation Engineer,Agent 185: Automation Engineer,,,,automation,General Business
+186,agent_186_ci_cd_engineer.py,Ci Cd Engineer,Agent 186: CI/CD Engineer,,,,,General Business
+187,agent_187_platform_engineer.py,Platform Engineer,Agent 187: Platform Engineer,,,,,Integration & Platforms
+188,agent_188_kubernetes_administrator.py,Kubernetes Administrator,Agent 188: Kubernetes Administrator,,,,,General Business
+189,agent_189_api_gateway_specialist.py,Api Gateway Specialist,Agent 189: API Gateway Specialist,,,,,Integration & Platforms
+190,agent_190_microservices_architect.py,Microservices Architect,Agent 190: Microservices Architect,,,,,Technology & Engineering
+191,agent_191_integration_engineer.py,Integration Engineer,Agent 191: Integration Engineer,,,,,Integration & Platforms
+192,agent_192_middleware_administrator.py,Middleware Administrator,Agent 192: Middleware Administrator,,,,,General Business
+193,agent_193_email_systems_administrator.py,Email Systems Administrator,Agent 193: Email Systems Administrator,,,,,General Business
+194,agent_194_collaboration_tools_admin.py,Collaboration Tools Admin,Agent 194: Collaboration Tools Admin,,,,,General Business
+195,agent_195_identity_access_management_specialist.py,Identity Access Management Specialist,Agent 195: Identity Access Management Specialist,,,,management,General Business
+196,agent_196_vpn_specialist.py,Vpn Specialist,Agent 196: VPN Specialist,,,,,General Business
+197,agent_197_wireless_network_engineer.py,Wireless Network Engineer,Agent 197: Wireless Network Engineer,,,,,General Business
+198,agent_198_firewall_administrator.py,Firewall Administrator,Agent 198: Firewall Administrator,,,,,General Business
+199,agent_199_load_balancer_specialist.py,Load Balancer Specialist,Agent 199: Load Balancer Specialist,,,,,General Business
+200,agent_200_cdn_specialist.py,Cdn Specialist,Agent 200: CDN Specialist,,,,,General Business
+201,agent_201_vp_customer_support.py,Vp Customer Support,Agent 201: VP Customer Support,,,,,Customer Experience
+202,agent_202_director_support_operations.py,Director Support Operations,Agent 202: Director Support Operations,,,,,Technology & Engineering
+203,agent_203_director_technical_support.py,Director Technical Support,Agent 203: Director Technical Support,,,,,Technology & Engineering
+204,agent_204_director_customer_success.py,Director Customer Success,Agent 204: Director Customer Success,,,,,Technology & Engineering
+205,agent_205_support_manager.py,Support Manager,Agent 205: Support Manager,,,,management,Customer Experience
+206,agent_206_technical_support_manager.py,Technical Support Manager,Agent 206: Technical Support Manager,,,,management,Customer Experience
+207,agent_207_customer_success_operations_manager.py,Customer Success Operations Manager,Agent 207: Customer Success Operations Manager,,,,management,Customer Experience
+208,agent_208_escalation_manager.py,Escalation Manager,Agent 208: Escalation Manager,,,,management,General Business
+209,agent_209_knowledge_management_specialist.py,Knowledge Management Specialist,Agent 209: Knowledge Management Specialist,,,,"web search, management",General Business
+210,agent_210_senior_support_engineer.py,Senior Support Engineer,Agent 210: Senior Support Engineer,,,,,Customer Experience
+211,agent_211_technical_support_engineer.py,Technical Support Engineer,Agent 211: Technical Support Engineer,,,,,Customer Experience
+212,agent_212_customer_support_specialist.py,Customer Support Specialist,Agent 212: Customer Support Specialist,,,,,Customer Experience
+213,agent_213_tier1_support_agent.py,Tier1 Support Agent,Agent 213: Tier 1 Support Agent,,,,,Customer Experience
+214,agent_214_tier2_support_agent.py,Tier2 Support Agent,Agent 214: Tier 2 Support Agent,,,,,Customer Experience
+215,agent_215_tier3_support_agent.py,Tier3 Support Agent,Agent 215: Tier 3 Support Agent,,,,,Customer Experience
+216,agent_216_chat_support_specialist.py,Chat Support Specialist,Agent 216: Chat Support Specialist,,,,,Customer Experience
+217,agent_217_email_support_specialist.py,Email Support Specialist,Agent 217: Email Support Specialist,,,,,Customer Experience
+218,agent_218_phone_support_specialist.py,Phone Support Specialist,Agent 218: Phone Support Specialist,,,,,Customer Experience
+219,agent_219_customer_onboarding_specialist.py,Customer Onboarding Specialist,Agent 219: Customer Onboarding Specialist,,,,,Customer Experience
+220,agent_220_customer_training_specialist.py,Customer Training Specialist,Agent 220: Customer Training Specialist,,,,,Customer Experience
+221,agent_221_implementation_specialist.py,Implementation Specialist,Agent 221: Implementation Specialist,,,,,General Business
+222,agent_222_solutions_consultant.py,Solutions Consultant,Agent 222: Solutions Consultant,,,,,General Business
+223,agent_223_customer_advocate.py,Customer Advocate,Agent 223: Customer Advocate,,,,,Customer Experience
+224,agent_224_voc_analyst.py,Voc Analyst,Agent 224: VOC Analyst,,,,,General Business
+225,agent_225_support_quality_analyst.py,Support Quality Analyst,Agent 225: Support Quality Analyst,,,,,Customer Experience
+226,agent_226_support_analytics_specialist.py,Support Analytics Specialist,Agent 226: Support Analytics Specialist,,,,analysis,Information & Data
+227,agent_227_community_manager.py,Community Manager,Agent 227: Community Manager,,,,management,General Business
+228,agent_228_customer_education_manager.py,Customer Education Manager,Agent 228: Customer Education Manager,,,,management,Customer Experience
+229,agent_229_customer_health_specialist.py,Customer Health Specialist,Agent 229: Customer Health Specialist,,,,,Customer Experience
+230,agent_230_renewal_specialist.py,Renewal Specialist,Agent 230: Renewal Specialist,,,,,General Business
+231,agent_231_expansion_specialist.py,Expansion Specialist,Agent 231: Expansion Specialist,,,,,General Business
+232,agent_232_churn_prevention_specialist.py,Churn Prevention Specialist,Agent 232: Churn Prevention Specialist,,,,,Communications & PR
+233,agent_233_product_specialist.py,Product Specialist,Agent 233: Product Specialist,,,,,Product Management
+234,agent_234_technical_account_manager.py,Technical Account Manager,Agent 234: Technical Account Manager,,,,management,Sales & Revenue
+235,agent_235_customer_insights_analyst.py,Customer Insights Analyst,Agent 235: Customer Insights Analyst,,,,,Customer Experience
+236,agent_236_support_tools_administrator.py,Support Tools Administrator,Agent 236: Support Tools Administrator,,,,,Customer Experience
+237,agent_237_sla_manager.py,Sla Manager,Agent 237: SLA Manager,,,,management,General Business
+238,agent_238_customer_feedback_coordinator.py,Customer Feedback Coordinator,Agent 238: Customer Feedback Coordinator,,,,,Executive Leadership
+239,agent_239_beta_program_manager.py,Beta Program Manager,Agent 239: Beta Program Manager,,,,management,Communications & PR
+240,agent_240_customer_advisory_board_coordinator.py,Customer Advisory Board Coordinator,Agent 240: Customer Advisory Board Coordinator,,,,,Executive Leadership
+241,agent_241_vp_legal_operations.py,Vp Legal Operations,Agent 241: VP Legal Operations,,,,,Legal
+242,agent_242_vp_corporate_affairs.py,Vp Corporate Affairs,Agent 242: VP Corporate Affairs,,,,,General Business
+243,agent_243_director_contracts.py,Director Contracts,Agent 243: Director Contracts,,,,,Technology & Engineering
+244,agent_244_director_litigation.py,Director Litigation,Agent 244: Director Litigation,,,,,Technology & Engineering
+245,agent_245_director_ip_legal.py,Director Ip Legal,Agent 245: Director IP Legal,,,,web search,Technology & Engineering
+246,agent_246_director_regulatory_affairs.py,Director Regulatory Affairs,Agent 246: Director Regulatory Affairs,,,,,Technology & Engineering
+247,agent_247_senior_corporate_counsel.py,Senior Corporate Counsel,Agent 247: Senior Corporate Counsel,,,,,Legal
+248,agent_248_commercial_counsel.py,Commercial Counsel,Agent 248: Commercial Counsel,,,,web search,Legal
+249,agent_249_employment_counsel.py,Employment Counsel,Agent 249: Employment Counsel,,,,,Legal
+250,agent_250_ip_counsel.py,Ip Counsel,Agent 250: IP Counsel,,,,web search,Legal
+251,agent_251_privacy_counsel.py,Privacy Counsel,Agent 251: Privacy Counsel,,,,,Legal
+252,agent_252_contracts_manager.py,Contracts Manager,Agent 252: Contracts Manager,,,,management,Legal
+253,agent_253_contract_specialist.py,Contract Specialist,Agent 253: Contract Specialist,,,,,Legal
+254,agent_254_paralegal.py,Paralegal,Agent 254: Paralegal,,,,web search,Legal
+255,agent_255_legal_assistant.py,Legal Assistant,Agent 255: Legal Assistant,,,,,Legal
+256,agent_256_compliance_manager.py,Compliance Manager,Agent 256: Compliance Manager,,,,management,Security & Compliance
+257,agent_257_regulatory_compliance_specialist.py,Regulatory Compliance Specialist,Agent 257: Regulatory Compliance Specialist,,,,,Security & Compliance
+258,agent_258_ethics_compliance_officer.py,Ethics Compliance Officer,Agent 258: Ethics Compliance Officer,,,,,Security & Compliance
+259,agent_259_privacy_compliance_specialist.py,Privacy Compliance Specialist,Agent 259: Privacy Compliance Specialist,,,,,Security & Compliance
+260,agent_260_gdpr_specialist.py,Gdpr Specialist,Agent 260: GDPR Specialist,,,,,Communications & PR
+261,agent_261_export_compliance_specialist.py,Export Compliance Specialist,Agent 261: Export Compliance Specialist,,,,,Security & Compliance
+262,agent_262_anti_corruption_specialist.py,Anti Corruption Specialist,Agent 262: Anti-Corruption Specialist,,,,,General Business
+263,agent_263_antitrust_specialist.py,Antitrust Specialist,Agent 263: Antitrust Specialist,,,,,General Business
+264,agent_264_trade_compliance_specialist.py,Trade Compliance Specialist,Agent 264: Trade Compliance Specialist,,,,,Security & Compliance
+265,agent_265_policy_analyst.py,Policy Analyst,Agent 265: Policy Analyst,,,,web search,General Business
+266,agent_266_regulatory_reporting_specialist.py,Regulatory Reporting Specialist,Agent 266: Regulatory Reporting Specialist,,,,reporting,General Business
+267,agent_267_compliance_training_specialist.py,Compliance Training Specialist,Agent 267: Compliance Training Specialist,,,,,Security & Compliance
+268,agent_268_compliance_auditor.py,Compliance Auditor,Agent 268: Compliance Auditor,,,,,Security & Compliance
+269,agent_269_legal_research_analyst.py,Legal Research Analyst,Agent 269: Legal Research Analyst,,,,web search,Legal
+270,agent_270_legal_operations_manager.py,Legal Operations Manager,Agent 270: Legal Operations Manager,,,,management,Legal
+271,agent_271_legal_technology_specialist.py,Legal Technology Specialist,Agent 271: Legal Technology Specialist,,,,,Technology & Engineering
+272,agent_272_ediscovery_specialist.py,Ediscovery Specialist,Agent 272: eDiscovery Specialist,,,,,General Business
+273,agent_273_litigation_support_specialist.py,Litigation Support Specialist,Agent 273: Litigation Support Specialist,,,,,Customer Experience
+274,agent_274_ip_administrator.py,Ip Administrator,Agent 274: IP Administrator,,,,,General Business
+275,agent_275_trademark_specialist.py,Trademark Specialist,Agent 275: Trademark Specialist,,,,web search,General Business
+276,agent_276_patent_coordinator.py,Patent Coordinator,Agent 276: Patent Coordinator,,,,web search,Executive Leadership
+277,agent_277_corporate_secretary.py,Corporate Secretary,Agent 277: Corporate Secretary,,,,,General Business
+278,agent_278_board_governance_coordinator.py,Board Governance Coordinator,Agent 278: Board Governance Coordinator,,,,,Executive Leadership
+279,agent_279_insurance_claims_specialist.py,Insurance Claims Specialist,Agent 279: Insurance Claims Specialist,,,,,General Business
+280,agent_280_records_management_specialist.py,Records Management Specialist,Agent 280: Records Management Specialist,,,,management,General Business
+281,agent_281_vp_engineering.py,Vp Engineering,Agent 281: VP Engineering,,,,,Technology & Engineering
+282,agent_282_vp_product_development.py,Vp Product Development,Agent 282: VP Product Development,,,,,Product Management
+283,agent_283_vp_r_and_d.py,Vp R And D,Agent 283: VP R&D,,,,web search,General Business
+284,agent_284_director_software_engineering.py,Director Software Engineering,Agent 284: Director Software Engineering,,,,,Technology & Engineering
+285,agent_285_director_qa_engineering.py,Director Qa Engineering,Agent 285: Director QA Engineering,,,,,Technology & Engineering
+286,agent_286_director_product_design.py,Director Product Design,Agent 286: Director Product Design,,,,web search,Technology & Engineering
+287,agent_287_engineering_manager_backend.py,Engineering Manager Backend,Agent 287: Engineering Manager Backend,,,,management,Technology & Engineering
+288,agent_288_engineering_manager_frontend.py,Engineering Manager Frontend,Agent 288: Engineering Manager Frontend,,,,management,Technology & Engineering
+289,agent_289_engineering_manager_mobile.py,Engineering Manager Mobile,Agent 289: Engineering Manager Mobile,,,,management,Technology & Engineering
+290,agent_290_engineering_manager_data.py,Engineering Manager Data,Agent 290: Engineering Manager Data,,,,management,Technology & Engineering
+291,agent_291_senior_software_engineer.py,Senior Software Engineer,Agent 291: Senior Software Engineer,,,,,Technology & Engineering
+292,agent_292_software_engineer.py,Software Engineer,Agent 292: Software Engineer,,,,,Technology & Engineering
+293,agent_293_backend_engineer.py,Backend Engineer,Agent 293: Backend Engineer,,,,,General Business
+294,agent_294_frontend_engineer.py,Frontend Engineer,Agent 294: Frontend Engineer,,,,,General Business
+295,agent_295_fullstack_engineer.py,Fullstack Engineer,Agent 295: Fullstack Engineer,,,,,General Business
+296,agent_296_mobile_engineer_ios.py,Mobile Engineer Ios,Agent 296: Mobile Engineer iOS,,,,,Information & Data
+297,agent_297_mobile_engineer_android.py,Mobile Engineer Android,Agent 297: Mobile Engineer Android,,,,,Information & Data
+298,agent_298_qa_engineer.py,Qa Engineer,Agent 298: QA Engineer,,,,,General Business
+299,agent_299_test_automation_engineer.py,Test Automation Engineer,Agent 299: Test Automation Engineer,,,,automation,General Business
+300,agent_300_sdet.py,Sdet,Agent 300: SDET,,,,,General Business
+301,agent_301_product_manager.py,Product Manager,Agent 301: Product Manager,,,,"web search, management",Product Management
+302,agent_302_senior_product_manager.py,Senior Product Manager,Agent 302: Senior Product Manager,,,,management,Product Management
+303,agent_303_technical_product_manager.py,Technical Product Manager,Agent 303: Technical Product Manager,,,,management,Product Management
+304,agent_304_product_owner.py,Product Owner,Agent 304: Product Owner,,,,,Product Management
+305,agent_305_ux_researcher.py,Ux Researcher,Agent 305: UX Researcher,,,,web search,Product Management
+306,agent_306_ux_designer.py,Ux Designer,Agent 306: UX Designer,,,,,Product Management
+307,agent_307_ui_designer.py,Ui Designer,Agent 307: UI Designer,,,,,Product Management
+308,agent_308_product_designer.py,Product Designer,Agent 308: Product Designer,,,,web search,Product Management
+309,agent_309_design_systems_engineer.py,Design Systems Engineer,Agent 309: Design Systems Engineer,,,,,Product Management
+310,agent_310_front_end_architect.py,Front End Architect,Agent 310: Front End Architect,,,,,Technology & Engineering
+311,agent_311_backend_architect.py,Backend Architect,Agent 311: Backend Architect,,,,,Technology & Engineering
+312,agent_312_mobile_architect.py,Mobile Architect,Agent 312: Mobile Architect,,,,,Technology & Engineering
+313,agent_313_ml_engineer.py,Ml Engineer,Agent 313: ML Engineer,,,,,General Business
+314,agent_314_ai_engineer.py,Ai Engineer,Agent 314: AI Engineer,,,,,General Business
+315,agent_315_data_engineer.py,Data Engineer,Agent 315: Data Engineer,,,,,Information & Data
+316,agent_316_analytics_engineer.py,Analytics Engineer,Agent 316: Analytics Engineer,,,,analysis,Information & Data
+317,agent_317_performance_engineer_product.py,Performance Engineer Product,Agent 317: Performance Engineer (Product),,,,,Product Management
+318,agent_318_security_engineer.py,Security Engineer,Agent 318: Security Engineer,,,,,Security & Compliance
+319,agent_319_build_engineer.py,Build Engineer,Agent 319: Build Engineer,,,,,Product Management
+320,agent_320_tools_engineer.py,Tools Engineer,Agent 320: Tools Engineer,,,,,General Business
+321,agent_321_documentation_engineer.py,Documentation Engineer,Agent 321: Documentation Engineer,,,,,General Business
+322,agent_322_technical_writer.py,Technical Writer,Agent 322: Technical Writer,,,,,General Business
+323,agent_323_api_documentation_specialist.py,Api Documentation Specialist,Agent 323: API Documentation Specialist,,,,,Integration & Platforms
+324,agent_324_developer_advocate.py,Developer Advocate,Agent 324: Developer Advocate,,,,,Technology & Engineering
+325,agent_325_developer_relations_engineer.py,Developer Relations Engineer,Agent 325: Developer Relations Engineer,,,,,Technology & Engineering
+326,agent_326_developer_experience_engineer.py,Developer Experience Engineer,Agent 326: Developer Experience Engineer,,,,,Technology & Engineering
+327,agent_327_open_source_program_manager.py,Open Source Program Manager,Agent 327: Open Source Program Manager,,,,management,Communications & PR
+328,agent_328_technical_program_manager.py,Technical Program Manager,Agent 328: Technical Program Manager,,,,management,Communications & PR
+329,agent_329_engineering_program_manager.py,Engineering Program Manager,Agent 329: Engineering Program Manager,,,,management,Technology & Engineering
+330,agent_330_release_engineer.py,Release Engineer,Agent 330: Release Engineer,,,,,General Business
+331,agent_331_build_release_engineer.py,Build Release Engineer,Agent 331: Build Release Engineer,,,,,Product Management
+332,agent_332_production_engineer.py,Production Engineer,Agent 332: Production Engineer,,,,,Product Management
+333,agent_333_chaos_engineer.py,Chaos Engineer,Agent 333: Chaos Engineer,,,,,General Business
+334,agent_334_incident_manager.py,Incident Manager,Agent 334: Incident Manager,,,,management,General Business
+335,agent_335_on_call_engineer.py,On Call Engineer,Agent 335: On-Call Engineer,,,,,General Business
+336,agent_336_embedded_systems_engineer.py,Embedded Systems Engineer,Agent 336: Embedded Systems Engineer,,,,,General Business
+337,agent_337_firmware_engineer.py,Firmware Engineer,Agent 337: Firmware Engineer,,,,,General Business
+338,agent_338_hardware_engineer.py,Hardware Engineer,Agent 338: Hardware Engineer,,,,,General Business
+339,agent_339_robotics_engineer.py,Robotics Engineer,Agent 339: Robotics Engineer,,,,,General Business
+340,agent_340_iot_engineer.py,Iot Engineer,Agent 340: IoT Engineer,,,,,General Business
+341,agent_341_vp_data_analytics.py,Vp Data Analytics,Agent 341: VP Data Analytics,,,,analysis,Information & Data
+342,agent_342_director_data_science.py,Director Data Science,Agent 342: Director Data Science,,,,web search,Technology & Engineering
+343,agent_343_director_business_intelligence.py,Director Business Intelligence,Agent 343: Director Business Intelligence,,,,,Technology & Engineering
+344,agent_344_director_data_engineering.py,Director Data Engineering,Agent 344: Director Data Engineering,,,,,Technology & Engineering
+345,agent_345_senior_data_scientist.py,Senior Data Scientist,Agent 345: Senior Data Scientist,,,,,Information & Data
+346,agent_346_data_scientist.py,Data Scientist,Agent 346: Data Scientist,,,,,Information & Data
+347,agent_347_ml_scientist.py,Ml Scientist,Agent 347: ML Scientist,,,,web search,General Business
+348,agent_348_research_scientist.py,Research Scientist,Agent 348: Research Scientist,,,,web search,Research & Innovation
+349,agent_349_senior_data_engineer_analytics.py,Senior Data Engineer Analytics,Agent 349: Senior Data Engineer Analytics,,,,analysis,Information & Data
+350,agent_350_data_engineer_analytics.py,Data Engineer Analytics,Agent 350: Data Engineer Analytics,,,,analysis,Information & Data
+351,agent_351_bi_developer.py,Bi Developer,Agent 351: BI Developer,,,,,Technology & Engineering
+352,agent_352_bi_analyst.py,Bi Analyst,Agent 352: BI Analyst,,,,,Information & Data
+353,agent_353_business_analyst.py,Business Analyst,Agent 353: Business Analyst,,,,,General Business
+354,agent_354_data_analyst.py,Data Analyst,Agent 354: Data Analyst,,,,,Information & Data
+355,agent_355_analytics_consultant.py,Analytics Consultant,Agent 355: Analytics Consultant,,,,analysis,Information & Data
+356,agent_356_quantitative_analyst.py,Quantitative Analyst,Agent 356: Quantitative Analyst,,,,web search,General Business
+357,agent_357_statistician.py,Statistician,Agent 357: Statistician,,,,,General Business
+358,agent_358_data_visualization_specialist.py,Data Visualization Specialist,Agent 358: Data Visualization Specialist,,,,,Information & Data
+359,agent_359_reporting_analyst.py,Reporting Analyst,Agent 359: Reporting Analyst,,,,reporting,General Business
+360,agent_360_insights_analyst.py,Insights Analyst,Agent 360: Insights Analyst,,,,,General Business
+361,agent_361_data_governance_manager.py,Data Governance Manager,Agent 361: Data Governance Manager,,,,management,Information & Data
+362,agent_362_data_quality_manager.py,Data Quality Manager,Agent 362: Data Quality Manager,,,,management,Information & Data
+363,agent_363_master_data_manager.py,Master Data Manager,Agent 363: Master Data Manager,,,,management,Information & Data
+364,agent_364_metadata_manager.py,Metadata Manager,Agent 364: Metadata Manager,,,,management,Information & Data
+365,agent_365_data_catalog_administrator.py,Data Catalog Administrator,Agent 365: Data Catalog Administrator,,,,web search,Information & Data
+366,agent_366_data_steward.py,Data Steward,Agent 366: Data Steward,,,,,Information & Data
+367,agent_367_data_privacy_analyst.py,Data Privacy Analyst,Agent 367: Data Privacy Analyst,,,,,Information & Data
+368,agent_368_data_architect.py,Data Architect,Agent 368: Data Architect,,,,,Technology & Engineering
+369,agent_369_analytics_architect.py,Analytics Architect,Agent 369: Analytics Architect,,,,analysis,Technology & Engineering
+370,agent_370_data_warehouse_architect.py,Data Warehouse Architect,Agent 370: Data Warehouse Architect,,,,web search,Technology & Engineering
+371,agent_371_etl_developer.py,Etl Developer,Agent 371: ETL Developer,,,,,Technology & Engineering
+372,agent_372_data_integration_specialist.py,Data Integration Specialist,Agent 372: Data Integration Specialist,,,,,Information & Data
+373,agent_373_data_ops_engineer.py,Data Ops Engineer,Agent 373: DataOps Engineer,,,,,Information & Data
+374,agent_374_ml_ops_engineer.py,Ml Ops Engineer,Agent 374: MLOps Engineer,,,,,Operations
+375,agent_375_feature_engineering_specialist.py,Feature Engineering Specialist,Agent 375: Feature Engineering Specialist,,,,,Technology & Engineering
+376,agent_376_model_validation_specialist.py,Model Validation Specialist,Agent 376: Model Validation Specialist,,,,,General Business
+377,agent_377_ab_testing_analyst.py,Ab Testing Analyst,Agent 377: A/B Testing Analyst,,,,,General Business
+378,agent_378_experimentation_analyst.py,Experimentation Analyst,Agent 378: Experimentation Analyst,,,,,General Business
+379,agent_379_predictive_analytics_specialist.py,Predictive Analytics Specialist,Agent 379: Predictive Analytics Specialist,,,,analysis,Information & Data
+380,agent_380_forecasting_analyst.py,Forecasting Analyst,Agent 380: Forecasting Analyst,,,,,General Business
+381,agent_381_vp_cybersecurity.py,Vp Cybersecurity,,,,,,Security & Compliance
+382,agent_382_director_security_operations.py,Director Security Operations,,,,,,Technology & Engineering
+383,agent_383_director_application_security.py,Director Application Security,,,,,,Technology & Engineering
+384,agent_384_director_identity_security.py,Director Identity Security,,,,,,Technology & Engineering
+385,agent_385_security_operations_manager.py,Security Operations Manager,,,,,management,Security & Compliance
+386,agent_386_incident_response_manager.py,Incident Response Manager,,,,,management,General Business
+387,agent_387_threat_intelligence_manager.py,Threat Intelligence Manager,,,,,management,Human Resources
+388,agent_388_vulnerability_management_manager.py,Vulnerability Management Manager,,,,,management,Information & Data
+389,agent_389_security_architect_enterprise.py,Security Architect Enterprise,,,,,,Technology & Engineering
+390,agent_390_application_security_architect.py,Application Security Architect,,,,,,Technology & Engineering
+391,agent_391_security_operations_analyst.py,Security Operations Analyst,,,,,,Security & Compliance
+392,agent_392_soc_analyst.py,Soc Analyst,,,,,,General Business
+393,agent_393_threat_hunter.py,Threat Hunter,,,,,,Human Resources
+394,agent_394_incident_responder.py,Incident Responder,,,,,,General Business
+395,agent_395_malware_analyst.py,Malware Analyst,,,,,,General Business
+396,agent_396_forensics_analyst.py,Forensics Analyst,,,,,,General Business
+397,agent_397_penetration_tester.py,Penetration Tester,,,,,,General Business
+398,agent_398_ethical_hacker.py,Ethical Hacker,,,,,,General Business
+399,agent_399_red_team_operator.py,Red Team Operator,,,,,,General Business
+400,agent_400_blue_team_analyst.py,Blue Team Analyst,,,,,,General Business
+401,agent_401_vulnerability_analyst.py,Vulnerability Analyst,Agent 401: Vulnerability Analyst,,,,,Information & Data
+402,agent_402_security_compliance_analyst.py,Security Compliance Analyst,Agent 402: Security Compliance Analyst,,,,,Security & Compliance
+403,agent_403_grc_analyst.py,Grc Analyst,Agent 403: GRC Analyst,,,,,General Business
+404,agent_404_risk_analyst.py,Risk Analyst,Agent 404: Risk Analyst,,,,,Security & Compliance
+405,agent_405_third_party_risk_analyst.py,Third Party Risk Analyst,Agent 405: Third Party Risk Analyst,,,,,Security & Compliance
+406,agent_406_vendor_security_assessor.py,Vendor Security Assessor,Agent 406: Vendor Security Assessor,,,,,Security & Compliance
+407,agent_407_security_awareness_specialist.py,Security Awareness Specialist,Agent 407: Security Awareness Specialist,,,,,Security & Compliance
+408,agent_408_phishing_simulation_specialist.py,Phishing Simulation Specialist,Agent 408: Phishing Simulation Specialist,,,,,General Business
+409,agent_409_devsecops_engineer.py,Devsecops Engineer,Agent 409: DevSecOps Engineer,,,,,Operations
+410,agent_410_cloud_security_engineer.py,Cloud Security Engineer,Agent 410: Cloud Security Engineer,,,,,Security & Compliance
+411,agent_411_network_security_engineer.py,Network Security Engineer,Agent 411: Network Security Engineer,,,,,Security & Compliance
+412,agent_412_endpoint_security_engineer.py,Endpoint Security Engineer,Agent 412: Endpoint Security Engineer,,,,,Security & Compliance
+413,agent_413_identity_security_engineer.py,Identity Security Engineer,Agent 413: Identity Security Engineer,,,,,Security & Compliance
+414,agent_414_pki_specialist.py,Pki Specialist,Agent 414: PKI Specialist,,,,,General Business
+415,agent_415_encryption_specialist.py,Encryption Specialist,Agent 415: Encryption Specialist,,,,,General Business
+416,agent_416_secrets_management_specialist.py,Secrets Management Specialist,Agent 416: Secrets Management Specialist,,,,management,General Business
+417,agent_417_security_tools_administrator.py,Security Tools Administrator,Agent 417: Security Tools Administrator,,,,,Security & Compliance
+418,agent_418_siem_administrator.py,Siem Administrator,Agent 418: SIEM Administrator,,,,,General Business
+419,agent_419_dlp_administrator.py,Dlp Administrator,Agent 419: DLP Administrator,,,,,General Business
+420,agent_420_security_metrics_analyst.py,Security Metrics Analyst,Agent 420: Security Metrics Analyst,,,,,Security & Compliance
+421,agent_421_salesforce_integration_specialist.py,Salesforce Integration Specialist,Agent 421: Salesforce Integration Specialist,,,,,Sales & Revenue
+422,agent_422_workday_integration_specialist.py,Workday Integration Specialist,Agent 422: Workday Integration Specialist,,,,,Integration & Platforms
+423,agent_423_servicenow_integration_specialist.py,Servicenow Integration Specialist,Agent 423: ServiceNow Integration Specialist,,,,,Customer Experience
+424,agent_424_oracle_integration_specialist.py,Oracle Integration Specialist,Agent 424: Oracle Integration Specialist,,,,,Integration & Platforms
+425,agent_425_sap_integration_specialist.py,Sap Integration Specialist,Agent 425: SAP Integration Specialist,,,,,Integration & Platforms
+426,agent_426_microsoft_365_specialist.py,Microsoft 365 Specialist,Agent 426: Microsoft 365 Specialist,,,,,General Business
+427,agent_427_google_workspace_specialist.py,Google Workspace Specialist,Agent 427: Google Workspace Specialist,,,,,General Business
+428,agent_428_slack_integration_specialist.py,Slack Integration Specialist,Agent 428: Slack Integration Specialist,,,,,Integration & Platforms
+429,agent_429_zoom_integration_specialist.py,Zoom Integration Specialist,Agent 429: Zoom Integration Specialist,,,,,Integration & Platforms
+430,agent_430_okta_integration_specialist.py,Okta Integration Specialist,Agent 430: Okta Integration Specialist,,,,,Integration & Platforms
+431,agent_431_hubspot_integration_specialist.py,Hubspot Integration Specialist,Agent 431: HubSpot Integration Specialist,,,,,Integration & Platforms
+432,agent_432_marketo_integration_specialist.py,Marketo Integration Specialist,Agent 432: Marketo Integration Specialist,,,,,Integration & Platforms
+433,agent_433_zendesk_integration_specialist.py,Zendesk Integration Specialist,Agent 433: Zendesk Integration Specialist,,,,,Integration & Platforms
+434,agent_434_jira_integration_specialist.py,Jira Integration Specialist,Agent 434: Jira Integration Specialist,,,,,Integration & Platforms
+435,agent_435_confluence_integration_specialist.py,Confluence Integration Specialist,Agent 435: Confluence Integration Specialist,,,,web search,Integration & Platforms
+436,agent_436_tableau_integration_specialist.py,Tableau Integration Specialist,Agent 436: Tableau Integration Specialist,,,,,Integration & Platforms
+437,agent_437_snowflake_integration_specialist.py,Snowflake Integration Specialist,Agent 437: Snowflake Integration Specialist,,,,,Integration & Platforms
+438,agent_438_aws_integration_specialist.py,Aws Integration Specialist,Agent 438: AWS Integration Specialist,,,,,Integration & Platforms
+439,agent_439_azure_integration_specialist.py,Azure Integration Specialist,Agent 439: Azure Integration Specialist,,,,,Integration & Platforms
+440,agent_440_gcp_integration_specialist.py,Gcp Integration Specialist,Agent 440: GCP Integration Specialist,,,,,Integration & Platforms
+441,agent_441_stripe_integration_specialist.py,Stripe Integration Specialist,Agent 441: Stripe Integration Specialist,,,,,Integration & Platforms
+442,agent_442_paypal_integration_specialist.py,Paypal Integration Specialist,Agent 442: PayPal Integration Specialist,,,,,Integration & Platforms
+443,agent_443_square_integration_specialist.py,Square Integration Specialist,Agent 443: Square Integration Specialist,,,,,Integration & Platforms
+444,agent_444_shopify_integration_specialist.py,Shopify Integration Specialist,Agent 444: Shopify Integration Specialist,,,,,Integration & Platforms
+445,agent_445_magento_integration_specialist.py,Magento Integration Specialist,Agent 445: Magento Integration Specialist,,,,,Integration & Platforms
+446,agent_446_quickbooks_integration_specialist.py,Quickbooks Integration Specialist,Agent 446: QuickBooks Integration Specialist,,,,,Product Management
+447,agent_447_netsuite_integration_specialist.py,Netsuite Integration Specialist,Agent 447: NetSuite Integration Specialist,,,,,Product Management
+448,agent_448_bamboohr_integration_specialist.py,Bamboohr Integration Specialist,Agent 448: BambooHR Integration Specialist,,,,,Human Resources
+449,agent_449_greenhouse_integration_specialist.py,Greenhouse Integration Specialist,Agent 449: Greenhouse Integration Specialist,,,,,Integration & Platforms
+450,agent_450_lever_integration_specialist.py,Lever Integration Specialist,Agent 450: Lever Integration Specialist,,,,,Integration & Platforms
+451,agent_451_docusign_integration_specialist.py,Docusign Integration Specialist,Agent 451: DocuSign Integration Specialist,,,,,Integration & Platforms
+452,agent_452_adobe_sign_integration_specialist.py,Adobe Sign Integration Specialist,Agent 452: Adobe Sign Integration Specialist,,,,,Integration & Platforms
+453,agent_453_box_integration_specialist.py,Box Integration Specialist,Agent 453: Box Integration Specialist,,,,,Integration & Platforms
+454,agent_454_dropbox_integration_specialist.py,Dropbox Integration Specialist,Agent 454: Dropbox Integration Specialist,,,,,Integration & Platforms
+455,agent_455_asana_integration_specialist.py,Asana Integration Specialist,Agent 455: Asana Integration Specialist,,,,,Integration & Platforms
+456,agent_456_monday_integration_specialist.py,Monday Integration Specialist,Agent 456: Monday Integration Specialist,,,,,Integration & Platforms
+457,agent_457_smartsheet_integration_specialist.py,Smartsheet Integration Specialist,Agent 457: Smartsheet Integration Specialist,,,,,Integration & Platforms
+458,agent_458_airtable_integration_specialist.py,Airtable Integration Specialist,Agent 458: Airtable Integration Specialist,,,,,Integration & Platforms
+459,agent_459_notion_integration_specialist.py,Notion Integration Specialist,Agent 459: Notion Integration Specialist,,,,web search,Integration & Platforms
+460,agent_460_miro_integration_specialist.py,Miro Integration Specialist,Agent 460: Miro Integration Specialist,,,,,Integration & Platforms
+461,agent_461_twilio_integration_specialist.py,Twilio Integration Specialist,Agent 461: Twilio Integration Specialist,,,,,Integration & Platforms
+462,agent_462_sendgrid_integration_specialist.py,Sendgrid Integration Specialist,Agent 462: SendGrid Integration Specialist,,,,,Integration & Platforms
+463,agent_463_mailchimp_integration_specialist.py,Mailchimp Integration Specialist,Agent 463: Mailchimp Integration Specialist,,,,,Integration & Platforms
+464,agent_464_intercom_integration_specialist.py,Intercom Integration Specialist,Agent 464: Intercom Integration Specialist,,,,,Integration & Platforms
+465,agent_465_drift_integration_specialist.py,Drift Integration Specialist,Agent 465: Drift Integration Specialist,,,,,Integration & Platforms
+466,agent_466_segment_integration_specialist.py,Segment Integration Specialist,Agent 466: Segment Integration Specialist,,,,,Integration & Platforms
+467,agent_467_amplitude_integration_specialist.py,Amplitude Integration Specialist,Agent 467: Amplitude Integration Specialist,,,,,Integration & Platforms
+468,agent_468_mixpanel_integration_specialist.py,Mixpanel Integration Specialist,Agent 468: Mixpanel Integration Specialist,,,,,Integration & Platforms
+469,agent_469_pendo_integration_specialist.py,Pendo Integration Specialist,Agent 469: Pendo Integration Specialist,,,,,Integration & Platforms
+470,agent_470_fullstory_integration_specialist.py,Fullstory Integration Specialist,Agent 470: FullStory Integration Specialist,,,,web search,Integration & Platforms
+471,agent_471_datadog_integration_specialist.py,Datadog Integration Specialist,Agent 471: Datadog Integration Specialist,,,,,Information & Data
+472,agent_472_new_relic_integration_specialist.py,New Relic Integration Specialist,Agent 472: New Relic Integration Specialist,,,,,Integration & Platforms
+473,agent_473_splunk_integration_specialist.py,Splunk Integration Specialist,Agent 473: Splunk Integration Specialist,,,,web search,Integration & Platforms
+474,agent_474_pagerduty_integration_specialist.py,Pagerduty Integration Specialist,Agent 474: PagerDuty Integration Specialist,,,,,Integration & Platforms
+475,agent_475_opsgenie_integration_specialist.py,Opsgenie Integration Specialist,Agent 475: Opsgenie Integration Specialist,,,,,Operations
+476,agent_476_looker_integration_specialist.py,Looker Integration Specialist,Agent 476: Looker Integration Specialist,,,,,Integration & Platforms
+477,agent_477_power_bi_integration_specialist.py,Power Bi Integration Specialist,Agent 477: Power BI Integration Specialist,,,,,Information & Data
+478,agent_478_qlik_integration_specialist.py,Qlik Integration Specialist,Agent 478: Qlik Integration Specialist,,,,,Integration & Platforms
+479,agent_479_domo_integration_specialist.py,Domo Integration Specialist,Agent 479: Domo Integration Specialist,,,,,Integration & Platforms
+480,agent_480_sisense_integration_specialist.py,Sisense Integration Specialist,Agent 480: Sisense Integration Specialist,,,,,Integration & Platforms
+481,agent_481_vp_innovation.py,Vp Innovation,Agent 481: VP Innovation,,,,,Research & Innovation
+482,agent_482_director_digital_transformation.py,Director Digital Transformation,Agent 482: Director Digital Transformation,,,,,Technology & Engineering
+483,agent_483_director_strategic_initiatives.py,Director Strategic Initiatives,Agent 483: Director Strategic Initiatives,,,,,Technology & Engineering
+484,agent_484_innovation_manager.py,Innovation Manager,Agent 484: Innovation Manager,,,,management,Research & Innovation
+485,agent_485_transformation_manager.py,Transformation Manager,Agent 485: Transformation Manager,,,,management,General Business
+486,agent_486_change_management_specialist.py,Change Management Specialist,Agent 486: Change Management Specialist,,,,management,General Business
+487,agent_487_business_process_improvement_specialist.py,Business Process Improvement Specialist,Agent 487: Business Process Improvement Specialist,,,,automation,Operations
+488,agent_488_automation_specialist.py,Automation Specialist,Agent 488: Automation Specialist,,,,automation,General Business
+489,agent_489_rpa_developer.py,Rpa Developer,Agent 489: RPA Developer,,,,,Technology & Engineering
+490,agent_490_low_code_developer.py,Low Code Developer,Agent 490: Low Code Developer,,,,,Technology & Engineering
+491,agent_491_citizen_developer_enabler.py,Citizen Developer Enabler,Agent 491: Citizen Developer Enabler,,,,,Technology & Engineering
+492,agent_492_ai_implementation_specialist.py,Ai Implementation Specialist,Agent 492: AI Implementation Specialist,,,,,General Business
+493,agent_493_blockchain_specialist.py,Blockchain Specialist,Agent 493: Blockchain Specialist,,,,,General Business
+494,agent_494_quantum_computing_researcher.py,Quantum Computing Researcher,Agent 494: Quantum Computing Researcher,,,,web search,Research & Innovation
+495,agent_495_emerging_tech_researcher.py,Emerging Tech Researcher,Agent 495: Emerging Tech Researcher,,,,web search,Research & Innovation
+496,agent_496_innovation_analyst.py,Innovation Analyst,Agent 496: Innovation Analyst,,,,,Research & Innovation
+497,agent_497_startup_liaison.py,Startup Liaison,Agent 497: Startup Liaison,,,,,General Business
+498,agent_498_venture_capital_analyst.py,Venture Capital Analyst,Agent 498: Venture Capital Analyst,,,,,Integration & Platforms
+499,agent_499_technology_scout.py,Technology Scout,Agent 499: Technology Scout,,,,web search,Technology & Engineering
+500,agent_500_patent_strategy_analyst.py,Patent Strategy Analyst,Agent 500: Patent Strategy Analyst,,,,web search,Strategy & Business Development
+501,agent_501_sustainability_innovation_specialist.py,Sustainability Innovation Specialist,Agent 501: Sustainability Innovation Specialist,,,,,Information & Data
+502,agent_502_green_technology_specialist.py,Green Technology Specialist,Agent 502: Green Technology Specialist,,,,web search,Technology & Engineering
+503,agent_503_circular_economy_specialist.py,Circular Economy Specialist,Agent 503: Circular Economy Specialist,,,,,General Business
+504,agent_504_social_impact_manager.py,Social Impact Manager,Agent 504: Social Impact Manager,,,,management,General Business
+505,agent_505_dei_innovation_specialist.py,Dei Innovation Specialist,Agent 505: DEI Innovation Specialist,,,,,Research & Innovation
+506,agent_506_future_of_work_specialist.py,Future Of Work Specialist,Agent 506: Future of Work Specialist,,,,,General Business
+507,agent_507_metaverse_specialist.py,Metaverse Specialist,Agent 507: Metaverse Specialist,,,,,General Business
+508,agent_508_web3_specialist.py,Web3 Specialist,Agent 508: Web3 Specialist,,,,,General Business
+509,agent_509_digital_twin_specialist.py,Digital Twin Specialist,Agent 509: Digital Twin Specialist,,,,,General Business
+510,agent_510_edge_computing_specialist.py,Edge Computing Specialist,Agent 510: Edge Computing Specialist,,,,,General Business
+511,agent_511_5g_iot_specialist.py,5G Iot Specialist,Agent 511: 5G IoT Specialist,,,,,General Business
