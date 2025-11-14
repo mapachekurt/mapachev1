@@ -1,0 +1,151 @@
+graph TB
+    Root[Root Orchestrator<br/>Level 0<br/>gemini-2.0-flash-exp]
+
+    %% Division Level (Level 1)
+    Root --> Div1[Executive & Strategy Division<br/>76 agents | 3 teams<br/>gemini-2.0-flash-exp]
+    Root --> Div2[Security, Legal & Compliance Division<br/>71 agents | 5 teams<br/>gemini-2.0-flash-exp]
+    Root --> Div3[Technology Infrastructure Division<br/>48 agents | 4 teams<br/>gemini-2.0-flash-exp]
+    Root --> Div4[Finance & Accounting Division<br/>14 agents | 4 teams<br/>gemini-2.0-flash-exp]
+    Root --> Div5[People & Culture Division<br/>18 agents | 4 teams<br/>gemini-2.0-flash-exp]
+    Root --> Div6[Revenue Operations Division<br/>31 agents | 5 teams<br/>gemini-2.0-flash-exp]
+    Root --> Div7[Engineering & Product Division<br/>59 agents | 6 teams<br/>gemini-2.0-flash-exp]
+    Root --> Div8[Customer Success Division<br/>35 agents | 4 teams<br/>gemini-2.0-flash-exp]
+    Root --> Div9[Operations & Supply Chain Division<br/>32 agents | 4 teams<br/>gemini-2.0-flash-exp]
+    Root --> Div10[Data & Analytics Division<br/>40 agents | 6 teams<br/>gemini-2.0-flash-exp]
+    Root --> Div11[Integration & Innovation Division<br/>87 agents | 11 teams<br/>gemini-2.0-flash-exp]
+
+    %% Executive & Strategy Division Teams
+    Div1 --> T1_1[Executive Leadership Team<br/>71 specialists<br/>gemini-flash]
+    Div1 --> T1_2[Corporate Strategy Team<br/>2 specialists<br/>gemini-flash]
+    Div1 --> T1_3[Communications & PR Team<br/>3 specialists<br/>gemini-flash]
+
+    T1_1 -.-> S1_1[agent_001: CEO Root Coordinator]
+    T1_1 -.-> S1_2[agent_002: COO Operations Coordinator]
+    T1_1 -.-> S1_3[agent_003: CFO Financial Director]
+    T1_1 -.-> S1_4[+ 68 more specialists]
+
+    %% Security, Legal & Compliance Division Teams
+    Div2 --> T2_1[Legal Team<br/>20 specialists<br/>gemini-flash]
+    Div2 --> T2_2[Cybersecurity Operations Team<br/>13 specialists<br/>gemini-flash]
+    Div2 --> T2_3[Security Engineering Team<br/>12 specialists<br/>gemini-flash]
+    Div2 --> T2_4[Regulatory Compliance Team<br/>13 specialists<br/>gemini-flash]
+    Div2 --> T2_5[Security & Risk Compliance Team<br/>13 specialists<br/>gemini-flash]
+
+    T2_1 -.-> S2_1[agent_013: General Counsel]
+    T2_1 -.-> S2_2[agent_247: Senior Corporate Counsel]
+    T2_1 -.-> S2_3[+ 18 more specialists]
+
+    %% Technology Infrastructure Division Teams
+    Div3 --> T3_1[IT Service Management Team<br/>18 specialists<br/>gemini-flash]
+    Div3 --> T3_2[Cloud & Infrastructure Team<br/>8 specialists<br/>gemini-flash]
+    Div3 --> T3_3[Network & Systems Team<br/>13 specialists<br/>gemini-flash]
+    Div3 --> T3_4[DevOps & SRE Team<br/>9 specialists<br/>gemini-flash]
+
+    T3_2 -.-> S3_1[agent_142: VP Cloud Services]
+    T3_2 -.-> S3_2[agent_150: Cloud Architect]
+    T3_2 -.-> S3_3[+ 6 more specialists]
+
+    %% Finance & Accounting Division Teams
+    Div4 --> T4_1[Financial Planning & Analysis Team<br/>3 specialists<br/>gemini-flash]
+    Div4 --> T4_2[Tax & Treasury Team<br/>4 specialists<br/>gemini-flash]
+    Div4 --> T4_3[Internal Audit Team<br/>2 specialists<br/>gemini-flash]
+    Div4 --> T4_4[Accounting Operations Team<br/>5 specialists<br/>gemini-flash]
+
+    T4_1 -.-> S4_1[agent_021: VP Financial Planning]
+    T4_1 -.-> S4_2[agent_030: Senior Financial Analyst]
+    T4_1 -.-> S4_3[+ 1 more specialist]
+
+    %% People & Culture Division Teams
+    Div5 --> T5_1[Talent Acquisition Team<br/>2 specialists<br/>gemini-flash]
+    Div5 --> T5_2[Compensation & Benefits Team<br/>3 specialists<br/>gemini-flash]
+    Div5 --> T5_3[Learning & Development Team<br/>3 specialists<br/>gemini-flash]
+    Div5 --> T5_4[HR Operations Team<br/>10 specialists<br/>gemini-flash]
+
+    T5_4 -.-> S5_1[agent_045: Director HR Operations]
+    T5_4 -.-> S5_2[agent_053: HR Generalist]
+    T5_4 -.-> S5_3[+ 8 more specialists]
+
+    %% Revenue Operations Division Teams
+    Div6 --> T6_1[Enterprise Sales Team<br/>3 specialists<br/>gemini-flash]
+    Div6 --> T6_2[Growth Marketing Team<br/>12 specialists<br/>gemini-flash]
+    Div6 --> T6_3[Brand & Product Marketing Team<br/>6 specialists<br/>gemini-flash]
+    Div6 --> T6_4[Marketing Operations Team<br/>1 specialist<br/>gemini-flash]
+    Div6 --> T6_5[Sales Operations Team<br/>9 specialists<br/>gemini-flash]
+
+    T6_2 -.-> S6_1[agent_072: Digital Marketing Manager]
+    T6_2 -.-> S6_2[agent_076: SEO/SEM Specialist]
+    T6_2 -.-> S6_3[+ 10 more specialists]
+
+    %% Engineering & Product Division Teams
+    Div7 --> T7_1[Engineering Architecture Team<br/>4 specialists<br/>gemini-flash]
+    Div7 --> T7_2[Product Management Team<br/>7 specialists<br/>gemini-flash]
+    Div7 --> T7_3[Software Engineering Team<br/>13 specialists<br/>gemini-flash]
+    Div7 --> T7_4[Product Design Team<br/>9 specialists<br/>gemini-flash]
+    Div7 --> T7_5[Specialized Engineering Team<br/>23 specialists<br/>gemini-flash]
+    Div7 --> T7_6[Quality Engineering Team<br/>3 specialists<br/>gemini-flash]
+
+    T7_3 -.-> S7_1[agent_291: Senior Software Engineer]
+    T7_3 -.-> S7_2[agent_293: Backend Engineer]
+    T7_3 -.-> S7_3[agent_294: Frontend Engineer]
+    T7_3 -.-> S7_4[+ 10 more specialists]
+
+    %% Customer Success Division Teams
+    Div8 --> T8_1[Customer Success Team<br/>8 specialists<br/>gemini-flash]
+    Div8 --> T8_2[Customer Support Team<br/>11 specialists<br/>gemini-flash]
+    Div8 --> T8_3[Customer Operations Team<br/>10 specialists<br/>gemini-flash]
+    Div8 --> T8_4[Customer Engagement Team<br/>6 specialists<br/>gemini-flash]
+
+    T8_2 -.-> S8_1[agent_210: Senior Support Engineer]
+    T8_2 -.-> S8_2[agent_213: Tier 1 Support Agent]
+    T8_2 -.-> S8_3[+ 9 more specialists]
+
+    %% Operations & Supply Chain Division Teams
+    Div9 --> T9_1[Supply Chain Management Team<br/>5 specialists<br/>gemini-flash]
+    Div9 --> T9_2[Logistics & Warehouse Team<br/>11 specialists<br/>gemini-flash]
+    Div9 --> T9_3[Process Improvement Team<br/>7 specialists<br/>gemini-flash]
+    Div9 --> T9_4[Manufacturing & Quality Team<br/>9 specialists<br/>gemini-flash]
+
+    T9_2 -.-> S9_1[agent_103: VP Logistics]
+    T9_2 -.-> S9_2[agent_111: Logistics Manager]
+    T9_2 -.-> S9_3[+ 9 more specialists]
+
+    %% Data & Analytics Division Teams
+    Div10 --> T10_1[Data Architecture Team<br/>4 specialists<br/>gemini-flash]
+    Div10 --> T10_2[Data Engineering Team<br/>8 specialists<br/>gemini-flash]
+    Div10 --> T10_3[Data Science Team<br/>6 specialists<br/>gemini-flash]
+    Div10 --> T10_4[Business Intelligence Team<br/>8 specialists<br/>gemini-flash]
+    Div10 --> T10_5[Data Governance Team<br/>7 specialists<br/>gemini-flash]
+    Div10 --> T10_6[Analytics Specialist Team<br/>7 specialists<br/>gemini-flash]
+
+    T10_3 -.-> S10_1[agent_345: Senior Data Scientist]
+    T10_3 -.-> S10_2[agent_346: Data Scientist]
+    T10_3 -.-> S10_3[+ 4 more specialists]
+
+    %% Integration & Innovation Division Teams
+    Div11 --> T11_1[API & Integration Engineering Team<br/>4 specialists<br/>gemini-flash]
+    Div11 --> T11_2[CRM & Sales Integration Team<br/>3 specialists<br/>gemini-flash]
+    Div11 --> T11_3[Enterprise Integration Team<br/>4 specialists<br/>gemini-flash]
+    Div11 --> T11_4[Collaboration Integration Team<br/>4 specialists<br/>gemini-flash]
+    Div11 --> T11_5[Support & Productivity Integration Team<br/>9 specialists<br/>gemini-flash]
+    Div11 --> T11_6[Cloud & Data Integration Team<br/>10 specialists<br/>gemini-flash]
+    Div11 --> T11_7[Commerce & Marketing Integration Team<br/>5 specialists<br/>gemini-flash]
+    Div11 --> T11_8[HR & Document Integration Team<br/>6 specialists<br/>gemini-flash]
+    Div11 --> T11_9[Communication & Analytics Integration Team<br/>10 specialists<br/>gemini-flash]
+    Div11 --> T11_10[Monitoring & Ops Integration Team<br/>5 specialists<br/>gemini-flash]
+    Div11 --> T11_11[Innovation & Research Team<br/>27 specialists<br/>gemini-flash]
+
+    T11_11 -.-> S11_1[agent_481: VP Innovation]
+    T11_11 -.-> S11_2[agent_492: AI Implementation Specialist]
+    T11_11 -.-> S11_3[agent_493: Blockchain Specialist]
+    T11_11 -.-> S11_4[+ 24 more specialists]
+
+    %% Styling
+    classDef rootStyle fill:#e1f5ff,stroke:#01579b,stroke-width:3px,color:#000
+    classDef divStyle fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    classDef teamStyle fill:#f3e5f5,stroke:#4a148c,stroke-width:2px,color:#000
+    classDef specStyle fill:#e8f5e9,stroke:#1b5e20,stroke-width:1px,color:#000
+
+    class Root rootStyle
+    class Div1,Div2,Div3,Div4,Div5,Div6,Div7,Div8,Div9,Div10,Div11 divStyle
+    class T1_1,T1_2,T1_3,T2_1,T2_2,T2_3,T2_4,T2_5,T3_1,T3_2,T3_3,T3_4,T4_1,T4_2,T4_3,T4_4,T5_1,T5_2,T5_3,T5_4,T6_1,T6_2,T6_3,T6_4,T6_5,T7_1,T7_2,T7_3,T7_4,T7_5,T7_6,T8_1,T8_2,T8_3,T8_4,T9_1,T9_2,T9_3,T9_4,T10_1,T10_2,T10_3,T10_4,T10_5,T10_6,T11_1,T11_2,T11_3,T11_4,T11_5,T11_6,T11_7,T11_8,T11_9,T11_10,T11_11 teamStyle
+    class S1_1,S1_2,S1_3,S1_4,S2_1,S2_2,S2_3,S3_1,S3_2,S3_3,S4_1,S4_2,S4_3,S5_1,S5_2,S5_3,S6_1,S6_2,S6_3,S7_1,S7_2,S7_3,S7_4,S8_1,S8_2,S8_3,S9_1,S9_2,S9_3,S10_1,S10_2,S10_3,S11_1,S11_2,S11_3,S11_4 specStyle
