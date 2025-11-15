@@ -1,69 +1,57 @@
-# Copyright 2025 Google LLC
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+"""
+Root Orchestrator - Master Coordinator
 
-import datetime
-import os
-from zoneinfo import ZoneInfo
+This is the root orchestrator that routes requests to appropriate divisions.
+"""
 
-import google.auth
-from google.adk.agents import Agent
-from google.adk.apps.app import App
-
-_, project_id = google.auth.default()
-os.environ.setdefault("GOOGLE_CLOUD_PROJECT", project_id)
-os.environ.setdefault("GOOGLE_CLOUD_LOCATION", "global")
-os.environ.setdefault("GOOGLE_GENAI_USE_VERTEXAI", "True")
+from google.adk.agents import LlmAgent
+from app.agents.coordinators.executivestrategydivision import executivestrategydivision
+from app.agents.coordinators.securitylegaldivision import securitylegaldivision
+from app.agents.coordinators.technologyinfrastructuredivision import technologyinfrastructuredivision
+from app.agents.coordinators.financeaccountingdivision import financeaccountingdivision
+from app.agents.coordinators.peopleculturedivision import peopleculturedivision
+from app.agents.coordinators.revenueoperationsdivision import revenueoperationsdivision
+from app.agents.coordinators.engineeringproductdivision import engineeringproductdivision
+from app.agents.coordinators.customersuccessdivision import customersuccessdivision
+from app.agents.coordinators.operationssupplychaindivision import operationssupplychaindivision
+from app.agents.coordinators.dataanalyticsdivision import dataanalyticsdivision
+from app.agents.coordinators.integrationinnovationdivision import integrationinnovationdivision
 
 
-def get_weather(query: str) -> str:
-    """Simulates a web search. Use it get information on weather.
+root_orchestrator = LlmAgent(
+    name="rootorchestrator",
+    model="gemini-2.0-flash-exp",
+    description="Master orchestrator that routes requests to appropriate divisions based on functional area. Analyzes incoming requests and delegates to the most appropriate division coordinator.",
+    sub_agents=[executivestrategydivision, securitylegaldivision, technologyinfrastructuredivision, financeaccountingdivision, peopleculturedivision, revenueoperationsdivision, engineeringproductdivision, customersuccessdivision, operationssupplychaindivision, dataanalyticsdivision, integrationinnovationdivision],
+    instruction="""You are the Root Orchestrator, the master coordinator of the entire organization.
 
-    Args:
-        query: A string containing the location to get weather information for.
+Your role is to analyze incoming requests and route them to the appropriate division coordinator.
 
-    Returns:
-        A string with the simulated weather information for the queried location.
-    """
-    if "sf" in query.lower() or "san francisco" in query.lower():
-        return "It's 60 degrees and foggy."
-    return "It's 90 degrees and sunny."
+Available divisions:
+  - Executive & Strategy Division: Manages executive & strategy division functions
+  - Security, Legal & Compliance Division: Manages security, legal & compliance division functions
+  - Technology Infrastructure Division: Manages technology infrastructure division functions
+  - Finance & Accounting Division: Manages finance & accounting division functions
+  - People & Culture Division: Manages people & culture division functions
+  - Revenue Operations Division: Manages revenue operations division functions
+  - Engineering & Product Division: Manages engineering & product division functions
+  - Customer Success Division: Manages customer success division functions
+  - Operations & Supply Chain Division: Manages operations & supply chain division functions
+  - Data & Analytics Division: Manages data & analytics division functions
+  - Integration & Innovation Division: Manages integration & innovation division functions
 
+Routing Guidelines:
+- Carefully analyze each request to understand its functional area
+- Route to the most appropriate division based on the request type
+- Consider cross-functional requests and route to the primary responsible division
+- Balance load across divisions when multiple could handle a request
+- Ensure all requests receive expert attention from the right division
+- Track routing patterns to optimize future decisions
 
-def get_current_time(query: str) -> str:
-    """Simulates getting the current time for a city.
-
-    Args:
-        city: The name of the city to get the current time for.
-
-    Returns:
-        A string with the current time information.
-    """
-    if "sf" in query.lower() or "san francisco" in query.lower():
-        tz_identifier = "America/Los_Angeles"
-    else:
-        return f"Sorry, I don't have timezone information for query: {query}."
-
-    tz = ZoneInfo(tz_identifier)
-    now = datetime.datetime.now(tz)
-    return f"The current time for query {query} is {now.strftime('%Y-%m-%d %H:%M:%S %Z%z')}"
-
-
-root_agent = Agent(
-    name="root_agent",
-    model="gemini-2.5-flash",
-    instruction="You are a helpful AI assistant designed to provide accurate and useful information.",
-    tools=[get_weather, get_current_time],
+Always route to division coordinators. Do not attempt to answer requests directly.
+You are a router and coordinator, not an executor."""
 )
 
-app = App(root_agent=root_agent, name="app")
+# Export for ADK
+agent = root_orchestrator
+app = root_orchestrator  # Alias for compatibility
