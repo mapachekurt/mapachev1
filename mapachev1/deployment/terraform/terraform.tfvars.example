@@ -1,0 +1,168 @@
+# Example Terraform variables file for multi-agent system deployment
+# Copy this file to terraform.tfvars and fill in your actual values
+#
+# IMPORTANT: Never commit terraform.tfvars to git - it's in .gitignore
+#
+# Usage:
+#   cp terraform.tfvars.example terraform.tfvars
+#   # Edit terraform.tfvars with your values
+#   terraform init
+#   terraform plan -var-file=terraform.tfvars
+#   terraform apply -var-file=terraform.tfvars
+
+# ==============================================================================
+# Core Configuration
+# ==============================================================================
+
+# Project name used as base for all resource naming
+# Must be lowercase, alphanumeric, hyphens allowed
+# Example: "my-agent-system" or "sales-ai-platform"
+project_name = "mapachev1"
+
+# ==============================================================================
+# GCP Project IDs
+# ==============================================================================
+
+# Production environment project ID
+# This is where your production agent will run
+prod_project_id = "my-org-prod-12345"
+
+# Staging environment project ID
+# This is where staging deployments and testing happen
+staging_project_id = "my-org-staging-67890"
+
+# CI/CD runner project ID
+# This project runs Cloud Build or GitHub Actions workflows
+# It also hosts the Artifact Registry for Docker images
+cicd_runner_project_id = "my-org-cicd-11111"
+
+# ==============================================================================
+# Regional Configuration
+# ==============================================================================
+
+# Google Cloud region for all resources
+# Recommended: Choose region closest to your users
+# Options: us-central1, us-east1, europe-west1, asia-northeast1, etc.
+region = "us-central1"
+
+# ==============================================================================
+# GitHub / Repository Configuration
+# ==============================================================================
+
+# GitHub organization or username that owns the repository
+repository_owner = "my-github-org"
+
+# Repository name (without .git extension)
+repository_name = "my-agent-repo"
+
+# Whether to create a new GitHub repository (typically false - use existing)
+create_repository = false
+
+# Host connection name for Cloud Build (if using Cloud Build)
+host_connection_name = "mapachev1-github-connection"
+
+# ==============================================================================
+# Monitoring and Alerting
+# ==============================================================================
+
+# Email address for alert notifications
+# Leave empty ("") to disable email notifications
+alert_email = "ops-team@example.com"
+
+# Enable or disable monitoring alerts
+# Set to false for dev environments to reduce noise
+enable_alerts = true
+
+# ==============================================================================
+# Service Account Roles
+# ==============================================================================
+
+# Roles for the application service account (agent runtime)
+# These are the permissions your agent needs to execute
+app_sa_roles = [
+  "roles/aiplatform.user",              # Call Vertex AI APIs (Gemini, etc.)
+  "roles/discoveryengine.editor",       # Use Vertex AI Search & Conversation
+  "roles/logging.logWriter",            # Write application logs
+  "roles/cloudtrace.agent",             # Write distributed traces
+  "roles/storage.admin",                # Access GCS buckets for data
+  "roles/serviceusage.serviceUsageConsumer"
+]
+
+# Roles for CI/CD runner service account in the CI/CD project
+# These are permissions needed to build and deploy
+cicd_roles = [
+  "roles/storage.admin",                # Access build artifacts and logs
+  "roles/aiplatform.user",              # Deploy to Agent Engine (if used)
+  "roles/discoveryengine.editor",       # Configure search/RAG
+  "roles/logging.logWriter",            # Write build logs
+  "roles/cloudtrace.agent",             # Tracing during tests
+  "roles/artifactregistry.writer",      # Push Docker images
+  "roles/cloudbuild.builds.builder"     # Run Cloud Build jobs
+]
+
+# Roles for CI/CD runner in staging and production projects
+# These are cross-project permissions for deployment
+cicd_sa_deployment_required_roles = [
+  "roles/iam.serviceAccountUser",       # Impersonate app service account
+  "roles/aiplatform.user",              # Deploy agents to Vertex AI
+  "roles/storage.admin"                 # Manage storage resources
+]
+
+# ==============================================================================
+# Log Filtering
+# ==============================================================================
+
+# Log filter for telemetry data (traces, spans, agent metrics)
+# Adjust based on your logging structure
+telemetry_logs_filter = "labels.service_name=\"mapachev1\" labels.type=\"agent_telemetry\""
+
+# Log filter for feedback data (user ratings, evaluations)
+feedback_logs_filter = "jsonPayload.log_type=\"feedback\""
+
+# ==============================================================================
+# Example Configurations for Different Environments
+# ==============================================================================
+
+# Development Environment Example:
+# --------------------------------
+# project_name = "myagent-dev"
+# prod_project_id = "dev-project-12345"
+# staging_project_id = "dev-project-12345"  # Same as prod for dev
+# cicd_runner_project_id = "dev-project-12345"  # All in one project
+# region = "us-central1"
+# alert_email = ""  # No alerts for dev
+# enable_alerts = false
+
+# Staging Environment Example:
+# ----------------------------
+# project_name = "myagent"
+# prod_project_id = "mycompany-prod-agents"
+# staging_project_id = "mycompany-staging-agents"
+# cicd_runner_project_id = "mycompany-cicd-shared"
+# region = "us-central1"
+# alert_email = "staging-alerts@example.com"
+# enable_alerts = true
+
+# Production Environment Example:
+# -------------------------------
+# project_name = "sales-ai-prod"
+# prod_project_id = "acmecorp-prod-ai-agents"
+# staging_project_id = "acmecorp-staging-ai-agents"
+# cicd_runner_project_id = "acmecorp-cicd-platform"
+# region = "us-east1"
+# repository_owner = "acmecorp"
+# repository_name = "sales-ai-agents"
+# alert_email = "sre-oncall@acmecorp.com"
+# enable_alerts = true
+
+# ==============================================================================
+# Multi-Region Setup (Advanced)
+# ==============================================================================
+
+# For multi-region deployments, you can override region per environment:
+# 1. Deploy staging in us-central1 (this file)
+# 2. Deploy production in europe-west1 (separate terraform.tfvars)
+#
+# Use workspace or separate state files:
+# terraform workspace new prod-europe
+# terraform apply -var-file=terraform-prod-europe.tfvars
