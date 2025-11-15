@@ -1,0 +1,519 @@
+# Copyright 2025 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+name: Deploy to Production
+
+on:
+  # Manual trigger only - requires explicit approval
+  workflow_dispatch:
+    inputs:
+      staging_commit_sha:
+        description: 'Commit SHA from staging to promote (leave empty for latest)'
+        required: false
+        type: string
+  # Can also be triggered by creating a release tag
+  push:
+    tags:
+      - 'v*.*.*'
+
+# Only one production deployment at a time - never cancel
+concurrency:
+  group: production-deployment
+  cancel-in-progress: false
+
+env:
+  REGION: ${{ vars.REGION }}
+  CICD_PROJECT_ID: ${{ vars.CICD_PROJECT_ID }}
+  STAGING_PROJECT_ID: ${{ vars.STAGING_PROJECT_ID }}
+  PROD_PROJECT_ID: ${{ vars.PROD_PROJECT_ID }}
+
+jobs:
+  pre-deployment-checks:
+    name: Pre-Deployment Validation
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
+    outputs:
+      commit_sha: ${{ steps.determine-commit.outputs.commit_sha }}
+      can_deploy: ${{ steps.validate.outputs.can_deploy }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 10
+
+      - name: Determine commit to deploy
+        id: determine-commit
+        run: |
+          if [ -n "${{ inputs.staging_commit_sha }}" ]; then
+            COMMIT_SHA="${{ inputs.staging_commit_sha }}"
+          elif [ "${{ github.ref_type }}" == "tag" ]; then
+            COMMIT_SHA="${{ github.sha }}"
+          else
+            COMMIT_SHA="${{ github.sha }}"
+          fi
+
+          echo "commit_sha=${COMMIT_SHA}" >> $GITHUB_OUTPUT
+          echo "📌 Will deploy commit: ${COMMIT_SHA}"
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: 'projects/${{ vars.GCP_PROJECT_NUMBER }}/locations/global/workloadIdentityPools/${{ secrets.WIF_POOL_ID }}/providers/${{ secrets.WIF_PROVIDER_ID }}'
+          service_account: '${{ secrets.GCP_SERVICE_ACCOUNT }}'
+          create_credentials_file: true
+          project_id: ${{ vars.CICD_PROJECT_ID }}
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Validate staging deployment exists
+        id: validate
+        run: |
+          echo "Checking if commit has been deployed to staging..."
+
+          # Check if there are any recent Agent Engine deployments in staging
+          STAGING_ENGINES=$(gcloud ai reasoning-engines list \
+            --project=${{ env.STAGING_PROJECT_ID }} \
+            --region=${{ env.REGION }} \
+            --format=json \
+            --limit=5 || echo "[]")
+
+          ENGINE_COUNT=$(echo "${STAGING_ENGINES}" | jq '. | length')
+
+          if [ "${ENGINE_COUNT}" -eq "0" ]; then
+            echo "⚠️  Warning: No recent deployments found in staging"
+            echo "can_deploy=false" >> $GITHUB_OUTPUT
+            exit 1
+          else
+            echo "✅ Found ${ENGINE_COUNT} staging deployments"
+            echo "can_deploy=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Check for open incidents
+        run: |
+          echo "Checking for open incidents in staging..."
+          # This is a placeholder - integrate with your incident management system
+          # For example, check PagerDuty, Opsgenie, or custom monitoring
+
+          # Example: Check error rate in last hour
+          ERROR_RATE=$(gcloud logging read \
+            "resource.type=\"aiplatform.googleapis.com/ReasoningEngine\" \
+             AND severity>=ERROR \
+             AND timestamp>=\"$(date -u -d '1 hour ago' '+%Y-%m-%dT%H:%M:%SZ')\"" \
+            --project=${{ env.STAGING_PROJECT_ID }} \
+            --limit=1000 \
+            --format=json | jq '. | length')
+
+          echo "Error count in last hour: ${ERROR_RATE}"
+
+          if [ "${ERROR_RATE}" -gt "50" ]; then
+            echo "⚠️  Warning: High error rate detected in staging!"
+            echo "Consider investigating before deploying to production"
+          fi
+
+  deploy-production:
+    name: Deploy to Production
+    needs: pre-deployment-checks
+    if: needs.pre-deployment-checks.outputs.can_deploy == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+      deployments: write
+
+    # IMPORTANT: This environment requires manual approval
+    # Configure in: Settings > Environments > production
+    # Add required reviewers before production deployments can proceed
+    environment:
+      name: production
+      url: https://console.cloud.google.com/vertex-ai/agent-builder/engines?project=${{ vars.PROD_PROJECT_ID }}
+
+    outputs:
+      agent_engine_id: ${{ steps.deploy.outputs.agent_engine_id }}
+      deployment_time: ${{ steps.deploy.outputs.deployment_time }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.pre-deployment-checks.outputs.commit_sha }}
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Authenticate to Google Cloud
+        id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: 'projects/${{ vars.GCP_PROJECT_NUMBER }}/locations/global/workloadIdentityPools/${{ secrets.WIF_POOL_ID }}/providers/${{ secrets.WIF_PROVIDER_ID }}'
+          service_account: '${{ secrets.GCP_SERVICE_ACCOUNT }}'
+          create_credentials_file: true
+          project_id: ${{ vars.CICD_PROJECT_ID }}
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Install uv and dependencies
+        run: |
+          pip install uv==0.8.13
+          uv sync --locked
+
+      - name: Export requirements
+        run: |
+          uv export --no-hashes --no-sources --no-header --no-dev --no-emit-project --no-annotate --locked > app/app_utils/.requirements.txt
+
+      - name: Create deployment record
+        id: create-deployment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const deployment = await github.rest.repos.createDeployment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: '${{ needs.pre-deployment-checks.outputs.commit_sha }}',
+              environment: 'production',
+              description: 'Production deployment via GitHub Actions',
+              required_contexts: [],
+              auto_merge: false
+            });
+
+            return deployment.data.id;
+
+      - name: Deploy to Production Agent Engine
+        id: deploy
+        run: |
+          DEPLOY_START=$(date +%s)
+
+          echo "🚀 Deploying to Production Agent Engine..."
+          echo "Commit: ${{ needs.pre-deployment-checks.outputs.commit_sha }}"
+          echo "Project: ${{ env.PROD_PROJECT_ID }}"
+          echo "Region: ${{ env.REGION }}"
+
+          AGENT_ID=$(uv run python -m app.app_utils.deploy \
+            --project ${{ env.PROD_PROJECT_ID }} \
+            --location ${{ env.REGION }} \
+            --source-packages=./app \
+            --entrypoint-module=app.agent_engine_app \
+            --entrypoint-object=agent_engine \
+            --requirements-file=app/app_utils/.requirements.txt \
+            --set-env-vars="COMMIT_SHA=${{ needs.pre-deployment-checks.outputs.commit_sha }},ENVIRONMENT=production,ARTIFACTS_BUCKET_NAME=${{ vars.LOGS_BUCKET_NAME_PROD }}" \
+            | grep -oP 'reasoningEngines/\K[^"]+' | head -1)
+
+          DEPLOY_END=$(date +%s)
+          DEPLOY_DURATION=$((DEPLOY_END - DEPLOY_START))
+
+          echo "agent_engine_id=${AGENT_ID}" >> $GITHUB_OUTPUT
+          echo "deployment_time=${DEPLOY_DURATION}" >> $GITHUB_OUTPUT
+
+          echo "✅ Deployment complete!"
+          echo "Agent Engine ID: ${AGENT_ID}"
+          echo "Deployment duration: ${DEPLOY_DURATION}s"
+
+      - name: Verify deployment
+        run: |
+          echo "Verifying production deployment..."
+
+          gcloud ai reasoning-engines describe ${{ steps.deploy.outputs.agent_engine_id }} \
+            --project=${{ env.PROD_PROJECT_ID }} \
+            --region=${{ env.REGION }}
+
+          echo "✅ Deployment verified"
+
+      - name: Update deployment status - success
+        if: success()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.repos.createDeploymentStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              deployment_id: ${{ steps.create-deployment.outputs.result }},
+              state: 'success',
+              environment_url: 'https://console.cloud.google.com/vertex-ai/agent-builder/engines?project=${{ env.PROD_PROJECT_ID }}',
+              description: 'Production deployment successful'
+            });
+
+      - name: Update deployment status - failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.repos.createDeploymentStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              deployment_id: ${{ steps.create-deployment.outputs.result }},
+              state: 'failure',
+              description: 'Production deployment failed'
+            });
+
+  post-deployment-validation:
+    name: Post-Deployment Validation
+    needs: deploy-production
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: 'projects/${{ vars.GCP_PROJECT_NUMBER }}/locations/global/workloadIdentityPools/${{ secrets.WIF_POOL_ID }}/providers/${{ secrets.WIF_PROVIDER_ID }}'
+          service_account: '${{ secrets.GCP_SERVICE_ACCOUNT }}'
+          create_credentials_file: true
+          project_id: ${{ vars.CICD_PROJECT_ID }}
+
+      - name: Install dependencies
+        run: |
+          pip install uv==0.8.13
+          uv sync --locked
+
+      - name: Run production smoke tests
+        run: |
+          echo "Running production smoke tests..."
+          uv run pytest tests/smoke/ -v --maxfail=1
+        env:
+          PROJECT_ID: ${{ env.PROD_PROJECT_ID }}
+          REGION: ${{ env.REGION }}
+          AGENT_ENGINE_ID: ${{ needs.deploy-production.outputs.agent_engine_id }}
+
+      - name: Monitor for immediate errors
+        run: |
+          echo "Monitoring for errors in the first 2 minutes..."
+          sleep 120
+
+          ERROR_COUNT=$(gcloud logging read \
+            "resource.type=\"aiplatform.googleapis.com/ReasoningEngine\" \
+             AND severity>=ERROR \
+             AND timestamp>=\"$(date -u -d '2 minutes ago' '+%Y-%m-%dT%H:%M:%SZ')\"" \
+            --project=${{ env.PROD_PROJECT_ID }} \
+            --limit=100 \
+            --format=json | jq '. | length')
+
+          echo "Found ${ERROR_COUNT} errors in first 2 minutes"
+
+          if [ "${ERROR_COUNT}" -gt "5" ]; then
+            echo "❌ High error rate detected immediately after deployment!"
+            echo "Consider rolling back"
+            exit 1
+          else
+            echo "✅ No critical errors detected"
+          fi
+
+  rollback-procedure:
+    name: Rollback (Manual)
+    needs: [deploy-production, post-deployment-validation]
+    if: failure()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Rollback instructions
+        run: |
+          cat << 'EOF'
+          ❌ Deployment validation failed!
+
+          ROLLBACK PROCEDURE:
+          ===================
+
+          1. Identify the previous working Agent Engine version:
+             gcloud ai reasoning-engines list \
+               --project=${{ env.PROD_PROJECT_ID }} \
+               --region=${{ env.REGION }} \
+               --sort-by=~createTime \
+               --limit=5
+
+          2. Update application to use previous version by reverting the commit:
+             git revert ${{ needs.pre-deployment-checks.outputs.commit_sha }}
+
+          3. Or manually redeploy previous version:
+             - Go to GitHub Actions
+             - Run "Deploy to Production" workflow
+             - Specify the previous working commit SHA
+
+          4. Monitor the rollback:
+             - Check Cloud Logging for errors
+             - Verify metrics in Cloud Monitoring
+             - Run smoke tests manually
+
+          INCIDENT RESPONSE:
+          ==================
+          - Create incident in your tracking system
+          - Notify stakeholders via Slack/email
+          - Document root cause
+          - Plan remediation
+
+          EOF
+
+  deployment-summary:
+    name: Production Deployment Summary
+    needs: [pre-deployment-checks, deploy-production, post-deployment-validation]
+    if: always()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Generate deployment summary
+        run: |
+          cat << EOF >> $GITHUB_STEP_SUMMARY
+          # 🚀 Production Deployment Summary
+
+          **Status:** ${{ needs.deploy-production.result == 'success' && '✅ Success' || '❌ Failed' }}
+
+          ## Deployment Details
+
+          | Property | Value |
+          |----------|-------|
+          | Commit | \`${{ needs.pre-deployment-checks.outputs.commit_sha }}\` |
+          | Triggered by | @${{ github.actor }} |
+          | Deployment Time | ${{ needs.deploy-production.outputs.deployment_time }}s |
+          | Environment | Production |
+          | Project ID | ${{ env.PROD_PROJECT_ID }} |
+          | Region | ${{ env.REGION }} |
+
+          **Agent Engine ID:** \`${{ needs.deploy-production.outputs.agent_engine_id }}\`
+
+          ## Validation Results
+
+          | Check | Status |
+          |-------|--------|
+          | Pre-deployment | ${{ needs.pre-deployment-checks.result == 'success' && '✅ Passed' || '❌ Failed' }} |
+          | Deployment | ${{ needs.deploy-production.result == 'success' && '✅ Passed' || '❌ Failed' }} |
+          | Post-deployment | ${{ needs.post-deployment-validation.result == 'success' && '✅ Passed' || '❌ Failed' }} |
+
+          ## Quick Links
+
+          - [Agent Engine Console](https://console.cloud.google.com/vertex-ai/agent-builder/engines?project=${{ env.PROD_PROJECT_ID }})
+          - [Cloud Logging](https://console.cloud.google.com/logs/query?project=${{ env.PROD_PROJECT_ID }})
+          - [Cloud Trace](https://console.cloud.google.com/traces/list?project=${{ env.PROD_PROJECT_ID }})
+          - [Monitoring Dashboard](https://console.cloud.google.com/monitoring?project=${{ env.PROD_PROJECT_ID }})
+
+          ## Post-Deployment Tasks
+
+          - [ ] Monitor error rates for next 24 hours
+          - [ ] Review performance metrics
+          - [ ] Check cost impact
+          - [ ] Update documentation if needed
+          - [ ] Notify stakeholders of deployment
+
+          ---
+          *Deployment completed at $(date -u '+%Y-%m-%d %H:%M:%S UTC')*
+          EOF
+
+  notify-on-success:
+    name: Success Notification
+    needs: [deploy-production, post-deployment-validation]
+    if: success() && vars.SLACK_WEBHOOK_URL != ''
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send success notification
+        uses: slackapi/slack-github-action@v1
+        with:
+          payload: |
+            {
+              "text": "✅ Production Deployment Successful",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*✅ Production Deployment Successful*\n\n*Commit:* `${{ needs.pre-deployment-checks.outputs.commit_sha }}`\n*Deployed by:* @${{ github.actor }}\n*Duration:* ${{ needs.deploy-production.outputs.deployment_time }}s\n*Agent Engine:* `${{ needs.deploy-production.outputs.agent_engine_id }}`"
+                  }
+                },
+                {
+                  "type": "actions",
+                  "elements": [
+                    {
+                      "type": "button",
+                      "text": {
+                        "type": "plain_text",
+                        "text": "View in Console"
+                      },
+                      "url": "https://console.cloud.google.com/vertex-ai/agent-builder/engines?project=${{ env.PROD_PROJECT_ID }}"
+                    },
+                    {
+                      "type": "button",
+                      "text": {
+                        "type": "plain_text",
+                        "text": "View Workflow"
+                      },
+                      "url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                    }
+                  ]
+                }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ vars.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+
+  notify-on-failure:
+    name: Failure Notification
+    needs: [deploy-production, post-deployment-validation]
+    if: failure() && vars.SLACK_WEBHOOK_URL != ''
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send failure notification
+        uses: slackapi/slack-github-action@v1
+        with:
+          payload: |
+            {
+              "text": "❌ Production Deployment Failed",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*❌ Production Deployment Failed*\n\n*Commit:* `${{ needs.pre-deployment-checks.outputs.commit_sha }}`\n*Triggered by:* @${{ github.actor }}\n\n⚠️ *Immediate action required*\nCheck the workflow logs and consider rollback if necessary."
+                  }
+                },
+                {
+                  "type": "actions",
+                  "elements": [
+                    {
+                      "type": "button",
+                      "text": {
+                        "type": "plain_text",
+                        "text": "View Workflow"
+                      },
+                      "url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
+                      "style": "danger"
+                    }
+                  ]
+                }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ vars.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK

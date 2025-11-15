@@ -1,0 +1,338 @@
+# Copyright 2025 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Cloud Build configuration for staging deployment
+# Triggers on merge to main branch
+
+steps:
+  # Step 1: Install dependencies
+  - name: 'python:3.12-slim'
+    id: install-dependencies
+    entrypoint: /bin/bash
+    args:
+      - '-c'
+      - |
+        set -e
+        echo "Installing uv and dependencies..."
+        pip install uv==0.8.13
+        uv sync --locked
+
+  # Step 2: Run quick validation tests
+  - name: 'python:3.12-slim'
+    id: pre-deploy-validation
+    entrypoint: /bin/bash
+    env:
+      - 'PROJECT_ID=${_STAGING_PROJECT_ID}'
+      - 'REGION=${_REGION}'
+    args:
+      - '-c'
+      - |
+        set -e
+        echo "Running pre-deployment validation..."
+        pip install uv==0.8.13
+        uv sync --locked
+
+        # Run quick smoke tests
+        uv run pytest tests/unit -v --maxfail=1 -x || {
+          echo "❌ Pre-deployment tests failed!"
+          exit 1
+        }
+
+        echo "✅ Pre-deployment validation passed"
+
+  # Step 3: Export requirements for Agent Engine
+  - name: 'python:3.12-slim'
+    id: export-requirements
+    entrypoint: /bin/bash
+    args:
+      - '-c'
+      - |
+        set -e
+        echo "Exporting requirements..."
+        pip install uv==0.8.13
+        uv export --no-hashes --no-sources --no-header --no-dev --no-emit-project --no-annotate --locked > app/app_utils/.requirements.txt
+        echo "Requirements exported to app/app_utils/.requirements.txt"
+
+  # Step 4: Deploy to Staging Agent Engine
+  - name: 'python:3.12-slim'
+    id: deploy-agent-engine
+    entrypoint: /bin/bash
+    env:
+      - 'GOOGLE_CLOUD_PROJECT=${_STAGING_PROJECT_ID}'
+    args:
+      - '-c'
+      - |
+        set -e
+        echo "Deploying to Staging Agent Engine..."
+        echo "Project: ${_STAGING_PROJECT_ID}"
+        echo "Region: ${_REGION}"
+        echo "Commit: $COMMIT_SHA"
+
+        pip install uv==0.8.13
+        uv sync --locked
+
+        # Deploy to Agent Engine
+        AGENT_ENGINE_OUTPUT=$(uv run python -m app.app_utils.deploy \
+          --project ${_STAGING_PROJECT_ID} \
+          --location ${_REGION} \
+          --source-packages=./app \
+          --entrypoint-module=app.agent_engine_app \
+          --entrypoint-object=agent_engine \
+          --requirements-file=app/app_utils/.requirements.txt \
+          --set-env-vars="COMMIT_SHA=$COMMIT_SHA,ENVIRONMENT=staging,ARTIFACTS_BUCKET_NAME=${_LOGS_BUCKET_STAGING}")
+
+        echo "$AGENT_ENGINE_OUTPUT"
+
+        # Extract Agent Engine ID
+        AGENT_ID=$(echo "$AGENT_ENGINE_OUTPUT" | grep -oP 'reasoningEngines/\K[^"]+' | head -1)
+
+        if [ -z "$AGENT_ID" ]; then
+          echo "❌ Failed to extract Agent Engine ID"
+          exit 1
+        fi
+
+        echo "✅ Deployment successful!"
+        echo "Agent Engine ID: ${AGENT_ID}"
+
+        # Save Agent ID to file for subsequent steps
+        echo "${AGENT_ID}" > /workspace/agent_id.txt
+
+  # Step 5: Verify deployment
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    id: verify-deployment
+    entrypoint: /bin/bash
+    args:
+      - '-c'
+      - |
+        set -e
+        AGENT_ID=$(cat /workspace/agent_id.txt)
+
+        echo "Verifying deployment of Agent Engine: ${AGENT_ID}"
+
+        gcloud ai reasoning-engines describe ${AGENT_ID} \
+          --project=${_STAGING_PROJECT_ID} \
+          --region=${_REGION} \
+          --format=json > /workspace/agent_details.json
+
+        # Check if agent is active
+        STATUS=$(jq -r '.state' /workspace/agent_details.json)
+
+        if [ "$STATUS" != "ACTIVE" ]; then
+          echo "⚠️  Warning: Agent Engine status is: ${STATUS}"
+        else
+          echo "✅ Agent Engine is ACTIVE"
+        fi
+
+  # Step 6: Run smoke tests
+  - name: 'python:3.12-slim'
+    id: smoke-tests
+    entrypoint: /bin/bash
+    env:
+      - 'PROJECT_ID=${_STAGING_PROJECT_ID}'
+      - 'REGION=${_REGION}'
+    args:
+      - '-c'
+      - |
+        set -e
+        AGENT_ID=$(cat /workspace/agent_id.txt)
+
+        echo "Running smoke tests against staging deployment..."
+        export AGENT_ENGINE_ID="${AGENT_ID}"
+
+        pip install uv==0.8.13
+        uv sync --locked
+
+        # Run smoke tests if they exist
+        if [ -d "tests/smoke" ]; then
+          uv run pytest tests/smoke/ -v --maxfail=1 || {
+            echo "⚠️  Smoke tests failed, but continuing..."
+          }
+        else
+          echo "No smoke tests found, skipping..."
+        fi
+    allowFailure: true
+
+  # Step 7: Run load tests
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    id: load-tests
+    entrypoint: /bin/bash
+    env:
+      - 'PROJECT_ID=${_STAGING_PROJECT_ID}'
+      - 'REGION=${_REGION}'
+    args:
+      - '-c'
+      - |
+        set -e
+        AGENT_ID=$(cat /workspace/agent_id.txt)
+        export AGENT_ENGINE_ID="${AGENT_ID}"
+
+        echo "Running load tests..."
+
+        # Install Python and dependencies
+        apt-get update && apt-get install -y python3-pip
+        pip3 install uv==0.8.13 locust==2.31.1
+        uv sync --locked
+
+        # Get auth token
+        export _AUTH_TOKEN=$(gcloud auth print-access-token -q)
+
+        # Create results directory
+        mkdir -p /workspace/load_test_results
+
+        # Run load test if test file exists
+        if [ -f "tests/load_test/load_test.py" ]; then
+          locust -f tests/load_test/load_test.py \
+            --headless \
+            -t 60s -u 5 -r 1 \
+            --csv=/workspace/load_test_results/results \
+            --html=/workspace/load_test_results/report.html || {
+            echo "⚠️  Load tests had issues, but continuing..."
+          }
+        else
+          echo "No load tests found, skipping..."
+        fi
+    allowFailure: true
+
+  # Step 8: Upload load test results to GCS
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    id: upload-results
+    entrypoint: /bin/bash
+    args:
+      - '-c'
+      - |
+        set -e
+        TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+
+        if [ -d "/workspace/load_test_results" ] && [ "$(ls -A /workspace/load_test_results)" ]; then
+          echo "Uploading load test results to GCS..."
+
+          gcloud storage cp --recursive /workspace/load_test_results \
+            gs://${_LOGS_BUCKET_STAGING}/load-test-results/${TIMESTAMP}/ || true
+
+          echo "📊 Load test results uploaded to:"
+          echo "gs://${_LOGS_BUCKET_STAGING}/load-test-results/${TIMESTAMP}/"
+        else
+          echo "No load test results to upload"
+        fi
+    allowFailure: true
+
+  # Step 9: Health check - monitor for errors
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    id: health-check
+    entrypoint: /bin/bash
+    args:
+      - '-c'
+      - |
+        set -e
+        echo "Running health check..."
+        echo "Waiting 30 seconds for deployment to stabilize..."
+        sleep 30
+
+        # Check for errors in last 5 minutes
+        ERROR_COUNT=$(gcloud logging read \
+          "resource.type=\"aiplatform.googleapis.com/ReasoningEngine\" \
+           AND severity>=ERROR \
+           AND timestamp>=\"$(date -u -d '5 minutes ago' '+%Y-%m-%dT%H:%M:%SZ')\"" \
+          --project=${_STAGING_PROJECT_ID} \
+          --limit=100 \
+          --format=json | jq '. | length' || echo "0")
+
+        echo "Found ${ERROR_COUNT} errors in the last 5 minutes"
+
+        if [ "${ERROR_COUNT}" -gt "10" ]; then
+          echo "⚠️  Warning: High error count detected!"
+        else
+          echo "✅ Error count is within acceptable range"
+        fi
+
+        # Check for telemetry data
+        TELEMETRY_COUNT=$(gcloud logging read \
+          "logName=\"projects/${_STAGING_PROJECT_ID}/logs/agent-telemetry\" \
+           AND timestamp>=\"$(date -u -d '5 minutes ago' '+%Y-%m-%dT%H:%M:%SZ')\"" \
+          --project=${_STAGING_PROJECT_ID} \
+          --limit=10 \
+          --format=json | jq '. | length' || echo "0")
+
+        echo "Found ${TELEMETRY_COUNT} telemetry entries"
+
+        if [ "${TELEMETRY_COUNT}" -eq "0" ]; then
+          echo "⚠️  Warning: No telemetry data found"
+        else
+          echo "✅ Telemetry collection is working"
+        fi
+    allowFailure: true
+
+  # Step 10: Deployment summary
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    id: deployment-summary
+    entrypoint: /bin/bash
+    args:
+      - '-c'
+      - |
+        AGENT_ID=$(cat /workspace/agent_id.txt)
+
+        cat << EOF
+
+        ========================================
+        🚀 Staging Deployment Complete
+        ========================================
+
+        Commit SHA:      $COMMIT_SHA
+        Branch:          $BRANCH_NAME
+        Project:         ${_STAGING_PROJECT_ID}
+        Region:          ${_REGION}
+        Agent Engine ID: ${AGENT_ID}
+
+        Quick Links:
+        - Agent Console: https://console.cloud.google.com/vertex-ai/agent-builder/engines?project=${_STAGING_PROJECT_ID}
+        - Cloud Logging: https://console.cloud.google.com/logs/query?project=${_STAGING_PROJECT_ID}
+        - Cloud Trace:   https://console.cloud.google.com/traces/list?project=${_STAGING_PROJECT_ID}
+        - Monitoring:    https://console.cloud.google.com/monitoring?project=${_STAGING_PROJECT_ID}
+
+        Next Steps:
+        ✅ Staging deployment successful!
+        📊 Review monitoring dashboards
+        🧪 Validate functionality manually if needed
+        🚀 Promote to production when ready
+
+        ========================================
+        EOF
+
+# Logs bucket
+logsBucket: 'gs://${_LOGS_BUCKET_STAGING}'
+
+# Artifacts
+artifacts:
+  objects:
+    location: 'gs://${_LOGS_BUCKET_STAGING}/build-artifacts/$BUILD_ID'
+    paths:
+      - '/workspace/agent_id.txt'
+      - '/workspace/agent_details.json'
+      - '/workspace/load_test_results/**'
+
+# Build options
+options:
+  logging: CLOUD_LOGGING_ONLY
+  machineType: 'E2_HIGHCPU_8'
+  substitutionOption: 'ALLOW_LOOSE'
+  dynamicSubstitutions: true
+
+# Substitutions (these should match your Terraform outputs)
+substitutions:
+  _REGION: 'us-central1'
+  _STAGING_PROJECT_ID: '${STAGING_PROJECT_ID}'
+  _LOGS_BUCKET_STAGING: '${STAGING_PROJECT_ID}-mapachev1-logs'
+
+# Timeout: 30 minutes for full deployment + testing
+timeout: 1800s

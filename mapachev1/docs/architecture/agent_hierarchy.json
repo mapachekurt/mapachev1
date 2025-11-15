@@ -1,0 +1,1130 @@
+{
+  "root": {
+    "name": "RootOrchestrator",
+    "description": "Master orchestrator that routes requests to appropriate divisions based on functional area. Analyzes incoming requests and delegates to the most appropriate division coordinator.",
+    "model": "gemini-2.0-flash-exp",
+    "level": 0,
+    "capabilities": [
+      "routing",
+      "coordination",
+      "request_classification",
+      "load_balancing"
+    ],
+    "sub_agents": [
+      {
+        "id": "ExecutiveStrategyDivision",
+        "name": "Executive & Strategy Division",
+        "description": "Manages executive & strategy division functions",
+        "model": "gemini-2.0-flash-exp",
+        "level": 1,
+        "sub_agents": [
+          {
+            "id": "ExecutiveLeadershipTeam",
+            "name": "Executive Leadership Team",
+            "description": "Executive Leadership Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_001",
+              "agent_002",
+              "agent_003",
+              "agent_004",
+              "agent_005",
+              "agent_006",
+              "agent_007",
+              "agent_008",
+              "agent_009",
+              "agent_010",
+              "agent_011",
+              "agent_012",
+              "agent_014",
+              "agent_015",
+              "agent_026",
+              "agent_027",
+              "agent_028",
+              "agent_029",
+              "agent_032",
+              "agent_033",
+              "agent_045",
+              "agent_046",
+              "agent_047",
+              "agent_048",
+              "agent_049",
+              "agent_065",
+              "agent_066",
+              "agent_067",
+              "agent_068",
+              "agent_069",
+              "agent_070",
+              "agent_099",
+              "agent_105",
+              "agent_106",
+              "agent_107",
+              "agent_108",
+              "agent_109",
+              "agent_119",
+              "agent_120",
+              "agent_129",
+              "agent_131",
+              "agent_145",
+              "agent_146",
+              "agent_147",
+              "agent_148",
+              "agent_149",
+              "agent_190",
+              "agent_202",
+              "agent_203",
+              "agent_204",
+              "agent_234",
+              "agent_238",
+              "agent_240",
+              "agent_243",
+              "agent_244",
+              "agent_245",
+              "agent_246",
+              "agent_276",
+              "agent_278",
+              "agent_284",
+              "agent_285",
+              "agent_286",
+              "agent_342",
+              "agent_343",
+              "agent_344",
+              "agent_382",
+              "agent_383",
+              "agent_384",
+              "agent_426",
+              "agent_482",
+              "agent_483"
+            ]
+          },
+          {
+            "id": "CorporateStrategyTeam",
+            "name": "Corporate Strategy Team",
+            "description": "Corporate Strategy Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_016",
+              "agent_500"
+            ]
+          },
+          {
+            "id": "CommunicationsTeam",
+            "name": "Communications & PR Team",
+            "description": "Communications & PR Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_017",
+              "agent_018",
+              "agent_087"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SecurityLegalDivision",
+        "name": "Security, Legal & Compliance Division",
+        "description": "Manages security, legal & compliance division functions",
+        "model": "gemini-2.0-flash-exp",
+        "level": 1,
+        "sub_agents": [
+          {
+            "id": "LegalTeam",
+            "name": "Legal Team",
+            "description": "Legal Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_013",
+              "agent_241",
+              "agent_242",
+              "agent_247",
+              "agent_248",
+              "agent_249",
+              "agent_250",
+              "agent_251",
+              "agent_252",
+              "agent_254",
+              "agent_255",
+              "agent_269",
+              "agent_270",
+              "agent_271",
+              "agent_272",
+              "agent_274",
+              "agent_275",
+              "agent_277",
+              "agent_279",
+              "agent_280"
+            ]
+          },
+          {
+            "id": "CybersecurityTeam",
+            "name": "Cybersecurity Operations Team",
+            "description": "Cybersecurity Operations Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_143",
+              "agent_381",
+              "agent_385",
+              "agent_386",
+              "agent_391",
+              "agent_392",
+              "agent_394",
+              "agent_395",
+              "agent_396",
+              "agent_397",
+              "agent_398",
+              "agent_399",
+              "agent_400"
+            ]
+          },
+          {
+            "id": "SecurityEngineeringTeam",
+            "name": "Security Engineering Team",
+            "description": "Security Engineering Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_152",
+              "agent_318",
+              "agent_389",
+              "agent_390",
+              "agent_409",
+              "agent_410",
+              "agent_411",
+              "agent_412",
+              "agent_413",
+              "agent_414",
+              "agent_415",
+              "agent_416"
+            ]
+          },
+          {
+            "id": "ComplianceTeam",
+            "name": "Regulatory Compliance Team",
+            "description": "Regulatory Compliance Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_253",
+              "agent_256",
+              "agent_257",
+              "agent_258",
+              "agent_259",
+              "agent_260",
+              "agent_262",
+              "agent_263",
+              "agent_264",
+              "agent_265",
+              "agent_266",
+              "agent_267",
+              "agent_268"
+            ]
+          },
+          {
+            "id": "SecurityComplianceTeam",
+            "name": "Security & Risk Compliance Team",
+            "description": "Security & Risk Compliance Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_388",
+              "agent_401",
+              "agent_402",
+              "agent_403",
+              "agent_404",
+              "agent_405",
+              "agent_406",
+              "agent_407",
+              "agent_408",
+              "agent_417",
+              "agent_418",
+              "agent_419",
+              "agent_420"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "TechnologyInfrastructureDivision",
+        "name": "Technology Infrastructure Division",
+        "description": "Manages technology infrastructure division functions",
+        "model": "gemini-2.0-flash-exp",
+        "level": 1,
+        "sub_agents": [
+          {
+            "id": "ITServiceManagementTeam",
+            "name": "IT Service Management Team",
+            "description": "IT Service Management Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_020",
+              "agent_161",
+              "agent_162",
+              "agent_163",
+              "agent_164",
+              "agent_165",
+              "agent_166",
+              "agent_167",
+              "agent_168",
+              "agent_169",
+              "agent_170",
+              "agent_172",
+              "agent_173",
+              "agent_174",
+              "agent_175",
+              "agent_192",
+              "agent_194",
+              "agent_195"
+            ]
+          },
+          {
+            "id": "CloudInfrastructureTeam",
+            "name": "Cloud & Infrastructure Team",
+            "description": "Cloud & Infrastructure Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_141",
+              "agent_142",
+              "agent_150",
+              "agent_154",
+              "agent_160",
+              "agent_179",
+              "agent_180",
+              "agent_188"
+            ]
+          },
+          {
+            "id": "NetworkSystemsTeam",
+            "name": "Network & Systems Team",
+            "description": "Network & Systems Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_151",
+              "agent_155",
+              "agent_156",
+              "agent_157",
+              "agent_176",
+              "agent_177",
+              "agent_178",
+              "agent_193",
+              "agent_196",
+              "agent_197",
+              "agent_198",
+              "agent_199",
+              "agent_200"
+            ]
+          },
+          {
+            "id": "DevOpsSRETeam",
+            "name": "DevOps & SRE Team",
+            "description": "DevOps & SRE Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_158",
+              "agent_159",
+              "agent_171",
+              "agent_181",
+              "agent_182",
+              "agent_183",
+              "agent_184",
+              "agent_185",
+              "agent_186"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "FinanceAccountingDivision",
+        "name": "Finance & Accounting Division",
+        "description": "Manages finance & accounting division functions",
+        "model": "gemini-2.0-flash-exp",
+        "level": 1,
+        "sub_agents": [
+          {
+            "id": "FinancialPlanningTeam",
+            "name": "Financial Planning & Analysis Team",
+            "description": "Financial Planning & Analysis Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_021",
+              "agent_030",
+              "agent_031"
+            ]
+          },
+          {
+            "id": "TaxTreasuryTeam",
+            "name": "Tax & Treasury Team",
+            "description": "Tax & Treasury Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_023",
+              "agent_024",
+              "agent_034",
+              "agent_035"
+            ]
+          },
+          {
+            "id": "InternalAuditTeam",
+            "name": "Internal Audit Team",
+            "description": "Internal Audit Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_025",
+              "agent_036"
+            ]
+          },
+          {
+            "id": "AccountingOperationsTeam",
+            "name": "Accounting Operations Team",
+            "description": "Accounting Operations Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_022",
+              "agent_037",
+              "agent_038",
+              "agent_039",
+              "agent_040"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "PeopleCultureDivision",
+        "name": "People & Culture Division",
+        "description": "Manages people & culture division functions",
+        "model": "gemini-2.0-flash-exp",
+        "level": 1,
+        "sub_agents": [
+          {
+            "id": "TalentAcquisitionTeam",
+            "name": "Talent Acquisition Team",
+            "description": "Talent Acquisition Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_041",
+              "agent_050"
+            ]
+          },
+          {
+            "id": "CompensationBenefitsTeam",
+            "name": "Compensation & Benefits Team",
+            "description": "Compensation & Benefits Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_042",
+              "agent_051",
+              "agent_052"
+            ]
+          },
+          {
+            "id": "LearningDevelopmentTeam",
+            "name": "Learning & Development Team",
+            "description": "Learning & Development Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_043",
+              "agent_054",
+              "agent_058"
+            ]
+          },
+          {
+            "id": "HROperationsTeam",
+            "name": "HR Operations Team",
+            "description": "HR Operations Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_044",
+              "agent_053",
+              "agent_055",
+              "agent_056",
+              "agent_057",
+              "agent_059",
+              "agent_060",
+              "agent_387",
+              "agent_393",
+              "agent_448"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "RevenueOperationsDivision",
+        "name": "Revenue Operations Division",
+        "description": "Manages revenue operations division functions",
+        "model": "gemini-2.0-flash-exp",
+        "level": 1,
+        "sub_agents": [
+          {
+            "id": "EnterpriseSalesTeam",
+            "name": "Enterprise Sales Team",
+            "description": "Enterprise Sales Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_061",
+              "agent_071",
+              "agent_098"
+            ]
+          },
+          {
+            "id": "GrowthMarketingTeam",
+            "name": "Growth Marketing Team",
+            "description": "Growth Marketing Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_062",
+              "agent_072",
+              "agent_076",
+              "agent_077",
+              "agent_081",
+              "agent_082",
+              "agent_083",
+              "agent_084",
+              "agent_088",
+              "agent_089",
+              "agent_090",
+              "agent_116"
+            ]
+          },
+          {
+            "id": "BrandProductMarketingTeam",
+            "name": "Brand & Product Marketing Team",
+            "description": "Brand & Product Marketing Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_063",
+              "agent_064",
+              "agent_073",
+              "agent_074",
+              "agent_085",
+              "agent_086"
+            ]
+          },
+          {
+            "id": "MarketingOperationsTeam",
+            "name": "Marketing Operations Team",
+            "description": "Marketing Operations Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_075"
+            ]
+          },
+          {
+            "id": "SalesOperationsTeam",
+            "name": "Sales Operations Team",
+            "description": "Sales Operations Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_078",
+              "agent_079",
+              "agent_080",
+              "agent_091",
+              "agent_092",
+              "agent_093",
+              "agent_094",
+              "agent_095",
+              "agent_096"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "EngineeringProductDivision",
+        "name": "Engineering & Product Division",
+        "description": "Manages engineering & product division functions",
+        "model": "gemini-2.0-flash-exp",
+        "level": 1,
+        "sub_agents": [
+          {
+            "id": "EngineeringArchitectureTeam",
+            "name": "Engineering Architecture Team",
+            "description": "Engineering Architecture Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_097",
+              "agent_310",
+              "agent_311",
+              "agent_312"
+            ]
+          },
+          {
+            "id": "ProductManagementTeam",
+            "name": "Product Management Team",
+            "description": "Product Management Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_019",
+              "agent_233",
+              "agent_282",
+              "agent_301",
+              "agent_302",
+              "agent_303",
+              "agent_304"
+            ]
+          },
+          {
+            "id": "SoftwareEngineeringTeam",
+            "name": "Software Engineering Team",
+            "description": "Software Engineering Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_144",
+              "agent_281",
+              "agent_287",
+              "agent_288",
+              "agent_289",
+              "agent_290",
+              "agent_291",
+              "agent_292",
+              "agent_293",
+              "agent_294",
+              "agent_295",
+              "agent_296",
+              "agent_297"
+            ]
+          },
+          {
+            "id": "ProductDesignTeam",
+            "name": "Product Design Team",
+            "description": "Product Design Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_305",
+              "agent_306",
+              "agent_307",
+              "agent_308",
+              "agent_309",
+              "agent_319",
+              "agent_331",
+              "agent_446",
+              "agent_447"
+            ]
+          },
+          {
+            "id": "SpecializedEngineeringTeam",
+            "name": "Specialized Engineering Team",
+            "description": "Specialized Engineering Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_283",
+              "agent_313",
+              "agent_314",
+              "agent_317",
+              "agent_320",
+              "agent_321",
+              "agent_322",
+              "agent_324",
+              "agent_325",
+              "agent_326",
+              "agent_327",
+              "agent_328",
+              "agent_329",
+              "agent_330",
+              "agent_332",
+              "agent_333",
+              "agent_334",
+              "agent_335",
+              "agent_336",
+              "agent_337",
+              "agent_338",
+              "agent_339",
+              "agent_340"
+            ]
+          },
+          {
+            "id": "QualityEngineeringTeam",
+            "name": "Quality Engineering Team",
+            "description": "QA engineers, test automation, and software quality assurance",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_298",
+              "agent_299",
+              "agent_300"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CustomerSuccessDivision",
+        "name": "Customer Success Division",
+        "description": "Manages customer success division functions",
+        "model": "gemini-2.0-flash-exp",
+        "level": 1,
+        "sub_agents": [
+          {
+            "id": "CustomerSuccessTeam",
+            "name": "Customer Success Team",
+            "description": "Customer Success Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_100",
+              "agent_207",
+              "agent_219",
+              "agent_220",
+              "agent_221",
+              "agent_222",
+              "agent_228",
+              "agent_229"
+            ]
+          },
+          {
+            "id": "CustomerSupportTeam",
+            "name": "Customer Support Team",
+            "description": "Customer Support Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_206",
+              "agent_210",
+              "agent_211",
+              "agent_212",
+              "agent_213",
+              "agent_214",
+              "agent_215",
+              "agent_216",
+              "agent_217",
+              "agent_218",
+              "agent_273"
+            ]
+          },
+          {
+            "id": "CustomerOperationsTeam",
+            "name": "Customer Operations Team",
+            "description": "Customer Operations Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_201",
+              "agent_205",
+              "agent_208",
+              "agent_209",
+              "agent_223",
+              "agent_224",
+              "agent_225",
+              "agent_226",
+              "agent_236",
+              "agent_237"
+            ]
+          },
+          {
+            "id": "CustomerEngagementTeam",
+            "name": "Customer Engagement Team",
+            "description": "Customer Engagement Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_227",
+              "agent_230",
+              "agent_231",
+              "agent_232",
+              "agent_235",
+              "agent_239"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "OperationsSupplyChainDivision",
+        "name": "Operations & Supply Chain Division",
+        "description": "Manages operations & supply chain division functions",
+        "model": "gemini-2.0-flash-exp",
+        "level": 1,
+        "sub_agents": [
+          {
+            "id": "SupplyChainTeam",
+            "name": "Supply Chain Management Team",
+            "description": "Supply Chain Management Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_101",
+              "agent_110",
+              "agent_115",
+              "agent_118",
+              "agent_126"
+            ]
+          },
+          {
+            "id": "LogisticsWarehouseTeam",
+            "name": "Logistics & Warehouse Team",
+            "description": "Logistics & Warehouse Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_103",
+              "agent_111",
+              "agent_112",
+              "agent_117",
+              "agent_127",
+              "agent_128",
+              "agent_130",
+              "agent_132",
+              "agent_133",
+              "agent_134",
+              "agent_261"
+            ]
+          },
+          {
+            "id": "ProcessImprovementTeam",
+            "name": "Process Improvement Team",
+            "description": "Process Improvement Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_124",
+              "agent_125",
+              "agent_136",
+              "agent_137",
+              "agent_139",
+              "agent_140",
+              "agent_487"
+            ]
+          },
+          {
+            "id": "ManufacturingQualityTeam",
+            "name": "Manufacturing & Quality Team",
+            "description": "Manufacturing operations, production management, quality control, and maintenance",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_102",
+              "agent_104",
+              "agent_113",
+              "agent_114",
+              "agent_121",
+              "agent_122",
+              "agent_123",
+              "agent_135",
+              "agent_138"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DataAnalyticsDivision",
+        "name": "Data & Analytics Division",
+        "description": "Manages data & analytics division functions",
+        "model": "gemini-2.0-flash-exp",
+        "level": 1,
+        "sub_agents": [
+          {
+            "id": "DataArchitectureTeam",
+            "name": "Data Architecture Team",
+            "description": "Data Architecture Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_153",
+              "agent_368",
+              "agent_369",
+              "agent_370"
+            ]
+          },
+          {
+            "id": "DataEngineeringTeam",
+            "name": "Data Engineering Team",
+            "description": "Data Engineering Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_315",
+              "agent_316",
+              "agent_349",
+              "agent_350",
+              "agent_371",
+              "agent_372",
+              "agent_373",
+              "agent_374"
+            ]
+          },
+          {
+            "id": "DataScienceTeam",
+            "name": "Data Science Team",
+            "description": "Data Science Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_341",
+              "agent_345",
+              "agent_346",
+              "agent_347",
+              "agent_348",
+              "agent_375"
+            ]
+          },
+          {
+            "id": "BusinessIntelligenceTeam",
+            "name": "Business Intelligence Team",
+            "description": "Business Intelligence Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_351",
+              "agent_352",
+              "agent_353",
+              "agent_354",
+              "agent_355",
+              "agent_358",
+              "agent_359",
+              "agent_360"
+            ]
+          },
+          {
+            "id": "DataGovernanceTeam",
+            "name": "Data Governance Team",
+            "description": "Data Governance Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_361",
+              "agent_362",
+              "agent_363",
+              "agent_364",
+              "agent_365",
+              "agent_366",
+              "agent_367"
+            ]
+          },
+          {
+            "id": "AnalyticsSpecialistTeam",
+            "name": "Analytics Specialist Team",
+            "description": "Analytics Specialist Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_356",
+              "agent_357",
+              "agent_376",
+              "agent_377",
+              "agent_378",
+              "agent_379",
+              "agent_380"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "IntegrationInnovationDivision",
+        "name": "Integration & Innovation Division",
+        "description": "Manages integration & innovation division functions",
+        "model": "gemini-2.0-flash-exp",
+        "level": 1,
+        "sub_agents": [
+          {
+            "id": "APIIntegrationTeam",
+            "name": "API & Integration Engineering Team",
+            "description": "API & Integration Engineering Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_187",
+              "agent_189",
+              "agent_191",
+              "agent_323"
+            ]
+          },
+          {
+            "id": "CRMSalesIntegrationTeam",
+            "name": "CRM & Sales Integration Team",
+            "description": "CRM & Sales Integration Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_421",
+              "agent_431",
+              "agent_432"
+            ]
+          },
+          {
+            "id": "EnterpriseIntegrationTeam",
+            "name": "Enterprise Integration Team",
+            "description": "Enterprise Integration Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_422",
+              "agent_423",
+              "agent_424",
+              "agent_425"
+            ]
+          },
+          {
+            "id": "CollaborationIntegrationTeam",
+            "name": "Collaboration Integration Team",
+            "description": "Collaboration Integration Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_427",
+              "agent_428",
+              "agent_429",
+              "agent_430"
+            ]
+          },
+          {
+            "id": "SupportProductivityIntegrationTeam",
+            "name": "Support & Productivity Integration Team",
+            "description": "Support & Productivity Integration Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_433",
+              "agent_434",
+              "agent_435",
+              "agent_455",
+              "agent_456",
+              "agent_457",
+              "agent_458",
+              "agent_459",
+              "agent_460"
+            ]
+          },
+          {
+            "id": "CloudDataIntegrationTeam",
+            "name": "Cloud & Data Integration Team",
+            "description": "Cloud & Data Integration Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_436",
+              "agent_437",
+              "agent_438",
+              "agent_439",
+              "agent_440",
+              "agent_476",
+              "agent_477",
+              "agent_478",
+              "agent_479",
+              "agent_480"
+            ]
+          },
+          {
+            "id": "CommerceMarketingIntegrationTeam",
+            "name": "Commerce & Marketing Integration Team",
+            "description": "Commerce & Marketing Integration Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_441",
+              "agent_442",
+              "agent_443",
+              "agent_444",
+              "agent_445"
+            ]
+          },
+          {
+            "id": "HRDocumentIntegrationTeam",
+            "name": "HR & Document Integration Team",
+            "description": "HR & Document Integration Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_449",
+              "agent_450",
+              "agent_451",
+              "agent_452",
+              "agent_453",
+              "agent_454"
+            ]
+          },
+          {
+            "id": "CommunicationAnalyticsIntegrationTeam",
+            "name": "Communication & Analytics Integration Team",
+            "description": "Communication & Analytics Integration Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_461",
+              "agent_462",
+              "agent_463",
+              "agent_464",
+              "agent_465",
+              "agent_466",
+              "agent_467",
+              "agent_468",
+              "agent_469",
+              "agent_470"
+            ]
+          },
+          {
+            "id": "MonitoringOpsIntegrationTeam",
+            "name": "Monitoring & Ops Integration Team",
+            "description": "Monitoring & Ops Integration Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_471",
+              "agent_472",
+              "agent_473",
+              "agent_474",
+              "agent_475"
+            ]
+          },
+          {
+            "id": "InnovationResearchTeam",
+            "name": "Innovation & Research Team",
+            "description": "Innovation & Research Team",
+            "model": "gemini-flash",
+            "level": 2,
+            "specialists": [
+              "agent_481",
+              "agent_484",
+              "agent_485",
+              "agent_486",
+              "agent_488",
+              "agent_489",
+              "agent_490",
+              "agent_491",
+              "agent_492",
+              "agent_493",
+              "agent_494",
+              "agent_495",
+              "agent_496",
+              "agent_497",
+              "agent_498",
+              "agent_499",
+              "agent_501",
+              "agent_502",
+              "agent_503",
+              "agent_504",
+              "agent_505",
+              "agent_506",
+              "agent_507",
+              "agent_508",
+              "agent_509",
+              "agent_510",
+              "agent_511"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
