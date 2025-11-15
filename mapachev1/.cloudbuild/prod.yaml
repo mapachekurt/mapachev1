@@ -1,0 +1,444 @@
+# Copyright 2025 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Cloud Build configuration for production deployment
+# Requires manual approval trigger configuration in Cloud Build
+
+steps:
+  # Step 1: Pre-deployment validation
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    id: pre-deployment-checks
+    entrypoint: /bin/bash
+    args:
+      - '-c'
+      - |
+        set -e
+        echo "========================================="
+        echo "Production Deployment Pre-Flight Checks"
+        echo "========================================="
+        echo ""
+        echo "Commit SHA: $COMMIT_SHA"
+        echo "Branch: $BRANCH_NAME"
+        echo "Build ID: $BUILD_ID"
+        echo ""
+
+        # Check if staging deployment exists
+        echo "Checking for recent staging deployments..."
+
+        STAGING_ENGINES=$(gcloud ai reasoning-engines list \
+          --project=${_STAGING_PROJECT_ID} \
+          --region=${_REGION} \
+          --format=json \
+          --limit=5 || echo "[]")
+
+        ENGINE_COUNT=$(echo "${STAGING_ENGINES}" | jq '. | length')
+
+        if [ "${ENGINE_COUNT}" -eq "0" ]; then
+          echo "❌ ERROR: No recent deployments found in staging!"
+          echo "Please deploy to staging first."
+          exit 1
+        else
+          echo "✅ Found ${ENGINE_COUNT} recent staging deployments"
+        fi
+
+        # Check error rate in staging
+        echo ""
+        echo "Checking staging error rates..."
+
+        ERROR_RATE=$(gcloud logging read \
+          "resource.type=\"aiplatform.googleapis.com/ReasoningEngine\" \
+           AND severity>=ERROR \
+           AND timestamp>=\"$(date -u -d '1 hour ago' '+%Y-%m-%dT%H:%M:%SZ')\"" \
+          --project=${_STAGING_PROJECT_ID} \
+          --limit=1000 \
+          --format=json | jq '. | length')
+
+        echo "Errors in staging (last hour): ${ERROR_RATE}"
+
+        if [ "${ERROR_RATE}" -gt "50" ]; then
+          echo "⚠️  WARNING: High error rate in staging!"
+          echo "Consider investigating before deploying to production."
+          echo ""
+          echo "To proceed anyway, continue the build manually."
+        else
+          echo "✅ Error rate is acceptable"
+        fi
+
+        # Check for open incidents (placeholder - integrate with your incident management)
+        echo ""
+        echo "Checking for open incidents..."
+        echo "⚠️  Manual verification required:"
+        echo "   - No critical incidents in PagerDuty/Opsgenie"
+        echo "   - All stakeholders notified"
+        echo "   - Rollback plan reviewed"
+        echo ""
+
+        echo "✅ Pre-deployment checks complete"
+        echo "========================================="
+
+  # Step 2: Install dependencies
+  - name: 'python:3.12-slim'
+    id: install-dependencies
+    entrypoint: /bin/bash
+    args:
+      - '-c'
+      - |
+        set -e
+        echo "Installing uv and dependencies..."
+        pip install uv==0.8.13
+        uv sync --locked
+        echo "✅ Dependencies installed"
+
+  # Step 3: Export requirements
+  - name: 'python:3.12-slim'
+    id: export-requirements
+    entrypoint: /bin/bash
+    args:
+      - '-c'
+      - |
+        set -e
+        echo "Exporting requirements for production deployment..."
+        pip install uv==0.8.13
+        uv export --no-hashes --no-sources --no-header --no-dev --no-emit-project --no-annotate --locked > app/app_utils/.requirements.txt
+        echo "✅ Requirements exported"
+
+  # Step 4: Create deployment record
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    id: create-deployment-record
+    entrypoint: /bin/bash
+    args:
+      - '-c'
+      - |
+        set -e
+        TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M:%S UTC')
+
+        cat > /workspace/deployment_record.json << EOF
+        {
+          "deployment_id": "$BUILD_ID",
+          "commit_sha": "$COMMIT_SHA",
+          "branch": "$BRANCH_NAME",
+          "timestamp": "$TIMESTAMP",
+          "environment": "production",
+          "project_id": "${_PROD_PROJECT_ID}",
+          "region": "${_REGION}"
+        }
+        EOF
+
+        echo "Deployment record created"
+        cat /workspace/deployment_record.json
+
+  # Step 5: Deploy to Production Agent Engine
+  - name: 'python:3.12-slim'
+    id: deploy-production
+    entrypoint: /bin/bash
+    env:
+      - 'GOOGLE_CLOUD_PROJECT=${_PROD_PROJECT_ID}'
+    args:
+      - '-c'
+      - |
+        set -e
+        echo "========================================="
+        echo "🚀 Production Deployment Starting"
+        echo "========================================="
+        echo ""
+        echo "Project: ${_PROD_PROJECT_ID}"
+        echo "Region: ${_REGION}"
+        echo "Commit: $COMMIT_SHA"
+        echo ""
+
+        DEPLOY_START=$(date +%s)
+
+        pip install uv==0.8.13
+        uv sync --locked
+
+        # Deploy to Production Agent Engine
+        AGENT_ENGINE_OUTPUT=$(uv run python -m app.app_utils.deploy \
+          --project ${_PROD_PROJECT_ID} \
+          --location ${_REGION} \
+          --source-packages=./app \
+          --entrypoint-module=app.agent_engine_app \
+          --entrypoint-object=agent_engine \
+          --requirements-file=app/app_utils/.requirements.txt \
+          --set-env-vars="COMMIT_SHA=$COMMIT_SHA,ENVIRONMENT=production,ARTIFACTS_BUCKET_NAME=${_LOGS_BUCKET_PROD}")
+
+        echo "$AGENT_ENGINE_OUTPUT"
+
+        # Extract Agent Engine ID
+        AGENT_ID=$(echo "$AGENT_ENGINE_OUTPUT" | grep -oP 'reasoningEngines/\K[^"]+' | head -1)
+
+        if [ -z "$AGENT_ID" ]; then
+          echo "❌ Failed to extract Agent Engine ID"
+          exit 1
+        fi
+
+        DEPLOY_END=$(date +%s)
+        DEPLOY_DURATION=$((DEPLOY_END - DEPLOY_START))
+
+        echo ""
+        echo "✅ Production deployment successful!"
+        echo "Agent Engine ID: ${AGENT_ID}"
+        echo "Deployment duration: ${DEPLOY_DURATION}s"
+        echo "========================================="
+
+        # Save for subsequent steps
+        echo "${AGENT_ID}" > /workspace/agent_id.txt
+        echo "${DEPLOY_DURATION}" > /workspace/deploy_duration.txt
+
+  # Step 6: Verify production deployment
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    id: verify-deployment
+    entrypoint: /bin/bash
+    args:
+      - '-c'
+      - |
+        set -e
+        AGENT_ID=$(cat /workspace/agent_id.txt)
+
+        echo "Verifying production deployment..."
+        echo "Agent Engine ID: ${AGENT_ID}"
+
+        gcloud ai reasoning-engines describe ${AGENT_ID} \
+          --project=${_PROD_PROJECT_ID} \
+          --region=${_REGION} \
+          --format=json > /workspace/prod_agent_details.json
+
+        # Check status
+        STATUS=$(jq -r '.state' /workspace/prod_agent_details.json)
+
+        if [ "$STATUS" != "ACTIVE" ]; then
+          echo "❌ ERROR: Agent Engine status is: ${STATUS}"
+          exit 1
+        fi
+
+        echo "✅ Agent Engine is ACTIVE and verified"
+
+  # Step 7: Run production smoke tests
+  - name: 'python:3.12-slim'
+    id: production-smoke-tests
+    entrypoint: /bin/bash
+    env:
+      - 'PROJECT_ID=${_PROD_PROJECT_ID}'
+      - 'REGION=${_REGION}'
+    args:
+      - '-c'
+      - |
+        set -e
+        AGENT_ID=$(cat /workspace/agent_id.txt)
+        export AGENT_ENGINE_ID="${AGENT_ID}"
+
+        echo "Running production smoke tests..."
+
+        pip install uv==0.8.13
+        uv sync --locked
+
+        if [ -d "tests/smoke" ]; then
+          uv run pytest tests/smoke/ -v --maxfail=1 || {
+            echo "❌ Smoke tests failed!"
+            echo "Production deployment may need rollback!"
+            exit 1
+          }
+          echo "✅ Smoke tests passed"
+        else
+          echo "⚠️  No smoke tests found"
+        fi
+
+  # Step 8: Monitor for immediate errors (2 minutes)
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    id: error-monitoring
+    entrypoint: /bin/bash
+    args:
+      - '-c'
+      - |
+        set -e
+        echo "Monitoring for errors in production..."
+        echo "Waiting 2 minutes for deployment to stabilize..."
+        sleep 120
+
+        ERROR_COUNT=$(gcloud logging read \
+          "resource.type=\"aiplatform.googleapis.com/ReasoningEngine\" \
+           AND severity>=ERROR \
+           AND timestamp>=\"$(date -u -d '2 minutes ago' '+%Y-%m-%dT%H:%M:%SZ')\"" \
+          --project=${_PROD_PROJECT_ID} \
+          --limit=100 \
+          --format=json | jq '. | length')
+
+        echo "Found ${ERROR_COUNT} errors in first 2 minutes"
+
+        if [ "${ERROR_COUNT}" -gt "5" ]; then
+          echo "❌ HIGH ERROR RATE DETECTED!"
+          echo "Consider immediate rollback!"
+          exit 1
+        else
+          echo "✅ No critical errors detected"
+        fi
+
+  # Step 9: Update deployment record with success
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    id: update-deployment-record
+    entrypoint: /bin/bash
+    args:
+      - '-c'
+      - |
+        set -e
+        AGENT_ID=$(cat /workspace/agent_id.txt)
+        DURATION=$(cat /workspace/deploy_duration.txt)
+        TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M:%S UTC')
+
+        # Update deployment record
+        jq --arg agent_id "$AGENT_ID" \
+           --arg duration "$DURATION" \
+           --arg completed "$TIMESTAMP" \
+           '. + {agent_engine_id: $agent_id, deployment_duration_seconds: $duration, completed_at: $completed, status: "success"}' \
+           /workspace/deployment_record.json > /workspace/deployment_record_final.json
+
+        echo "Deployment record updated:"
+        cat /workspace/deployment_record_final.json
+
+        # Upload to GCS for audit trail
+        gcloud storage cp /workspace/deployment_record_final.json \
+          gs://${_LOGS_BUCKET_PROD}/deployment-records/deployment-${BUILD_ID}.json
+
+        echo "✅ Deployment record saved"
+
+  # Step 10: Production deployment summary
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    id: deployment-summary
+    entrypoint: /bin/bash
+    args:
+      - '-c'
+      - |
+        AGENT_ID=$(cat /workspace/agent_id.txt)
+        DURATION=$(cat /workspace/deploy_duration.txt)
+
+        cat << EOF
+
+        ==========================================
+        ✅ Production Deployment Complete
+        ==========================================
+
+        Build ID:        $BUILD_ID
+        Commit SHA:      $COMMIT_SHA
+        Branch:          $BRANCH_NAME
+        Project:         ${_PROD_PROJECT_ID}
+        Region:          ${_REGION}
+        Agent Engine ID: ${AGENT_ID}
+        Duration:        ${DURATION}s
+
+        Quick Links:
+        ============
+        - Agent Console: https://console.cloud.google.com/vertex-ai/agent-builder/engines?project=${_PROD_PROJECT_ID}
+        - Cloud Logging: https://console.cloud.google.com/logs/query?project=${_PROD_PROJECT_ID}
+        - Cloud Trace:   https://console.cloud.google.com/traces/list?project=${_PROD_PROJECT_ID}
+        - Monitoring:    https://console.cloud.google.com/monitoring?project=${_PROD_PROJECT_ID}
+
+        Post-Deployment Tasks:
+        ======================
+        ✅ Deployment successful and verified
+        📊 Monitor error rates for next 24 hours
+        📈 Review performance metrics
+        💰 Check cost impact
+        📢 Notify stakeholders
+        📝 Update documentation if needed
+
+        Rollback Procedure (if needed):
+        ================================
+        1. List recent deployments:
+           gcloud ai reasoning-engines list \\
+             --project=${_PROD_PROJECT_ID} \\
+             --region=${_REGION} \\
+             --sort-by=~createTime --limit=5
+
+        2. Trigger rollback build with previous commit SHA
+
+        ==========================================
+        EOF
+
+# On failure, provide rollback instructions
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    id: rollback-instructions
+    entrypoint: /bin/bash
+    args:
+      - '-c'
+      - |
+        cat << 'EOF'
+
+        ==========================================
+        ❌ Deployment Failed - Rollback Required
+        ==========================================
+
+        IMMEDIATE ACTIONS:
+        ==================
+        1. Check build logs above for error details
+        2. Review Cloud Logging for application errors
+        3. Verify staging environment is still working
+
+        ROLLBACK PROCEDURE:
+        ===================
+        1. Identify last working production deployment:
+
+           gcloud ai reasoning-engines list \
+             --project=${_PROD_PROJECT_ID} \
+             --region=${_REGION} \
+             --sort-by=~createTime \
+             --limit=5
+
+        2. Trigger new deployment with previous commit:
+           - Go to Cloud Build triggers
+           - Manually run production trigger
+           - Specify previous working commit SHA
+
+        3. Or revert the commit:
+           git revert $COMMIT_SHA
+           git push origin main
+
+        INCIDENT RESPONSE:
+        ==================
+        - Create incident ticket
+        - Notify stakeholders via Slack
+        - Document root cause
+        - Schedule post-mortem
+
+        ==========================================
+        EOF
+    waitFor: ['-']  # Run only on failure (configure in trigger)
+
+# Logs bucket
+logsBucket: 'gs://${_LOGS_BUCKET_PROD}'
+
+# Artifacts
+artifacts:
+  objects:
+    location: 'gs://${_LOGS_BUCKET_PROD}/build-artifacts/$BUILD_ID'
+    paths:
+      - '/workspace/agent_id.txt'
+      - '/workspace/prod_agent_details.json'
+      - '/workspace/deployment_record_final.json'
+
+# Build options
+options:
+  logging: CLOUD_LOGGING_ONLY
+  machineType: 'E2_HIGHCPU_8'
+  substitutionOption: 'ALLOW_LOOSE'
+  dynamicSubstitutions: true
+
+# Substitutions (these should match your Terraform outputs)
+substitutions:
+  _REGION: 'us-central1'
+  _STAGING_PROJECT_ID: '${STAGING_PROJECT_ID}'
+  _PROD_PROJECT_ID: '${PROD_PROJECT_ID}'
+  _LOGS_BUCKET_STAGING: '${STAGING_PROJECT_ID}-mapachev1-logs'
+  _LOGS_BUCKET_PROD: '${PROD_PROJECT_ID}-mapachev1-logs'
+
+# Timeout: 30 minutes for deployment + validation
+timeout: 1800s

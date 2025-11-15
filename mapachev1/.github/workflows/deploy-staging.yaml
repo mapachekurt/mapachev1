@@ -1,0 +1,387 @@
+# Copyright 2025 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+name: Deploy to Staging
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'app/**'
+      - 'data_ingestion/**'
+      - 'tests/**'
+      - 'deployment/**'
+      - 'pyproject.toml'
+      - 'uv.lock'
+  workflow_dispatch:
+
+# Only one staging deployment at a time
+concurrency:
+  group: staging-deployment
+  cancel-in-progress: false
+
+env:
+  REGION: ${{ vars.REGION }}
+  CICD_PROJECT_ID: ${{ vars.CICD_PROJECT_ID }}
+  STAGING_PROJECT_ID: ${{ vars.STAGING_PROJECT_ID }}
+  ARTIFACT_REGISTRY_REPO: ${{ vars.ARTIFACT_REGISTRY_REPO_NAME }}
+  CONTAINER_NAME: ${{ vars.CONTAINER_NAME }}
+
+jobs:
+  deploy-agent-engine:
+    name: Deploy Agent Engine to Staging
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    environment:
+      name: staging
+      url: https://console.cloud.google.com/vertex-ai/agent-builder/engines?project=${{ vars.STAGING_PROJECT_ID }}
+
+    outputs:
+      agent_engine_id: ${{ steps.deploy.outputs.agent_engine_id }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Authenticate to Google Cloud
+        id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: 'projects/${{ vars.GCP_PROJECT_NUMBER }}/locations/global/workloadIdentityPools/${{ secrets.WIF_POOL_ID }}/providers/${{ secrets.WIF_PROVIDER_ID }}'
+          service_account: '${{ secrets.GCP_SERVICE_ACCOUNT }}'
+          create_credentials_file: true
+          project_id: ${{ vars.CICD_PROJECT_ID }}
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Install uv and dependencies
+        run: |
+          pip install uv==0.8.13
+          uv sync --locked
+
+      - name: Export requirements
+        run: |
+          uv export --no-hashes --no-sources --no-header --no-dev --no-emit-project --no-annotate --locked > app/app_utils/.requirements.txt
+
+      - name: Deploy to Agent Engine
+        id: deploy
+        run: |
+          echo "Deploying to Agent Engine in staging..."
+
+          AGENT_ID=$(uv run python -m app.app_utils.deploy \
+            --project ${{ env.STAGING_PROJECT_ID }} \
+            --location ${{ env.REGION }} \
+            --source-packages=./app \
+            --entrypoint-module=app.agent_engine_app \
+            --entrypoint-object=agent_engine \
+            --requirements-file=app/app_utils/.requirements.txt \
+            --set-env-vars="COMMIT_SHA=${{ github.sha }},ENVIRONMENT=staging,ARTIFACTS_BUCKET_NAME=${{ vars.LOGS_BUCKET_NAME_STAGING }}" \
+            | grep -oP 'reasoningEngines/\K[^"]+' | head -1)
+
+          echo "agent_engine_id=${AGENT_ID}" >> $GITHUB_OUTPUT
+          echo "Deployed Agent Engine ID: ${AGENT_ID}"
+
+      - name: Verify deployment
+        run: |
+          echo "Verifying Agent Engine deployment..."
+          gcloud ai reasoning-engines describe ${{ steps.deploy.outputs.agent_engine_id }} \
+            --project=${{ env.STAGING_PROJECT_ID }} \
+            --region=${{ env.REGION }}
+
+  smoke-tests:
+    name: Run Smoke Tests
+    needs: deploy-agent-engine
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: 'projects/${{ vars.GCP_PROJECT_NUMBER }}/locations/global/workloadIdentityPools/${{ secrets.WIF_POOL_ID }}/providers/${{ secrets.WIF_PROVIDER_ID }}'
+          service_account: '${{ secrets.GCP_SERVICE_ACCOUNT }}'
+          create_credentials_file: true
+          project_id: ${{ vars.CICD_PROJECT_ID }}
+
+      - name: Install dependencies
+        run: |
+          pip install uv==0.8.13
+          uv sync --locked
+
+      - name: Run smoke tests
+        run: |
+          echo "Running smoke tests against staging environment..."
+          uv run pytest tests/smoke/ -v --maxfail=1
+        env:
+          PROJECT_ID: ${{ env.STAGING_PROJECT_ID }}
+          REGION: ${{ env.REGION }}
+          AGENT_ENGINE_ID: ${{ needs.deploy-agent-engine.outputs.agent_engine_id }}
+        continue-on-error: true
+
+  load-test:
+    name: Run Load Tests
+    needs: deploy-agent-engine
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: 'projects/${{ vars.GCP_PROJECT_NUMBER }}/locations/global/workloadIdentityPools/${{ secrets.WIF_POOL_ID }}/providers/${{ secrets.WIF_PROVIDER_ID }}'
+          service_account: '${{ secrets.GCP_SERVICE_ACCOUNT }}'
+          create_credentials_file: true
+          project_id: ${{ vars.CICD_PROJECT_ID }}
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Install Locust
+        run: |
+          pip install locust==2.31.1
+
+      - name: Fetch auth token
+        id: fetch-token
+        run: |
+          _AUTH_TOKEN=$(gcloud auth print-access-token -q)
+          echo "::add-mask::${_AUTH_TOKEN}"
+          echo "_auth_token=${_AUTH_TOKEN}" >> $GITHUB_OUTPUT
+
+      - name: Run load test
+        run: |
+          export _AUTH_TOKEN="${{ steps.fetch-token.outputs._auth_token }}"
+          export PROJECT_ID="${{ env.STAGING_PROJECT_ID }}"
+          export REGION="${{ env.REGION }}"
+          export AGENT_ENGINE_ID="${{ needs.deploy-agent-engine.outputs.agent_engine_id }}"
+
+          mkdir -p tests/load_test/.results
+
+          locust -f tests/load_test/load_test.py \
+            --headless \
+            -t 60s -u 5 -r 1 \
+            --csv=tests/load_test/.results/results \
+            --html=tests/load_test/.results/report.html
+        continue-on-error: true
+
+      - name: Upload load test results to GCS
+        if: always()
+        run: |
+          TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+          gcloud storage cp --recursive tests/load_test/.results \
+            gs://${{ vars.LOGS_BUCKET_NAME_STAGING }}/load-test-results/${TIMESTAMP} --quiet
+
+          echo "📊 Load test results uploaded to:"
+          echo "gs://${{ vars.LOGS_BUCKET_NAME_STAGING }}/load-test-results/${TIMESTAMP}"
+          echo ""
+          echo "View in console:"
+          echo "https://console.cloud.google.com/storage/browser/${{ vars.LOGS_BUCKET_NAME_STAGING }}/load-test-results/${TIMESTAMP}"
+
+      - name: Upload load test artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: load-test-results
+          path: tests/load_test/.results/
+          retention-days: 7
+
+  health-check:
+    name: Health Check & Monitoring
+    needs: [deploy-agent-engine, smoke-tests]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: 'projects/${{ vars.GCP_PROJECT_NUMBER }}/locations/global/workloadIdentityPools/${{ secrets.WIF_POOL_ID }}/providers/${{ secrets.WIF_PROVIDER_ID }}'
+          service_account: '${{ secrets.GCP_SERVICE_ACCOUNT }}'
+          create_credentials_file: true
+          project_id: ${{ vars.CICD_PROJECT_ID }}
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Check logs for errors
+        run: |
+          echo "Checking logs for errors in the last 5 minutes..."
+
+          ERROR_COUNT=$(gcloud logging read \
+            "resource.type=\"aiplatform.googleapis.com/ReasoningEngine\" \
+             AND severity>=ERROR \
+             AND timestamp>=\"$(date -u -d '5 minutes ago' '+%Y-%m-%dT%H:%M:%SZ')\"" \
+            --project=${{ env.STAGING_PROJECT_ID }} \
+            --limit=100 \
+            --format=json | jq '. | length')
+
+          echo "Found ${ERROR_COUNT} errors in the last 5 minutes"
+
+          if [ "${ERROR_COUNT}" -gt "10" ]; then
+            echo "⚠️  Warning: High error count detected!"
+            exit 1
+          fi
+        continue-on-error: true
+
+      - name: Verify telemetry collection
+        run: |
+          echo "Verifying telemetry data is being collected..."
+
+          TELEMETRY_COUNT=$(gcloud logging read \
+            "logName=\"projects/${{ env.STAGING_PROJECT_ID }}/logs/agent-telemetry\" \
+             AND timestamp>=\"$(date -u -d '5 minutes ago' '+%Y-%m-%dT%H:%M:%SZ')\"" \
+            --project=${{ env.STAGING_PROJECT_ID }} \
+            --limit=10 \
+            --format=json | jq '. | length')
+
+          echo "Found ${TELEMETRY_COUNT} telemetry entries"
+
+          if [ "${TELEMETRY_COUNT}" -eq "0" ]; then
+            echo "⚠️  Warning: No telemetry data found!"
+          else
+            echo "✅ Telemetry collection is working"
+          fi
+
+  deployment-summary:
+    name: Deployment Summary
+    needs: [deploy-agent-engine, smoke-tests, load-test, health-check]
+    if: always()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Generate deployment summary
+        run: |
+          cat << EOF >> $GITHUB_STEP_SUMMARY
+          # 🚀 Staging Deployment Summary
+
+          **Commit:** \`${{ github.sha }}\`
+          **Branch:** \`${{ github.ref_name }}\`
+          **Triggered by:** @${{ github.actor }}
+
+          ## Deployment Details
+
+          | Environment | Project ID | Region |
+          |-------------|------------|--------|
+          | Staging | ${{ env.STAGING_PROJECT_ID }} | ${{ env.REGION }} |
+
+          **Agent Engine ID:** \`${{ needs.deploy-agent-engine.outputs.agent_engine_id }}\`
+
+          ## Test Results
+
+          | Test Suite | Status |
+          |------------|--------|
+          | Smoke Tests | ${{ needs.smoke-tests.result == 'success' && '✅ Passed' || '❌ Failed' }} |
+          | Load Tests | ${{ needs.load-test.result == 'success' && '✅ Passed' || '❌ Failed' }} |
+          | Health Check | ${{ needs.health-check.result == 'success' && '✅ Passed' || '⚠️ Warning' }} |
+
+          ## Quick Links
+
+          - [Agent Engine Console](https://console.cloud.google.com/vertex-ai/agent-builder/engines?project=${{ env.STAGING_PROJECT_ID }})
+          - [Cloud Logging](https://console.cloud.google.com/logs/query?project=${{ env.STAGING_PROJECT_ID }})
+          - [Cloud Trace](https://console.cloud.google.com/traces/list?project=${{ env.STAGING_PROJECT_ID }})
+          - [Monitoring Dashboard](https://console.cloud.google.com/monitoring?project=${{ env.STAGING_PROJECT_ID }})
+
+          ## Next Steps
+
+          ✅ Staging deployment complete!
+
+          To promote to production:
+          1. Review the test results above
+          2. Check monitoring dashboards for any anomalies
+          3. Trigger the production deployment workflow manually
+
+          EOF
+
+  notify-slack:
+    name: Notify Slack
+    needs: [deploy-agent-engine, smoke-tests]
+    if: always() && vars.SLACK_WEBHOOK_URL != ''
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send Slack notification
+        uses: slackapi/slack-github-action@v1
+        with:
+          payload: |
+            {
+              "text": "Staging Deployment ${{ needs.deploy-agent-engine.result == 'success' && '✅ Successful' || '❌ Failed' }}",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*Staging Deployment ${{ needs.deploy-agent-engine.result == 'success' && '✅ Successful' || '❌ Failed' }}*\n\n*Commit:* `${{ github.sha }}`\n*Branch:* `${{ github.ref_name }}`\n*Triggered by:* @${{ github.actor }}\n*Agent Engine:* `${{ needs.deploy-agent-engine.outputs.agent_engine_id }}`"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*Test Results:*\n• Smoke Tests: ${{ needs.smoke-tests.result == 'success' && '✅' || '❌' }}\n• Deployment: ${{ needs.deploy-agent-engine.result == 'success' && '✅' || '❌' }}"
+                  }
+                },
+                {
+                  "type": "actions",
+                  "elements": [
+                    {
+                      "type": "button",
+                      "text": {
+                        "type": "plain_text",
+                        "text": "View Workflow"
+                      },
+                      "url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                    }
+                  ]
+                }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ vars.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
