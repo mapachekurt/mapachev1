@@ -1,0 +1,1142 @@
+# SaaS Agent Army - 1000 Tools Manifest
+# Starting from agent_512 (agents 421-511 already exist)
+
+project: saas_agent_army
+total_agents: 1000
+starting_id: 512
+
+tiers:
+  tier_1:
+    name: "Enterprise Essentials"
+    count: 20
+    priority: "immediate"
+    agents:
+      - {id: 512, name: "microsoft_teams", display: "Microsoft Teams", category: "communication"}
+      - {id: 513, name: "discord", display: "Discord", category: "communication"}
+      - {id: 514, name: "webex", display: "Cisco WebEx", category: "communication"}
+      - {id: 515, name: "google_meet", display: "Google Meet", category: "communication"}
+      - {id: 516, name: "gmail", display: "Gmail", category: "email"}
+      - {id: 517, name: "google_calendar", display: "Google Calendar", category: "calendar"}
+      - {id: 518, name: "google_drive", display: "Google Drive", category: "storage"}
+      - {id: 519, name: "google_sheets", display: "Google Sheets", category: "spreadsheet"}
+      - {id: 520, name: "google_docs", display: "Google Docs", category: "documents"}
+      - {id: 521, name: "outlook", display: "Microsoft Outlook", category: "email"}
+      - {id: 522, name: "onedrive", display: "Microsoft OneDrive", category: "storage"}
+      - {id: 523, name: "sharepoint", display: "Microsoft SharePoint", category: "collaboration"}
+      - {id: 524, name: "zoho_crm", display: "Zoho CRM", category: "crm"}
+      - {id: 525, name: "linear", display: "Linear", category: "project_management"}
+      - {id: 526, name: "github", display: "GitHub", category: "development"}
+      - {id: 527, name: "gitlab", display: "GitLab", category: "development"}
+      - {id: 528, name: "bitbucket", display: "Bitbucket", category: "development"}
+      - {id: 529, name: "microsoft_teams_admin", display: "Microsoft Teams Admin", category: "administration"}
+      - {id: 530, name: "google_admin", display: "Google Workspace Admin", category: "administration"}
+      - {id: 531, name: "azure_ad", display: "Azure Active Directory", category: "identity"}
+
+  tier_2:
+    name: "Marketing & Sales"
+    count: 100
+    priority: "high"
+    categories:
+      email_marketing:
+        agents:
+          - {id: 532, name: "sendgrid_advanced", display: "SendGrid Advanced", category: "email_marketing"}
+          - {id: 533, name: "constant_contact", display: "Constant Contact", category: "email_marketing"}
+          - {id: 534, name: "campaign_monitor", display: "Campaign Monitor", category: "email_marketing"}
+          - {id: 535, name: "activecampaign", display: "ActiveCampaign", category: "email_marketing"}
+          - {id: 536, name: "klaviyo", display: "Klaviyo", category: "email_marketing"}
+          - {id: 537, name: "omnisend", display: "Omnisend", category: "email_marketing"}
+          - {id: 538, name: "sendinblue", display: "Sendinblue (Brevo)", category: "email_marketing"}
+          - {id: 539, name: "getresponse", display: "GetResponse", category: "email_marketing"}
+          - {id: 540, name: "aweber", display: "AWeber", category: "email_marketing"}
+          - {id: 541, name: "convertkit", display: "ConvertKit", category: "email_marketing"}
+
+      social_media:
+        agents:
+          - {id: 542, name: "hootsuite", display: "Hootsuite", category: "social_media"}
+          - {id: 543, name: "buffer", display: "Buffer", category: "social_media"}
+          - {id: 544, name: "sprout_social", display: "Sprout Social", category: "social_media"}
+          - {id: 545, name: "later", display: "Later", category: "social_media"}
+          - {id: 546, name: "agorapulse", display: "Agorapulse", category: "social_media"}
+          - {id: 547, name: "socialbee", display: "SocialBee", category: "social_media"}
+          - {id: 548, name: "meetedgar", display: "MeetEdgar", category: "social_media"}
+          - {id: 549, name: "loomly", display: "Loomly", category: "social_media"}
+          - {id: 550, name: "sendible", display: "Sendible", category: "social_media"}
+          - {id: 551, name: "planoly", display: "Planoly", category: "social_media"}
+
+      seo_sem:
+        agents:
+          - {id: 552, name: "semrush", display: "SEMrush", category: "seo"}
+          - {id: 553, name: "ahrefs", display: "Ahrefs", category: "seo"}
+          - {id: 554, name: "moz", display: "Moz", category: "seo"}
+          - {id: 555, name: "screaming_frog", display: "Screaming Frog", category: "seo"}
+          - {id: 556, name: "majestic", display: "Majestic SEO", category: "seo"}
+          - {id: 557, name: "serpstat", display: "Serpstat", category: "seo"}
+          - {id: 558, name: "spyfu", display: "SpyFu", category: "seo"}
+          - {id: 559, name: "brightlocal", display: "BrightLocal", category: "seo"}
+          - {id: 560, name: "ranktracker", display: "Rank Tracker", category: "seo"}
+          - {id: 561, name: "ubersuggest", display: "Ubersuggest", category: "seo"}
+
+      analytics:
+        agents:
+          - {id: 562, name: "google_analytics", display: "Google Analytics", category: "analytics"}
+          - {id: 563, name: "google_analytics_4", display: "Google Analytics 4", category: "analytics"}
+          - {id: 564, name: "adobe_analytics", display: "Adobe Analytics", category: "analytics"}
+          - {id: 565, name: "matomo", display: "Matomo", category: "analytics"}
+          - {id: 566, name: "heap", display: "Heap Analytics", category: "analytics"}
+          - {id: 567, name: "hotjar", display: "Hotjar", category: "analytics"}
+          - {id: 568, name: "crazy_egg", display: "Crazy Egg", category: "analytics"}
+          - {id: 569, name: "mouseflow", display: "Mouseflow", category: "analytics"}
+          - {id: 570, name: "lucky_orange", display: "Lucky Orange", category: "analytics"}
+          - {id: 571, name: "clicky", display: "Clicky", category: "analytics"}
+
+      crm_sales:
+        agents:
+          - {id: 572, name: "pipedrive", display: "Pipedrive", category: "crm"}
+          - {id: 573, name: "copper", display: "Copper CRM", category: "crm"}
+          - {id: 574, name: "freshsales", display: "Freshsales", category: "crm"}
+          - {id: 575, name: "insightly", display: "Insightly", category: "crm"}
+          - {id: 576, name: "capsule", display: "Capsule CRM", category: "crm"}
+          - {id: 577, name: "nimble", display: "Nimble", category: "crm"}
+          - {id: 578, name: "agile_crm", display: "Agile CRM", category: "crm"}
+          - {id: 579, name: "vcita", display: "vcita", category: "crm"}
+          - {id: 580, name: "close", display: "Close CRM", category: "crm"}
+          - {id: 581, name: "nutshell", display: "Nutshell", category: "crm"}
+
+      marketing_automation:
+        agents:
+          - {id: 582, name: "pardot", display: "Pardot", category: "marketing_automation"}
+          - {id: 583, name: "eloqua", display: "Oracle Eloqua", category: "marketing_automation"}
+          - {id: 584, name: "sharpspring", display: "SharpSpring", category: "marketing_automation"}
+          - {id: 585, name: "autopilot", display: "Autopilot", category: "marketing_automation"}
+          - {id: 586, name: "act_on", display: "Act-On", category: "marketing_automation"}
+          - {id: 587, name: "drip", display: "Drip", category: "marketing_automation"}
+          - {id: 588, name: "customer_io", display: "Customer.io", category: "marketing_automation"}
+          - {id: 589, name: "vero", display: "Vero", category: "marketing_automation"}
+          - {id: 590, name: "iterable", display: "Iterable", category: "marketing_automation"}
+          - {id: 591, name: "blueshift", display: "Blueshift", category: "marketing_automation"}
+
+      advertising:
+        agents:
+          - {id: 592, name: "google_ads", display: "Google Ads", category: "advertising"}
+          - {id: 593, name: "facebook_ads", display: "Facebook Ads", category: "advertising"}
+          - {id: 594, name: "linkedin_ads", display: "LinkedIn Ads", category: "advertising"}
+          - {id: 595, name: "twitter_ads", display: "Twitter Ads", category: "advertising"}
+          - {id: 596, name: "tiktok_ads", display: "TikTok Ads", category: "advertising"}
+          - {id: 597, name: "pinterest_ads", display: "Pinterest Ads", category: "advertising"}
+          - {id: 598, name: "snapchat_ads", display: "Snapchat Ads", category: "advertising"}
+          - {id: 599, name: "bing_ads", display: "Microsoft Advertising", category: "advertising"}
+          - {id: 600, name: "reddit_ads", display: "Reddit Ads", category: "advertising"}
+          - {id: 601, name: "quora_ads", display: "Quora Ads", category: "advertising"}
+
+      content_marketing:
+        agents:
+          - {id: 602, name: "contentful", display: "Contentful", category: "content_marketing"}
+          - {id: 603, name: "wordpress", display: "WordPress", category: "content_marketing"}
+          - {id: 604, name: "medium", display: "Medium", category: "content_marketing"}
+          - {id: 605, name: "ghost", display: "Ghost", category: "content_marketing"}
+          - {id: 606, name: "webflow", display: "Webflow", category: "content_marketing"}
+          - {id: 607, name: "squarespace", display: "Squarespace", category: "content_marketing"}
+          - {id: 608, name: "wix", display: "Wix", category: "content_marketing"}
+          - {id: 609, name: "hubspot_cms", display: "HubSpot CMS", category: "content_marketing"}
+          - {id: 610, name: "strapi", display: "Strapi", category: "content_marketing"}
+          - {id: 611, name: "sanity", display: "Sanity", category: "content_marketing"}
+
+      lead_generation:
+        agents:
+          - {id: 612, name: "leadfeeder", display: "Leadfeeder", category: "lead_generation"}
+          - {id: 613, name: "clearbit", display: "Clearbit", category: "lead_generation"}
+          - {id: 614, name: "zoominfo", display: "ZoomInfo", category: "lead_generation"}
+          - {id: 615, name: "lusha", display: "Lusha", category: "lead_generation"}
+          - {id: 616, name: "hunter", display: "Hunter.io", category: "lead_generation"}
+          - {id: 617, name: "apollo", display: "Apollo.io", category: "lead_generation"}
+          - {id: 618, name: "seamless", display: "Seamless.ai", category: "lead_generation"}
+          - {id: 619, name: "cognism", display: "Cognism", category: "lead_generation"}
+          - {id: 620, name: "leadiq", display: "LeadIQ", category: "lead_generation"}
+          - {id: 621, name: "uplead", display: "UpLead", category: "lead_generation"}
+
+  tier_3:
+    name: "Developer Tools"
+    count: 150
+    priority: "high"
+    categories:
+      ci_cd:
+        agents:
+          - {id: 622, name: "jenkins", display: "Jenkins", category: "ci_cd"}
+          - {id: 623, name: "circleci", display: "CircleCI", category: "ci_cd"}
+          - {id: 624, name: "travis_ci", display: "Travis CI", category: "ci_cd"}
+          - {id: 625, name: "github_actions", display: "GitHub Actions", category: "ci_cd"}
+          - {id: 626, name: "gitlab_ci", display: "GitLab CI/CD", category: "ci_cd"}
+          - {id: 627, name: "bamboo", display: "Bamboo", category: "ci_cd"}
+          - {id: 628, name: "teamcity", display: "TeamCity", category: "ci_cd"}
+          - {id: 629, name: "buildkite", display: "Buildkite", category: "ci_cd"}
+          - {id: 630, name: "drone", display: "Drone CI", category: "ci_cd"}
+          - {id: 631, name: "codeship", display: "Codeship", category: "ci_cd"}
+          - {id: 632, name: "azure_devops", display: "Azure DevOps", category: "ci_cd"}
+          - {id: 633, name: "harness", display: "Harness", category: "ci_cd"}
+          - {id: 634, name: "spinnaker", display: "Spinnaker", category: "ci_cd"}
+          - {id: 635, name: "argocd", display: "ArgoCD", category: "ci_cd"}
+          - {id: 636, name: "flux", display: "Flux CD", category: "ci_cd"}
+
+      cloud_aws:
+        agents:
+          - {id: 637, name: "aws_ec2", display: "AWS EC2", category: "cloud"}
+          - {id: 638, name: "aws_s3", display: "AWS S3", category: "cloud"}
+          - {id: 639, name: "aws_lambda", display: "AWS Lambda", category: "cloud"}
+          - {id: 640, name: "aws_rds", display: "AWS RDS", category: "cloud"}
+          - {id: 641, name: "aws_dynamodb", display: "AWS DynamoDB", category: "cloud"}
+          - {id: 642, name: "aws_cloudfront", display: "AWS CloudFront", category: "cloud"}
+          - {id: 643, name: "aws_route53", display: "AWS Route53", category: "cloud"}
+          - {id: 644, name: "aws_vpc", display: "AWS VPC", category: "cloud"}
+          - {id: 645, name: "aws_iam", display: "AWS IAM", category: "cloud"}
+          - {id: 646, name: "aws_ecs", display: "AWS ECS", category: "cloud"}
+          - {id: 647, name: "aws_eks", display: "AWS EKS", category: "cloud"}
+          - {id: 648, name: "aws_sqs", display: "AWS SQS", category: "cloud"}
+          - {id: 649, name: "aws_sns", display: "AWS SNS", category: "cloud"}
+          - {id: 650, name: "aws_cloudwatch", display: "AWS CloudWatch", category: "cloud"}
+          - {id: 651, name: "aws_secrets_manager", display: "AWS Secrets Manager", category: "cloud"}
+
+      cloud_azure:
+        agents:
+          - {id: 652, name: "azure_vms", display: "Azure Virtual Machines", category: "cloud"}
+          - {id: 653, name: "azure_storage", display: "Azure Storage", category: "cloud"}
+          - {id: 654, name: "azure_functions", display: "Azure Functions", category: "cloud"}
+          - {id: 655, name: "azure_sql", display: "Azure SQL", category: "cloud"}
+          - {id: 656, name: "azure_cosmos", display: "Azure Cosmos DB", category: "cloud"}
+          - {id: 657, name: "azure_cdn", display: "Azure CDN", category: "cloud"}
+          - {id: 658, name: "azure_dns", display: "Azure DNS", category: "cloud"}
+          - {id: 659, name: "azure_vnet", display: "Azure Virtual Network", category: "cloud"}
+          - {id: 660, name: "azure_aks", display: "Azure AKS", category: "cloud"}
+          - {id: 661, name: "azure_monitor", display: "Azure Monitor", category: "cloud"}
+
+      cloud_gcp:
+        agents:
+          - {id: 662, name: "gcp_compute", display: "GCP Compute Engine", category: "cloud"}
+          - {id: 663, name: "gcp_storage", display: "GCP Cloud Storage", category: "cloud"}
+          - {id: 664, name: "gcp_functions", display: "GCP Cloud Functions", category: "cloud"}
+          - {id: 665, name: "gcp_sql", display: "GCP Cloud SQL", category: "cloud"}
+          - {id: 666, name: "gcp_firestore", display: "GCP Firestore", category: "cloud"}
+          - {id: 667, name: "gcp_cdn", display: "GCP Cloud CDN", category: "cloud"}
+          - {id: 668, name: "gcp_dns", display: "GCP Cloud DNS", category: "cloud"}
+          - {id: 669, name: "gcp_vpc", display: "GCP VPC", category: "cloud"}
+          - {id: 670, name: "gcp_gke", display: "GCP GKE", category: "cloud"}
+          - {id: 671, name: "gcp_monitoring", display: "GCP Cloud Monitoring", category: "cloud"}
+
+      monitoring:
+        agents:
+          - {id: 672, name: "prometheus", display: "Prometheus", category: "monitoring"}
+          - {id: 673, name: "grafana", display: "Grafana", category: "monitoring"}
+          - {id: 674, name: "elasticsearch", display: "Elasticsearch", category: "monitoring"}
+          - {id: 675, name: "kibana", display: "Kibana", category: "monitoring"}
+          - {id: 676, name: "logstash", display: "Logstash", category: "monitoring"}
+          - {id: 677, name: "fluentd", display: "Fluentd", category: "monitoring"}
+          - {id: 678, name: "nagios", display: "Nagios", category: "monitoring"}
+          - {id: 679, name: "zabbix", display: "Zabbix", category: "monitoring"}
+          - {id: 680, name: "dynatrace", display: "Dynatrace", category: "monitoring"}
+          - {id: 681, name: "appdynamics", display: "AppDynamics", category: "monitoring"}
+          - {id: 682, name: "sumo_logic", display: "Sumo Logic", category: "monitoring"}
+          - {id: 683, name: "logz_io", display: "Logz.io", category: "monitoring"}
+          - {id: 684, name: "honeycomb", display: "Honeycomb", category: "monitoring"}
+          - {id: 685, name: "lightstep", display: "Lightstep", category: "monitoring"}
+          - {id: 686, name: "instana", display: "Instana", category: "monitoring"}
+
+      devops:
+        agents:
+          - {id: 687, name: "terraform", display: "Terraform", category: "devops"}
+          - {id: 688, name: "ansible", display: "Ansible", category: "devops"}
+          - {id: 689, name: "puppet", display: "Puppet", category: "devops"}
+          - {id: 690, name: "chef", display: "Chef", category: "devops"}
+          - {id: 691, name: "saltstack", display: "SaltStack", category: "devops"}
+          - {id: 692, name: "docker", display: "Docker", category: "devops"}
+          - {id: 693, name: "kubernetes", display: "Kubernetes", category: "devops"}
+          - {id: 694, name: "helm", display: "Helm", category: "devops"}
+          - {id: 695, name: "vagrant", display: "Vagrant", category: "devops"}
+          - {id: 696, name: "packer", display: "Packer", category: "devops"}
+          - {id: 697, name: "consul", display: "Consul", category: "devops"}
+          - {id: 698, name: "vault", display: "HashiCorp Vault", category: "devops"}
+          - {id: 699, name: "nomad", display: "Nomad", category: "devops"}
+          - {id: 700, name: "rancher", display: "Rancher", category: "devops"}
+          - {id: 701, name: "portainer", display: "Portainer", category: "devops"}
+
+      api_management:
+        agents:
+          - {id: 702, name: "postman", display: "Postman", category: "api"}
+          - {id: 703, name: "swagger", display: "Swagger", category: "api"}
+          - {id: 704, name: "kong", display: "Kong", category: "api"}
+          - {id: 705, name: "apigee", display: "Apigee", category: "api"}
+          - {id: 706, name: "mulesoft", display: "MuleSoft", category: "api"}
+          - {id: 707, name: "tyk", display: "Tyk", category: "api"}
+          - {id: 708, name: "gravitee", display: "Gravitee", category: "api"}
+          - {id: 709, name: "apollo_graphql", display: "Apollo GraphQL", category: "api"}
+          - {id: 710, name: "hasura", display: "Hasura", category: "api"}
+          - {id: 711, name: "insomnia", display: "Insomnia", category: "api"}
+
+      code_quality:
+        agents:
+          - {id: 712, name: "sonarqube", display: "SonarQube", category: "code_quality"}
+          - {id: 713, name: "codeclimate", display: "Code Climate", category: "code_quality"}
+          - {id: 714, name: "coveralls", display: "Coveralls", category: "code_quality"}
+          - {id: 715, name: "codecov", display: "Codecov", category: "code_quality"}
+          - {id: 716, name: "snyk", display: "Snyk", category: "code_quality"}
+          - {id: 717, name: "checkmarx", display: "Checkmarx", category: "code_quality"}
+          - {id: 718, name: "veracode", display: "Veracode", category: "code_quality"}
+          - {id: 719, name: "whitesource", display: "WhiteSource", category: "code_quality"}
+          - {id: 720, name: "blackduck", display: "Black Duck", category: "code_quality"}
+          - {id: 721, name: "fortify", display: "Fortify", category: "code_quality"}
+
+      version_control:
+        agents:
+          - {id: 722, name: "perforce", display: "Perforce", category: "version_control"}
+          - {id: 723, name: "svn", display: "Apache SVN", category: "version_control"}
+          - {id: 724, name: "mercurial", display: "Mercurial", category: "version_control"}
+          - {id: 725, name: "aws_codecommit", display: "AWS CodeCommit", category: "version_control"}
+          - {id: 726, name: "azure_repos", display: "Azure Repos", category: "version_control"}
+          - {id: 727, name: "gitea", display: "Gitea", category: "version_control"}
+          - {id: 728, name: "gogs", display: "Gogs", category: "version_control"}
+          - {id: 729, name: "fossil", display: "Fossil", category: "version_control"}
+          - {id: 730, name: "phabricator", display: "Phabricator", category: "version_control"}
+          - {id: 731, name: "gerrit", display: "Gerrit", category: "version_control"}
+
+      databases:
+        agents:
+          - {id: 732, name: "mongodb", display: "MongoDB", category: "database"}
+          - {id: 733, name: "postgresql", display: "PostgreSQL", category: "database"}
+          - {id: 734, name: "mysql", display: "MySQL", category: "database"}
+          - {id: 735, name: "redis", display: "Redis", category: "database"}
+          - {id: 736, name: "cassandra", display: "Cassandra", category: "database"}
+          - {id: 737, name: "couchdb", display: "CouchDB", category: "database"}
+          - {id: 738, name: "neo4j", display: "Neo4j", category: "database"}
+          - {id: 739, name: "influxdb", display: "InfluxDB", category: "database"}
+          - {id: 740, name: "timescaledb", display: "TimescaleDB", category: "database"}
+          - {id: 741, name: "cockroachdb", display: "CockroachDB", category: "database"}
+
+  tier_4:
+    name: "Productivity & Collaboration"
+    count: 200
+    priority: "medium"
+    categories:
+      note_taking:
+        agents:
+          - {id: 742, name: "evernote", display: "Evernote", category: "notes"}
+          - {id: 743, name: "onenote", display: "Microsoft OneNote", category: "notes"}
+          - {id: 744, name: "bear", display: "Bear", category: "notes"}
+          - {id: 745, name: "simplenote", display: "Simplenote", category: "notes"}
+          - {id: 746, name: "roam", display: "Roam Research", category: "notes"}
+          - {id: 747, name: "obsidian", display: "Obsidian", category: "notes"}
+          - {id: 748, name: "logseq", display: "Logseq", category: "notes"}
+          - {id: 749, name: "notability", display: "Notability", category: "notes"}
+          - {id: 750, name: "goodnotes", display: "GoodNotes", category: "notes"}
+          - {id: 751, name: "coda", display: "Coda", category: "notes"}
+          - {id: 752, name: "craft", display: "Craft", category: "notes"}
+          - {id: 753, name: "mem", display: "Mem", category: "notes"}
+          - {id: 754, name: "remnote", display: "RemNote", category: "notes"}
+          - {id: 755, name: "clickup", display: "ClickUp", category: "notes"}
+          - {id: 756, name: "workflowy", display: "Workflowy", category: "notes"}
+
+      design:
+        agents:
+          - {id: 757, name: "figma", display: "Figma", category: "design"}
+          - {id: 758, name: "sketch", display: "Sketch", category: "design"}
+          - {id: 759, name: "adobe_xd", display: "Adobe XD", category: "design"}
+          - {id: 760, name: "invision", display: "InVision", category: "design"}
+          - {id: 761, name: "zeplin", display: "Zeplin", category: "design"}
+          - {id: 762, name: "framer", display: "Framer", category: "design"}
+          - {id: 763, name: "canva", display: "Canva", category: "design"}
+          - {id: 764, name: "adobe_photoshop", display: "Adobe Photoshop", category: "design"}
+          - {id: 765, name: "adobe_illustrator", display: "Adobe Illustrator", category: "design"}
+          - {id: 766, name: "adobe_indesign", display: "Adobe InDesign", category: "design"}
+          - {id: 767, name: "adobe_premiere", display: "Adobe Premiere Pro", category: "design"}
+          - {id: 768, name: "adobe_after_effects", display: "Adobe After Effects", category: "design"}
+          - {id: 769, name: "affinity_designer", display: "Affinity Designer", category: "design"}
+          - {id: 770, name: "affinity_photo", display: "Affinity Photo", category: "design"}
+          - {id: 771, name: "procreate", display: "Procreate", category: "design"}
+
+      documentation:
+        agents:
+          - {id: 772, name: "gitbook", display: "GitBook", category: "documentation"}
+          - {id: 773, name: "readme", display: "ReadMe", category: "documentation"}
+          - {id: 774, name: "docusaurus", display: "Docusaurus", category: "documentation"}
+          - {id: 775, name: "docsify", display: "Docsify", category: "documentation"}
+          - {id: 776, name: "mkdocs", display: "MkDocs", category: "documentation"}
+          - {id: 777, name: "sphinx", display: "Sphinx", category: "documentation"}
+          - {id: 778, name: "bookstack", display: "BookStack", category: "documentation"}
+          - {id: 779, name: "wiki_js", display: "Wiki.js", category: "documentation"}
+          - {id: 780, name: "dokuwiki", display: "DokuWiki", category: "documentation"}
+          - {id: 781, name: "mediawiki", display: "MediaWiki", category: "documentation"}
+          - {id: 782, name: "archbee", display: "Archbee", category: "documentation"}
+          - {id: 783, name: "slite", display: "Slite", category: "documentation"}
+          - {id: 784, name: "helpjuice", display: "Helpjuice", category: "documentation"}
+          - {id: 785, name: "document360", display: "Document360", category: "documentation"}
+          - {id: 786, name: "tettra", display: "Tettra", category: "documentation"}
+
+      file_sharing:
+        agents:
+          - {id: 787, name: "egnyte", display: "Egnyte", category: "file_sharing"}
+          - {id: 788, name: "sync", display: "Sync.com", category: "file_sharing"}
+          - {id: 789, name: "tresorit", display: "Tresorit", category: "file_sharing"}
+          - {id: 790, name: "resilio", display: "Resilio Sync", category: "file_sharing"}
+          - {id: 791, name: "nextcloud", display: "Nextcloud", category: "file_sharing"}
+          - {id: 792, name: "owncloud", display: "ownCloud", category: "file_sharing"}
+          - {id: 793, name: "seafile", display: "Seafile", category: "file_sharing"}
+          - {id: 794, name: "pcloud", display: "pCloud", category: "file_sharing"}
+          - {id: 795, name: "mega", display: "MEGA", category: "file_sharing"}
+          - {id: 796, name: "backblaze", display: "Backblaze B2", category: "file_sharing"}
+          - {id: 797, name: "wasabi", display: "Wasabi", category: "file_sharing"}
+          - {id: 798, name: "cloudflare_r2", display: "Cloudflare R2", category: "file_sharing"}
+          - {id: 799, name: "digitalocean_spaces", display: "DigitalOcean Spaces", category: "file_sharing"}
+          - {id: 800, name: "linode_object_storage", display: "Linode Object Storage", category: "file_sharing"}
+          - {id: 801, name: "filemail", display: "Filemail", category: "file_sharing"}
+
+      project_management:
+        agents:
+          - {id: 802, name: "trello", display: "Trello", category: "project_management"}
+          - {id: 803, name: "basecamp", display: "Basecamp", category: "project_management"}
+          - {id: 804, name: "wrike", display: "Wrike", category: "project_management"}
+          - {id: 805, name: "teamwork", display: "Teamwork", category: "project_management"}
+          - {id: 806, name: "proofhub", display: "ProofHub", category: "project_management"}
+          - {id: 807, name: "podio", display: "Podio", category: "project_management"}
+          - {id: 808, name: "workfront", display: "Adobe Workfront", category: "project_management"}
+          - {id: 809, name: "clarizen", display: "Clarizen", category: "project_management"}
+          - {id: 810, name: "mavenlink", display: "Mavenlink", category: "project_management"}
+          - {id: 811, name: "workzone", display: "Workzone", category: "project_management"}
+          - {id: 812, name: "projectmanager", display: "ProjectManager", category: "project_management"}
+          - {id: 813, name: "liquidplanner", display: "LiquidPlanner", category: "project_management"}
+          - {id: 814, name: "celoxis", display: "Celoxis", category: "project_management"}
+          - {id: 815, name: "zoho_projects", display: "Zoho Projects", category: "project_management"}
+          - {id: 816, name: "freedcamp", display: "Freedcamp", category: "project_management"}
+
+      time_tracking:
+        agents:
+          - {id: 817, name: "toggl", display: "Toggl Track", category: "time_tracking"}
+          - {id: 818, name: "harvest", display: "Harvest", category: "time_tracking"}
+          - {id: 819, name: "clockify", display: "Clockify", category: "time_tracking"}
+          - {id: 820, name: "timely", display: "Timely", category: "time_tracking"}
+          - {id: 821, name: "rescuetime", display: "RescueTime", category: "time_tracking"}
+          - {id: 822, name: "everhour", display: "Everhour", category: "time_tracking"}
+          - {id: 823, name: "timeneye", display: "Timeneye", category: "time_tracking"}
+          - {id: 824, name: "hubstaff", display: "Hubstaff", category: "time_tracking"}
+          - {id: 825, name: "timecamp", display: "TimeCamp", category: "time_tracking"}
+          - {id: 826, name: "timeular", display: "Timeular", category: "time_tracking"}
+          - {id: 827, name: "tmetric", display: "TMetric", category: "time_tracking"}
+          - {id: 828, name: "hours", display: "Hours", category: "time_tracking"}
+          - {id: 829, name: "freckle", display: "Noko (Freckle)", category: "time_tracking"}
+          - {id: 830, name: "beebole", display: "Beebole", category: "time_tracking"}
+          - {id: 831, name: "workpuls", display: "Workpuls", category: "time_tracking"}
+
+      communication:
+        agents:
+          - {id: 832, name: "telegram", display: "Telegram", category: "communication"}
+          - {id: 833, name: "signal", display: "Signal", category: "communication"}
+          - {id: 834, name: "whatsapp_business", display: "WhatsApp Business", category: "communication"}
+          - {id: 835, name: "viber", display: "Viber", category: "communication"}
+          - {id: 836, name: "line", display: "LINE", category: "communication"}
+          - {id: 837, name: "wechat", display: "WeChat", category: "communication"}
+          - {id: 838, name: "rocketchat", display: "Rocket.Chat", category: "communication"}
+          - {id: 839, name: "mattermost", display: "Mattermost", category: "communication"}
+          - {id: 840, name: "zulip", display: "Zulip", category: "communication"}
+          - {id: 841, name: "twist", display: "Twist", category: "communication"}
+          - {id: 842, name: "chanty", display: "Chanty", category: "communication"}
+          - {id: 843, name: "flock", display: "Flock", category: "communication"}
+          - {id: 844, name: "pumble", display: "Pumble", category: "communication"}
+          - {id: 845, name: "ryver", display: "Ryver", category: "communication"}
+          - {id: 846, name: "workplace", display: "Meta Workplace", category: "communication"}
+
+      calendar_scheduling:
+        agents:
+          - {id: 847, name: "calendly", display: "Calendly", category: "scheduling"}
+          - {id: 848, name: "acuity", display: "Acuity Scheduling", category: "scheduling"}
+          - {id: 849, name: "doodle", display: "Doodle", category: "scheduling"}
+          - {id: 850, name: "youcanbook", display: "YouCanBook.me", category: "scheduling"}
+          - {id: 851, name: "setmore", display: "Setmore", category: "scheduling"}
+          - {id: 852, name: "appointy", display: "Appointy", category: "scheduling"}
+          - {id: 853, name: "simplybook", display: "SimplyBook.me", category: "scheduling"}
+          - {id: 854, name: "booksy", display: "Booksy", category: "scheduling"}
+          - {id: 855, name: "vcita_scheduling", display: "vcita Scheduling", category: "scheduling"}
+          - {id: 856, name: "x_ai", display: "x.ai", category: "scheduling"}
+          - {id: 857, name: "chili_piper", display: "Chili Piper", category: "scheduling"}
+          - {id: 858, name: "mixmax", display: "Mixmax", category: "scheduling"}
+          - {id: 859, name: "calendarhero", display: "Calendar Hero", category: "scheduling"}
+          - {id: 860, name: "savvycal", display: "SavvyCal", category: "scheduling"}
+          - {id: 861, name: "rally", display: "Rally", category: "scheduling"}
+
+      video_conferencing:
+        agents:
+          - {id: 862, name: "whereby", display: "Whereby", category: "video"}
+          - {id: 863, name: "jitsi", display: "Jitsi", category: "video"}
+          - {id: 864, name: "bluejeans", display: "BlueJeans", category: "video"}
+          - {id: 865, name: "gotomeeting", display: "GoToMeeting", category: "video"}
+          - {id: 866, name: "gotowebinar", display: "GoToWebinar", category: "video"}
+          - {id: 867, name: "join_me", display: "join.me", category: "video"}
+          - {id: 868, name: "lifesize", display: "Lifesize", category: "video"}
+          - {id: 869, name: "ringcentral", display: "RingCentral Video", category: "video"}
+          - {id: 870, name: "8x8", display: "8x8 Meet", category: "video"}
+          - {id: 871, name: "dialpad", display: "Dialpad", category: "video"}
+          - {id: 872, name: "vonage", display: "Vonage Meetings", category: "video"}
+          - {id: 873, name: "fuze", display: "Fuze", category: "video"}
+          - {id: 874, name: "zoho_meeting", display: "Zoho Meeting", category: "video"}
+          - {id: 875, name: "demio", display: "Demio", category: "video"}
+          - {id: 876, name: "livestorm", display: "Livestorm", category: "video"}
+
+      forms_surveys:
+        agents:
+          - {id: 877, name: "typeform", display: "Typeform", category: "forms"}
+          - {id: 878, name: "google_forms", display: "Google Forms", category: "forms"}
+          - {id: 879, name: "surveymonkey", display: "SurveyMonkey", category: "forms"}
+          - {id: 880, name: "jotform", display: "JotForm", category: "forms"}
+          - {id: 881, name: "formstack", display: "Formstack", category: "forms"}
+          - {id: 882, name: "wufoo", display: "Wufoo", category: "forms"}
+          - {id: 883, name: "cognito_forms", display: "Cognito Forms", category: "forms"}
+          - {id: 884, name: "formsite", display: "Formsite", category: "forms"}
+          - {id: 885, name: "123formbuilder", display: "123FormBuilder", category: "forms"}
+          - {id: 886, name: "formidable", display: "Formidable Forms", category: "forms"}
+          - {id: 887, name: "gravity_forms", display: "Gravity Forms", category: "forms"}
+          - {id: 888, name: "ninja_forms", display: "Ninja Forms", category: "forms"}
+          - {id: 889, name: "qualtrics", display: "Qualtrics", category: "forms"}
+          - {id: 890, name: "alchemer", display: "Alchemer", category: "forms"}
+          - {id: 891, name: "sogosurvey", display: "SoGoSurvey", category: "forms"}
+
+  tier_5:
+    name: "Specialized Vertical Tools"
+    count: 530
+    priority: "medium"
+    categories:
+      finance_accounting:
+        agents:
+          - {id: 892, name: "xero", display: "Xero", category: "finance"}
+          - {id: 893, name: "freshbooks", display: "FreshBooks", category: "finance"}
+          - {id: 894, name: "wave", display: "Wave Accounting", category: "finance"}
+          - {id: 895, name: "zoho_books", display: "Zoho Books", category: "finance"}
+          - {id: 896, name: "sage", display: "Sage", category: "finance"}
+          - {id: 897, name: "kashoo", display: "Kashoo", category: "finance"}
+          - {id: 898, name: "freeagent", display: "FreeAgent", category: "finance"}
+          - {id: 899, name: "clearbooks", display: "Clear Books", category: "finance"}
+          - {id: 900, name: "billy", display: "Billy", category: "finance"}
+          - {id: 901, name: "books", display: "Books by Zoho", category: "finance"}
+          - {id: 902, name: "invoiceninja", display: "Invoice Ninja", category: "finance"}
+          - {id: 903, name: "invoiceplane", display: "InvoicePlane", category: "finance"}
+          - {id: 904, name: "akaunting", display: "Akaunting", category: "finance"}
+          - {id: 905, name: "odoo_accounting", display: "Odoo Accounting", category: "finance"}
+          - {id: 906, name: "gnucash", display: "GnuCash", category: "finance"}
+          - {id: 907, name: "manager", display: "Manager", category: "finance"}
+          - {id: 908, name: "financio", display: "Financio", category: "finance"}
+          - {id: 909, name: "bill", display: "Bill.com", category: "finance"}
+          - {id: 910, name: "expensify", display: "Expensify", category: "finance"}
+          - {id: 911, name: "concur", display: "SAP Concur", category: "finance"}
+          - {id: 912, name: "rydoo", display: "Rydoo", category: "finance"}
+          - {id: 913, name: "divvy", display: "Divvy", category: "finance"}
+          - {id: 914, name: "brex", display: "Brex", category: "finance"}
+          - {id: 915, name: "ramp", display: "Ramp", category: "finance"}
+          - {id: 916, name: "emburse", display: "Emburse", category: "finance"}
+          - {id: 917, name: "tipalti", display: "Tipalti", category: "finance"}
+          - {id: 918, name: "veem", display: "Veem", category: "finance"}
+          - {id: 919, name: "airbase", display: "Airbase", category: "finance"}
+          - {id: 920, name: "coupa", display: "Coupa", category: "finance"}
+          - {id: 921, name: "procurify", display: "Procurify", category: "finance"}
+
+      payment_processing:
+        agents:
+          - {id: 922, name: "adyen", display: "Adyen", category: "payments"}
+          - {id: 923, name: "braintree", display: "Braintree", category: "payments"}
+          - {id: 924, name: "authorize_net", display: "Authorize.net", category: "payments"}
+          - {id: 925, name: "worldpay", display: "Worldpay", category: "payments"}
+          - {id: 926, name: "checkout", display: "Checkout.com", category: "payments"}
+          - {id: 927, name: "razorpay", display: "Razorpay", category: "payments"}
+          - {id: 928, name: "paytm", display: "Paytm", category: "payments"}
+          - {id: 929, name: "mollie", display: "Mollie", category: "payments"}
+          - {id: 930, name: "klarna", display: "Klarna", category: "payments"}
+          - {id: 931, name: "afterpay", display: "Afterpay", category: "payments"}
+          - {id: 932, name: "affirm", display: "Affirm", category: "payments"}
+          - {id: 933, name: "sezzle", display: "Sezzle", category: "payments"}
+          - {id: 934, name: "payoneer", display: "Payoneer", category: "payments"}
+          - {id: 935, name: "transferwise", display: "Wise (TransferWise)", category: "payments"}
+          - {id: 936, name: "revolut", display: "Revolut Business", category: "payments"}
+          - {id: 937, name: "n26", display: "N26 Business", category: "payments"}
+          - {id: 938, name: "mercury", display: "Mercury", category: "payments"}
+          - {id: 939, name: "novo", display: "Novo", category: "payments"}
+          - {id: 940, name: "bluevine", display: "BlueVine", category: "payments"}
+          - {id: 941, name: "relay", display: "Relay", category: "payments"}
+
+      hr_recruitment:
+        agents:
+          - {id: 942, name: "workable", display: "Workable", category: "hr"}
+          - {id: 943, name: "recruitee", display: "Recruitee", category: "hr"}
+          - {id: 944, name: "breezy_hr", display: "Breezy HR", category: "hr"}
+          - {id: 945, name: "jobvite", display: "Jobvite", category: "hr"}
+          - {id: 946, name: "smartrecruiters", display: "SmartRecruiters", category: "hr"}
+          - {id: 947, name: "jazzhands", display: "JazzHR", category: "hr"}
+          - {id: 948, name: "recruitcrm", display: "RecruitCRM", category: "hr"}
+          - {id: 949, name: "teamtailor", display: "Teamtailor", category: "hr"}
+          - {id: 950, name: "applied", display: "Applied", category: "hr"}
+          - {id: 951, name: "ashby", display: "Ashby", category: "hr"}
+          - {id: 952, name: "gusto", display: "Gusto", category: "hr"}
+          - {id: 953, name: "adp_workforce", display: "ADP Workforce Now", category: "hr"}
+          - {id: 954, name: "paychex", display: "Paychex", category: "hr"}
+          - {id: 955, name: "paylocity", display: "Paylocity", category: "hr"}
+          - {id: 956, name: "namely", display: "Namely", category: "hr"}
+          - {id: 957, name: "rippling", display: "Rippling", category: "hr"}
+          - {id: 958, name: "zenefits", display: "Zenefits", category: "hr"}
+          - {id: 959, name: "justworks", display: "Justworks", category: "hr"}
+          - {id: 960, name: "deel", display: "Deel", category: "hr"}
+          - {id: 961, name: "remote", display: "Remote.com", category: "hr"}
+          - {id: 962, name: "oyster", display: "Oyster HR", category: "hr"}
+          - {id: 963, name: "papaya_global", display: "Papaya Global", category: "hr"}
+          - {id: 964, name: "multiplier", display: "Multiplier", category: "hr"}
+          - {id: 965, name: "globalization_partners", display: "Globalization Partners", category: "hr"}
+          - {id: 966, name: "velocity_global", display: "Velocity Global", category: "hr"}
+
+      ecommerce:
+        agents:
+          - {id: 967, name: "woocommerce", display: "WooCommerce", category: "ecommerce"}
+          - {id: 968, name: "bigcommerce", display: "BigCommerce", category: "ecommerce"}
+          - {id: 969, name: "prestashop", display: "PrestaShop", category: "ecommerce"}
+          - {id: 970, name: "opencart", display: "OpenCart", category: "ecommerce"}
+          - {id: 971, name: "volusion", display: "Volusion", category: "ecommerce"}
+          - {id: 972, name: "ecwid", display: "Ecwid", category: "ecommerce"}
+          - {id: 973, name: "big_cartel", display: "Big Cartel", category: "ecommerce"}
+          - {id: 974, name: "shift4shop", display: "Shift4Shop", category: "ecommerce"}
+          - {id: 975, name: "salesforce_commerce", display: "Salesforce Commerce Cloud", category: "ecommerce"}
+          - {id: 976, name: "oracle_commerce", display: "Oracle Commerce", category: "ecommerce"}
+          - {id: 977, name: "sap_commerce", display: "SAP Commerce Cloud", category: "ecommerce"}
+          - {id: 978, name: "commercetools", display: "commercetools", category: "ecommerce"}
+          - {id: 979, name: "elastic_path", display: "Elastic Path", category: "ecommerce"}
+          - {id: 980, name: "swell", display: "Swell", category: "ecommerce"}
+          - {id: 981, name: "medusa", display: "Medusa", category: "ecommerce"}
+          - {id: 982, name: "spree", display: "Spree Commerce", category: "ecommerce"}
+          - {id: 983, name: "sylius", display: "Sylius", category: "ecommerce"}
+          - {id: 984, name: "reaction", display: "Reaction Commerce", category: "ecommerce"}
+          - {id: 985, name: "vendure", display: "Vendure", category: "ecommerce"}
+          - {id: 986, name: "saleor", display: "Saleor", category: "ecommerce"}
+
+      customer_support:
+        agents:
+          - {id: 987, name: "freshdesk", display: "Freshdesk", category: "support"}
+          - {id: 988, name: "helpscout", display: "Help Scout", category: "support"}
+          - {id: 989, name: "kayako", display: "Kayako", category: "support"}
+          - {id: 990, name: "groovehq", display: "Groove", category: "support"}
+          - {id: 991, name: "desk", display: "Desk.com", category: "support"}
+          - {id: 992, name: "uservoice", display: "UserVoice", category: "support"}
+          - {id: 993, name: "crisp", display: "Crisp", category: "support"}
+          - {id: 994, name: "livechat", display: "LiveChat", category: "support"}
+          - {id: 995, name: "tidio", display: "Tidio", category: "support"}
+          - {id: 996, name: "olark", display: "Olark", category: "support"}
+          - {id: 997, name: "tawk", display: "Tawk.to", category: "support"}
+          - {id: 998, name: "pure_chat", display: "Pure Chat", category: "support"}
+          - {id: 999, name: "smartsupp", display: "Smartsupp", category: "support"}
+          - {id: 1000, name: "userlike", display: "Userlike", category: "support"}
+          - {id: 1001, name: "comm100", display: "Comm100", category: "support"}
+          - {id: 1002, name: "respond_io", display: "Respond.io", category: "support"}
+          - {id: 1003, name: "chaport", display: "Chaport", category: "support"}
+          - {id: 1004, name: "helpcrunch", display: "HelpCrunch", category: "support"}
+          - {id: 1005, name: "gorgias", display: "Gorgias", category: "support"}
+          - {id: 1006, name: "kustomer", display: "Kustomer", category: "support"}
+          - {id: 1007, name: "gladly", display: "Gladly", category: "support"}
+          - {id: 1008, name: "front", display: "Front", category: "support"}
+          - {id: 1009, name: "hiver", display: "Hiver", category: "support"}
+          - {id: 1010, name: "missive", display: "Missive", category: "support"}
+          - {id: 1011, name: "trengo", display: "Trengo", category: "support"}
+
+      healthcare:
+        agents:
+          - {id: 1012, name: "athenahealth", display: "athenahealth", category: "healthcare"}
+          - {id: 1013, name: "epic", display: "Epic Systems", category: "healthcare"}
+          - {id: 1014, name: "cerner", display: "Cerner", category: "healthcare"}
+          - {id: 1015, name: "allscripts", display: "Allscripts", category: "healthcare"}
+          - {id: 1016, name: "nextgen", display: "NextGen Healthcare", category: "healthcare"}
+          - {id: 1017, name: "eclinicalworks", display: "eClinicalWorks", category: "healthcare"}
+          - {id: 1018, name: "meditech", display: "Meditech", category: "healthcare"}
+          - {id: 1019, name: "kareo", display: "Kareo", category: "healthcare"}
+          - {id: 1020, name: "drchrono", display: "DrChrono", category: "healthcare"}
+          - {id: 1021, name: "practice_fusion", display: "Practice Fusion", category: "healthcare"}
+          - {id: 1022, name: "elation", display: "Elation Health", category: "healthcare"}
+          - {id: 1023, name: "praxis", display: "Praxis EMR", category: "healthcare"}
+          - {id: 1024, name: "carecloud", display: "CareCloud", category: "healthcare"}
+          - {id: 1025, name: "advancedmd", display: "AdvancedMD", category: "healthcare"}
+          - {id: 1026, name: "simplepractice", display: "SimplePractice", category: "healthcare"}
+          - {id: 1027, name: "therapynotes", display: "TherapyNotes", category: "healthcare"}
+          - {id: 1028, name: "healthie", display: "Healthie", category: "healthcare"}
+          - {id: 1029, name: "mindbody", display: "Mindbody", category: "healthcare"}
+          - {id: 1030, name: "vcita_health", display: "vcita Health", category: "healthcare"}
+          - {id: 1031, name: "cliniko", display: "Cliniko", category: "healthcare"}
+
+      legal:
+        agents:
+          - {id: 1032, name: "clio", display: "Clio", category: "legal"}
+          - {id: 1033, name: "mycase", display: "MyCase", category: "legal"}
+          - {id: 1034, name: "practicemanager", display: "PracticePanther", category: "legal"}
+          - {id: 1035, name: "rocket_matter", display: "Rocket Matter", category: "legal"}
+          - {id: 1036, name: "smokeball", display: "Smokeball", category: "legal"}
+          - {id: 1037, name: "lawmatics", display: "Lawmatics", category: "legal"}
+          - {id: 1038, name: "filevine", display: "Filevine", category: "legal"}
+          - {id: 1039, name: "litify", display: "Litify", category: "legal"}
+          - {id: 1040, name: "actionstep", display: "Actionstep", category: "legal"}
+          - {id: 1041, name: "leap", display: "LEAP", category: "legal"}
+          - {id: 1042, name: "zola_suite", display: "Zola Suite", category: "legal"}
+          - {id: 1043, name: "lexicata", display: "Lexicata", category: "legal"}
+          - {id: 1044, name: "case_status", display: "Case Status", category: "legal"}
+          - {id: 1045, name: "lawgistics", display: "Lawgistics", category: "legal"}
+          - {id: 1046, name: "bill4time", display: "Bill4Time", category: "legal"}
+          - {id: 1047, name: "timeslips", display: "Timeslips", category: "legal"}
+          - {id: 1048, name: "tabs3", display: "Tabs3", category: "legal"}
+          - {id: 1049, name: "pclaw", display: "PCLaw", category: "legal"}
+          - {id: 1050, name: "prolaw", display: "ProLaw", category: "legal"}
+          - {id: 1051, name: "cosmolex", display: "CosmoLex", category: "legal"}
+
+      education:
+        agents:
+          - {id: 1052, name: "canvas", display: "Canvas LMS", category: "education"}
+          - {id: 1053, name: "moodle", display: "Moodle", category: "education"}
+          - {id: 1054, name: "blackboard", display: "Blackboard", category: "education"}
+          - {id: 1055, name: "schoology", display: "Schoology", category: "education"}
+          - {id: 1056, name: "edmodo", display: "Edmodo", category: "education"}
+          - {id: 1057, name: "google_classroom", display: "Google Classroom", category: "education"}
+          - {id: 1058, name: "seesaw", display: "Seesaw", category: "education"}
+          - {id: 1059, name: "classlink", display: "ClassLink", category: "education"}
+          - {id: 1060, name: "clever", display: "Clever", category: "education"}
+          - {id: 1061, name: "nearpod", display: "Nearpod", category: "education"}
+          - {id: 1062, name: "peardeck", display: "Pear Deck", category: "education"}
+          - {id: 1063, name: "kahoot", display: "Kahoot!", category: "education"}
+          - {id: 1064, name: "quizizz", display: "Quizizz", category: "education"}
+          - {id: 1065, name: "quizlet", display: "Quizlet", category: "education"}
+          - {id: 1066, name: "socrative", display: "Socrative", category: "education"}
+          - {id: 1067, name: "mentimeter", display: "Mentimeter", category: "education"}
+          - {id: 1068, name: "padlet", display: "Padlet", category: "education"}
+          - {id: 1069, name: "flipgrid", display: "Flipgrid", category: "education"}
+          - {id: 1070, name: "loom", display: "Loom", category: "education"}
+          - {id: 1071, name: "screencastify", display: "Screencastify", category: "education"}
+
+      real_estate:
+        agents:
+          - {id: 1072, name: "zillow", display: "Zillow", category: "real_estate"}
+          - {id: 1073, name: "realtor", display: "Realtor.com", category: "real_estate"}
+          - {id: 1074, name: "redfin", display: "Redfin", category: "real_estate"}
+          - {id: 1075, name: "trulia", display: "Trulia", category: "real_estate"}
+          - {id: 1076, name: "propertybase", display: "Propertybase", category: "real_estate"}
+          - {id: 1077, name: "followupboss", display: "Follow Up Boss", category: "real_estate"}
+          - {id: 1078, name: "boomtown", display: "BoomTown", category: "real_estate"}
+          - {id: 1079, name: "kvcore", display: "kvCORE", category: "real_estate"}
+          - {id: 1080, name: "chime", display: "Chime", category: "real_estate"}
+          - {id: 1081, name: "liondesk", display: "LionDesk", category: "real_estate"}
+          - {id: 1082, name: "wise_agent", display: "Wise Agent", category: "real_estate"}
+          - {id: 1083, name: "ixact_contact", display: "iXact Contact", category: "real_estate"}
+          - {id: 1084, name: "top_producer", display: "Top Producer", category: "real_estate"}
+          - {id: 1085, name: "realvolve", display: "Realvolve", category: "real_estate"}
+          - {id: 1086, name: "realgeeks", display: "Real Geeks", category: "real_estate"}
+          - {id: 1087, name: "placester", display: "Placester", category: "real_estate"}
+          - {id: 1088, name: "ylopo", display: "Ylopo", category: "real_estate"}
+          - {id: 1089, name: "zillow_premier", display: "Zillow Premier Agent", category: "real_estate"}
+          - {id: 1090, name: "homes", display: "Homes.com", category: "real_estate"}
+          - {id: 1091, name: "homesnap", display: "Homesnap", category: "real_estate"}
+
+      construction:
+        agents:
+          - {id: 1092, name: "procore", display: "Procore", category: "construction"}
+          - {id: 1093, name: "buildertrend", display: "Buildertrend", category: "construction"}
+          - {id: 1094, name: "coschedule", display: "CoConstruct", category: "construction"}
+          - {id: 1095, name: "fieldwire", display: "Fieldwire", category: "construction"}
+          - {id: 1096, name: "plangrid", display: "PlanGrid", category: "construction"}
+          - {id: 1097, name: "autodesk_bim360", display: "Autodesk BIM 360", category: "construction"}
+          - {id: 1098, name: "buildercloud", display: "BuilderCloud", category: "construction"}
+          - {id: 1099, name: "eworks", display: "eWorks", category: "construction"}
+          - {id: 1100, name: "jobprogress", display: "JobProgress", category: "construction"}
+          - {id: 1101, name: "acculynx", display: "AccuLynx", category: "construction"}
+          - {id: 1102, name: "jobber", display: "Jobber", category: "construction"}
+          - {id: 1103, name: "service_titan", display: "ServiceTitan", category: "construction"}
+          - {id: 1104, name: "housecall_pro", display: "Housecall Pro", category: "construction"}
+          - {id: 1105, name: "servicem8", display: "ServiceM8", category: "construction"}
+          - {id: 1106, name: "jobnim bus", display: "Jobnim bus", category: "construction"}
+          - {id: 1107, name: "simpro", display: "simPRO", category: "construction"}
+          - {id: 1108, name: "fergus", display: "Fergus", category: "construction"}
+          - {id: 1109, name: "tradify", display: "Tradify", category: "construction"}
+          - {id: 1110, name: "servicemax", display: "ServiceMax", category: "construction"}
+          - {id: 1111, name: "fieldedge", display: "FieldEdge", category: "construction"}
+
+      logistics_shipping:
+        agents:
+          - {id: 1112, name: "shipstation", display: "ShipStation", category: "logistics"}
+          - {id: 1113, name: "shippo", display: "Shippo", category: "logistics"}
+          - {id: 1114, name: "easyship", display: "Easyship", category: "logistics"}
+          - {id: 1115, name: "shipengine", display: "ShipEngine", category: "logistics"}
+          - {id: 1116, name: "stamps", display: "Stamps.com", category: "logistics"}
+          - {id: 1117, name: "pitney_bowes", display: "Pitney Bowes", category: "logistics"}
+          - {id: 1118, name: "endicia", display: "Endicia", category: "logistics"}
+          - {id: 1119, name: "ordoro", display: "Ordoro", category: "logistics"}
+          - {id: 1120, name: "shippingeasy", display: "ShippingEasy", category: "logistics"}
+          - {id: 1121, name: "shipworks", display: "ShipWorks", category: "logistics"}
+          - {id: 1122, name: "freightview", display: "Freightview", category: "logistics"}
+          - {id: 1123, name: "freightos", display: "Freightos", category: "logistics"}
+          - {id: 1124, name: "flexport", display: "Flexport", category: "logistics"}
+          - {id: 1125, name: "shipbob", display: "ShipBob", category: "logistics"}
+          - {id: 1126, name: "deliverr", display: "Deliverr", category: "logistics"}
+          - {id: 1127, name: "shipmonk", display: "ShipMonk", category: "logistics"}
+          - {id: 1128, name: "red_stag", display: "Red Stag Fulfillment", category: "logistics"}
+          - {id: 1129, name: "rakuten", display: "Rakuten Super Logistics", category: "logistics"}
+          - {id: 1130, name: "whiplash", display: "Whiplash", category: "logistics"}
+          - {id: 1131, name: "flowspace", display: "Flowspace", category: "logistics"}
+
+      inventory_management:
+        agents:
+          - {id: 1132, name: "cin7", display: "Cin7", category: "inventory"}
+          - {id: 1133, name: "tradegecko", display: "TradeGecko", category: "inventory"}
+          - {id: 1134, name: "dear_inventory", display: "DEAR Inventory", category: "inventory"}
+          - {id: 1135, name: "unleashed", display: "Unleashed", category: "inventory"}
+          - {id: 1136, name: "fishbowl", display: "Fishbowl", category: "inventory"}
+          - {id: 1137, name: "katana", display: "Katana MRP", category: "inventory"}
+          - {id: 1138, name: "megaventory", display: "Megaventory", category: "inventory"}
+          - {id: 1139, name: "orderhive", display: "Orderhive", category: "inventory"}
+          - {id: 1140, name: "skuvault", display: "SkuVault", category: "inventory"}
+          - {id: 1141, name: "zoho_inventory", display: "Zoho Inventory", category: "inventory"}
+          - {id: 1142, name: "inventory_planner", display: "Inventory Planner", category: "inventory"}
+          - {id: 1143, name: "stocky", display: "Stocky", category: "inventory"}
+          - {id: 1144, name: "ecomdash", display: "Ecomdash", category: "inventory"}
+          - {id: 1145, name: "sellbrite", display: "Sellbrite", category: "inventory"}
+          - {id: 1146, name: "stitch_labs", display: "Stitch Labs", category: "inventory"}
+          - {id: 1147, name: "brightpearl", display: "Brightpearl", category: "inventory"}
+          - {id: 1148, name: "linnworks", display: "Linnworks", category: "inventory"}
+          - {id: 1149, name: "veeqo", display: "Veeqo", category: "inventory"}
+          - {id: 1150, name: "sellz", display: "Sellz", category: "inventory"}
+          - {id: 1151, name: "shiptheory", display: "Shiptheory", category: "inventory"}
+
+      restaurant_pos:
+        agents:
+          - {id: 1152, name: "toast", display: "Toast POS", category: "restaurant"}
+          - {id: 1153, name: "touchbistro", display: "TouchBistro", category: "restaurant"}
+          - {id: 1154, name: "lightspeed_restaurant", display: "Lightspeed Restaurant", category: "restaurant"}
+          - {id: 1155, name: "upserve", display: "Upserve", category: "restaurant"}
+          - {id: 1156, name: "revel", display: "Revel Systems", category: "restaurant"}
+          - {id: 1157, name: "lavu", display: "Lavu", category: "restaurant"}
+          - {id: 1158, name: "square_restaurants", display: "Square for Restaurants", category: "restaurant"}
+          - {id: 1159, name: "clover", display: "Clover POS", category: "restaurant"}
+          - {id: 1160, name: "talech", display: "Talech", category: "restaurant"}
+          - {id: 1161, name: "focus", display: "Focus POS", category: "restaurant"}
+          - {id: 1162, name: "maitre_d", display: "Maitre'D", category: "restaurant"}
+          - {id: 1163, name: "aloha", display: "Aloha POS", category: "restaurant"}
+          - {id: 1164, name: "micros", display: "Oracle MICROS", category: "restaurant"}
+          - {id: 1165, name: "restaurant365", display: "Restaurant365", category: "restaurant"}
+          - {id: 1166, name: "breadcrumb", display: "Breadcrumb", category: "restaurant"}
+          - {id: 1167, name: "rezku", display: "Rezku", category: "restaurant"}
+          - {id: 1168, name: "harbortouch", display: "Harbortouch", category: "restaurant"}
+          - {id: 1169, name: "shopkeep", display: "ShopKeep", category: "restaurant"}
+          - {id: 1170, name: "epos_now", display: "Epos Now", category: "restaurant"}
+          - {id: 1171, name: "loyverse", display: "Loyverse", category: "restaurant"}
+
+      retail_pos:
+        agents:
+          - {id: 1172, name: "vend", display: "Vend (Lightspeed Retail)", category: "retail"}
+          - {id: 1173, name: "square_retail", display: "Square for Retail", category: "retail"}
+          - {id: 1174, name: "shopify_pos", display: "Shopify POS", category: "retail"}
+          - {id: 1175, name: "lightspeed_retail", display: "Lightspeed Retail", category: "retail"}
+          - {id: 1176, name: "erply", display: "Erply", category: "retail"}
+          - {id: 1177, name: "springboard", display: "Springboard Retail", category: "retail"}
+          - {id: 1178, name: "bindo", display: "Bindo POS", category: "retail"}
+          - {id: 1179, name: "kounta", display: "Kounta", category: "retail"}
+          - {id: 1180, name: "retail_pro", display: "Retail Pro", category: "retail"}
+          - {id: 1181, name: "ls_nav", display: "LS Nav", category: "retail"}
+          - {id: 1182, name: "netsuite_pos", display: "NetSuite POS", category: "retail"}
+          - {id: 1183, name: "cegid", display: "Cegid Retail", category: "retail"}
+          - {id: 1184, name: "retail_express", display: "Retail Express", category: "retail"}
+          - {id: 1185, name: "quick_sale", display: "QuickSale POS", category: "retail"}
+          - {id: 1186, name: "cumulus", display: "Cumulus Retail", category: "retail"}
+          - {id: 1187, name: "pcamerica", display: "PC America", category: "retail"}
+          - {id: 1188, name: "amber", display: "Amber POS", category: "retail"}
+          - {id: 1189, name: "imonggo", display: "Imonggo", category: "retail"}
+          - {id: 1190, name: "hike", display: "Hike POS", category: "retail"}
+          - {id: 1191, name: "cybertill", display: "Cybertill", category: "retail"}
+
+      booking_reservations:
+        agents:
+          - {id: 1192, name: "opentable", display: "OpenTable", category: "booking"}
+          - {id: 1193, name: "resy", display: "Resy", category: "booking"}
+          - {id: 1194, name: "yelp_reservations", display: "Yelp Reservations", category: "booking"}
+          - {id: 1195, name: "sevenrooms", display: "SevenRooms", category: "booking"}
+          - {id: 1196, name: "tablesready", display: "TablesReady", category: "booking"}
+          - {id: 1197, name: "nowait", display: "Nowait", category: "booking"}
+          - {id: 1198, name: "waitwhile", display: "Waitwhile", category: "booking"}
+          - {id: 1199, name: "qudini", display: "Qudini", category: "booking"}
+          - {id: 1200, name: "appointedd", display: "Appointedd", category: "booking"}
+          - {id: 1201, name: "booksy_biz", display: "Booksy Biz", category: "booking"}
+          - {id: 1202, name: "vagaro", display: "Vagaro", category: "booking"}
+          - {id: 1203, name: "boulevard", display: "Boulevard", category: "booking"}
+          - {id: 1204, name: "zenoti", display: "Zenoti", category: "booking"}
+          - {id: 1205, name: "phorest", display: "Phorest", category: "booking"}
+          - {id: 1206, name: "shortcuts", display: "Shortcuts Software", category: "booking"}
+          - {id: 1207, name: "salon_iris", display: "Salon Iris", category: "booking"}
+          - {id: 1208, name: "rosy", display: "Rosy Salon Software", category: "booking"}
+          - {id: 1209, name: "mangomint", display: "Mangomint", category: "booking"}
+          - {id: 1210, name: "square_appointments", display: "Square Appointments", category: "booking"}
+          - {id: 1211, name: "fresha", display: "Fresha", category: "booking"}
+
+      event_management:
+        agents:
+          - {id: 1212, name: "eventbrite", display: "Eventbrite", category: "events"}
+          - {id: 1213, name: "bizzabo", display: "Bizzabo", category: "events"}
+          - {id: 1214, name: "cvent", display: "Cvent", category: "events"}
+          - {id: 1215, name: "eventmobi", display: "EventMobi", category: "events"}
+          - {id: 1216, name: "whova", display: "Whova", category: "events"}
+          - {id: 1217, name: "attendify", display: "Attendify", category: "events"}
+          - {id: 1218, name: "grenadine", display: "Grenadine Event Manager", category: "events"}
+          - {id: 1219, name: "social_tables", display: "Social Tables", category: "events"}
+          - {id: 1220, name: "eventgeek", display: "EventGeek", category: "events"}
+          - {id: 1221, name: "aventri", display: "Aventri", category: "events"}
+          - {id: 1222, name: "swoogo", display: "Swoogo", category: "events"}
+          - {id: 1223, name: "splash", display: "Splash", category: "events"}
+          - {id: 1224, name: "hubilo", display: "Hubilo", category: "events"}
+          - {id: 1225, name: "hopin", display: "Hopin", category: "events"}
+          - {id: 1226, name: "run_the_world", display: "Run the World", category: "events"}
+          - {id: 1227, name: "airmeet", display: "Airmeet", category: "events"}
+          - {id: 1228, name: "accelevents", display: "Accelevents", category: "events"}
+          - {id: 1229, name: "6connex", display: "6Connex", category: "events"}
+          - {id: 1230, name: "vfairs", display: "vFairs", category: "events"}
+          - {id: 1231, name: "remo", display: "Remo", category: "events"}
+
+      membership_subscription:
+        agents:
+          - {id: 1232, name: "memberful", display: "Memberful", category: "membership"}
+          - {id: 1233, name: "patreon", display: "Patreon", category: "membership"}
+          - {id: 1234, name: "memberpress", display: "MemberPress", category: "membership"}
+          - {id: 1235, name: "memberstack", display: "Memberstack", category: "membership"}
+          - {id: 1236, name: "memberspace", display: "MemberSpace", category: "membership"}
+          - {id: 1237, name: "wild_apricot", display: "Wild Apricot", category: "membership"}
+          - {id: 1238, name: "glue_up", display: "Glue Up", category: "membership"}
+          - {id: 1239, name: "memberclicks", display: "MemberClicks", category: "membership"}
+          - {id: 1240, name: "yourmembership", display: "YourMembership", category: "membership"}
+          - {id: 1241, name: "fonteva", display: "Fonteva", category: "membership"}
+          - {id: 1242, name: "nimble_ams", display: "Nimble AMS", category: "membership"}
+          - {id: 1243, name: "community_brands", display: "Community Brands", category: "membership"}
+          - {id: 1244, name: "aptify", display: "Aptify", category: "membership"}
+          - {id: 1245, name: "higher_logic", display: "Higher Logic", category: "membership"}
+          - {id: 1246, name: "imis", display: "iMIS", category: "membership"}
+          - {id: 1247, name: "raklet", display: "Raklet", category: "membership"}
+          - {id: 1248, name: "tribe", display: "Tribe", category: "membership"}
+          - {id: 1249, name: "circle", display: "Circle", category: "membership"}
+          - {id: 1250, name: "mighty_networks", display: "Mighty Networks", category: "membership"}
+          - {id: 1251, name: "geneva", display: "Geneva", category: "membership"}
+
+      nonprofit:
+        agents:
+          - {id: 1252, name: "bloomerang", display: "Bloomerang", category: "nonprofit"}
+          - {id: 1253, name: "donorperfect", display: "DonorPerfect", category: "nonprofit"}
+          - {id: 1254, name: "little_green_light", display: "Little Green Light", category: "nonprofit"}
+          - {id: 1255, name: "neon_crm", display: "Neon CRM", category: "nonprofit"}
+          - {id: 1256, name: "donor_snap", display: "DonorSnap", category: "nonprofit"}
+          - {id: 1257, name: "givebutter", display: "Givebutter", category: "nonprofit"}
+          - {id: 1258, name: "classy", display: "Classy", category: "nonprofit"}
+          - {id: 1259, name: "funraise", display: "Funraise", category: "nonprofit"}
+          - {id: 1260, name: "kindful", display: "Kindful", category: "nonprofit"}
+          - {id: 1261, name: "double_the_donation", display: "Double the Donation", category: "nonprofit"}
+          - {id: 1262, name: "qgiv", display: "Qgiv", category: "nonprofit"}
+          - {id: 1263, name: "virtuous", display: "Virtuous", category: "nonprofit"}
+          - {id: 1264, name: "keela", display: "Keela", category: "nonprofit"}
+          - {id: 1265, name: "giveffect", display: "Giveffect", category: "nonprofit"}
+          - {id: 1266, name: "donately", display: "Donately", category: "nonprofit"}
+          - {id: 1267, name: "mobilecause", display: "MobileCause", category: "nonprofit"}
+          - {id: 1268, name: "givegab", display: "GiveGab", category: "nonprofit"}
+          - {id: 1269, name: "rallybound", display: "Rallybound", category: "nonprofit"}
+          - {id: 1270, name: "mightycause", display: "Mightycause", category: "nonprofit"}
+          - {id: 1271, name: "donorbox", display: "Donorbox", category: "nonprofit"}
+
+      agriculture:
+        agents:
+          - {id: 1272, name: "farmlogs", display: "FarmLogs", category: "agriculture"}
+          - {id: 1273, name: "granular", display: "Granular", category: "agriculture"}
+          - {id: 1274, name: "climate_fieldview", display: "Climate FieldView", category: "agriculture"}
+          - {id: 1275, name: "farmers_edge", display: "Farmers Edge", category: "agriculture"}
+          - {id: 1276, name: "agworld", display: "Agworld", category: "agriculture"}
+          - {id: 1277, name: "cropio", display: "Cropio", category: "agriculture"}
+          - {id: 1278, name: "farm_works", display: "Farm Works", category: "agriculture"}
+          - {id: 1279, name: "conservis", display: "Conservis", category: "agriculture"}
+          - {id: 1280, name: "farmwizard", display: "FarmWizard", category: "agriculture"}
+          - {id: 1281, name: "agrivi", display: "AGRIVI", category: "agriculture"}
+          - {id: 1282, name: "trimble_ag", display: "Trimble Ag Software", category: "agriculture"}
+          - {id: 1283, name: "farmqa", display: "FarmQA", category: "agriculture"}
+          - {id: 1284, name: "croptracker", display: "Croptracker", category: "agriculture"}
+          - {id: 1285, name: "cropwise", display: "Cropwise", category: "agriculture"}
+          - {id: 1286, name: "agrian", display: "Agrian", category: "agriculture"}
+          - {id: 1287, name: "farm_at_hand", display: "Farm At Hand", category: "agriculture"}
+          - {id: 1288, name: "adapt_n", display: "Adapt-N", category: "agriculture"}
+          - {id: 1289, name: "encirca", display: "Encirca", category: "agriculture"}
+          - {id: 1290, name: "agri_webb", display: "AgriWebb", category: "agriculture"}
+          - {id: 1291, name: "farmobile", display: "Farmobile", category: "agriculture"}
+
+      manufacturing:
+        agents:
+          - {id: 1292, name: "odoo_manufacturing", display: "Odoo Manufacturing", category: "manufacturing"}
+          - {id: 1293, name: "erpnext", display: "ERPNext", category: "manufacturing"}
+          - {id: 1294, name: "epicor", display: "Epicor ERP", category: "manufacturing"}
+          - {id: 1295, name: "infor", display: "Infor CloudSuite", category: "manufacturing"}
+          - {id: 1296, name: "iqms", display: "IQMS", category: "manufacturing"}
+          - {id: 1297, name: "syspro", display: "SYSPRO", category: "manufacturing"}
+          - {id: 1298, name: "global_shop", display: "Global Shop Solutions", category: "manufacturing"}
+          - {id: 1299, name: "jobboss", display: "JobBOSS", category: "manufacturing"}
+          - {id: 1300, name: "e2_shop", display: "E2 Shop System", category: "manufacturing"}
+          - {id: 1301, name: "deacom", display: "DEACOM ERP", category: "manufacturing"}
+          - {id: 1302, name: "delmia", display: "DELMIA", category: "manufacturing"}
+          - {id: 1303, name: "plex", display: "Plex Manufacturing Cloud", category: "manufacturing"}
+          - {id: 1304, name: "genius_erp", display: "Genius ERP", category: "manufacturing"}
+          - {id: 1305, name: "macola", display: "Macola", category: "manufacturing"}
+          - {id: 1306, name: "abas_erp", display: "abas ERP", category: "manufacturing"}
+          - {id: 1307, name: "exact", display: "Exact Globe", category: "manufacturing"}
+          - {id: 1308, name: "ramco", display: "Ramco ERP", category: "manufacturing"}
+          - {id: 1309, name: "visibility", display: "Visibility ERP", category: "manufacturing"}
+          - {id: 1310, name: "acumatica", display: "Acumatica", category: "manufacturing"}
+          - {id: 1311, name: "cetec", display: "Cetec ERP", category: "manufacturing"}
+
+      utilities:
+        agents:
+          - {id: 1312, name: "grammarly", display: "Grammarly", category: "utility"}
+          - {id: 1313, name: "prowritingaid", display: "ProWritingAid", category: "utility"}
+          - {id: 1314, name: "hemingway", display: "Hemingway Editor", category: "utility"}
+          - {id: 1315, name: "docparser", display: "Docparser", category: "utility"}
+          - {id: 1316, name: "pdffiller", display: "PDFfiller", category: "utility"}
+          - {id: 1317, name: "smallpdf", display: "Smallpdf", category: "utility"}
+          - {id: 1318, name: "pandadoc", display: "PandaDoc", category: "utility"}
+          - {id: 1319, name: "hellosign", display: "HelloSign", category: "utility"}
+          - {id: 1320, name: "signnow", display: "SignNow", category: "utility"}
+          - {id: 1321, name: "rightsignature", display: "RightSignature", category: "utility"}
+          - {id: 1322, name: "signrequest", display: "SignRequest", category: "utility"}
+          - {id: 1323, name: "eversign", display: "eversign", category: "utility"}
+          - {id: 1324, name: "signable", display: "Signable", category: "utility"}
+          - {id: 1325, name: "onespan", display: "OneSpan Sign", category: "utility"}
+          - {id: 1326, name: "formswift", display: "FormSwift", category: "utility"}
+          - {id: 1327, name: "zipform", display: "zipForm", category: "utility"}
+          - {id: 1328, name: "zapier", display: "Zapier", category: "utility"}
+          - {id: 1329, name: "make", display: "Make (Integromat)", category: "utility"}
+          - {id: 1330, name: "n8n", display: "n8n", category: "utility"}
+          - {id: 1331, name: "automate_io", display: "Automate.io", category: "utility"}
+
+      collaboration_more:
+        agents:
+          - {id: 1332, name: "pitch", display: "Pitch", category: "collaboration"}
+          - {id: 1333, name: "beautiful_ai", display: "Beautiful.ai", category: "collaboration"}
+          - {id: 1334, name: "prezi", display: "Prezi", category: "collaboration"}
+          - {id: 1335, name: "visme", display: "Visme", category: "collaboration"}
+          - {id: 1336, name: "lucidchart", display: "Lucidchart", category: "collaboration"}
+          - {id: 1337, name: "creately", display: "Creately", category: "collaboration"}
+          - {id: 1338, name: "draw_io", display: "Draw.io", category: "collaboration"}
+          - {id: 1339, name: "mural", display: "Mural", category: "collaboration"}
+          - {id: 1340, name: "miro_advanced", display: "Miro Advanced", category: "collaboration"}
+          - {id: 1341, name: "whimsical", display: "Whimsical", category: "collaboration"}
+          - {id: 1342, name: "conceptboard", display: "Conceptboard", category: "collaboration"}
+          - {id: 1343, name: "stormboard", display: "Stormboard", category: "collaboration"}
+          - {id: 1344, name: "jamboard", display: "Google Jamboard", category: "collaboration"}
+          - {id: 1345, name: "milanote", display: "Milanote", category: "collaboration"}
+          - {id: 1346, name: "mindmeister", display: "MindMeister", category: "collaboration"}
+          - {id: 1347, name: "coggle", display: "Coggle", category: "collaboration"}
+          - {id: 1348, name: "xmind", display: "XMind", category: "collaboration"}
+          - {id: 1349, name: "bubbleus", display: "Bubble.us", category: "collaboration"}
+          - {id: 1350, name: "wisemapping", display: "WiseMapping", category: "collaboration"}
+          - {id: 1351, name: "ayoa", display: "Ayoa", category: "collaboration"}
+
+      business_intelligence:
+        agents:
+          - {id: 1352, name: "metabase", display: "Metabase", category: "bi"}
+          - {id: 1353, name: "redash", display: "Redash", category: "bi"}
+          - {id: 1354, name: "superset", display: "Apache Superset", category: "bi"}
+          - {id: 1355, name: "mode", display: "Mode Analytics", category: "bi"}
+          - {id: 1356, name: "chartio", display: "Chartio", category: "bi"}
+          - {id: 1357, name: "periscope", display: "Periscope Data", category: "bi"}
+          - {id: 1358, name: "klipfolio", display: "Klipfolio", category: "bi"}
+          - {id: 1359, name: "cyfe", display: "Cyfe", category: "bi"}
+          - {id: 1360, name: "geckoboard", display: "Geckoboard", category: "bi"}
+          - {id: 1361, name: "databox", display: "Databox", category: "bi"}
+          - {id: 1362, name: "grow", display: "Grow", category: "bi"}
+          - {id: 1363, name: "birst", display: "Birst", category: "bi"}
+          - {id: 1364, name: "sisense_advanced", display: "Sisense Advanced", category: "bi"}
+          - {id: 1365, name: "thoughtspot", display: "ThoughtSpot", category: "bi"}
+          - {id: 1366, name: "gooddata", display: "GoodData", category: "bi"}
+          - {id: 1367, name: "yellowfin", display: "Yellowfin BI", category: "bi"}
+          - {id: 1368, name: "zoho_analytics", display: "Zoho Analytics", category: "bi"}
+          - {id: 1369, name: "databricks", display: "Databricks", category: "bi"}
+          - {id: 1370, name: "alteryx", display: "Alteryx", category: "bi"}
+          - {id: 1371, name: "knime", display: "KNIME", category: "bi"}
+
+      data_warehousing:
+        agents:
+          - {id: 1372, name: "fivetran", display: "Fivetran", category: "data"}
+          - {id: 1373, name: "stitch", display: "Stitch Data", category: "data"}
+          - {id: 1374, name: "airbyte", display: "Airbyte", category: "data"}
+          - {id: 1375, name: "talend", display: "Talend", category: "data"}
+          - {id: 1376, name: "informatica", display: "Informatica", category: "data"}
+          - {id: 1377, name: "pentaho", display: "Pentaho", category: "data"}
+          - {id: 1378, name: "matillion", display: "Matillion", category: "data"}
+          - {id: 1379, name: "singer", display: "Singer", category: "data"}
+          - {id: 1380, name: "hevo", display: "Hevo Data", category: "data"}
+          - {id: 1381, name: "rivery", display: "Rivery", category: "data"}
+          - {id: 1382, name: "funnel", display: "Funnel.io", category: "data"}
+          - {id: 1383, name: "supermetrics", display: "Supermetrics", category: "data"}
+          - {id: 1384, name: "dbt", display: "dbt (Data Build Tool)", category: "data"}
+          - {id: 1385, name: "dataform", display: "Dataform", category: "data"}
+          - {id: 1386, name: "census", display: "Census", category: "data"}
+          - {id: 1387, name: "hightouch", display: "Hightouch", category: "data"}
+          - {id: 1388, name: "rudderstack", display: "RudderStack", category: "data"}
+          - {id: 1389, name: "mparticle", display: "mParticle", category: "data"}
+          - {id: 1390, name: "tealium", display: "Tealium", category: "data"}
+          - {id: 1391, name: "fresh pire", display: "Freshpaint", category: "data"}
+
+      api_testing:
+        agents:
+          - {id: 1392, name: "katalon", display: "Katalon Studio", category: "testing"}
+          - {id: 1393, name: "soapui", display: "SoapUI", category: "testing"}
+          - {id: 1394, name: "rest_assured", display: "REST Assured", category: "testing"}
+          - {id: 1395, name: "karate", display: "Karate DSL", category: "testing"}
+          - {id: 1396, name: "pact", display: "Pact", category: "testing"}
+          - {id: 1397, name: "dredd", display: "Dredd", category: "testing"}
+          - {id: 1398, name: "tavern", display: "Tavern", category: "testing"}
+          - {id: 1399, name: "apigee_edge", display: "Apigee Edge", category: "testing"}
+          - {id: 1400, name: "runscope", display: "Runscope", category: "testing"}
+          - {id: 1401, name: "assertible", display: "Assertible", category: "testing"}
+          - {id: 1402, name: "blazemeter", display: "BlazeMeter", category: "testing"}
+          - {id: 1403, name: "gatling", display: "Gatling", category: "testing"}
+          - {id: 1404, name: "jmeter", display: "Apache JMeter", category: "testing"}
+          - {id: 1405, name: "k6", display: "k6", category: "testing"}
+          - {id: 1406, name: "artillery", display: "Artillery", category: "testing"}
+          - {id: 1407, name: "locust", display: "Locust", category: "testing"}
+          - {id: 1408, name: "loader_io", display: "Loader.io", category: "testing"}
+          - {id: 1409, name: "flood_io", display: "Flood.io", category: "testing"}
+          - {id: 1410, name: "loadninja", display: "LoadNinja", category: "testing"}
+          - {id: 1411, name: "neoload", display: "NeoLoad", category: "testing"}
+
+      ml_ai_platforms:
+        agents:
+          - {id: 1412, name: "dataiku", display: "Dataiku", category: "ml"}
+          - {id: 1413, name: "datarobot", display: "DataRobot", category: "ml"}
+          - {id: 1414, name: "h2o_ai", display: "H2O.ai", category: "ml"}
+          - {id: 1415, name: "rapidminer", display: "RapidMiner", category: "ml"}
+          - {id: 1416, name: "mlflow", display: "MLflow", category: "ml"}
+          - {id: 1417, name: "wandb", display: "Weights & Biases", category: "ml"}
+          - {id: 1418, name: "neptune_ai", display: "Neptune.ai", category: "ml"}
+          - {id: 1419, name: "comet_ml", display: "Comet ML", category: "ml"}
+          - {id: 1420, name: "guild_ai", display: "Guild AI", category: "ml"}
+          - {id: 1421, name: "domino", display: "Domino Data Lab", category: "ml"}
+          - {id: 1422, name: "paperspace", display: "Paperspace", category: "ml"}
+          - {id: 1423, name: "gradient", display: "Gradient (Paperspace)", category: "ml"}
+          - {id: 1424, name: "floyd", display: "FloydHub", category: "ml"}
+          - {id: 1425, name: "sagemaker", display: "AWS SageMaker", category: "ml"}
+          - {id: 1426, name: "azure_ml", display: "Azure Machine Learning", category: "ml"}
+          - {id: 1427, name: "vertex_ai", display: "Google Vertex AI", category: "ml"}
+          - {id: 1428, name: "algorithmia", display: "Algorithmia", category: "ml"}
+          - {id: 1429, name: "seldon", display: "Seldon", category: "ml"}
+          - {id: 1430, name: "cortex", display: "Cortex", category: "ml"}
+          - {id: 1431, name: "kubeflow", display: "Kubeflow", category: "ml"}
+
+mcp_discovery:
+  search_locations:
+    - "https://github.com/modelcontextprotocol"
+    - "https://github.com/topics/mcp-server"
+    - "https://github.com/topics/model-context-protocol"
+
+  integration_priority:
+    has_mcp_server: "immediate_integration"
+    has_public_api: "build_custom_mcp"
+    has_api_docs: "document_for_future"
+    no_public_access: "skip_for_now"
+
+deployment:
+  model: "gemini-2.0-flash-exp"
+  platform: "google_vertex_ai"
+  infrastructure: "terraform"
+  ci_cd: "github_actions"
+
+status:
+  created: "2025-11-16"
+  version: "1.0.0"
+  total_planned: 1000
+  agents_range: "512-1511"

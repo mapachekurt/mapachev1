@@ -1,0 +1,53 @@
+agent_name: "cassandra_agent"
+display_name: "Cassandra"
+description: "Expert agent for Cassandra operations and integration"
+version: "1.0.0"
+model: "gemini-2.0-flash-exp"
+tier: "Developer Tools"
+category: "database"
+
+capabilities:
+  - api_integration
+  - data_synchronization
+  - workflow_automation
+  - real_time_operations
+  - error_handling
+  - security_management
+
+authentication:
+  type: "oauth"  # Placeholder for future OAuth migration
+  current: "api_key"
+  env_var: "CASSANDRA_API_KEY"
+
+mcp_server:
+  available: false
+  source: "custom"
+
+api_config:
+  base_url: "https://api.cassandra.com"
+  rate_limit: 1000  # requests per hour
+  docs_url: "https://docs.cassandra.com"
+  version: "v1"
+
+deployment:
+  dev:
+    endpoint: "dev-cassandra-agent"
+    project: "mapache-dev"
+  staging:
+    endpoint: "staging-cassandra-agent"
+    project: "mapache-staging"
+  prod:
+    endpoint: "prod-cassandra-agent"
+    project: "mapache-prod"
+
+monitoring:
+  health_check: true
+  metrics: true
+  logging: "structured_json"
+  alerts: true
+
+integration_status:
+  implemented: false
+  tested: false
+  deployed: false
+  production_ready: false

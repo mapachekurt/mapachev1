@@ -1,0 +1,53 @@
+agent_name: "pardot_agent"
+display_name: "Pardot"
+description: "Expert agent for Pardot operations and integration"
+version: "1.0.0"
+model: "gemini-2.0-flash-exp"
+tier: "Marketing & Sales"
+category: "marketing_automation"
+
+capabilities:
+  - api_integration
+  - data_synchronization
+  - workflow_automation
+  - real_time_operations
+  - error_handling
+  - security_management
+
+authentication:
+  type: "oauth"  # Placeholder for future OAuth migration
+  current: "api_key"
+  env_var: "PARDOT_API_KEY"
+
+mcp_server:
+  available: false
+  source: "custom"
+
+api_config:
+  base_url: "https://api.pardot.com"
+  rate_limit: 1000  # requests per hour
+  docs_url: "https://docs.pardot.com"
+  version: "v1"
+
+deployment:
+  dev:
+    endpoint: "dev-pardot-agent"
+    project: "mapache-dev"
+  staging:
+    endpoint: "staging-pardot-agent"
+    project: "mapache-staging"
+  prod:
+    endpoint: "prod-pardot-agent"
+    project: "mapache-prod"
+
+monitoring:
+  health_check: true
+  metrics: true
+  logging: "structured_json"
+  alerts: true
+
+integration_status:
+  implemented: false
+  tested: false
+  deployed: false
+  production_ready: false

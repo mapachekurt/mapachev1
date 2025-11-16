@@ -1,0 +1,90 @@
+# Close CRM Agent
+
+Expert agent for Close CRM operations within the Mapache SaaS ecosystem.
+
+## Overview
+
+Agent ID: `agent_580`
+Tier: Marketing & Sales
+Category: crm
+
+## Capabilities
+
+- Close CRM API integration
+- Real-time data synchronization
+- Workflow automation
+- OAuth authentication (planned)
+- Error handling and recovery
+- Rate limiting management
+
+## Configuration
+
+### Environment Variables
+
+- `CLOSE_API_KEY`: API key for Close CRM
+
+### API Configuration
+
+- Base URL: https://api.close.com
+- Rate Limit: 1000 requests/hour
+- Documentation: https://docs.close.com
+
+## MCP Server
+
+
+MCP Server Available: No
+Custom integration required
+
+
+## Usage
+
+```python
+from agents.saas_agents.close.agent import close_agent
+
+# Execute operations
+result = close_agent.execute("sync data")
+
+# Get capabilities
+capabilities = close_agent.get_capabilities()
+
+# Get configuration
+config = close_agent.get_config()
+```
+
+## Deployment
+
+### Development
+```bash
+# Deploy to dev environment
+make deploy-dev AGENT=close
+```
+
+### Production
+```bash
+# Deploy to production
+make deploy-prod AGENT=close
+```
+
+## Testing
+
+```bash
+# Run tests
+pytest agents/saas_agents/close/tests/
+```
+
+## Integration Status
+
+- [ ] API Integration
+- [ ] MCP Server Integration
+- [ ] Unit Tests
+- [ ] Integration Tests
+- [ ] Documentation Complete
+- [ ] Production Deployment
+
+## Support
+
+For issues or questions, refer to the main [SaaS Agents documentation](../README.md).
+
+## License
+
+Copyright 2025 Mapache - All Rights Reserved

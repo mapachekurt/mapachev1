@@ -1,0 +1,90 @@
+# Farm Works Agent
+
+Expert agent for Farm Works operations within the Mapache SaaS ecosystem.
+
+## Overview
+
+Agent ID: `agent_1278`
+Tier: Specialized Vertical Tools
+Category: agriculture
+
+## Capabilities
+
+- Farm Works API integration
+- Real-time data synchronization
+- Workflow automation
+- OAuth authentication (planned)
+- Error handling and recovery
+- Rate limiting management
+
+## Configuration
+
+### Environment Variables
+
+- `FARM_WORKS_API_KEY`: API key for Farm Works
+
+### API Configuration
+
+- Base URL: https://api.farmworks.com
+- Rate Limit: 1000 requests/hour
+- Documentation: https://docs.farmworks.com
+
+## MCP Server
+
+
+MCP Server Available: No
+Custom integration required
+
+
+## Usage
+
+```python
+from agents.saas_agents.farm_works.agent import farm_works_agent
+
+# Execute operations
+result = farm_works_agent.execute("sync data")
+
+# Get capabilities
+capabilities = farm_works_agent.get_capabilities()
+
+# Get configuration
+config = farm_works_agent.get_config()
+```
+
+## Deployment
+
+### Development
+```bash
+# Deploy to dev environment
+make deploy-dev AGENT=farm_works
+```
+
+### Production
+```bash
+# Deploy to production
+make deploy-prod AGENT=farm_works
+```
+
+## Testing
+
+```bash
+# Run tests
+pytest agents/saas_agents/farm_works/tests/
+```
+
+## Integration Status
+
+- [ ] API Integration
+- [ ] MCP Server Integration
+- [ ] Unit Tests
+- [ ] Integration Tests
+- [ ] Documentation Complete
+- [ ] Production Deployment
+
+## Support
+
+For issues or questions, refer to the main [SaaS Agents documentation](../README.md).
+
+## License
+
+Copyright 2025 Mapache - All Rights Reserved

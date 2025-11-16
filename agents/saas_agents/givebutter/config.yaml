@@ -1,0 +1,53 @@
+agent_name: "givebutter_agent"
+display_name: "Givebutter"
+description: "Expert agent for Givebutter operations and integration"
+version: "1.0.0"
+model: "gemini-2.0-flash-exp"
+tier: "Specialized Vertical Tools"
+category: "nonprofit"
+
+capabilities:
+  - api_integration
+  - data_synchronization
+  - workflow_automation
+  - real_time_operations
+  - error_handling
+  - security_management
+
+authentication:
+  type: "oauth"  # Placeholder for future OAuth migration
+  current: "api_key"
+  env_var: "GIVEBUTTER_API_KEY"
+
+mcp_server:
+  available: false
+  source: "custom"
+
+api_config:
+  base_url: "https://api.givebutter.com"
+  rate_limit: 1000  # requests per hour
+  docs_url: "https://docs.givebutter.com"
+  version: "v1"
+
+deployment:
+  dev:
+    endpoint: "dev-givebutter-agent"
+    project: "mapache-dev"
+  staging:
+    endpoint: "staging-givebutter-agent"
+    project: "mapache-staging"
+  prod:
+    endpoint: "prod-givebutter-agent"
+    project: "mapache-prod"
+
+monitoring:
+  health_check: true
+  metrics: true
+  logging: "structured_json"
+  alerts: true
+
+integration_status:
+  implemented: false
+  tested: false
+  deployed: false
+  production_ready: false

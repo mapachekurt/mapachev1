@@ -1,0 +1,53 @@
+agent_name: "mercurial_agent"
+display_name: "Mercurial"
+description: "Expert agent for Mercurial operations and integration"
+version: "1.0.0"
+model: "gemini-2.0-flash-exp"
+tier: "Developer Tools"
+category: "version_control"
+
+capabilities:
+  - api_integration
+  - data_synchronization
+  - workflow_automation
+  - real_time_operations
+  - error_handling
+  - security_management
+
+authentication:
+  type: "oauth"  # Placeholder for future OAuth migration
+  current: "api_key"
+  env_var: "MERCURIAL_API_KEY"
+
+mcp_server:
+  available: false
+  source: "custom"
+
+api_config:
+  base_url: "https://api.mercurial.com"
+  rate_limit: 1000  # requests per hour
+  docs_url: "https://docs.mercurial.com"
+  version: "v1"
+
+deployment:
+  dev:
+    endpoint: "dev-mercurial-agent"
+    project: "mapache-dev"
+  staging:
+    endpoint: "staging-mercurial-agent"
+    project: "mapache-staging"
+  prod:
+    endpoint: "prod-mercurial-agent"
+    project: "mapache-prod"
+
+monitoring:
+  health_check: true
+  metrics: true
+  logging: "structured_json"
+  alerts: true
+
+integration_status:
+  implemented: false
+  tested: false
+  deployed: false
+  production_ready: false

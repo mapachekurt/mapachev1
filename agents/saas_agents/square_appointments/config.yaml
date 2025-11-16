@@ -1,0 +1,53 @@
+agent_name: "square_appointments_agent"
+display_name: "Square Appointments"
+description: "Expert agent for Square Appointments operations and integration"
+version: "1.0.0"
+model: "gemini-2.0-flash-exp"
+tier: "Specialized Vertical Tools"
+category: "booking"
+
+capabilities:
+  - api_integration
+  - data_synchronization
+  - workflow_automation
+  - real_time_operations
+  - error_handling
+  - security_management
+
+authentication:
+  type: "oauth"  # Placeholder for future OAuth migration
+  current: "api_key"
+  env_var: "SQUARE_APPOINTMENTS_API_KEY"
+
+mcp_server:
+  available: false
+  source: "custom"
+
+api_config:
+  base_url: "https://api.squareappointments.com"
+  rate_limit: 1000  # requests per hour
+  docs_url: "https://docs.squareappointments.com"
+  version: "v1"
+
+deployment:
+  dev:
+    endpoint: "dev-square_appointments-agent"
+    project: "mapache-dev"
+  staging:
+    endpoint: "staging-square_appointments-agent"
+    project: "mapache-staging"
+  prod:
+    endpoint: "prod-square_appointments-agent"
+    project: "mapache-prod"
+
+monitoring:
+  health_check: true
+  metrics: true
+  logging: "structured_json"
+  alerts: true
+
+integration_status:
+  implemented: false
+  tested: false
+  deployed: false
+  production_ready: false

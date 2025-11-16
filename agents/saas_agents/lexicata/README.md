@@ -1,0 +1,90 @@
+# Lexicata Agent
+
+Expert agent for Lexicata operations within the Mapache SaaS ecosystem.
+
+## Overview
+
+Agent ID: `agent_1043`
+Tier: Specialized Vertical Tools
+Category: legal
+
+## Capabilities
+
+- Lexicata API integration
+- Real-time data synchronization
+- Workflow automation
+- OAuth authentication (planned)
+- Error handling and recovery
+- Rate limiting management
+
+## Configuration
+
+### Environment Variables
+
+- `LEXICATA_API_KEY`: API key for Lexicata
+
+### API Configuration
+
+- Base URL: https://api.lexicata.com
+- Rate Limit: 1000 requests/hour
+- Documentation: https://docs.lexicata.com
+
+## MCP Server
+
+
+MCP Server Available: No
+Custom integration required
+
+
+## Usage
+
+```python
+from agents.saas_agents.lexicata.agent import lexicata_agent
+
+# Execute operations
+result = lexicata_agent.execute("sync data")
+
+# Get capabilities
+capabilities = lexicata_agent.get_capabilities()
+
+# Get configuration
+config = lexicata_agent.get_config()
+```
+
+## Deployment
+
+### Development
+```bash
+# Deploy to dev environment
+make deploy-dev AGENT=lexicata
+```
+
+### Production
+```bash
+# Deploy to production
+make deploy-prod AGENT=lexicata
+```
+
+## Testing
+
+```bash
+# Run tests
+pytest agents/saas_agents/lexicata/tests/
+```
+
+## Integration Status
+
+- [ ] API Integration
+- [ ] MCP Server Integration
+- [ ] Unit Tests
+- [ ] Integration Tests
+- [ ] Documentation Complete
+- [ ] Production Deployment
+
+## Support
+
+For issues or questions, refer to the main [SaaS Agents documentation](../README.md).
+
+## License
+
+Copyright 2025 Mapache - All Rights Reserved

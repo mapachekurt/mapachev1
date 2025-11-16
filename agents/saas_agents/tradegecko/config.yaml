@@ -1,0 +1,53 @@
+agent_name: "tradegecko_agent"
+display_name: "TradeGecko"
+description: "Expert agent for TradeGecko operations and integration"
+version: "1.0.0"
+model: "gemini-2.0-flash-exp"
+tier: "Specialized Vertical Tools"
+category: "inventory"
+
+capabilities:
+  - api_integration
+  - data_synchronization
+  - workflow_automation
+  - real_time_operations
+  - error_handling
+  - security_management
+
+authentication:
+  type: "oauth"  # Placeholder for future OAuth migration
+  current: "api_key"
+  env_var: "TRADEGECKO_API_KEY"
+
+mcp_server:
+  available: false
+  source: "custom"
+
+api_config:
+  base_url: "https://api.tradegecko.com"
+  rate_limit: 1000  # requests per hour
+  docs_url: "https://docs.tradegecko.com"
+  version: "v1"
+
+deployment:
+  dev:
+    endpoint: "dev-tradegecko-agent"
+    project: "mapache-dev"
+  staging:
+    endpoint: "staging-tradegecko-agent"
+    project: "mapache-staging"
+  prod:
+    endpoint: "prod-tradegecko-agent"
+    project: "mapache-prod"
+
+monitoring:
+  health_check: true
+  metrics: true
+  logging: "structured_json"
+  alerts: true
+
+integration_status:
+  implemented: false
+  tested: false
+  deployed: false
+  production_ready: false
