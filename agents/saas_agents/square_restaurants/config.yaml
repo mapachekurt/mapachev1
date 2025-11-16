@@ -1,0 +1,53 @@
+agent_name: "square_restaurants_agent"
+display_name: "Square for Restaurants"
+description: "Expert agent for Square for Restaurants operations and integration"
+version: "1.0.0"
+model: "gemini-2.0-flash-exp"
+tier: "Specialized Vertical Tools"
+category: "restaurant"
+
+capabilities:
+  - api_integration
+  - data_synchronization
+  - workflow_automation
+  - real_time_operations
+  - error_handling
+  - security_management
+
+authentication:
+  type: "oauth"  # Placeholder for future OAuth migration
+  current: "api_key"
+  env_var: "SQUARE_RESTAURANTS_API_KEY"
+
+mcp_server:
+  available: false
+  source: "custom"
+
+api_config:
+  base_url: "https://api.squarerestaurants.com"
+  rate_limit: 1000  # requests per hour
+  docs_url: "https://docs.squarerestaurants.com"
+  version: "v1"
+
+deployment:
+  dev:
+    endpoint: "dev-square_restaurants-agent"
+    project: "mapache-dev"
+  staging:
+    endpoint: "staging-square_restaurants-agent"
+    project: "mapache-staging"
+  prod:
+    endpoint: "prod-square_restaurants-agent"
+    project: "mapache-prod"
+
+monitoring:
+  health_check: true
+  metrics: true
+  logging: "structured_json"
+  alerts: true
+
+integration_status:
+  implemented: false
+  tested: false
+  deployed: false
+  production_ready: false

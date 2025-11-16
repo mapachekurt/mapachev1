@@ -1,0 +1,53 @@
+agent_name: "climate_fieldview_agent"
+display_name: "Climate FieldView"
+description: "Expert agent for Climate FieldView operations and integration"
+version: "1.0.0"
+model: "gemini-2.0-flash-exp"
+tier: "Specialized Vertical Tools"
+category: "agriculture"
+
+capabilities:
+  - api_integration
+  - data_synchronization
+  - workflow_automation
+  - real_time_operations
+  - error_handling
+  - security_management
+
+authentication:
+  type: "oauth"  # Placeholder for future OAuth migration
+  current: "api_key"
+  env_var: "CLIMATE_FIELDVIEW_API_KEY"
+
+mcp_server:
+  available: false
+  source: "custom"
+
+api_config:
+  base_url: "https://api.climatefieldview.com"
+  rate_limit: 1000  # requests per hour
+  docs_url: "https://docs.climatefieldview.com"
+  version: "v1"
+
+deployment:
+  dev:
+    endpoint: "dev-climate_fieldview-agent"
+    project: "mapache-dev"
+  staging:
+    endpoint: "staging-climate_fieldview-agent"
+    project: "mapache-staging"
+  prod:
+    endpoint: "prod-climate_fieldview-agent"
+    project: "mapache-prod"
+
+monitoring:
+  health_check: true
+  metrics: true
+  logging: "structured_json"
+  alerts: true
+
+integration_status:
+  implemented: false
+  tested: false
+  deployed: false
+  production_ready: false

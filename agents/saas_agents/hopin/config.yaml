@@ -1,0 +1,53 @@
+agent_name: "hopin_agent"
+display_name: "Hopin"
+description: "Expert agent for Hopin operations and integration"
+version: "1.0.0"
+model: "gemini-2.0-flash-exp"
+tier: "Specialized Vertical Tools"
+category: "events"
+
+capabilities:
+  - api_integration
+  - data_synchronization
+  - workflow_automation
+  - real_time_operations
+  - error_handling
+  - security_management
+
+authentication:
+  type: "oauth"  # Placeholder for future OAuth migration
+  current: "api_key"
+  env_var: "HOPIN_API_KEY"
+
+mcp_server:
+  available: false
+  source: "custom"
+
+api_config:
+  base_url: "https://api.hopin.com"
+  rate_limit: 1000  # requests per hour
+  docs_url: "https://docs.hopin.com"
+  version: "v1"
+
+deployment:
+  dev:
+    endpoint: "dev-hopin-agent"
+    project: "mapache-dev"
+  staging:
+    endpoint: "staging-hopin-agent"
+    project: "mapache-staging"
+  prod:
+    endpoint: "prod-hopin-agent"
+    project: "mapache-prod"
+
+monitoring:
+  health_check: true
+  metrics: true
+  logging: "structured_json"
+  alerts: true
+
+integration_status:
+  implemented: false
+  tested: false
+  deployed: false
+  production_ready: false

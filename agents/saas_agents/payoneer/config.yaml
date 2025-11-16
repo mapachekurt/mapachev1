@@ -1,0 +1,53 @@
+agent_name: "payoneer_agent"
+display_name: "Payoneer"
+description: "Expert agent for Payoneer operations and integration"
+version: "1.0.0"
+model: "gemini-2.0-flash-exp"
+tier: "Specialized Vertical Tools"
+category: "payments"
+
+capabilities:
+  - api_integration
+  - data_synchronization
+  - workflow_automation
+  - real_time_operations
+  - error_handling
+  - security_management
+
+authentication:
+  type: "oauth"  # Placeholder for future OAuth migration
+  current: "api_key"
+  env_var: "PAYONEER_API_KEY"
+
+mcp_server:
+  available: false
+  source: "custom"
+
+api_config:
+  base_url: "https://api.payoneer.com"
+  rate_limit: 1000  # requests per hour
+  docs_url: "https://docs.payoneer.com"
+  version: "v1"
+
+deployment:
+  dev:
+    endpoint: "dev-payoneer-agent"
+    project: "mapache-dev"
+  staging:
+    endpoint: "staging-payoneer-agent"
+    project: "mapache-staging"
+  prod:
+    endpoint: "prod-payoneer-agent"
+    project: "mapache-prod"
+
+monitoring:
+  health_check: true
+  metrics: true
+  logging: "structured_json"
+  alerts: true
+
+integration_status:
+  implemented: false
+  tested: false
+  deployed: false
+  production_ready: false

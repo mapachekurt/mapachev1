@@ -1,0 +1,53 @@
+agent_name: "gorgias_agent"
+display_name: "Gorgias"
+description: "Expert agent for Gorgias operations and integration"
+version: "1.0.0"
+model: "gemini-2.0-flash-exp"
+tier: "Specialized Vertical Tools"
+category: "support"
+
+capabilities:
+  - api_integration
+  - data_synchronization
+  - workflow_automation
+  - real_time_operations
+  - error_handling
+  - security_management
+
+authentication:
+  type: "oauth"  # Placeholder for future OAuth migration
+  current: "api_key"
+  env_var: "GORGIAS_API_KEY"
+
+mcp_server:
+  available: false
+  source: "custom"
+
+api_config:
+  base_url: "https://api.gorgias.com"
+  rate_limit: 1000  # requests per hour
+  docs_url: "https://docs.gorgias.com"
+  version: "v1"
+
+deployment:
+  dev:
+    endpoint: "dev-gorgias-agent"
+    project: "mapache-dev"
+  staging:
+    endpoint: "staging-gorgias-agent"
+    project: "mapache-staging"
+  prod:
+    endpoint: "prod-gorgias-agent"
+    project: "mapache-prod"
+
+monitoring:
+  health_check: true
+  metrics: true
+  logging: "structured_json"
+  alerts: true
+
+integration_status:
+  implemented: false
+  tested: false
+  deployed: false
+  production_ready: false

@@ -1,0 +1,53 @@
+agent_name: "ecwid_agent"
+display_name: "Ecwid"
+description: "Expert agent for Ecwid operations and integration"
+version: "1.0.0"
+model: "gemini-2.0-flash-exp"
+tier: "Specialized Vertical Tools"
+category: "ecommerce"
+
+capabilities:
+  - api_integration
+  - data_synchronization
+  - workflow_automation
+  - real_time_operations
+  - error_handling
+  - security_management
+
+authentication:
+  type: "oauth"  # Placeholder for future OAuth migration
+  current: "api_key"
+  env_var: "ECWID_API_KEY"
+
+mcp_server:
+  available: false
+  source: "custom"
+
+api_config:
+  base_url: "https://api.ecwid.com"
+  rate_limit: 1000  # requests per hour
+  docs_url: "https://docs.ecwid.com"
+  version: "v1"
+
+deployment:
+  dev:
+    endpoint: "dev-ecwid-agent"
+    project: "mapache-dev"
+  staging:
+    endpoint: "staging-ecwid-agent"
+    project: "mapache-staging"
+  prod:
+    endpoint: "prod-ecwid-agent"
+    project: "mapache-prod"
+
+monitoring:
+  health_check: true
+  metrics: true
+  logging: "structured_json"
+  alerts: true
+
+integration_status:
+  implemented: false
+  tested: false
+  deployed: false
+  production_ready: false

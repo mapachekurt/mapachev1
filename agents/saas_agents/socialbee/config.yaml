@@ -1,0 +1,53 @@
+agent_name: "socialbee_agent"
+display_name: "SocialBee"
+description: "Expert agent for SocialBee operations and integration"
+version: "1.0.0"
+model: "gemini-2.0-flash-exp"
+tier: "Marketing & Sales"
+category: "social_media"
+
+capabilities:
+  - api_integration
+  - data_synchronization
+  - workflow_automation
+  - real_time_operations
+  - error_handling
+  - security_management
+
+authentication:
+  type: "oauth"  # Placeholder for future OAuth migration
+  current: "api_key"
+  env_var: "SOCIALBEE_API_KEY"
+
+mcp_server:
+  available: false
+  source: "custom"
+
+api_config:
+  base_url: "https://api.socialbee.com"
+  rate_limit: 1000  # requests per hour
+  docs_url: "https://docs.socialbee.com"
+  version: "v1"
+
+deployment:
+  dev:
+    endpoint: "dev-socialbee-agent"
+    project: "mapache-dev"
+  staging:
+    endpoint: "staging-socialbee-agent"
+    project: "mapache-staging"
+  prod:
+    endpoint: "prod-socialbee-agent"
+    project: "mapache-prod"
+
+monitoring:
+  health_check: true
+  metrics: true
+  logging: "structured_json"
+  alerts: true
+
+integration_status:
+  implemented: false
+  tested: false
+  deployed: false
+  production_ready: false

@@ -1,0 +1,53 @@
+agent_name: "doximity_agent"
+display_name: "Doximity"
+description: "Expert agent for Doximity operations and integration"
+version: "1.0.0"
+model: "gemini-2.0-flash-exp"
+tier: "Specialized Vertical Tools"
+category: "healthcare"
+
+capabilities:
+  - api_integration
+  - data_synchronization
+  - workflow_automation
+  - real_time_operations
+  - error_handling
+  - security_management
+
+authentication:
+  type: "oauth"  # Placeholder for future OAuth migration
+  current: "api_key"
+  env_var: "DOXIMITY_API_KEY"
+
+mcp_server:
+  available: false
+  source: "custom"
+
+api_config:
+  base_url: "https://api.doximity.com"
+  rate_limit: 1000  # requests per hour
+  docs_url: "https://docs.doximity.com"
+  version: "v1"
+
+deployment:
+  dev:
+    endpoint: "dev-doximity-agent"
+    project: "mapache-dev"
+  staging:
+    endpoint: "staging-doximity-agent"
+    project: "mapache-staging"
+  prod:
+    endpoint: "prod-doximity-agent"
+    project: "mapache-prod"
+
+monitoring:
+  health_check: true
+  metrics: true
+  logging: "structured_json"
+  alerts: true
+
+integration_status:
+  implemented: false
+  tested: false
+  deployed: false
+  production_ready: false

@@ -1,0 +1,3 @@
+# Framer Common Workflows
+
+Typical use cases and workflows.

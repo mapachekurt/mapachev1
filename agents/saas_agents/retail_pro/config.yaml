@@ -1,0 +1,53 @@
+agent_name: "retail_pro_agent"
+display_name: "Retail Pro"
+description: "Expert agent for Retail Pro operations and integration"
+version: "1.0.0"
+model: "gemini-2.0-flash-exp"
+tier: "Specialized Vertical Tools"
+category: "retail"
+
+capabilities:
+  - api_integration
+  - data_synchronization
+  - workflow_automation
+  - real_time_operations
+  - error_handling
+  - security_management
+
+authentication:
+  type: "oauth"  # Placeholder for future OAuth migration
+  current: "api_key"
+  env_var: "RETAIL_PRO_API_KEY"
+
+mcp_server:
+  available: false
+  source: "custom"
+
+api_config:
+  base_url: "https://api.retailpro.com"
+  rate_limit: 1000  # requests per hour
+  docs_url: "https://docs.retailpro.com"
+  version: "v1"
+
+deployment:
+  dev:
+    endpoint: "dev-retail_pro-agent"
+    project: "mapache-dev"
+  staging:
+    endpoint: "staging-retail_pro-agent"
+    project: "mapache-staging"
+  prod:
+    endpoint: "prod-retail_pro-agent"
+    project: "mapache-prod"
+
+monitoring:
+  health_check: true
+  metrics: true
+  logging: "structured_json"
+  alerts: true
+
+integration_status:
+  implemented: false
+  tested: false
+  deployed: false
+  production_ready: false

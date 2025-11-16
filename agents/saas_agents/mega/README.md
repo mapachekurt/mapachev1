@@ -1,0 +1,90 @@
+# MEGA Agent
+
+Expert agent for MEGA operations within the Mapache SaaS ecosystem.
+
+## Overview
+
+Agent ID: `agent_795`
+Tier: Productivity & Collaboration
+Category: file_sharing
+
+## Capabilities
+
+- MEGA API integration
+- Real-time data synchronization
+- Workflow automation
+- OAuth authentication (planned)
+- Error handling and recovery
+- Rate limiting management
+
+## Configuration
+
+### Environment Variables
+
+- `MEGA_API_KEY`: API key for MEGA
+
+### API Configuration
+
+- Base URL: https://api.mega.com
+- Rate Limit: 1000 requests/hour
+- Documentation: https://docs.mega.com
+
+## MCP Server
+
+
+MCP Server Available: No
+Custom integration required
+
+
+## Usage
+
+```python
+from agents.saas_agents.mega.agent import mega_agent
+
+# Execute operations
+result = mega_agent.execute("sync data")
+
+# Get capabilities
+capabilities = mega_agent.get_capabilities()
+
+# Get configuration
+config = mega_agent.get_config()
+```
+
+## Deployment
+
+### Development
+```bash
+# Deploy to dev environment
+make deploy-dev AGENT=mega
+```
+
+### Production
+```bash
+# Deploy to production
+make deploy-prod AGENT=mega
+```
+
+## Testing
+
+```bash
+# Run tests
+pytest agents/saas_agents/mega/tests/
+```
+
+## Integration Status
+
+- [ ] API Integration
+- [ ] MCP Server Integration
+- [ ] Unit Tests
+- [ ] Integration Tests
+- [ ] Documentation Complete
+- [ ] Production Deployment
+
+## Support
+
+For issues or questions, refer to the main [SaaS Agents documentation](../README.md).
+
+## License
+
+Copyright 2025 Mapache - All Rights Reserved
