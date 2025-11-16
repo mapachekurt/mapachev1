@@ -1,3 +1,3 @@
-# Rakuten Super Logistics Common Workflows
+# Rakuten Common Workflows
 
 Typical use cases and workflows.

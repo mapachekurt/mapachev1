@@ -1,3 +1,3 @@
-# Rakuten Super Logistics Documentation
+# Rakuten Documentation
 
 Official documentation and API reference.

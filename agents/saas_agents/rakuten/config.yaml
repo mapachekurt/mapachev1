@@ -1,10 +1,10 @@
 agent_name: "rakuten_agent"
-display_name: "Rakuten Super Logistics"
-description: "Expert agent for Rakuten Super Logistics operations and integration"
+display_name: "Rakuten"
+description: "Expert agent for Rakuten operations and integration"
 version: "1.0.0"
 model: "gemini-2.0-flash-exp"
 tier: "Specialized Vertical Tools"
-category: "logistics"
+category: "regional"
 
 capabilities:
   - api_integration

@@ -1,3 +1,3 @@
-# Rakuten Super Logistics Best Practices
+# Rakuten Best Practices
 
 Recommended patterns and practices.

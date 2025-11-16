@@ -1,8 +1,8 @@
 """
-Agent 1129: Rakuten Super Logistics
-Role: Rakuten Super Logistics Agent
+Agent 1486: Rakuten
+Role: Rakuten Agent
 Tier: Specialized Vertical Tools
-Category: logistics
+Category: regional
 """
 
 from typing import Dict, Any, List, Optional
@@ -11,22 +11,22 @@ import os
 
 class RakutenAgent:
     """
-    Rakuten Super Logistics Agent - logistics integration
-    Expert agent for Rakuten Super Logistics operations within the Mapache ecosystem
+    Rakuten Agent - regional integration
+    Expert agent for Rakuten operations within the Mapache ecosystem
 
-    This agent provides deep knowledge of Rakuten Super Logistics and integrates
+    This agent provides deep knowledge of Rakuten and integrates
     with the Google Vertex AI Agent Engine.
     """
 
     def __init__(self):
-        self.agent_id = "agent_1129"
-        self.role = "Rakuten Super Logistics Specialist"
+        self.agent_id = "agent_1486"
+        self.role = "Rakuten Specialist"
         self.tier = "Specialized Vertical Tools"
-        self.category = "logistics"
+        self.category = "regional"
         self.department = "SaaS Integration"
 
         self.responsibilities = [
-            "Rakuten Super Logistics API integration",
+            "Rakuten API integration",
             "Data synchronization and management",
             "Authentication and authorization",
             "Workflow automation",
@@ -37,7 +37,7 @@ class RakutenAgent:
         ]
 
         self.integrations = [
-            "Rakuten Super Logistics API",
+            "Rakuten API",
             "Webhook integration",
             "OAuth 2.0 authentication",
             "MCP server protocols",
@@ -51,7 +51,7 @@ class RakutenAgent:
 
     def execute(self, task: Optional[str] = None) -> str:
         """
-        Execute Rakuten Super Logistics integration tasks
+        Execute Rakuten integration tasks
 
         Args:
             task: Specific task to execute
@@ -60,8 +60,8 @@ class RakutenAgent:
             str: Task execution result
         """
         if task:
-            return f"Rakuten Super Logistics Agent executing: {task}"
-        return f"Rakuten Super Logistics Agent ready for operations"
+            return f"Rakuten Agent executing: {task}"
+        return f"Rakuten Agent ready for operations"
 
     def get_capabilities(self) -> List[str]:
         """

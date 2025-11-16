@@ -1117,6 +1117,98 @@ tiers:
           - {id: 1430, name: "cortex", display: "Cortex", category: "ml"}
           - {id: 1431, name: "kubeflow", display: "Kubeflow", category: "ml"}
 
+      security_compliance:
+        agents:
+          - {id: 1432, name: "auth0", display: "Auth0", category: "security"}
+          - {id: 1433, name: "onelogin", display: "OneLogin", category: "security"}
+          - {id: 1434, name: "ping_identity", display: "Ping Identity", category: "security"}
+          - {id: 1435, name: "duo_security", display: "Duo Security", category: "security"}
+          - {id: 1436, name: "qualys", display: "Qualys", category: "security"}
+          - {id: 1437, name: "rapid7", display: "Rapid7", category: "security"}
+          - {id: 1438, name: "tenable", display: "Tenable", category: "security"}
+          - {id: 1439, name: "crowdstrike", display: "CrowdStrike", category: "security"}
+          - {id: 1440, name: "carbon_black", display: "Carbon Black", category: "security"}
+          - {id: 1441, name: "cylance", display: "Cylance", category: "security"}
+          - {id: 1442, name: "knowbe4", display: "KnowBe4", category: "security"}
+          - {id: 1443, name: "proofpoint", display: "Proofpoint", category: "security"}
+          - {id: 1444, name: "mimecast", display: "Mimecast", category: "security"}
+          - {id: 1445, name: "vanta", display: "Vanta", category: "compliance"}
+          - {id: 1446, name: "drata", display: "Drata", category: "compliance"}
+          - {id: 1447, name: "secureframe", display: "Secureframe", category: "compliance"}
+          - {id: 1448, name: "tugboat_logic", display: "Tugboat Logic", category: "compliance"}
+          - {id: 1449, name: "onspring", display: "OnSpring", category: "compliance"}
+          - {id: 1450, name: "hyperproof", display: "Hyperproof", category: "compliance"}
+          - {id: 1451, name: "auditboard", display: "AuditBoard", category: "compliance"}
+
+      emerging_tech:
+        agents:
+          - {id: 1452, name: "openai", display: "OpenAI", category: "ai"}
+          - {id: 1453, name: "anthropic", display: "Anthropic", category: "ai"}
+          - {id: 1454, name: "cohere", display: "Cohere", category: "ai"}
+          - {id: 1455, name: "huggingface", display: "Hugging Face", category: "ai"}
+          - {id: 1456, name: "replicate", display: "Replicate", category: "ai"}
+          - {id: 1457, name: "midjourney", display: "Midjourney", category: "ai"}
+          - {id: 1458, name: "stable_diffusion", display: "Stable Diffusion", category: "ai"}
+          - {id: 1459, name: "runway_ml", display: "Runway ML", category: "ai"}
+          - {id: 1460, name: "elevenlabs", display: "ElevenLabs", category: "ai"}
+          - {id: 1461, name: "synthesia", display: "Synthesia", category: "ai"}
+          - {id: 1462, name: "alchemy", display: "Alchemy", category: "web3"}
+          - {id: 1463, name: "infura", display: "Infura", category: "web3"}
+          - {id: 1464, name: "moralis", display: "Moralis", category: "web3"}
+          - {id: 1465, name: "thirdweb", display: "thirdweb", category: "web3"}
+          - {id: 1466, name: "chainlink", display: "Chainlink", category: "web3"}
+          - {id: 1467, name: "pinata", display: "Pinata", category: "web3"}
+          - {id: 1468, name: "nft_storage", display: "NFT.Storage", category: "web3"}
+          - {id: 1469, name: "polygon", display: "Polygon", category: "web3"}
+          - {id: 1470, name: "opensea", display: "OpenSea", category: "web3"}
+          - {id: 1471, name: "magic", display: "Magic (Fortmatic)", category: "web3"}
+
+      regional_platforms:
+        agents:
+          - {id: 1472, name: "wechat_work", display: "WeChat Work", category: "regional"}
+          - {id: 1473, name: "dingtalk", display: "DingTalk", category: "regional"}
+          - {id: 1474, name: "lark", display: "Lark (Feishu)", category: "regional"}
+          - {id: 1475, name: "kakao_work", display: "Kakao Work", category: "regional"}
+          - {id: 1476, name: "naver_works", display: "Naver Works", category: "regional"}
+          - {id: 1477, name: "mercado_libre", display: "Mercado Libre", category: "regional"}
+          - {id: 1478, name: "mercado_pago", display: "Mercado Pago", category: "regional"}
+          - {id: 1479, name: "pagseguro", display: "PagSeguro", category: "regional"}
+          - {id: 1480, name: "alipay", display: "Alipay", category: "regional"}
+          - {id: 1481, name: "grab", display: "Grab", category: "regional"}
+          - {id: 1482, name: "gojek", display: "Gojek", category: "regional"}
+          - {id: 1483, name: "rappi", display: "Rappi", category: "regional"}
+          - {id: 1484, name: "flipkart", display: "Flipkart", category: "regional"}
+          - {id: 1485, name: "jd_com", display: "JD.com", category: "regional"}
+          - {id: 1486, name: "rakuten", display: "Rakuten", category: "regional"}
+          - {id: 1487, name: "coupang", display: "Coupang", category: "regional"}
+          - {id: 1488, name: "yandex", display: "Yandex", category: "regional"}
+          - {id: 1489, name: "vk", display: "VK (VKontakte)", category: "regional"}
+          - {id: 1490, name: "baidu", display: "Baidu", category: "regional"}
+          - {id: 1491, name: "tencent_cloud", display: "Tencent Cloud", category: "regional"}
+
+      additional_verticals:
+        agents:
+          - {id: 1492, name: "dexcare", display: "DexCare", category: "healthcare"}
+          - {id: 1493, name: "doximity", display: "Doximity", category: "healthcare"}
+          - {id: 1494, name: "zocdoc", display: "Zocdoc", category: "healthcare"}
+          - {id: 1495, name: "teladoc", display: "Teladoc", category: "healthcare"}
+          - {id: 1496, name: "doctolib", display: "Doctolib", category: "healthcare"}
+          - {id: 1497, name: "veeva", display: "Veeva", category: "healthcare"}
+          - {id: 1498, name: "medidata", display: "Medidata", category: "healthcare"}
+          - {id: 1499, name: "flywire", display: "Flywire", category: "finance"}
+          - {id: 1500, name: "marqeta", display: "Marqeta", category: "finance"}
+          - {id: 1501, name: "plaid", display: "Plaid", category: "finance"}
+          - {id: 1502, name: "yodlee", display: "Yodlee", category: "finance"}
+          - {id: 1503, name: "finicity", display: "Finicity", category: "finance"}
+          - {id: 1504, name: "tink", display: "Tink", category: "finance"}
+          - {id: 1505, name: "mx", display: "MX", category: "finance"}
+          - {id: 1506, name: "unit", display: "Unit", category: "finance"}
+          - {id: 1507, name: "synapse", display: "Synapse", category: "finance"}
+          - {id: 1508, name: "dwolla", display: "Dwolla", category: "finance"}
+          - {id: 1509, name: "checkbook", display: "Checkbook.io", category: "finance"}
+          - {id: 1510, name: "modern_treasury", display: "Modern Treasury", category: "finance"}
+          - {id: 1511, name: "increase", display: "Increase", category: "finance"}
+
 mcp_discovery:
   search_locations:
     - "https://github.com/modelcontextprotocol"

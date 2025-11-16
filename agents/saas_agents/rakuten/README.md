@@ -1,16 +1,16 @@
-# Rakuten Super Logistics Agent
+# Rakuten Agent
 
-Expert agent for Rakuten Super Logistics operations within the Mapache SaaS ecosystem.
+Expert agent for Rakuten operations within the Mapache SaaS ecosystem.
 
 ## Overview
 
-Agent ID: `agent_1129`
+Agent ID: `agent_1486`
 Tier: Specialized Vertical Tools
-Category: logistics
+Category: regional
 
 ## Capabilities
 
-- Rakuten Super Logistics API integration
+- Rakuten API integration
 - Real-time data synchronization
 - Workflow automation
 - OAuth authentication (planned)
@@ -21,7 +21,7 @@ Category: logistics
 
 ### Environment Variables
 
-- `RAKUTEN_API_KEY`: API key for Rakuten Super Logistics
+- `RAKUTEN_API_KEY`: API key for Rakuten
 
 ### API Configuration
 
