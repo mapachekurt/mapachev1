@@ -1,0 +1,39 @@
+{
+  "name": "director_ui",
+  "description": "Director of UI responsible for product functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "ui_design",
+      "visual_design",
+      "design_systems"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Director of UI",
+    "department": "product",
+    "reports_to": "vp_design",
+    "manages": [
+      "ui_designer_1",
+      "ui_designer_2",
+      "ui_designer_3",
+      "ui_designer_4"
+    ],
+    "tags": [
+      "product",
+      "ui_design",
+      "visual_design",
+      "design_systems",
+      "product"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "director_ui@mapache.ai"
+  }
+}

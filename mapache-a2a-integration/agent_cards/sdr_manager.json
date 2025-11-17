@@ -1,0 +1,45 @@
+{
+  "name": "sdr_manager",
+  "description": "SDR Manager responsible for sales functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "lead_generation",
+      "team_management",
+      "sales_development"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "SDR Manager",
+    "department": "sales",
+    "reports_to": "vp_sales",
+    "manages": [
+      "sdr_1",
+      "sdr_2",
+      "sdr_3",
+      "sdr_4",
+      "sdr_5",
+      "sdr_6",
+      "sdr_7",
+      "sdr_8",
+      "sdr_9",
+      "sdr_10"
+    ],
+    "tags": [
+      "sales",
+      "lead_generation",
+      "team_management",
+      "sales_development",
+      "sales"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "sdr_manager@mapache.ai"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "security_engineer_4",
+  "description": "Security Engineer responsible for security functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "cybersecurity",
+      "security_monitoring",
+      "incident_response"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Security Engineer",
+    "department": "security",
+    "reports_to": "director_security_ops",
+    "manages": [],
+    "tags": [
+      "security",
+      "cybersecurity",
+      "security_monitoring",
+      "incident_response",
+      "security"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "security_engineer_4@mapache.ai"
+  }
+}

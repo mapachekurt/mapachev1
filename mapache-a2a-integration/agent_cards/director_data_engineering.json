@@ -1,0 +1,37 @@
+{
+  "name": "director_data_engineering",
+  "description": "Director of Data Engineering responsible for data functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "data_engineering",
+      "data_architecture",
+      "etl"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Director of Data Engineering",
+    "department": "data",
+    "reports_to": "vp_data",
+    "manages": [
+      "senior_data_engineer_1",
+      "senior_data_engineer_2"
+    ],
+    "tags": [
+      "data",
+      "data_engineering",
+      "data_architecture",
+      "etl",
+      "data"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "director_data_engineering@mapache.ai"
+  }
+}

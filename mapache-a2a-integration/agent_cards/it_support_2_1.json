@@ -1,0 +1,34 @@
+{
+  "name": "it_support_2_1",
+  "description": "IT Support Specialist responsible for it functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "helpdesk",
+      "troubleshooting",
+      "user_support"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "IT Support Specialist",
+    "department": "it",
+    "reports_to": "it_manager_2",
+    "manages": [],
+    "tags": [
+      "it",
+      "helpdesk",
+      "troubleshooting",
+      "user_support",
+      "it"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "it_support_2_1@mapache.ai"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "chro",
+  "description": "Chief Human Resources Officer responsible for executive functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "talent_management",
+      "organizational_development",
+      "culture"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Chief Human Resources Officer",
+    "department": "executive",
+    "reports_to": "ceo",
+    "manages": [
+      "vp_talent",
+      "vp_people_ops"
+    ],
+    "tags": [
+      "executive",
+      "talent_management",
+      "organizational_development",
+      "culture",
+      "executive"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "chro@mapache.ai"
+  }
+}

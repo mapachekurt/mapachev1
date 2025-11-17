@@ -1,0 +1,34 @@
+{
+  "name": "data_scientist_1_2",
+  "description": "Data Scientist responsible for data functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "data_science",
+      "python",
+      "machine_learning"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Data Scientist",
+    "department": "data",
+    "reports_to": "senior_data_scientist_1",
+    "manages": [],
+    "tags": [
+      "data",
+      "data_science",
+      "python",
+      "machine_learning",
+      "data"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "data_scientist_1_2@mapache.ai"
+  }
+}

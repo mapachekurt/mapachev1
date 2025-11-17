@@ -1,0 +1,37 @@
+{
+  "name": "cmo",
+  "description": "Chief Marketing Officer responsible for executive functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "brand_management",
+      "marketing_strategy",
+      "demand_generation"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Chief Marketing Officer",
+    "department": "executive",
+    "reports_to": "ceo",
+    "manages": [
+      "vp_marketing",
+      "vp_product_marketing"
+    ],
+    "tags": [
+      "executive",
+      "brand_management",
+      "marketing_strategy",
+      "demand_generation",
+      "executive"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "cmo@mapache.ai"
+  }
+}

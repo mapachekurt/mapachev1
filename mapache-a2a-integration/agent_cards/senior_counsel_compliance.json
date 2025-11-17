@@ -1,0 +1,37 @@
+{
+  "name": "senior_counsel_compliance",
+  "description": "Senior Counsel - Compliance responsible for legal functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "compliance",
+      "regulatory_affairs",
+      "legal_counsel"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Senior Counsel - Compliance",
+    "department": "legal",
+    "reports_to": "general_counsel",
+    "manages": [
+      "compliance_attorney_1",
+      "compliance_attorney_2"
+    ],
+    "tags": [
+      "legal",
+      "compliance",
+      "regulatory_affairs",
+      "legal_counsel",
+      "legal"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "senior_counsel_compliance@mapache.ai"
+  }
+}

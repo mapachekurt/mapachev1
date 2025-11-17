@@ -1,0 +1,42 @@
+{
+  "name": "support_manager_1",
+  "description": "Support Manager responsible for customer_success functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "customer_support",
+      "technical_support",
+      "team_leadership"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Support Manager",
+    "department": "customer_success",
+    "reports_to": "director_support",
+    "manages": [
+      "support_agent_1_1",
+      "support_agent_1_2",
+      "support_agent_1_3",
+      "support_agent_1_4",
+      "support_agent_1_5",
+      "support_agent_1_6",
+      "support_agent_1_7"
+    ],
+    "tags": [
+      "customer_success",
+      "customer_support",
+      "technical_support",
+      "team_leadership",
+      "customer_success"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "support_manager_1@mapache.ai"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "director_ux",
+  "description": "Director of UX responsible for product functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "ux_design",
+      "user_research",
+      "design_thinking"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Director of UX",
+    "department": "product",
+    "reports_to": "vp_design",
+    "manages": [
+      "ux_designer_1",
+      "ux_designer_2",
+      "ux_designer_3",
+      "ux_designer_4"
+    ],
+    "tags": [
+      "product",
+      "ux_design",
+      "user_research",
+      "design_thinking",
+      "product"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "director_ux@mapache.ai"
+  }
+}

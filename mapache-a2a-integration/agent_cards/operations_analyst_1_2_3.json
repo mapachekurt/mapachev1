@@ -1,0 +1,34 @@
+{
+  "name": "operations_analyst_1_2_3",
+  "description": "Operations Analyst responsible for operations functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "data_analysis",
+      "reporting",
+      "process_documentation"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Operations Analyst",
+    "department": "operations",
+    "reports_to": "operations_manager_1_2",
+    "manages": [],
+    "tags": [
+      "operations",
+      "data_analysis",
+      "reporting",
+      "process_documentation",
+      "operations"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "operations_analyst_1_2_3@mapache.ai"
+  }
+}

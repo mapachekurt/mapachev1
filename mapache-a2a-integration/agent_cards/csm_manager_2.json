@@ -1,0 +1,45 @@
+{
+  "name": "csm_manager_2",
+  "description": "CSM Manager responsible for customer_success functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "customer_success",
+      "team_management",
+      "customer_retention"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "CSM Manager",
+    "department": "customer_success",
+    "reports_to": "director_cs",
+    "manages": [
+      "csm_2_1",
+      "csm_2_2",
+      "csm_2_3",
+      "csm_2_4",
+      "csm_2_5",
+      "csm_2_6",
+      "csm_2_7",
+      "csm_2_8",
+      "csm_2_9",
+      "csm_2_10"
+    ],
+    "tags": [
+      "customer_success",
+      "customer_success",
+      "team_management",
+      "customer_retention",
+      "customer_success"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "csm_manager_2@mapache.ai"
+  }
+}

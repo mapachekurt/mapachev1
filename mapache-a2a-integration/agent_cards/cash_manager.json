@@ -1,0 +1,34 @@
+{
+  "name": "cash_manager",
+  "description": "Cash Manager responsible for finance functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "cash_management",
+      "treasury_management",
+      "liquidity_planning"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Cash Manager",
+    "department": "finance",
+    "reports_to": "treasurer",
+    "manages": [],
+    "tags": [
+      "finance",
+      "cash_management",
+      "treasury_management",
+      "liquidity_planning",
+      "finance"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "cash_manager@mapache.ai"
+  }
+}

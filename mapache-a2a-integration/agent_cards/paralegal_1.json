@@ -1,0 +1,34 @@
+{
+  "name": "paralegal_1",
+  "description": "Paralegal responsible for legal functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "legal_support",
+      "document_management",
+      "research"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Paralegal",
+    "department": "legal",
+    "reports_to": "general_counsel",
+    "manages": [],
+    "tags": [
+      "legal",
+      "legal_support",
+      "document_management",
+      "research",
+      "legal"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "paralegal_1@mapache.ai"
+  }
+}

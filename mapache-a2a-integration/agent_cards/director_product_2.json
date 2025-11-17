@@ -1,0 +1,37 @@
+{
+  "name": "director_product_2",
+  "description": "Director of Product responsible for product functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "product_management",
+      "strategy",
+      "stakeholder_management"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Director of Product",
+    "department": "product",
+    "reports_to": "vp_product",
+    "manages": [
+      "senior_pm_2_1",
+      "senior_pm_2_2"
+    ],
+    "tags": [
+      "product",
+      "product_management",
+      "strategy",
+      "stakeholder_management",
+      "product"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "director_product_2@mapache.ai"
+  }
+}

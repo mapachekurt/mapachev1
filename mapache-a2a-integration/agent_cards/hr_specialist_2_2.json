@@ -1,0 +1,34 @@
+{
+  "name": "hr_specialist_2_2",
+  "description": "HR Specialist responsible for hr functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "hr_operations",
+      "employee_support",
+      "compliance"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "HR Specialist",
+    "department": "hr",
+    "reports_to": "hr_ops_manager_2",
+    "manages": [],
+    "tags": [
+      "hr",
+      "hr_operations",
+      "employee_support",
+      "compliance",
+      "hr"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "hr_specialist_2_2@mapache.ai"
+  }
+}

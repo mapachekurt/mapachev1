@@ -1,0 +1,37 @@
+{
+  "name": "director_content",
+  "description": "Director of Content responsible for marketing functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "content_marketing",
+      "content_strategy",
+      "storytelling"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Director of Content",
+    "department": "marketing",
+    "reports_to": "vp_marketing",
+    "manages": [
+      "content_manager_1",
+      "content_manager_2"
+    ],
+    "tags": [
+      "marketing",
+      "content_marketing",
+      "content_strategy",
+      "storytelling",
+      "marketing"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "director_content@mapache.ai"
+  }
+}

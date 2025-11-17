@@ -1,0 +1,37 @@
+{
+  "name": "director_recruiting",
+  "description": "Director of Recruiting responsible for hr functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "recruiting",
+      "talent_acquisition",
+      "hiring"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Director of Recruiting",
+    "department": "hr",
+    "reports_to": "vp_talent",
+    "manages": [
+      "recruiting_manager_1",
+      "recruiting_manager_2"
+    ],
+    "tags": [
+      "hr",
+      "recruiting",
+      "talent_acquisition",
+      "hiring",
+      "hr"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "director_recruiting@mapache.ai"
+  }
+}

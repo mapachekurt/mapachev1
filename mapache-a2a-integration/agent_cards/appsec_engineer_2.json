@@ -1,0 +1,34 @@
+{
+  "name": "appsec_engineer_2",
+  "description": "Application Security Engineer responsible for security functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "application_security",
+      "code_review",
+      "vulnerability_assessment"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Application Security Engineer",
+    "department": "security",
+    "reports_to": "director_appsec",
+    "manages": [],
+    "tags": [
+      "security",
+      "application_security",
+      "code_review",
+      "vulnerability_assessment",
+      "security"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "appsec_engineer_2@mapache.ai"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "hr_ops_manager_2",
+  "description": "HR Operations Manager responsible for hr functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "hr_operations",
+      "employee_relations",
+      "benefits"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "HR Operations Manager",
+    "department": "hr",
+    "reports_to": "director_hr_ops",
+    "manages": [
+      "hr_specialist_2_1",
+      "hr_specialist_2_2",
+      "hr_specialist_2_3"
+    ],
+    "tags": [
+      "hr",
+      "hr_operations",
+      "employee_relations",
+      "benefits",
+      "hr"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "hr_ops_manager_2@mapache.ai"
+  }
+}

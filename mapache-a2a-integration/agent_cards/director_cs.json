@@ -1,0 +1,37 @@
+{
+  "name": "director_cs",
+  "description": "Director of Customer Success responsible for customer_success functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "customer_success",
+      "account_management",
+      "renewals"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Director of Customer Success",
+    "department": "customer_success",
+    "reports_to": "vp_customer_success",
+    "manages": [
+      "csm_manager_1",
+      "csm_manager_2"
+    ],
+    "tags": [
+      "customer_success",
+      "customer_success",
+      "account_management",
+      "renewals",
+      "customer_success"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "director_cs@mapache.ai"
+  }
+}

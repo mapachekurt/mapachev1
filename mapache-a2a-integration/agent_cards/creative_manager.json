@@ -1,0 +1,39 @@
+{
+  "name": "creative_manager",
+  "description": "Creative Manager responsible for marketing functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "creative_direction",
+      "design",
+      "visual_communication"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Creative Manager",
+    "department": "marketing",
+    "reports_to": "director_brand",
+    "manages": [
+      "designer_1",
+      "designer_2",
+      "designer_3",
+      "designer_4"
+    ],
+    "tags": [
+      "marketing",
+      "creative_direction",
+      "design",
+      "visual_communication",
+      "marketing"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "creative_manager@mapache.ai"
+  }
+}

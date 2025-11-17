@@ -1,0 +1,34 @@
+{
+  "name": "csm_1_10",
+  "description": "Customer Success Manager responsible for customer_success functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "customer_success",
+      "relationship_management",
+      "value_realization"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Customer Success Manager",
+    "department": "customer_success",
+    "reports_to": "csm_manager_1",
+    "manages": [],
+    "tags": [
+      "customer_success",
+      "customer_success",
+      "relationship_management",
+      "value_realization",
+      "customer_success"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "csm_1_10@mapache.ai"
+  }
+}

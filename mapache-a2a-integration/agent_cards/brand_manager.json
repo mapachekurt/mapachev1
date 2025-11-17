@@ -1,0 +1,37 @@
+{
+  "name": "brand_manager",
+  "description": "Brand Manager responsible for marketing functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "brand_management",
+      "brand_strategy",
+      "marketing"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Brand Manager",
+    "department": "marketing",
+    "reports_to": "director_brand",
+    "manages": [
+      "brand_specialist_1",
+      "brand_specialist_2"
+    ],
+    "tags": [
+      "marketing",
+      "brand_management",
+      "brand_strategy",
+      "marketing",
+      "marketing"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "brand_manager@mapache.ai"
+  }
+}

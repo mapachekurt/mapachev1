@@ -1,0 +1,34 @@
+{
+  "name": "content_writer_2_1",
+  "description": "Content Writer responsible for marketing functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "writing",
+      "storytelling",
+      "seo"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Content Writer",
+    "department": "marketing",
+    "reports_to": "content_manager_2",
+    "manages": [],
+    "tags": [
+      "marketing",
+      "writing",
+      "storytelling",
+      "seo",
+      "marketing"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "content_writer_2_1@mapache.ai"
+  }
+}

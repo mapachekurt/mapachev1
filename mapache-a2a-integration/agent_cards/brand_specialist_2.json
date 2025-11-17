@@ -1,0 +1,34 @@
+{
+  "name": "brand_specialist_2",
+  "description": "Brand Specialist responsible for marketing functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "branding",
+      "creative",
+      "marketing"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Brand Specialist",
+    "department": "marketing",
+    "reports_to": "brand_manager",
+    "manages": [],
+    "tags": [
+      "marketing",
+      "branding",
+      "creative",
+      "marketing",
+      "marketing"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "brand_specialist_2@mapache.ai"
+  }
+}

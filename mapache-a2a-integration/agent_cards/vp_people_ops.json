@@ -1,0 +1,37 @@
+{
+  "name": "vp_people_ops",
+  "description": "VP of People Operations responsible for hr functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "hr_operations",
+      "employee_experience",
+      "hr_systems"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "VP of People Operations",
+    "department": "hr",
+    "reports_to": "chro",
+    "manages": [
+      "director_hr_ops",
+      "director_learning_development"
+    ],
+    "tags": [
+      "hr",
+      "hr_operations",
+      "employee_experience",
+      "hr_systems",
+      "hr"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "vp_people_ops@mapache.ai"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "treasurer",
+  "description": "Treasurer responsible for finance functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "treasury_management",
+      "cash_management",
+      "risk_management"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Treasurer",
+    "department": "finance",
+    "reports_to": "cfo",
+    "manages": [
+      "cash_manager"
+    ],
+    "tags": [
+      "finance",
+      "treasury_management",
+      "cash_management",
+      "risk_management",
+      "finance"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "treasurer@mapache.ai"
+  }
+}

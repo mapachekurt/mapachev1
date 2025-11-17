@@ -1,0 +1,38 @@
+{
+  "name": "analytics_manager_1",
+  "description": "Analytics Manager responsible for data functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "analytics",
+      "data_analysis",
+      "reporting"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Analytics Manager",
+    "department": "data",
+    "reports_to": "director_analytics",
+    "manages": [
+      "data_analyst_1_1",
+      "data_analyst_1_2",
+      "data_analyst_1_3"
+    ],
+    "tags": [
+      "data",
+      "analytics",
+      "data_analysis",
+      "reporting",
+      "data"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "analytics_manager_1@mapache.ai"
+  }
+}

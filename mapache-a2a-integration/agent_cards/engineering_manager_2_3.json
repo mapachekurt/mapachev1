@@ -1,0 +1,37 @@
+{
+  "name": "engineering_manager_2_3",
+  "description": "Engineering Manager responsible for engineering functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "engineering_management",
+      "technical_leadership",
+      "agile"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Engineering Manager",
+    "department": "engineering",
+    "reports_to": "director_engineering_2",
+    "manages": [
+      "senior_engineer_2_3_1",
+      "senior_engineer_2_3_2"
+    ],
+    "tags": [
+      "engineering",
+      "engineering_management",
+      "technical_leadership",
+      "agile",
+      "engineering"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "engineering_manager_2_3@mapache.ai"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "demand_gen_specialist_1_2",
+  "description": "Demand Generation Specialist responsible for marketing functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "digital_marketing",
+      "campaign_execution",
+      "analytics"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Demand Generation Specialist",
+    "department": "marketing",
+    "reports_to": "demand_gen_manager_1",
+    "manages": [],
+    "tags": [
+      "marketing",
+      "digital_marketing",
+      "campaign_execution",
+      "analytics",
+      "marketing"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "demand_gen_specialist_1_2@mapache.ai"
+  }
+}

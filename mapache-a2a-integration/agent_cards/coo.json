@@ -1,0 +1,37 @@
+{
+  "name": "coo",
+  "description": "Chief Operating Officer responsible for executive functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "operations_management",
+      "process_optimization",
+      "scalability"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Chief Operating Officer",
+    "department": "executive",
+    "reports_to": "ceo",
+    "manages": [
+      "vp_operations",
+      "vp_supply_chain"
+    ],
+    "tags": [
+      "executive",
+      "operations_management",
+      "process_optimization",
+      "scalability",
+      "executive"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "coo@mapache.ai"
+  }
+}

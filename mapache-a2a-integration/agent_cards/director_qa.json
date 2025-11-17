@@ -1,0 +1,37 @@
+{
+  "name": "director_qa",
+  "description": "Director of QA responsible for engineering functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "quality_assurance",
+      "test_strategy",
+      "automation"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Director of QA",
+    "department": "engineering",
+    "reports_to": "vp_engineering",
+    "manages": [
+      "qa_manager_1",
+      "qa_manager_2"
+    ],
+    "tags": [
+      "engineering",
+      "quality_assurance",
+      "test_strategy",
+      "automation",
+      "engineering"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "director_qa@mapache.ai"
+  }
+}

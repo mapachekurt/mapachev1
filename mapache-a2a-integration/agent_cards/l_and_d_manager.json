@@ -1,0 +1,38 @@
+{
+  "name": "l_and_d_manager",
+  "description": "Learning & Development Manager responsible for hr functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "training",
+      "curriculum_development",
+      "coaching"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Learning & Development Manager",
+    "department": "hr",
+    "reports_to": "director_learning_development",
+    "manages": [
+      "training_specialist_1",
+      "training_specialist_2",
+      "training_specialist_3"
+    ],
+    "tags": [
+      "hr",
+      "training",
+      "curriculum_development",
+      "coaching",
+      "hr"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "l_and_d_manager@mapache.ai"
+  }
+}

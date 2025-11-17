@@ -1,0 +1,37 @@
+{
+  "name": "compliance_manager",
+  "description": "Security Compliance Manager responsible for security functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "compliance",
+      "security_auditing",
+      "policy_management"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Security Compliance Manager",
+    "department": "security",
+    "reports_to": "vp_security",
+    "manages": [
+      "compliance_analyst_1",
+      "compliance_analyst_2"
+    ],
+    "tags": [
+      "security",
+      "compliance",
+      "security_auditing",
+      "policy_management",
+      "security"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "compliance_manager@mapache.ai"
+  }
+}

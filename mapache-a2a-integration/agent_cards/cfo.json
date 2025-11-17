@@ -1,0 +1,38 @@
+{
+  "name": "cfo",
+  "description": "Chief Financial Officer responsible for executive functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "financial_planning",
+      "investor_relations",
+      "budget_management"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Chief Financial Officer",
+    "department": "executive",
+    "reports_to": "ceo",
+    "manages": [
+      "controller",
+      "vp_fp_and_a",
+      "treasurer"
+    ],
+    "tags": [
+      "executive",
+      "financial_planning",
+      "investor_relations",
+      "budget_management",
+      "executive"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "cfo@mapache.ai"
+  }
+}

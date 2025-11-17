@@ -1,0 +1,37 @@
+{
+  "name": "senior_pm_1_2",
+  "description": "Senior Product Manager responsible for product functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "product_management",
+      "roadmap_planning",
+      "user_research"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Senior Product Manager",
+    "department": "product",
+    "reports_to": "director_product_1",
+    "manages": [
+      "pm_1_2_1",
+      "pm_1_2_2"
+    ],
+    "tags": [
+      "product",
+      "product_management",
+      "roadmap_planning",
+      "user_research",
+      "product"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "senior_pm_1_2@mapache.ai"
+  }
+}

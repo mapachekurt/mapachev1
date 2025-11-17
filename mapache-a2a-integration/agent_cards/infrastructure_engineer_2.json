@@ -1,0 +1,34 @@
+{
+  "name": "infrastructure_engineer_2",
+  "description": "Infrastructure Engineer responsible for it functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "infrastructure",
+      "cloud_computing",
+      "networking"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Infrastructure Engineer",
+    "department": "it",
+    "reports_to": "director_infrastructure",
+    "manages": [],
+    "tags": [
+      "it",
+      "infrastructure",
+      "cloud_computing",
+      "networking",
+      "it"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "infrastructure_engineer_2@mapache.ai"
+  }
+}

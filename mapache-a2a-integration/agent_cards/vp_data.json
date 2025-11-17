@@ -1,0 +1,38 @@
+{
+  "name": "vp_data",
+  "description": "VP of Data responsible for data functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "data_strategy",
+      "analytics",
+      "data_governance"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "VP of Data",
+    "department": "data",
+    "reports_to": "ceo",
+    "manages": [
+      "director_data_engineering",
+      "director_analytics",
+      "director_data_science"
+    ],
+    "tags": [
+      "data",
+      "data_strategy",
+      "analytics",
+      "data_governance",
+      "data"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "vp_data@mapache.ai"
+  }
+}

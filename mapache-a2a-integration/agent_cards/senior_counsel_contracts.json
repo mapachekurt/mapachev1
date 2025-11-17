@@ -1,0 +1,37 @@
+{
+  "name": "senior_counsel_contracts",
+  "description": "Senior Counsel - Contracts responsible for legal functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "contract_management",
+      "contract_negotiation",
+      "legal_review"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Senior Counsel - Contracts",
+    "department": "legal",
+    "reports_to": "general_counsel",
+    "manages": [
+      "contracts_attorney_1",
+      "contracts_attorney_2"
+    ],
+    "tags": [
+      "legal",
+      "contract_management",
+      "contract_negotiation",
+      "legal_review",
+      "legal"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "senior_counsel_contracts@mapache.ai"
+  }
+}

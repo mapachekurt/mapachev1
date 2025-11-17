@@ -1,0 +1,37 @@
+{
+  "name": "vp_fp_and_a",
+  "description": "VP of Financial Planning & Analysis responsible for finance functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "financial_planning",
+      "budget_management",
+      "financial_modeling"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "VP of Financial Planning & Analysis",
+    "department": "finance",
+    "reports_to": "cfo",
+    "manages": [
+      "fp_and_a_manager_1",
+      "fp_and_a_manager_2"
+    ],
+    "tags": [
+      "finance",
+      "financial_planning",
+      "budget_management",
+      "financial_modeling",
+      "finance"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "vp_fp_and_a@mapache.ai"
+  }
+}

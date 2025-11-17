@@ -1,0 +1,38 @@
+{
+  "name": "vp_engineering",
+  "description": "VP of Engineering responsible for engineering functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "engineering_leadership",
+      "technical_strategy",
+      "team_building"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "VP of Engineering",
+    "department": "engineering",
+    "reports_to": "cto",
+    "manages": [
+      "director_engineering_1",
+      "director_engineering_2",
+      "director_engineering_3"
+    ],
+    "tags": [
+      "engineering",
+      "engineering_leadership",
+      "technical_strategy",
+      "team_building",
+      "engineering"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "vp_engineering@mapache.ai"
+  }
+}

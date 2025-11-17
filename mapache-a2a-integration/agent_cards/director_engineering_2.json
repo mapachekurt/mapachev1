@@ -1,0 +1,38 @@
+{
+  "name": "director_engineering_2",
+  "description": "Director of Engineering - Team 2 responsible for engineering functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "engineering_management",
+      "architecture",
+      "technical_leadership"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Director of Engineering - Team 2",
+    "department": "engineering",
+    "reports_to": "vp_engineering",
+    "manages": [
+      "engineering_manager_2_1",
+      "engineering_manager_2_2",
+      "engineering_manager_2_3"
+    ],
+    "tags": [
+      "engineering",
+      "engineering_management",
+      "architecture",
+      "technical_leadership",
+      "engineering"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "director_engineering_2@mapache.ai"
+  }
+}

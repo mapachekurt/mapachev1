@@ -1,0 +1,37 @@
+{
+  "name": "vp_security",
+  "description": "VP of Security responsible for security functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "cybersecurity",
+      "risk_management",
+      "security_strategy"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "VP of Security",
+    "department": "security",
+    "reports_to": "cto",
+    "manages": [
+      "director_security_ops",
+      "director_appsec"
+    ],
+    "tags": [
+      "security",
+      "cybersecurity",
+      "risk_management",
+      "security_strategy",
+      "security"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "vp_security@mapache.ai"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "qa_engineer_2_2",
+  "description": "QA Engineer responsible for engineering functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "quality_assurance",
+      "testing",
+      "automation"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "QA Engineer",
+    "department": "engineering",
+    "reports_to": "qa_manager_2",
+    "manages": [],
+    "tags": [
+      "engineering",
+      "quality_assurance",
+      "testing",
+      "automation",
+      "engineering"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "qa_engineer_2_2@mapache.ai"
+  }
+}

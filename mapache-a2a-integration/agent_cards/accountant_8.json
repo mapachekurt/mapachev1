@@ -1,0 +1,34 @@
+{
+  "name": "accountant_8",
+  "description": "Accountant responsible for finance functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "accounting",
+      "financial_reporting",
+      "reconciliation"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Accountant",
+    "department": "finance",
+    "reports_to": "controller",
+    "manages": [],
+    "tags": [
+      "finance",
+      "accounting",
+      "financial_reporting",
+      "reconciliation",
+      "finance"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "accountant_8@mapache.ai"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "cto",
+  "description": "Chief Technology Officer responsible for executive functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "system_architecture",
+      "technical_leadership",
+      "innovation"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Chief Technology Officer",
+    "department": "executive",
+    "reports_to": "ceo",
+    "manages": [
+      "vp_engineering",
+      "vp_infrastructure",
+      "vp_security"
+    ],
+    "tags": [
+      "executive",
+      "system_architecture",
+      "technical_leadership",
+      "innovation",
+      "executive"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "cto@mapache.ai"
+  }
+}
