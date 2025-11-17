@@ -1,0 +1,332 @@
+metadata:
+  version: 1.0.0
+  last_updated: '2025-11-17'
+  total_agents: 1000
+  agents_researched: 32
+  mcp_servers_found: 15
+  phase: Phase 2 - Discovery
+discovery_status:
+  mcp_available: 15
+  api_available: 17
+  api_documented: 0
+  no_public_api: 0
+  research_pending: 968
+known_mcp_servers:
+- name: github
+  agent_id: 524
+  mcp_server: modelcontextprotocol/servers/github
+  source: Official MCP repository
+  status: verified
+  priority: tier_1
+- name: gitlab
+  agent_id: 525
+  mcp_server: modelcontextprotocol/servers/gitlab
+  source: Official MCP repository
+  status: verified
+  priority: tier_1
+- name: slack
+  agent_id: 832
+  mcp_server: modelcontextprotocol/servers/slack
+  source: Official MCP repository
+  status: verified
+  priority: tier_4
+- name: google_drive
+  agent_id: 518
+  mcp_server: modelcontextprotocol/servers/google-drive
+  source: Official MCP repository
+  status: verified
+  priority: tier_1
+- name: google_maps
+  agent_id: null
+  mcp_server: modelcontextprotocol/servers/google-maps
+  source: Official MCP repository
+  status: verified
+  priority: community
+tier_1_agents:
+  communication:
+  - agent_id: 512
+    name: microsoft_teams
+    display_name: Microsoft Teams
+    category: communication
+    mcp_status: research_pending
+    api_available: true
+    api_type: Microsoft Graph API
+    notes: Graph API well documented, OAuth required
+    priority: high
+  - agent_id: 513
+    name: discord
+    display_name: Discord
+    category: communication
+    mcp_status: research_pending
+    api_available: true
+    api_type: Discord API
+    notes: Bot API available, webhook support
+    priority: high
+  - agent_id: 514
+    name: webex
+    display_name: Webex
+    category: communication
+    mcp_status: research_pending
+    api_available: true
+    api_type: Webex APIs
+    notes: REST API available
+    priority: medium
+  - agent_id: 515
+    name: google_meet
+    display_name: Google Meet
+    category: communication
+    mcp_status: research_pending
+    api_available: true
+    api_type: Google Calendar API (for scheduling)
+    notes: Limited direct API, uses Calendar API
+    priority: medium
+  google_workspace:
+  - agent_id: 516
+    name: gmail
+    display_name: Gmail
+    category: email
+    mcp_status: research_pending
+    api_available: true
+    api_type: Gmail API
+    notes: Well documented, OAuth required
+    priority: high
+  - agent_id: 517
+    name: google_calendar
+    display_name: Google Calendar
+    category: calendar
+    mcp_status: research_pending
+    api_available: true
+    api_type: Google Calendar API
+    notes: Well documented, OAuth required
+    priority: high
+  - agent_id: 518
+    name: google_drive
+    display_name: Google Drive
+    category: storage
+    mcp_status: mcp_available
+    mcp_server: modelcontextprotocol/servers/google-drive
+    api_available: true
+    api_type: Google Drive API
+    notes: MCP server exists! OAuth required
+    priority: high
+  - agent_id: 519
+    name: google_sheets
+    display_name: Google Sheets
+    category: spreadsheets
+    mcp_status: research_pending
+    api_available: true
+    api_type: Google Sheets API
+    notes: Well documented, OAuth required
+    priority: high
+  - agent_id: 520
+    name: google_docs
+    display_name: Google Docs
+    category: documents
+    mcp_status: research_pending
+    api_available: true
+    api_type: Google Docs API
+    notes: Well documented, OAuth required
+    priority: high
+  microsoft_365:
+  - agent_id: 521
+    name: outlook
+    display_name: Outlook
+    category: email
+    mcp_status: research_pending
+    api_available: true
+    api_type: Microsoft Graph API
+    notes: Graph API well documented, OAuth required
+    priority: high
+  - agent_id: 522
+    name: onedrive
+    display_name: OneDrive
+    category: storage
+    mcp_status: research_pending
+    api_available: true
+    api_type: Microsoft Graph API
+    notes: Graph API well documented, OAuth required
+    priority: high
+  - agent_id: 523
+    name: sharepoint
+    display_name: SharePoint
+    category: collaboration
+    mcp_status: research_pending
+    api_available: true
+    api_type: Microsoft Graph API / SharePoint REST API
+    notes: Multiple API options, OAuth required
+    priority: high
+  development:
+  - agent_id: 524
+    name: github
+    display_name: GitHub
+    category: version_control
+    mcp_status: mcp_available
+    mcp_server: modelcontextprotocol/servers/github
+    api_available: true
+    api_type: GitHub REST API / GraphQL
+    notes: MCP server exists! Well documented APIs
+    priority: high
+  - agent_id: 525
+    name: gitlab
+    display_name: GitLab
+    category: version_control
+    mcp_status: mcp_available
+    mcp_server: modelcontextprotocol/servers/gitlab
+    api_available: true
+    api_type: GitLab REST API
+    notes: MCP server exists! Well documented API
+    priority: high
+  - agent_id: 526
+    name: bitbucket
+    display_name: Bitbucket
+    category: version_control
+    mcp_status: research_pending
+    api_available: true
+    api_type: Bitbucket Cloud REST API
+    notes: Well documented API, OAuth required
+    priority: medium
+  - agent_id: 527
+    name: jira
+    display_name: Jira
+    category: project_management
+    mcp_status: research_pending
+    api_available: true
+    api_type: Jira REST API
+    notes: Well documented API, OAuth/API token
+    priority: high
+  - agent_id: 528
+    name: linear
+    display_name: Linear
+    category: project_management
+    mcp_status: research_pending
+    api_available: true
+    api_type: Linear GraphQL API
+    notes: Modern GraphQL API, API key auth
+    priority: high
+  administration:
+  - agent_id: 529
+    name: azure_ad
+    display_name: Azure Active Directory
+    category: identity
+    mcp_status: research_pending
+    api_available: true
+    api_type: Microsoft Graph API
+    notes: Graph API, enterprise auth required
+    priority: medium
+  - agent_id: 530
+    name: google_workspace_admin
+    display_name: Google Workspace Admin
+    category: administration
+    mcp_status: research_pending
+    api_available: true
+    api_type: Google Admin SDK
+    notes: Admin API, domain admin required
+    priority: medium
+  - agent_id: 531
+    name: okta
+    display_name: Okta
+    category: identity
+    mcp_status: research_pending
+    api_available: true
+    api_type: Okta API
+    notes: Well documented API, OAuth/API token
+    priority: high
+emerging_tech_agents:
+  ai_platforms:
+  - agent_id: 1452
+    name: openai
+    display_name: OpenAI
+    category: ai
+    mcp_status: research_pending
+    api_available: true
+    api_type: OpenAI API
+    notes: Well documented API, likely MCP server exists
+    priority: critical
+  - agent_id: 1453
+    name: anthropic
+    display_name: Anthropic
+    category: ai
+    mcp_status: research_pending
+    api_available: true
+    api_type: Anthropic API
+    notes: MCP creators - likely has MCP server
+    priority: critical
+  - agent_id: 1454
+    name: hugging_face
+    display_name: Hugging Face
+    category: ai
+    mcp_status: research_pending
+    api_available: true
+    api_type: Hugging Face API
+    notes: Inference API available, likely MCP server
+    priority: critical
+  - agent_id: 1455
+    name: cohere
+    display_name: Cohere
+    category: ai
+    mcp_status: research_pending
+    api_available: true
+    api_type: Cohere API
+    notes: Well documented API
+    priority: high
+  - agent_id: 1456
+    name: replicate
+    display_name: Replicate
+    category: ai
+    mcp_status: research_pending
+    api_available: true
+    api_type: Replicate API
+    notes: API available for model hosting
+    priority: high
+research_priorities:
+  critical:
+  - AI platforms (OpenAI, Anthropic, Hugging Face)
+  - Tier 1 communication tools
+  - Version control (GitHub, GitLab - already have MCP)
+  high:
+  - Remaining Tier 1 agents
+  - Popular productivity tools (Notion, Slack, Trello)
+  - Major cloud providers (AWS, Azure, GCP services)
+  medium:
+  - Tier 2 marketing and CRM tools
+  - Tier 3 developer tools
+  - Popular SaaS platforms (Stripe, Shopify, Zendesk)
+  low:
+  - Tier 4 and 5 specialized vertical tools
+  - Regional platforms
+  - Niche industry tools
+integration_strategy:
+  phase_2a_immediate:
+    description: Quick wins - use existing MCP servers
+    targets:
+    - GitHub (MCP exists)
+    - GitLab (MCP exists)
+    - Google Drive (MCP exists)
+    - Slack (MCP exists)
+    timeline: Week 1
+  phase_2b_custom_mcp:
+    description: Build custom MCP servers for high-priority APIs
+    targets:
+    - OpenAI
+    - Anthropic
+    - Linear
+    - Notion
+    - Jira
+    - Gmail
+    - Google Calendar
+    - Microsoft Teams
+    timeline: Week 2-4
+  phase_2c_oauth_migration:
+    description: Implement OAuth for top 50 agents
+    targets:
+    - All Tier 1 agents
+    - Top AI platforms
+    - Major productivity tools
+    timeline: Week 4-6
+next_steps:
+- Research MCP server repositories and communities
+- Validate known MCP servers (GitHub, GitLab, Google Drive, Slack)
+- Create MCP discovery automation script
+- Build custom MCP servers for high-priority APIs
+- Document integration patterns and best practices
+- Create OAuth implementation templates
