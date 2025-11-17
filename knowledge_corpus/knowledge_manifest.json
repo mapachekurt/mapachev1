@@ -1,0 +1,85 @@
+{
+  "collection_date": "2025-11-17T17:51:56.339286",
+  "version": "1.0.0",
+  "sources": [
+    {
+      "name": "ADK Starter Kit",
+      "type": "git_repository",
+      "url": "https://github.com/google/adk-starter-kit",
+      "status": "failed",
+      "error": "Cloning into 'knowledge_corpus/starter_kit/adk-starter-kit'...\nfatal: could not read Username for 'https://github.com': No such device or address\n"
+    },
+    {
+      "name": "ADK Sample Agents",
+      "type": "git_repository",
+      "url": "https://github.com/google/adk-sample-agents",
+      "status": "failed",
+      "error": "Cloning into 'knowledge_corpus/sample_agents/adk-sample-agents'...\nfatal: could not read Username for 'https://github.com': No such device or address\n"
+    },
+    {
+      "name": "ADK Agent Types Documentation",
+      "type": "web_research",
+      "url": "https://google.github.io/adk-docs/agents/",
+      "status": "success"
+    },
+    {
+      "name": "ADK Deployment Guide",
+      "type": "web_research",
+      "url": "https://cloud.google.com/agent-builder/agent-engine/develop/adk",
+      "status": "success"
+    }
+  ],
+  "files_collected": [
+    {
+      "name": "overview",
+      "type": "documentation",
+      "source_url": "https://google.github.io/adk-docs/",
+      "file_path": "knowledge_corpus/docs/overview.html",
+      "size_bytes": 105246
+    },
+    {
+      "name": "adk_best_practices",
+      "type": "best_practices",
+      "file_path": "knowledge_corpus/best_practices/adk_best_practices.json",
+      "size_bytes": 16034
+    },
+    {
+      "name": "adk_agent_patterns",
+      "type": "patterns_reference",
+      "file_path": "knowledge_corpus/best_practices/adk_agent_patterns.json",
+      "size_bytes": 6319
+    },
+    {
+      "name": "adk_agent_types",
+      "type": "documentation",
+      "source": "Web research and documentation compilation",
+      "file_path": "knowledge_corpus/docs/adk_agent_types.md",
+      "size_bytes": 5229
+    },
+    {
+      "name": "adk_vertex_ai_deployment",
+      "type": "documentation",
+      "source": "Web research and Google Cloud documentation",
+      "file_path": "knowledge_corpus/docs/adk_vertex_ai_deployment.md",
+      "size_bytes": 7936
+    },
+    {
+      "name": "adk_code_examples",
+      "type": "code_examples",
+      "source": "Curated code examples and patterns",
+      "file_path": "knowledge_corpus/docs/adk_code_examples.md",
+      "size_bytes": 13412
+    }
+  ],
+  "statistics": {
+    "total_files": 6,
+    "total_size_bytes": 154176,
+    "total_size_mb": 0.15,
+    "sources_count": 4,
+    "documentation_pages": 3,
+    "repositories_cloned": 0,
+    "best_practices_files": 2,
+    "code_examples_files": 1
+  },
+  "last_updated": "2025-11-17T17:56:04.171110"
+}

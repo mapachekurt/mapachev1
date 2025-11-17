@@ -1,0 +1,171 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-11-17T17:51:57.817996",
+  "patterns": [
+    {
+      "name": "Single Agent Pattern",
+      "description": "A standalone agent handling a specific task",
+      "complexity": "Simple",
+      "use_when": "Task is straightforward and doesn't require decomposition",
+      "structure": {
+        "agent_type": "Agent",
+        "sub_agents": 0,
+        "tools": "0-5"
+      },
+      "example_use_cases": [
+        "Document summarization",
+        "Data extraction",
+        "Simple Q&A",
+        "Text classification"
+      ],
+      "code_template": "agent = Agent(name='task_agent', instruction='...', model='gemini-2.0-flash-001')"
+    },
+    {
+      "name": "Sequential Multi-Agent Pattern",
+      "description": "Multiple agents executing in sequence, each building on previous results",
+      "complexity": "Moderate",
+      "use_when": "Tasks have dependencies and must be executed in order",
+      "structure": {
+        "agent_type": "SequentialAgent",
+        "sub_agents": "2-10",
+        "tools": "Variable per agent"
+      },
+      "example_use_cases": [
+        "Software development pipeline (requirements -> design -> code -> test)",
+        "Content creation workflow (research -> outline -> draft -> edit)",
+        "Data analysis pipeline (collect -> clean -> analyze -> visualize)",
+        "Agent building workflow"
+      ],
+      "code_template": "root = SequentialAgent(name='pipeline', sub_agents=[agent1, agent2, agent3], ...)"
+    },
+    {
+      "name": "Parallel Multi-Agent Pattern",
+      "description": "Multiple agents executing concurrently on independent tasks",
+      "complexity": "Moderate",
+      "use_when": "Tasks are independent and can run simultaneously",
+      "structure": {
+        "agent_type": "ParallelAgent",
+        "sub_agents": "2-10",
+        "tools": "Variable per agent"
+      },
+      "example_use_cases": [
+        "Multi-source data gathering",
+        "Concurrent analysis from different perspectives",
+        "Parallel validation checks",
+        "Multi-channel communication"
+      ],
+      "code_template": "root = ParallelAgent(name='parallel', sub_agents=[agent1, agent2, agent3], ...)"
+    },
+    {
+      "name": "Loop Agent Pattern",
+      "description": "Agent that iteratively refines output until criteria are met",
+      "complexity": "Moderate-Advanced",
+      "use_when": "Task requires iterative improvement or refinement",
+      "structure": {
+        "agent_type": "LoopAgent",
+        "sub_agents": "1-3",
+        "tools": "Variable"
+      },
+      "example_use_cases": [
+        "Code refinement loops",
+        "Quality improvement iterations",
+        "Test-driven development cycles",
+        "Creative refinement"
+      ],
+      "code_template": "root = LoopAgent(name='refiner', sub_agents=[generator, reviewer], max_iterations=5, ...)"
+    },
+    {
+      "name": "Hierarchical Agent Pattern",
+      "description": "Multi-level agent hierarchy with coordinator and specialized teams",
+      "complexity": "Advanced",
+      "use_when": "Complex systems requiring multiple specializations",
+      "structure": {
+        "agent_type": "Mixed (Sequential/Parallel root with nested structures)",
+        "sub_agents": "5+",
+        "levels": "2-3"
+      },
+      "example_use_cases": [
+        "Enterprise automation (CEO -> dept heads -> teams)",
+        "Complex project management",
+        "Large-scale system design",
+        "Multi-domain expert systems"
+      ],
+      "code_template": "ceo = SequentialAgent(name='ceo', sub_agents=[cto_team, cfo_team, cmo_team], ...)"
+    },
+    {
+      "name": "RAG-Enhanced Agent Pattern",
+      "description": "Agent with retrieval-augmented generation using knowledge bases",
+      "complexity": "Moderate-Advanced",
+      "use_when": "Agent needs access to large knowledge bases or documentation",
+      "structure": {
+        "agent_type": "Agent with RAG tool_config",
+        "knowledge_base": "Gemini File Search corpus",
+        "tools": "File search + custom tools"
+      },
+      "example_use_cases": [
+        "Documentation assistants",
+        "Domain expert agents",
+        "Technical support agents",
+        "Research assistants"
+      ],
+      "code_template": "agent = Agent(name='expert', tool_config={'file_search': {'corpus_resource_name': corpus}}, ...)"
+    },
+    {
+      "name": "Tool-Augmented Agent Pattern",
+      "description": "Agent with extensive tool integration for actions and data access",
+      "complexity": "Moderate",
+      "use_when": "Agent needs to interact with external systems and APIs",
+      "structure": {
+        "agent_type": "Agent",
+        "tools": "5+ tools (MCP servers + Python functions)",
+        "integrations": "Multiple external systems"
+      },
+      "example_use_cases": [
+        "SaaS integration agents",
+        "System automation agents",
+        "API orchestration",
+        "DevOps automation"
+      ],
+      "code_template": "agent = Agent(name='integrator', tools=[tool1, tool2, tool3], ...)"
+    }
+  ],
+  "selection_guide": {
+    "decision_tree": [
+      {
+        "question": "Does the task require multiple steps?",
+        "if_no": "Use Single Agent Pattern",
+        "if_yes": "Continue to next question"
+      },
+      {
+        "question": "Do steps have dependencies (must run in order)?",
+        "if_yes": "Use Sequential Multi-Agent Pattern",
+        "if_no": "Continue to next question"
+      },
+      {
+        "question": "Can steps run independently and concurrently?",
+        "if_yes": "Use Parallel Multi-Agent Pattern",
+        "if_no": "Continue to next question"
+      },
+      {
+        "question": "Does output need iterative refinement?",
+        "if_yes": "Use Loop Agent Pattern",
+        "if_no": "Continue to next question"
+      },
+      {
+        "question": "Is there a multi-level organizational structure?",
+        "if_yes": "Use Hierarchical Agent Pattern",
+        "if_no": "Use Sequential Multi-Agent Pattern as default"
+      }
+    ],
+    "additional_considerations": [
+      {
+        "consideration": "Need access to knowledge base?",
+        "add": "RAG-Enhanced Agent Pattern features"
+      },
+      {
+        "consideration": "Need external system integration?",
+        "add": "Tool-Augmented Agent Pattern features"
+      }
+    ]
+  }
+}

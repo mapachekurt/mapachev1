@@ -1,0 +1,446 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-11-17T17:51:57.816516",
+  "categories": {
+    "agent_architecture": {
+      "description": "Agent architecture patterns and design principles",
+      "practices": [
+        {
+          "title": "Sequential Agent Pattern",
+          "description": "Use SequentialAgent for linear workflows where tasks must be completed in order",
+          "use_cases": [
+            "Data processing pipelines",
+            "Multi-step analysis",
+            "Ordered task execution"
+          ],
+          "example": "SequentialAgent with sub-agents for: requirements -> design -> implementation -> testing",
+          "benefits": [
+            "Clear execution flow",
+            "Easy debugging",
+            "Predictable behavior"
+          ]
+        },
+        {
+          "title": "Parallel Agent Pattern",
+          "description": "Use ParallelAgent for independent tasks that can run simultaneously",
+          "use_cases": [
+            "Multi-source data gathering",
+            "Concurrent analysis",
+            "Independent validations"
+          ],
+          "example": "ParallelAgent dispatching to: data_fetcher, validator, analyzer concurrently",
+          "benefits": [
+            "Faster execution",
+            "Resource efficiency",
+            "Scalability"
+          ]
+        },
+        {
+          "title": "Loop Agent Pattern",
+          "description": "Use LoopAgent for iterative refinement and repeated tasks",
+          "use_cases": [
+            "Code refinement",
+            "Iterative optimization",
+            "Quality improvement loops"
+          ],
+          "example": "LoopAgent for: generate -> review -> refine until quality threshold met",
+          "benefits": [
+            "Self-improvement",
+            "Quality assurance",
+            "Adaptive behavior"
+          ]
+        },
+        {
+          "title": "Hierarchical Agent Architecture",
+          "description": "Design agents in hierarchies with root coordinators and specialized sub-agents",
+          "use_cases": [
+            "Complex multi-domain systems",
+            "Enterprise workflows",
+            "Large-scale automation"
+          ],
+          "example": "CEO root agent coordinating CTO, CFO, CMO sub-agents, each with their own teams",
+          "benefits": [
+            "Separation of concerns",
+            "Modularity",
+            "Maintainability",
+            "Scalability"
+          ]
+        }
+      ]
+    },
+    "tool_integration": {
+      "description": "Best practices for integrating tools with agents",
+      "practices": [
+        {
+          "title": "MCP Tool Integration",
+          "description": "Use Model Context Protocol (MCP) for standardized tool integration",
+          "use_cases": [
+            "External API integration",
+            "System tool access",
+            "Cross-platform tools"
+          ],
+          "implementation": "Define tools in config.yaml with MCP server specifications",
+          "benefits": [
+            "Standardization",
+            "Reusability",
+            "Ecosystem compatibility"
+          ]
+        },
+        {
+          "title": "Python Function Tools",
+          "description": "Define Python functions as tools for custom logic and integrations",
+          "use_cases": [
+            "Business logic",
+            "Data transformations",
+            "Custom integrations"
+          ],
+          "implementation": "Decorate functions with @tool or define in tools/ directory",
+          "benefits": [
+            "Flexibility",
+            "Custom logic",
+            "Easy testing"
+          ]
+        },
+        {
+          "title": "Tool Error Handling",
+          "description": "Implement robust error handling and retry logic for tool calls",
+          "practices": [
+            "Validate inputs",
+            "Handle timeouts",
+            "Implement retries",
+            "Log failures"
+          ],
+          "benefits": [
+            "Reliability",
+            "User experience",
+            "Debugging capability"
+          ]
+        },
+        {
+          "title": "Tool Documentation",
+          "description": "Provide clear descriptions and parameter specifications for all tools",
+          "importance": "Critical for model understanding and proper tool usage",
+          "benefits": [
+            "Model comprehension",
+            "Correct usage",
+            "Self-documenting code"
+          ]
+        }
+      ]
+    },
+    "deployment_strategies": {
+      "description": "Strategies for deploying ADK agents to production",
+      "practices": [
+        {
+          "title": "Vertex AI Agent Engine Deployment",
+          "description": "Deploy agents to Google Cloud Vertex AI Agent Engine for scalable, managed hosting",
+          "use_cases": [
+            "Production deployments",
+            "Enterprise applications",
+            "Scalable services"
+          ],
+          "steps": [
+            "Package agent",
+            "Create AdkApp",
+            "Deploy to Vertex AI",
+            "Configure endpoints"
+          ],
+          "benefits": [
+            "Managed infrastructure",
+            "Auto-scaling",
+            "Integration with GCP services"
+          ]
+        },
+        {
+          "title": "Cloud Run Deployment",
+          "description": "Deploy agents as containerized services on Cloud Run",
+          "use_cases": [
+            "Custom hosting",
+            "Multi-cloud",
+            "Flexible infrastructure"
+          ],
+          "steps": [
+            "Containerize agent",
+            "Build Docker image",
+            "Deploy to Cloud Run",
+            "Configure routing"
+          ],
+          "benefits": [
+            "Flexibility",
+            "Multi-cloud support",
+            "Cost optimization"
+          ]
+        },
+        {
+          "title": "Local Development and Testing",
+          "description": "Use local execution for development and testing before deployment",
+          "practices": [
+            "Use AdkApp.serve() for local testing",
+            "Test with sample inputs",
+            "Validate behavior"
+          ],
+          "benefits": [
+            "Fast iteration",
+            "Easy debugging",
+            "Cost-free testing"
+          ]
+        },
+        {
+          "title": "Environment Configuration",
+          "description": "Use environment variables and config files for different deployment environments",
+          "practices": [
+            "Separate dev/staging/prod configs",
+            "Use secrets management",
+            "Version control configs"
+          ],
+          "benefits": [
+            "Security",
+            "Flexibility",
+            "Consistency"
+          ]
+        }
+      ]
+    },
+    "error_handling": {
+      "description": "Error handling and resilience patterns",
+      "practices": [
+        {
+          "title": "Graceful Degradation",
+          "description": "Design agents to handle failures gracefully and provide partial results",
+          "implementation": "Try-except blocks, fallback logic, default responses",
+          "benefits": [
+            "Better UX",
+            "Resilience",
+            "Reliability"
+          ]
+        },
+        {
+          "title": "Retry Logic with Exponential Backoff",
+          "description": "Implement retry logic for transient failures",
+          "implementation": "Use tenacity library or custom retry decorators",
+          "benefits": [
+            "Handle transient failures",
+            "Rate limit protection",
+            "Improved success rates"
+          ]
+        },
+        {
+          "title": "Comprehensive Logging",
+          "description": "Log all significant events, errors, and decisions",
+          "implementation": "Use Python logging module with appropriate levels",
+          "benefits": [
+            "Debugging",
+            "Monitoring",
+            "Audit trails"
+          ]
+        },
+        {
+          "title": "Input Validation",
+          "description": "Validate all inputs before processing",
+          "implementation": "Use Pydantic models for type validation and data validation",
+          "benefits": [
+            "Security",
+            "Data quality",
+            "Early error detection"
+          ]
+        }
+      ]
+    },
+    "model_selection": {
+      "description": "Guidelines for selecting appropriate models",
+      "practices": [
+        {
+          "title": "Gemini Flash for Speed",
+          "description": "Use Gemini Flash (1.5 or 2.0) for fast, cost-effective operations",
+          "use_cases": [
+            "Simple tasks",
+            "High-volume operations",
+            "Quick responses",
+            "Sub-agents"
+          ],
+          "characteristics": [
+            "Low latency",
+            "Cost-effective",
+            "Good for straightforward tasks"
+          ],
+          "benefits": [
+            "Fast execution",
+            "Lower costs",
+            "Scalability"
+          ]
+        },
+        {
+          "title": "Gemini Pro for Complex Reasoning",
+          "description": "Use Gemini Pro for complex reasoning and analysis tasks",
+          "use_cases": [
+            "Complex analysis",
+            "Strategic planning",
+            "Creative tasks",
+            "Root agents"
+          ],
+          "characteristics": [
+            "Advanced reasoning",
+            "Better context understanding",
+            "Higher accuracy"
+          ],
+          "benefits": [
+            "Quality",
+            "Complex problem solving",
+            "Better results"
+          ]
+        },
+        {
+          "title": "Model Selection Strategy",
+          "description": "Choose models based on task complexity and requirements",
+          "strategy": "Use Pro for root/complex agents, Flash for sub-agents and simple tasks",
+          "considerations": [
+            "Task complexity",
+            "Latency requirements",
+            "Cost constraints",
+            "Quality needs"
+          ],
+          "benefits": [
+            "Cost optimization",
+            "Performance balance",
+            "Quality assurance"
+          ]
+        }
+      ]
+    },
+    "rag_integration": {
+      "description": "Retrieval-Augmented Generation (RAG) integration patterns",
+      "practices": [
+        {
+          "title": "Gemini File Search Integration",
+          "description": "Use Gemini File Search for RAG capabilities with document corpora",
+          "use_cases": [
+            "Knowledge-base agents",
+            "Documentation assistants",
+            "Domain experts"
+          ],
+          "implementation": "Configure tool_config with Gemini File Search corpus",
+          "benefits": [
+            "Accurate retrieval",
+            "Managed infrastructure",
+            "Easy integration"
+          ]
+        },
+        {
+          "title": "Knowledge Base Organization",
+          "description": "Organize knowledge bases with clear structure and metadata",
+          "practices": [
+            "Group related documents",
+            "Add metadata",
+            "Version control",
+            "Regular updates"
+          ],
+          "benefits": [
+            "Better retrieval",
+            "Maintainability",
+            "Quality control"
+          ]
+        },
+        {
+          "title": "Source Citation",
+          "description": "Ensure agents cite sources when using RAG",
+          "implementation": "Configure agents to include source references in responses",
+          "benefits": [
+            "Transparency",
+            "Verification",
+            "Trust",
+            "Accuracy"
+          ]
+        }
+      ]
+    },
+    "performance_optimization": {
+      "description": "Performance optimization techniques",
+      "practices": [
+        {
+          "title": "Caching Strategies",
+          "description": "Implement caching for frequently accessed data and responses",
+          "implementation": "Use in-memory caching or external caching services",
+          "benefits": [
+            "Reduced latency",
+            "Cost savings",
+            "Better UX"
+          ]
+        },
+        {
+          "title": "Parallel Execution",
+          "description": "Use ParallelAgent for independent operations",
+          "implementation": "Identify independent tasks and run them concurrently",
+          "benefits": [
+            "Faster execution",
+            "Better resource utilization",
+            "Scalability"
+          ]
+        },
+        {
+          "title": "Prompt Optimization",
+          "description": "Optimize prompts for clarity and conciseness",
+          "practices": [
+            "Clear instructions",
+            "Minimal examples",
+            "Structured output",
+            "Avoid redundancy"
+          ],
+          "benefits": [
+            "Better results",
+            "Lower costs",
+            "Faster responses"
+          ]
+        }
+      ]
+    },
+    "security": {
+      "description": "Security best practices for ADK agents",
+      "practices": [
+        {
+          "title": "Secret Management",
+          "description": "Use Google Secret Manager or environment variables for secrets",
+          "implementation": "Never hardcode secrets, use Secret Manager API",
+          "benefits": [
+            "Security",
+            "Compliance",
+            "Auditability"
+          ]
+        },
+        {
+          "title": "Input Sanitization",
+          "description": "Sanitize and validate all user inputs",
+          "implementation": "Use Pydantic validation, escape special characters",
+          "benefits": [
+            "Prevent injection attacks",
+            "Data quality",
+            "Security"
+          ]
+        },
+        {
+          "title": "Access Control",
+          "description": "Implement proper IAM and access controls",
+          "implementation": "Use GCP IAM, service accounts with minimal permissions",
+          "benefits": [
+            "Security",
+            "Compliance",
+            "Least privilege"
+          ]
+        }
+      ]
+    }
+  },
+  "common_patterns": {
+    "agent_creation": {
+      "description": "Common patterns for creating agents",
+      "code_example": "\n# Sequential Agent with Sub-agents\nfrom google.adk import Agent, SequentialAgent\n\n# Define sub-agents\nrequirements_agent = Agent(\n    name=\"requirements_gatherer\",\n    instruction=\"Gather and analyze requirements...\",\n    model=\"gemini-2.0-flash-001\"\n)\n\ndesign_agent = Agent(\n    name=\"architecture_designer\",\n    instruction=\"Design system architecture...\",\n    model=\"gemini-2.0-flash-001\"\n)\n\n# Create root sequential agent\nroot_agent = SequentialAgent(\n    name=\"agent_builder_pro\",\n    instruction=\"Build complete agent systems...\",\n    model=\"gemini-1.5-pro\",\n    sub_agents=[requirements_agent, design_agent]\n)\n"
+    },
+    "tool_definition": {
+      "description": "Common patterns for defining tools",
+      "code_example": "\n# Python Function Tool\nfrom google.adk import tool\n\n@tool\ndef search_documentation(query: str) -> str:\n    '''Search ADK documentation for relevant information.\n\n    Args:\n        query: Search query string\n\n    Returns:\n        Relevant documentation excerpts\n    '''\n    # Implementation\n    return results\n\n# MCP Tool Configuration (config.yaml)\ntools:\n  - type: mcp\n    server: filesystem\n    config:\n      allowed_paths: [\"/workspace\"]\n"
+    },
+    "rag_configuration": {
+      "description": "Pattern for configuring RAG with Gemini File Search",
+      "code_example": "\n# Configure RAG with File Search\nfrom google.adk import Agent\nfrom google.genai import FileSearchTool\n\nfile_search_tool = FileSearchTool(\n    corpus_name=\"projects/{project}/locations/{location}/corpora/{corpus_id}\"\n)\n\nagent = Agent(\n    name=\"knowledge_agent\",\n    instruction=\"Answer questions using knowledge base...\",\n    model=\"gemini-1.5-pro\",\n    tool_config={\n        \"file_search\": {\n            \"corpus_resource_name\": corpus_name\n        }\n    }\n)\n"
+    }
+  }
+}
