@@ -1,0 +1,95 @@
+# Context Engineering Configuration
+
+sessions:
+  # Session lifecycle settings
+  default_timeout_minutes: 60
+  auto_close_after_inactivity: true
+  inactivity_threshold_minutes: 15
+  max_events_per_session: 1000
+
+memory:
+  # Declarative memory settings
+  declarative:
+    min_confidence_to_store: 0.5
+    min_confidence_to_retrieve: 0.7
+    max_age_days: 180
+    enable_auto_expiration: true
+
+  # Procedural memory settings
+  procedural:
+    min_examples_for_pattern: 2
+    min_confidence_to_store: 0.6
+    min_confidence_to_retrieve: 0.8
+    max_patterns_per_type: 50
+
+  # Provenance tracking
+  provenance:
+    track_source_sessions: true
+    track_confidence_changes: true
+    enable_contradiction_detection: true
+    debug_mode: false
+
+extraction:
+  # LLM-driven memory extraction
+  enable_automatic_extraction: true
+  extract_on_session_close: true
+  extract_on_event_threshold: 20
+  consolidation_strategy: "confidence_weighted"  # or "latest_wins"
+
+retrieval:
+  # Proactive retrieval (always included)
+  proactive_keys:
+    - user_name
+    - user_timezone
+    - working_hours
+    - core_preferences
+    - active_projects
+    - safety_info
+    - recent_context
+
+  # Reactive retrieval (on-demand)
+  reactive:
+    max_results: 5
+    similarity_threshold: 0.75
+    enable_caching: true
+    cache_ttl_seconds: 1800
+
+  # Token budget management
+  max_context_tokens: 4000
+  proactive_token_budget: 1000
+  reactive_token_budget: 2000
+  reserve_for_query: 1000
+
+production:
+  # Privacy settings
+  privacy:
+    strict_user_isolation: true
+    enable_encryption_at_rest: true
+    enable_encryption_in_transit: true
+    gdpr_compliant: true
+    enable_user_data_export: true
+    enable_user_data_deletion: true
+
+  # Performance settings
+  performance:
+    enable_memory_caching: true
+    cache_backend: "redis"  # or "memory"
+    cache_ttl_seconds: 3600
+    max_cache_size_mb: 1000
+    enable_query_batching: true
+
+  # Scale settings
+  scale:
+    use_vector_database: true
+    vector_db_backend: "vertex_ai_search"  # When deployed
+    enable_memory_compression: true
+    enable_graceful_degradation: true
+    max_memories_per_user: 10000
+
+monitoring:
+  # Observability
+  enable_metrics: true
+  enable_tracing: true
+  log_memory_operations: true
+  track_context_assembly_time: true
+  alert_on_memory_errors: true
