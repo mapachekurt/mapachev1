@@ -1,0 +1,246 @@
+# Cost Optimization Configuration
+
+llm_routing:
+  enabled: true
+
+  # Complexity thresholds (1-10 scale)
+  complexity_threshold:
+    simple: 3      # Use local SLM or cheapest model
+    moderate: 6    # Use balanced model (GPT-3.5, Claude Haiku)
+    complex: 8     # Use advanced model (GPT-4, Claude Sonnet)
+    expert: 10     # Use most capable model (GPT-4-turbo, Claude Opus)
+
+  # Model configuration by tier
+  models:
+    simple:
+      primary: local-slm
+      fallback: gemini-2.0-flash
+      max_complexity: 3
+
+    moderate:
+      primary: gemini-2.0-flash
+      fallback: gpt-3.5-turbo
+      max_complexity: 6
+
+    complex:
+      primary: gemini-2.0-pro
+      fallback: gpt-4
+      max_complexity: 8
+
+    expert:
+      primary: gemini-2.0-ultra
+      fallback: gpt-4-turbo
+      max_complexity: 10
+
+  # Complexity estimation factors
+  complexity_factors:
+    prompt_length:
+      weight: 0.2
+      threshold_tokens: 1000
+
+    technical_keywords:
+      weight: 0.3
+      keywords:
+        - analyze
+        - evaluate
+        - compare
+        - synthesize
+        - recommend
+        - optimize
+
+    context_depth:
+      weight: 0.2
+      # Number of previous messages in conversation
+
+    output_requirements:
+      weight: 0.3
+      structured_output: +2
+      code_generation: +3
+      multi_step_reasoning: +2
+
+local_slm:
+  enabled: true
+  model: llama3.2:3b  # Ollama model
+  confidence_threshold: 0.85
+
+  # Tasks suitable for local SLM
+  routine_patterns:
+    - greeting
+    - farewell
+    - simple_calculation
+    - text_extraction
+    - formatting
+    - status_check
+    - simple_classification
+    - entity_recognition
+
+  # Docker configuration for Ollama
+  docker:
+    image: ollama/ollama:latest
+    port: 11434
+    memory_limit: 4G
+    auto_start: true
+
+  # Fallback behavior
+  fallback:
+    enabled: true
+    confidence_threshold: 0.85
+    route_to: moderate  # Route to moderate tier on low confidence
+
+caching:
+  enabled: true
+  backend: redis  # redis or memory
+
+  # Redis configuration
+  redis:
+    host: localhost
+    port: 6379
+    db: 0
+    password: ${REDIS_PASSWORD}
+    ssl: false
+
+  # In-memory configuration (for testing)
+  memory:
+    max_size_mb: 1000
+    eviction_policy: lru
+
+  # Cache settings
+  ttl_seconds: 3600  # 1 hour default
+  max_entries: 10000
+
+  # Semantic caching
+  semantic_similarity:
+    enabled: true
+    threshold: 0.95  # Cache hit if similarity > 95%
+    embedding_model: text-embedding-ada-002
+
+  # Cache key generation
+  key_strategy: semantic  # semantic or exact
+
+  # What to cache
+  cache_rules:
+    - pattern: ".*"
+      ttl: 3600
+      enabled: true
+
+    - pattern: "frequently_asked.*"
+      ttl: 86400  # 24 hours
+      enabled: true
+
+    - pattern: "real_time.*"
+      ttl: 60  # 1 minute
+      enabled: true
+
+    - pattern: "no_cache.*"
+      enabled: false
+
+cost_tracking:
+  enabled: true
+
+  # Cost tracking dimensions
+  dimensions:
+    - agent_id
+    - user_id
+    - task_type
+    - model
+    - timestamp
+    - session_id
+
+  # Model pricing (per 1K tokens)
+  model_costs:
+    # OpenAI
+    gpt-4-turbo:
+      input: 0.01
+      output: 0.03
+
+    gpt-4:
+      input: 0.03
+      output: 0.06
+
+    gpt-3.5-turbo:
+      input: 0.0005
+      output: 0.0015
+
+    # Anthropic Claude
+    claude-opus:
+      input: 0.015
+      output: 0.075
+
+    claude-sonnet:
+      input: 0.003
+      output: 0.015
+
+    claude-haiku:
+      input: 0.00025
+      output: 0.00125
+
+    # Google Gemini
+    gemini-2.0-ultra:
+      input: 0.002
+      output: 0.006
+
+    gemini-2.0-pro:
+      input: 0.0005
+      output: 0.0015
+
+    gemini-2.0-flash:
+      input: 0.0001
+      output: 0.0003
+
+    # Local
+    local-slm:
+      input: 0.0
+      output: 0.0
+
+  # Budget management
+  budgets:
+    # Daily budgets
+    daily:
+      global: 1000  # $1000/day
+      per_agent: 100  # $100/day per agent
+      per_user: 50   # $50/day per user
+
+    # Monthly budgets
+    monthly:
+      global: 25000  # $25k/month
+      per_agent: 2000  # $2k/month per agent
+
+  # Alert thresholds
+  alerts:
+    - threshold: 0.8  # 80% of budget
+      severity: warning
+      notify: [email]
+
+    - threshold: 0.9  # 90% of budget
+      severity: warning
+      notify: [email, slack]
+
+    - threshold: 1.0  # 100% of budget
+      severity: critical
+      notify: [email, slack, pagerduty]
+      action: throttle  # Throttle requests
+
+  # Cost optimization recommendations
+  recommendations:
+    enabled: true
+    analyze_interval_hours: 24
+
+    rules:
+      - condition: cache_hit_rate < 0.3
+        recommendation: "Enable semantic caching"
+
+      - condition: local_slm_usage < 0.2 AND routine_tasks > 0.3
+        recommendation: "Increase local SLM usage for routine tasks"
+
+      - condition: avg_cost_per_request > 0.10
+        recommendation: "Review model routing to use cheaper models"
+
+      - condition: high_complexity_model_usage > 0.5
+        recommendation: "Analyze if all requests need advanced models"
+
+# Target metrics (for monitoring)
+targets:
+  cost_per_request: 0.05  # Target $0.05 per request
+  cost_reduction: 0.60     # Target 60% cost reduction
+  cache_hit_rate: 0.50     # Target 50% cache hit rate
+  local_slm_usage: 0.25    # Target 25% local SLM usage

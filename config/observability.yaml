@@ -1,0 +1,195 @@
+# Observability Configuration
+
+logging:
+  level: INFO  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  format: json  # json or text
+  output:
+    console: true
+    file: /var/log/agents/agent.log
+    cloud_logging: false  # Enable when deployed to GCP
+
+  # Structured logging fields
+  include_fields:
+    - timestamp
+    - agent_id
+    - request_id
+    - user_id
+    - session_id
+    - event
+    - level
+
+  # Log sampling (reduce volume in production)
+  sampling:
+    enabled: false
+    rate: 0.1  # 10% of logs
+
+tracing:
+  enabled: true
+  service_name: agent-system
+  sample_rate: 1.0  # 100% sampling (reduce in production)
+
+  exporters:
+    - console  # For development
+    # - cloud_trace  # Enable for GCP
+    # - jaeger  # Enable for Jaeger
+
+  # Trace attributes
+  include_attributes:
+    - agent_id
+    - agent_type
+    - task_id
+    - user_id
+    - session_id
+
+  # Span configuration
+  spans:
+    agent_task:
+      include_input: true
+      include_output: true
+      max_output_length: 1000
+
+    llm_call:
+      include_prompt: true
+      include_response: true
+      max_prompt_length: 5000
+      max_response_length: 5000
+
+    external_call:
+      include_url: true
+      include_headers: false  # Security consideration
+
+metrics:
+  enabled: true
+  port: 9090
+  path: /metrics
+  namespace: agent_system
+
+  # Prometheus exporters
+  exporters:
+    - prometheus
+
+  # Metric collection
+  collect_interval_seconds: 15
+
+  # Metric dimensions
+  default_labels:
+    environment: development  # production, staging, development
+    region: us-central1
+    version: 1.0.0
+
+  # Custom metrics
+  custom_metrics:
+    - name: agent_success_rate
+      type: gauge
+      description: Agent success rate over time window
+      labels: [agent_id, time_window]
+
+    - name: agent_cost_efficiency
+      type: gauge
+      description: Cost per successful task
+      labels: [agent_id, model]
+
+dashboards:
+  # Looker Studio configuration
+  looker_studio:
+    enabled: true
+    refresh_interval_minutes: 5
+    data_source: bigquery  # bigquery, cloud_sql, sheets
+
+  # Grafana configuration
+  grafana:
+    enabled: false
+    url: http://localhost:3000
+    api_key: ${GRAFANA_API_KEY}
+    folder: Agent Monitoring
+
+  # Dashboard definitions
+  executive_dashboard:
+    enabled: true
+    panels:
+      - total_requests
+      - success_rate
+      - avg_response_time
+      - total_cost
+      - active_agents
+      - error_rate
+
+  performance_dashboard:
+    enabled: true
+    panels:
+      - request_latency_p50
+      - request_latency_p95
+      - request_latency_p99
+      - throughput
+      - active_requests
+
+  cost_dashboard:
+    enabled: true
+    panels:
+      - total_cost_usd
+      - cost_by_agent
+      - cost_by_model
+      - token_usage
+      - cost_per_request
+
+  quality_dashboard:
+    enabled: true
+    panels:
+      - golden_task_pass_rate
+      - error_rate_by_type
+      - human_feedback_score
+      - task_success_rate
+      - retry_rate
+
+alerting:
+  enabled: true
+
+  # Alert channels
+  channels:
+    - type: email
+      addresses: [admin@example.com]
+    - type: slack
+      webhook_url: ${SLACK_WEBHOOK_URL}
+    # - type: pagerduty
+    #   api_key: ${PAGERDUTY_API_KEY}
+
+  # Alert rules
+  rules:
+    - name: high_error_rate
+      condition: error_rate > 0.05
+      severity: critical
+      notification_interval: 5m
+
+    - name: high_latency
+      condition: p95_latency > 10000
+      severity: warning
+      notification_interval: 10m
+
+    - name: high_cost
+      condition: hourly_cost > 100
+      severity: warning
+      notification_interval: 30m
+
+    - name: low_success_rate
+      condition: success_rate < 0.95
+      severity: critical
+      notification_interval: 5m
+
+    - name: agent_down
+      condition: active_requests == 0 for 5m
+      severity: critical
+      notification_interval: 1m
+
+retention:
+  # Data retention policies
+  logs:
+    retention_days: 30
+    archive_after_days: 7
+
+  traces:
+    retention_days: 7
+    sample_archived: true
+
+  metrics:
+    retention_days: 90
+    aggregation_intervals: [1m, 5m, 1h, 1d]
