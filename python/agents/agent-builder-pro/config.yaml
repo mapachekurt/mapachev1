@@ -1,0 +1,127 @@
+agent:
+  name: "agent_builder_pro"
+  display_name: "Agent Builder Pro"
+  version: "1.0.0"
+  description: |
+    RAG-enhanced multi-agent system for building production-ready ADK agents.
+    Leverages comprehensive ADK knowledge base through Gemini File Search.
+
+  model: "gemini-1.5-pro"
+
+  instruction: |
+    You are Agent Builder Pro, an expert system for building sophisticated ADK agents.
+
+    Your mission is to guide developers through the complete agent development lifecycle,
+    from requirements gathering to production deployment, using your comprehensive knowledge
+    of ADK best practices, patterns, and code examples.
+
+    You coordinate 5 specialized sub-agents in a sequential pipeline:
+    1. Requirements Gatherer - Analyzes requirements
+    2. Architecture Designer - Designs agent architecture
+    3. Tool Specification - Defines tools and integrations
+    4. Code Generator - Generates production code
+    5. Validation & Deployment - Validates and prepares deployment
+
+    IMPORTANT GUIDELINES:
+    - Use your knowledge base to provide accurate, up-to-date ADK information
+    - Always cite sources from the knowledge base when referencing best practices
+    - Follow ADK patterns: Sequential, Parallel, Loop, or Hierarchical
+    - Generate production-ready code with error handling and documentation
+    - Consider model selection (Flash for sub-agents, Pro for complex reasoning)
+    - Include comprehensive testing and deployment instructions
+    - Ensure security best practices (secrets management, input validation)
+
+    OUTPUT STRUCTURE:
+    For each agent building request, provide:
+    1. Requirements Analysis (structured document)
+    2. Architecture Design (pattern, sub-agents, tools)
+    3. Tool Specifications (detailed tool definitions)
+    4. Complete Implementation (code files)
+    5. Deployment Package (tests, configs, deployment scripts)
+
+rag:
+  enabled: true
+  corpus_type: "gemini_file_search"
+  corpus_resource_name: "${ADK_CORPUS_RESOURCE_NAME}"
+
+  retrieval_config:
+    max_results: 10
+    include_citations: true
+
+  knowledge_categories:
+    - "ADK Documentation"
+    - "Best Practices"
+    - "Code Examples"
+    - "Agent Patterns"
+    - "Deployment Guides"
+    - "Tool Integration"
+    - "Security Practices"
+    - "Performance Optimization"
+
+sub_agents:
+  - name: "requirements_gatherer"
+    model: "gemini-2.0-flash-001"
+    description: "Analyzes and structures requirements"
+
+  - name: "architecture_designer"
+    model: "gemini-2.0-flash-001"
+    description: "Designs optimal agent architecture"
+
+  - name: "tool_specification"
+    model: "gemini-2.0-flash-001"
+    description: "Defines and validates tool integrations"
+
+  - name: "code_generator"
+    model: "gemini-1.5-pro"
+    description: "Generates production-ready implementation"
+
+  - name: "validation_deployment"
+    model: "gemini-2.0-flash-001"
+    description: "Validates and prepares for deployment"
+
+deployment:
+  target: "vertex_ai_agent_engine"
+  project_id: "${GOOGLE_CLOUD_PROJECT}"
+  location: "${GOOGLE_CLOUD_LOCATION:-us-central1}"
+
+  machine_config:
+    machine_type: "n1-standard-4"
+    min_replicas: 1
+    max_replicas: 10
+
+  staging_bucket: "gs://${GOOGLE_CLOUD_PROJECT}-agent-staging"
+
+tools:
+  # No external tools needed - RAG provides all knowledge access
+  # Additional tools can be added here if needed for code execution, etc.
+  enabled: []
+
+monitoring:
+  enable_logging: true
+  enable_tracing: true
+  log_level: "INFO"
+
+metrics:
+  track_usage: true
+  track_quality: true
+  track_latency: true
+
+security:
+  input_validation: true
+  output_sanitization: true
+  secrets_manager: true
+
+environment:
+  development:
+    model: "gemini-2.0-flash-001"  # Use Flash for faster iteration
+    enable_debug: true
+
+  staging:
+    model: "gemini-1.5-pro"
+    enable_debug: false
+
+  production:
+    model: "gemini-1.5-pro"
+    enable_debug: false
+    min_replicas: 2
+    max_replicas: 20
