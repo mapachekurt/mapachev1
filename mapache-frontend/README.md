@@ -177,30 +177,163 @@ Currently, the frontend uses mock data for demonstration. To connect to the real
 
 ## Deployment
 
-### Vercel (Recommended)
+### Google Cloud Platform (Recommended)
 
-1. Push code to GitHub
-2. Import project in Vercel
-3. Configure environment variables
-4. Deploy
+Deploy the Mapache frontend to Google Cloud Run for seamless integration with your existing backend infrastructure.
 
-```bash
-# Or use Vercel CLI
-npm i -g vercel
-vercel
-```
-
-### Docker
+#### Prerequisites
 
 ```bash
-# Build image
-docker build -t mapache-frontend .
+# Install Google Cloud SDK (if not already installed)
+# https://cloud.google.com/sdk/docs/install
 
-# Run container
-docker run -p 3000:3000 mapache-frontend
+# Authenticate
+gcloud auth login
+
+# Set your project
+gcloud config set project YOUR_PROJECT_ID
 ```
 
-### Custom Server
+#### Option 1: Cloud Run (Recommended)
+
+**Step 1: Build and deploy using Cloud Build**
+
+```bash
+# From the mapache-frontend directory
+cd mapache-frontend
+
+# Build and deploy in one command
+gcloud run deploy mapache-frontend \
+  --source . \
+  --platform managed \
+  --region us-central1 \
+  --allow-unauthenticated \
+  --set-env-vars="NEXT_PUBLIC_API_URL=https://your-backend-url.run.app" \
+  --set-env-vars="NEXT_PUBLIC_WS_URL=wss://your-backend-url.run.app/ws"
+```
+
+**Step 2: Configure additional environment variables (optional)**
+
+```bash
+gcloud run services update mapache-frontend \
+  --region us-central1 \
+  --set-env-vars="NEXT_PUBLIC_AUTH_ENABLED=true" \
+  --set-env-vars="NEXT_PUBLIC_ANALYTICS_ENABLED=true"
+```
+
+**Step 3: Get your deployed URL**
+
+```bash
+gcloud run services describe mapache-frontend \
+  --region us-central1 \
+  --format="value(status.url)"
+```
+
+#### Option 2: Manual Docker Deployment
+
+**Step 1: Build Docker image**
+
+```bash
+# Build the image
+docker build -t gcr.io/YOUR_PROJECT_ID/mapache-frontend:latest .
+
+# Test locally
+docker run -p 3000:3000 \
+  -e NEXT_PUBLIC_API_URL=http://localhost:8080 \
+  gcr.io/YOUR_PROJECT_ID/mapache-frontend:latest
+```
+
+**Step 2: Push to Google Container Registry**
+
+```bash
+# Configure Docker for GCR
+gcloud auth configure-docker
+
+# Push image
+docker push gcr.io/YOUR_PROJECT_ID/mapache-frontend:latest
+```
+
+**Step 3: Deploy to Cloud Run**
+
+```bash
+gcloud run deploy mapache-frontend \
+  --image gcr.io/YOUR_PROJECT_ID/mapache-frontend:latest \
+  --platform managed \
+  --region us-central1 \
+  --allow-unauthenticated \
+  --port 3000 \
+  --memory 512Mi \
+  --cpu 1 \
+  --max-instances 10
+```
+
+#### Option 3: CI/CD with Cloud Build
+
+**Step 1: Create `cloudbuild.yaml`** (already included in the project)
+
+**Step 2: Set up Cloud Build trigger**
+
+```bash
+# Create trigger from GitHub repository
+gcloud builds triggers create github \
+  --repo-name=mapachev1 \
+  --repo-owner=mapachekurt \
+  --branch-pattern="^main$" \
+  --build-config=mapache-frontend/cloudbuild.yaml \
+  --included-files="mapache-frontend/**"
+```
+
+**Step 3: Push to trigger deployment**
+
+```bash
+git push origin main
+# Cloud Build will automatically build and deploy
+```
+
+#### Environment Variables Configuration
+
+Set environment variables using Secret Manager for sensitive data:
+
+```bash
+# Create secrets
+echo -n "https://your-backend-url.run.app" | \
+  gcloud secrets create api-url --data-file=-
+
+echo -n "wss://your-backend-url.run.app/ws" | \
+  gcloud secrets create ws-url --data-file=-
+
+# Update Cloud Run service to use secrets
+gcloud run services update mapache-frontend \
+  --region us-central1 \
+  --update-secrets=NEXT_PUBLIC_API_URL=api-url:latest \
+  --update-secrets=NEXT_PUBLIC_WS_URL=ws-url:latest
+```
+
+#### Custom Domain Setup
+
+```bash
+# Map custom domain
+gcloud run domain-mappings create \
+  --service mapache-frontend \
+  --domain mapache.app \
+  --region us-central1
+
+# Add DNS records (follow the instructions provided)
+```
+
+#### Monitoring and Logging
+
+```bash
+# View logs
+gcloud logging read "resource.type=cloud_run_revision AND resource.labels.service_name=mapache-frontend" \
+  --limit 50 \
+  --format json
+
+# Monitor metrics in Cloud Console
+# https://console.cloud.google.com/run/detail/REGION/mapache-frontend/metrics
+```
+
+### Local Production Build
 
 ```bash
 # Build the application
@@ -208,6 +341,10 @@ npm run build
 
 # Start production server
 npm start
+
+# Or test with Docker locally
+docker build -t mapache-frontend .
+docker run -p 3000:3000 mapache-frontend
 ```
 
 ## Testing
