@@ -1,0 +1,21 @@
+# Base Dockerfile for scrapers
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Copy requirements
+COPY deployment/intelligence/requirements.txt .
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy intelligence package
+COPY app/intelligence app/intelligence
+
+# Set environment variables
+ENV PYTHONUNBUFFERED=1
+ENV GCP_PROJECT_ID=${GCP_PROJECT_ID}
+ENV GCP_REGION=europe-west1
+
+# Default command (override in specific scrapers)
+CMD ["python", "-m", "app.intelligence.scrapers.hackernews"]

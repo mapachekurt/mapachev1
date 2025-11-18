@@ -1,0 +1,75 @@
+# Cloud Workflows definition for intelligence orchestration
+main:
+  steps:
+    - init:
+        assign:
+          - project_id: ${sys.get_env("GOOGLE_CLOUD_PROJECT_ID")}
+          - region: "europe-west1"
+          - scrapers:
+              - "hackernews"
+              - "reddit"
+              - "producthunt"
+              - "blogs"
+              - "arxiv"
+              - "github"
+
+    - log_start:
+        call: sys.log
+        args:
+          text: ${"Starting intelligence scraping orchestration with " + string(len(scrapers)) + " scrapers"}
+          severity: "INFO"
+
+    - run_scrapers_parallel:
+        parallel:
+          shared: [results]
+          for:
+            value: scraper
+            in: ${scrapers}
+            steps:
+              - execute_scraper:
+                  try:
+                    steps:
+                      - log_scraper_start:
+                          call: sys.log
+                          args:
+                            text: ${"Starting scraper: " + scraper}
+                            severity: "INFO"
+
+                      - run_cloud_run_job:
+                          call: googleapis.run.v1.namespaces.jobs.run
+                          args:
+                            name: ${"namespaces/" + project_id + "/jobs/intelligence-scraper-" + scraper}
+                            location: ${region}
+                          result: job_result
+
+                      - log_scraper_success:
+                          call: sys.log
+                          args:
+                            text: ${"Scraper completed successfully: " + scraper}
+                            severity: "INFO"
+
+                      - append_result:
+                          assign:
+                            - results: ${list.concat(results, [{"scraper": scraper, "status": "success"}])}
+
+                  except:
+                    as: e
+                    steps:
+                      - log_scraper_error:
+                          call: sys.log
+                          args:
+                            text: ${"Scraper failed: " + scraper + " - Error: " + e.message}
+                            severity: "ERROR"
+
+                      - append_error:
+                          assign:
+                            - results: ${list.concat(results, [{"scraper": scraper, "status": "error", "error": e.message}])}
+
+    - log_completion:
+        call: sys.log
+        args:
+          text: ${"Intelligence scraping orchestration completed. Results: " + json.encode_to_string(results)}
+          severity: "INFO"
+
+    - return_results:
+        return: ${results}

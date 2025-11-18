@@ -14,6 +14,17 @@ dependencies = [
     "opentelemetry-sdk>=1.20.0,<2.0.0",
     "opentelemetry-exporter-gcp-trace>=1.9.0,<2.0.0",
     "protobuf>=6.31.1,<7.0.0",
+    # Intelligence System dependencies
+    "google-cloud-pubsub>=2.18.0,<3.0.0",
+    "google-cloud-storage>=2.10.0,<3.0.0",
+    "google-cloud-firestore>=2.13.0,<3.0.0",
+    "google-cloud-functions>=1.10.0,<2.0.0",
+    "requests>=2.31.0,<3.0.0",
+    "feedparser>=6.0.10,<7.0.0",
+    "beautifulsoup4>=4.12.0,<5.0.0",
+    "functions-framework>=3.5.0,<4.0.0",
+    "cloudevents>=1.10.0,<2.0.0",
+    "python-dateutil>=2.8.2,<3.0.0",
 ]
 
 requires-python = ">=3.10,<3.13"

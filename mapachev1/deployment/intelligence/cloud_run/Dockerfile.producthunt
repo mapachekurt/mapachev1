@@ -1,0 +1,13 @@
+# Dockerfile for ProductHunt scraper
+FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY deployment/intelligence/requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY app/intelligence app/intelligence
+
+ENV PYTHONUNBUFFERED=1
+
+CMD ["python", "-m", "app.intelligence.scrapers.producthunt"]
