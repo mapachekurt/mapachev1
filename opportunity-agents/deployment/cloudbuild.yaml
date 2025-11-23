@@ -1,0 +1,68 @@
+# Google Cloud Build configuration for CI/CD
+# Automatically test and deploy agents on commit
+
+steps:
+  # Test Validation Agent
+  - name: 'python:3.11'
+    id: 'test-validation'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        cd validation-agent
+        pip install -r requirements.txt
+        pytest tests/ -v
+
+  # Test Opportunity Agent
+  - name: 'python:3.11'
+    id: 'test-opportunity'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        cd opportunity-agent
+        pip install -r requirements.txt
+        pytest tests/ -v
+
+  # Test Orchestrator Agent
+  - name: 'python:3.11'
+    id: 'test-orchestrator'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        cd orchestrator-agent
+        pip install -r requirements.txt
+        pytest tests/ -v
+
+  # Deploy agents (only on main branch)
+  - name: 'gcr.io/cloud-builders/gcloud'
+    id: 'deploy'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        if [ "$BRANCH_NAME" = "main" ] || [ "$BRANCH_NAME" = "master" ]; then
+          chmod +x deployment/deploy.sh
+          deployment/deploy.sh
+        else
+          echo "Skipping deployment (not main branch)"
+        fi
+    waitFor:
+      - 'test-validation'
+      - 'test-opportunity'
+      - 'test-orchestrator'
+
+# Build options
+options:
+  machineType: 'N1_HIGHCPU_8'
+  logging: CLOUD_LOGGING_ONLY
+  dynamic_substitutions: true
+
+# Timeout (30 minutes)
+timeout: '1800s'
+
+# Substitutions
+substitutions:
+  _GCP_PROJECT_ID: '${PROJECT_ID}'
+  _GCP_REGION: 'us-central1'

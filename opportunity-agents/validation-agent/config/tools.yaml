@@ -1,0 +1,23 @@
+tools:
+  reddit_scraper:
+    rate_limit: 60  # requests per minute
+    batch_size: 100
+    default_timeframe: week
+    max_comments_per_post: 20
+
+  twitter_api:
+    rate_limit: 450  # requests per 15 minutes
+    max_results_per_query: 100
+
+  hackernews_api:
+    rate_limit: 60
+    max_items: 100
+
+  g2_reviews:
+    rate_limit: 30
+    max_reviews_per_product: 50
+
+  sentiment_analyzer:
+    batch_size: 50
+    model: gemini-2.0-flash-exp
+    temperature: 0.1

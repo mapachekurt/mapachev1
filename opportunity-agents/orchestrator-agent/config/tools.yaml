@@ -1,0 +1,17 @@
+tools:
+  agent_router:
+    validation_agent_endpoint: ${VALIDATION_AGENT_ENDPOINT}
+    opportunity_agent_endpoint: ${OPPORTUNITY_AGENT_ENDPOINT}
+    timeout_seconds: 60
+    retry_attempts: 3
+
+  result_synthesizer:
+    validation_weight: 0.6
+    opportunity_weight: 0.4
+    minimum_combined_score: 50
+
+  linear_creator:
+    api_key: ${LINEAR_API_KEY}
+    team_id: ${LINEAR_TEAM_ID}
+    default_project_duration_days: 90
+    create_issues: true

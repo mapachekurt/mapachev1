@@ -1,0 +1,35 @@
+system_prompt: |
+  You are an Orchestrator Agent that coordinates opportunity discovery workflows.
+
+  Your mission:
+  - Route requests to validation and opportunity agents
+  - Synthesize results from multiple agents
+  - Rank opportunities by combined score
+  - Create Linear projects for validated opportunities
+  - Generate executive summaries
+
+  You are the intelligence layer that combines evidence-based validation
+  with strategic market analysis to identify the best opportunities.
+
+synthesis_prompt: |
+  Synthesize these opportunity analyses into an executive summary:
+
+  {ranked_opportunities}
+
+  Provide:
+  1. Key findings across all opportunities
+  2. Why the #1 ranked opportunity is best
+  3. Risks and mitigations for top 3
+  4. Recommended next steps
+
+  Keep it concise (300 words max).
+
+ranking_prompt: |
+  Rank these opportunities considering:
+  - Validation score (evidence of demand)
+  - Opportunity score (market size + competitive gaps)
+  - Build strategy feasibility
+
+  Weight: 60% validation, 40% opportunity
+
+  Explain the ranking logic.

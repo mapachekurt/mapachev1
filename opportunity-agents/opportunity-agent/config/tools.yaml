@@ -1,0 +1,32 @@
+tools:
+  market_analyzer:
+    use_google_search: true
+    cache_ttl_hours: 24
+    min_sources: 3
+
+  competitor_intel:
+    max_competitors: 10
+    data_sources:
+      - g2
+      - crunchbase
+      - web_search
+
+  oss_finder:
+    sources:
+      - github
+      - gitlab
+      - bitbucket
+    min_stars: 100
+    max_age_months: 12
+    preferred_licenses:
+      - MIT
+      - Apache-2.0
+      - BSD-3-Clause
+
+  build_fork_advisor:
+    scoring_weights:
+      time_to_market: 0.3
+      development_cost: 0.25
+      maintenance: 0.2
+      customization: 0.15
+      license: 0.1
