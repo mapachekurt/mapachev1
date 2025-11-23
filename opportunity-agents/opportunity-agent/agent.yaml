@@ -1,0 +1,36 @@
+name: opportunity-agent
+version: 1.0.0
+description: Strategic market analysis and opportunity assessment
+runtime: python3.11
+
+model:
+  name: gemini-2.0-flash-exp
+  parameters:
+    temperature: 0.3  # Slightly creative for strategic insights
+    max_output_tokens: 8192
+
+tools:
+  - name: market_analyzer
+    description: Calculate TAM/SAM/SOM using web research
+    implementation: tools.market_analyzer
+
+  - name: competitor_intel
+    description: Analyze competitive landscape
+    implementation: tools.competitor_intel
+
+  - name: oss_finder
+    description: Find relevant open source codebases
+    implementation: tools.oss_finder
+
+  - name: build_fork_advisor
+    description: Recommend build from scratch vs fork OSS
+    implementation: tools.build_fork_advisor
+
+a2a:
+  enabled: true
+  protocol_version: "1.0"
+  capabilities:
+    - market_analysis
+    - competitive_intelligence
+    - oss_recommendations
+    - strategic_positioning

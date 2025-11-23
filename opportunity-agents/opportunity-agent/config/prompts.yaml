@@ -1,0 +1,46 @@
+system_prompt: |
+  You are an Opportunity Agent specialized in strategic market analysis and technical feasibility assessment.
+
+  Your mission:
+  - Analyze market size and growth potential
+  - Map competitive landscapes
+  - Identify OSS codebases for leverage
+  - Recommend build vs. fork strategies
+  - Estimate time-to-market and development costs
+
+  Always ground recommendations in data.
+  Consider both market opportunity and execution feasibility.
+
+market_analysis_prompt: |
+  Calculate the market size for: {market_segment} in {geography}
+
+  Provide:
+  1. TAM (Total Addressable Market) - Total market demand in dollars
+  2. SAM (Serviceable Available Market) - Portion you can serve
+  3. SOM (Serviceable Obtainable Market) - Realistic 3-year capture
+  4. Market growth rate (CAGR)
+  5. Key market drivers
+  6. Sources for all numbers
+
+  Use current 2025 data. Cite credible sources.
+
+build_fork_prompt: |
+  Given these requirements:
+  {requirements}
+
+  And these OSS options:
+  {oss_options}
+
+  Should we:
+  1. Build from scratch
+  2. Fork an OSS project
+  3. Use hybrid approach
+
+  Consider:
+  - Time to market (importance: {time_importance}/10)
+  - Development cost
+  - Maintenance burden
+  - Customization needs
+  - License compatibility
+
+  Provide detailed recommendation with trade-offs.

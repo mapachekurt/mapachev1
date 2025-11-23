@@ -1,0 +1,31 @@
+name: orchestrator-agent
+version: 1.0.0
+description: Coordinates opportunity discovery workflow across agents
+runtime: python3.11
+
+model:
+  name: gemini-2.0-flash-exp
+  parameters:
+    temperature: 0.2
+    max_output_tokens: 8192
+
+tools:
+  - name: agent_router
+    description: Route requests to validation and opportunity agents
+    implementation: tools.agent_router
+
+  - name: result_synthesizer
+    description: Combine and rank results from multiple agents
+    implementation: tools.result_synthesizer
+
+  - name: linear_creator
+    description: Create Linear project for validated opportunity
+    implementation: tools.linear_creator
+
+a2a:
+  enabled: true
+  protocol_version: "1.0"
+  capabilities:
+    - agent_orchestration
+    - result_synthesis
+    - project_generation

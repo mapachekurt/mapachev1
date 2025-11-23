@@ -1,0 +1,39 @@
+name: validation-agent
+version: 1.0.0
+description: Social listening and pain point validation agent
+runtime: python3.11
+
+model:
+  name: gemini-2.0-flash-exp
+  parameters:
+    temperature: 0.1  # Low for factual evidence collection
+    max_output_tokens: 4096
+
+tools:
+  - name: reddit_scraper
+    description: Search and analyze Reddit posts/comments for pain points
+    implementation: tools.reddit_scraper
+
+  - name: twitter_api
+    description: Search X/Twitter for mentions and sentiment
+    implementation: tools.twitter_api
+
+  - name: hackernews_api
+    description: Analyze HackerNews discussions
+    implementation: tools.hackernews_api
+
+  - name: g2_reviews
+    description: Scrape competitor reviews from G2
+    implementation: tools.g2_reviews
+
+  - name: sentiment_analyzer
+    description: Score frustration level and urgency
+    implementation: tools.sentiment_analyzer
+
+a2a:
+  enabled: true
+  protocol_version: "1.0"
+  capabilities:
+    - pain_point_validation
+    - competitor_analysis
+    - evidence_collection
