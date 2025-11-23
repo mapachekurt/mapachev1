@@ -1,0 +1,233 @@
+# Golden Tasks Configuration
+# Sample golden tasks for evaluating agent quality
+
+financial_analyst_agent:
+  - task_id: "fa-001"
+    name: "Q3 Revenue Analysis"
+    description: "Analyze Q3 2024 revenue trends and growth"
+    input_data:
+      quarter: "Q3"
+      year: 2024
+      metrics: ["revenue", "growth", "trends"]
+      data:
+        q1_revenue: 1000000
+        q2_revenue: 1200000
+        q3_revenue: 1400000
+    expected_output:
+      revenue_growth: true
+      growth_rate: 0.167
+      trend: "positive"
+    acceptance_criteria:
+      - name: "has_revenue_growth"
+        validation_mode: "exact_match"
+        expected_value: true
+        threshold: 0.0
+      - name: "growth_rate"
+        validation_mode: "similarity"
+        expected_value: "16.7%"
+        threshold: 0.85
+      - name: "trend_analysis"
+        validation_mode: "regex"
+        expected_value: "positive|upward|increasing"
+        threshold: 0.0
+    timeout_ms: 5000
+    max_cost_usd: 0.10
+
+  - task_id: "fa-002"
+    name: "Cost-Benefit Analysis"
+    description: "Evaluate ROI for new project investment"
+    input_data:
+      project: "Cloud Migration"
+      initial_cost: 500000
+      annual_savings: 150000
+      years: 5
+    expected_output:
+      roi: 0.5
+      payback_period: 3.33
+      recommendation: "proceed"
+    acceptance_criteria:
+      - name: "roi_positive"
+        validation_mode: "exact_match"
+        expected_value: true
+        threshold: 0.0
+      - name: "has_recommendation"
+        validation_mode: "regex"
+        expected_value: "proceed|recommend|approve"
+        threshold: 0.0
+    timeout_ms: 5000
+    max_cost_usd: 0.10
+
+  - task_id: "fa-003"
+    name: "Budget Variance Report"
+    description: "Compare actual vs budgeted expenses"
+    input_data:
+      department: "Engineering"
+      budgeted: 1000000
+      actual: 1050000
+      period: "Q3 2024"
+    expected_output:
+      variance: 50000
+      variance_percent: 5.0
+      status: "over_budget"
+    acceptance_criteria:
+      - name: "variance_calculated"
+        validation_mode: "exact_match"
+        expected_value: true
+        threshold: 0.0
+      - name: "status_correct"
+        validation_mode: "exact_match"
+        expected_value: "over_budget"
+        threshold: 0.0
+    timeout_ms: 5000
+    max_cost_usd: 0.08
+
+pm_agent:
+  - task_id: "pm-001"
+    name: "Create Project Plan"
+    description: "Generate project plan with timeline and milestones"
+    input_data:
+      project_name: "Mobile App Redesign"
+      duration_weeks: 12
+      team_size: 5
+      complexity: "medium"
+    expected_output:
+      milestones:
+        - "Requirements Gathering"
+        - "Design Phase"
+        - "Development"
+        - "Testing"
+        - "Launch"
+      timeline: "12 weeks"
+    acceptance_criteria:
+      - name: "has_milestones"
+        validation_mode: "exact_match"
+        expected_value: true
+        threshold: 0.0
+      - name: "milestone_count"
+        validation_mode: "similarity"
+        expected_value: "5 milestones"
+        threshold: 0.8
+    timeout_ms: 5000
+    max_cost_usd: 0.10
+
+  - task_id: "pm-002"
+    name: "Risk Assessment"
+    description: "Identify and evaluate project risks"
+    input_data:
+      project: "Cloud Migration"
+      scope: "large"
+      timeline: "6 months"
+    expected_output:
+      risk_count: 5
+      high_risks: ["data_loss", "downtime"]
+      mitigation_plan: true
+    acceptance_criteria:
+      - name: "risks_identified"
+        validation_mode: "exact_match"
+        expected_value: true
+        threshold: 0.0
+      - name: "has_mitigation"
+        validation_mode: "exact_match"
+        expected_value: true
+        threshold: 0.0
+    timeout_ms: 5000
+    max_cost_usd: 0.10
+
+  - task_id: "pm-003"
+    name: "Resource Allocation"
+    description: "Allocate team resources to project tasks"
+    input_data:
+      team_members: 8
+      tasks: 15
+      duration_weeks: 8
+    expected_output:
+      allocation_complete: true
+      utilization_rate: 0.85
+    acceptance_criteria:
+      - name: "allocation_complete"
+        validation_mode: "exact_match"
+        expected_value: true
+        threshold: 0.0
+    timeout_ms: 5000
+    max_cost_usd: 0.08
+
+customer_support_agent:
+  - task_id: "cs-001"
+    name: "Handle Customer Complaint"
+    description: "Resolve customer complaint with empathy"
+    input_data:
+      complaint: "Product arrived damaged"
+      customer_tier: "premium"
+      order_value: 500
+    expected_output:
+      resolution: "replacement_offered"
+      sentiment: "positive"
+      customer_satisfied: true
+    acceptance_criteria:
+      - name: "has_resolution"
+        validation_mode: "regex"
+        expected_value: "replacement|refund|credit"
+        threshold: 0.0
+      - name: "positive_tone"
+        validation_mode: "similarity"
+        expected_value: "We apologize and will make this right"
+        threshold: 0.7
+    timeout_ms: 5000
+    max_cost_usd: 0.10
+
+  - task_id: "cs-002"
+    name: "Escalation Handling"
+    description: "Determine if issue needs escalation"
+    input_data:
+      issue: "Billing discrepancy $10,000"
+      severity: "high"
+      customer_type: "enterprise"
+    expected_output:
+      escalate: true
+      escalation_level: "manager"
+      urgency: "high"
+    acceptance_criteria:
+      - name: "correct_escalation"
+        validation_mode: "exact_match"
+        expected_value: true
+        threshold: 0.0
+    timeout_ms: 5000
+    max_cost_usd: 0.08
+
+  - task_id: "cs-003"
+    name: "FAQ Response"
+    description: "Answer common customer question"
+    input_data:
+      question: "What is your return policy?"
+    expected_output:
+      answer_provided: true
+      includes_timeframe: true
+      includes_conditions: true
+    acceptance_criteria:
+      - name: "answer_complete"
+        validation_mode: "exact_match"
+        expected_value: true
+        threshold: 0.0
+      - name: "mentions_30_days"
+        validation_mode: "similarity"
+        expected_value: "30 days"
+        threshold: 0.8
+    timeout_ms: 5000
+    max_cost_usd: 0.05
+
+# Template for adding more agents
+# agent_name:
+#   - task_id: "agent-001"
+#     name: "Task Name"
+#     description: "Task description"
+#     input_data:
+#       key: value
+#     expected_output:
+#       key: value
+#     acceptance_criteria:
+#       - name: "criterion_name"
+#         validation_mode: "exact_match|regex|similarity|custom"
+#         expected_value: value
+#         threshold: 0.0
+#     timeout_ms: 5000
+#     max_cost_usd: 0.10

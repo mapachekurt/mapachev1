@@ -1,0 +1,247 @@
+# Quality Gates Configuration
+# Define quality requirements for agent deployments
+
+# Development to Staging Gate
+dev_to_staging:
+  enabled: true
+  description: "Quality gate for promoting agents from development to staging"
+
+  requirements:
+    golden_task_pass_rate:
+      threshold: 0.80  # 80% pass rate
+      required: true
+      description: "Golden task pass rate must be >= 80%"
+
+    has_evaluation:
+      required: true
+      description: "Agent must have evaluation framework implemented"
+
+    has_unit_tests:
+      required: true
+      description: "Agent must have unit tests with coverage"
+      minimum_coverage: 0.70  # 70% code coverage
+
+    documentation_complete:
+      required: true
+      description: "Agent documentation must be complete"
+      checklist:
+        - README with usage examples
+        - API documentation
+        - Architecture diagram
+        - Deployment guide
+
+    code_quality:
+      required: true
+      description: "Code quality checks must pass"
+      checks:
+        - linter_passed
+        - type_hints_present
+        - no_security_vulnerabilities
+
+  # Override policy
+  overrides:
+    allowed: true
+    requires_approval: true
+    approval_roles: [tech_lead, engineering_manager]
+    audit_log: true
+
+# Staging to Production Gate
+staging_to_prod:
+  enabled: true
+  description: "Quality gate for promoting agents from staging to production"
+
+  requirements:
+    golden_task_pass_rate:
+      threshold: 0.95  # 95% pass rate
+      required: true
+      description: "Golden task pass rate must be >= 95%"
+
+    load_test_passed:
+      required: true
+      description: "Load testing must pass successfully"
+      load_test_criteria:
+        - sustained_100_rps_for_10_minutes
+        - p95_latency_under_5_seconds
+        - zero_errors_under_normal_load
+
+    cost_per_request:
+      threshold: 0.10  # $0.10 per request
+      required: true
+      description: "Average cost per request must be <= $0.10"
+      measurement_period: 7_days
+
+    p95_latency_ms:
+      threshold: 5000  # 5 seconds
+      required: true
+      description: "P95 latency must be <= 5000ms"
+      measurement_period: 7_days
+
+    has_rollback_plan:
+      required: true
+      description: "Rollback plan must be documented and tested"
+      checklist:
+        - rollback_procedure_documented
+        - rollback_tested_in_staging
+        - data_migration_reversible
+        - communication_plan_ready
+
+    has_monitoring:
+      required: true
+      description: "Monitoring and alerting must be configured"
+      checklist:
+        - structured_logging_enabled
+        - distributed_tracing_enabled
+        - metrics_collection_enabled
+        - dashboards_created
+        - alerts_configured
+
+    security_review:
+      required: true
+      description: "Security review must be completed"
+      checklist:
+        - no_hardcoded_secrets
+        - input_validation
+        - output_sanitization
+        - rate_limiting_configured
+        - authentication_required
+
+  # Override policy
+  overrides:
+    allowed: true
+    requires_approval: true
+    approval_roles: [director_of_engineering, vp_engineering]
+    audit_log: true
+    requires_incident_postmortem: false
+
+# Production Monitoring Gate
+prod_monitoring:
+  enabled: true
+  description: "Continuous quality monitoring for production agents"
+
+  requirements:
+    success_rate:
+      threshold: 0.99  # 99% success rate
+      required: true
+      description: "Success rate must be >= 99%"
+      measurement_window: 1_hour
+      evaluation_interval: 5_minutes
+
+    error_rate:
+      threshold: 0.01  # 1% error rate
+      required: true
+      description: "Error rate must be <= 1%"
+      measurement_window: 1_hour
+      evaluation_interval: 5_minutes
+
+    cost_deviation:
+      threshold: 0.20  # 20% deviation
+      required: true
+      description: "Cost deviation from baseline must be <= 20%"
+      baseline_period: 7_days
+      measurement_window: 1_day
+
+    human_feedback_score:
+      threshold: 4.0  # 4.0 out of 5.0
+      required: false  # Optional metric
+      description: "Average human feedback score should be >= 4.0"
+      measurement_window: 7_days
+      min_feedback_count: 10
+
+    p99_latency_ms:
+      threshold: 10000  # 10 seconds
+      required: true
+      description: "P99 latency must be <= 10000ms"
+      measurement_window: 1_hour
+
+    availability:
+      threshold: 0.999  # 99.9% uptime
+      required: true
+      description: "Service availability must be >= 99.9%"
+      measurement_window: 24_hours
+
+  # Automatic actions
+  actions:
+    - condition: success_rate < 0.95
+      action: alert
+      severity: critical
+      notify: [on_call_engineer, engineering_manager]
+
+    - condition: error_rate > 0.05
+      action: alert
+      severity: critical
+      notify: [on_call_engineer, engineering_manager]
+
+    - condition: success_rate < 0.90
+      action: auto_rollback
+      severity: critical
+      notify: [on_call_engineer, engineering_manager, director]
+
+    - condition: cost_deviation > 0.50
+      action: alert
+      severity: warning
+      notify: [finance_team, engineering_manager]
+
+    - condition: p99_latency_ms > 30000
+      action: alert
+      severity: warning
+      notify: [on_call_engineer]
+
+# Gate Evaluation Schedule
+evaluation:
+  dev_to_staging:
+    trigger: manual  # Manual gate evaluation
+    retention_days: 90
+
+  staging_to_prod:
+    trigger: manual  # Manual gate evaluation
+    retention_days: 365
+
+  prod_monitoring:
+    trigger: automatic  # Continuous monitoring
+    interval_minutes: 5
+    retention_days: 30
+
+# Reporting
+reporting:
+  enabled: true
+
+  reports:
+    - name: quality_gate_summary
+      schedule: daily
+      recipients: [engineering_leads, product_managers]
+      includes:
+        - pass_fail_status
+        - failed_requirements
+        - override_count
+        - trend_analysis
+
+    - name: production_health
+      schedule: hourly
+      recipients: [on_call_engineer]
+      includes:
+        - success_rate
+        - error_rate
+        - latency_metrics
+        - cost_metrics
+
+    - name: quality_trends
+      schedule: weekly
+      recipients: [engineering_leadership, product_leadership]
+      includes:
+        - quality_score_trends
+        - deployment_frequency
+        - rollback_rate
+        - mean_time_to_recovery
+
+# Historical Data
+history:
+  enabled: true
+  retention_days: 365
+
+  track:
+    - gate_evaluations
+    - requirement_results
+    - overrides
+    - deployments
+    - rollbacks
+    - incidents
