@@ -1,0 +1,34 @@
+{
+  "name": "ux_designer_3",
+  "description": "UX Designer responsible for product functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "ux_design",
+      "wireframing",
+      "user_research"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "UX Designer",
+    "department": "product",
+    "reports_to": "director_ux",
+    "manages": [],
+    "tags": [
+      "product",
+      "ux_design",
+      "wireframing",
+      "user_research",
+      "product"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "ux_designer_3@mapache.ai"
+  }
+}

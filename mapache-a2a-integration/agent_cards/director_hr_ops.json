@@ -1,0 +1,37 @@
+{
+  "name": "director_hr_ops",
+  "description": "Director of HR Operations responsible for hr functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "hr_operations",
+      "hris",
+      "compliance"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Director of HR Operations",
+    "department": "hr",
+    "reports_to": "vp_people_ops",
+    "manages": [
+      "hr_ops_manager_1",
+      "hr_ops_manager_2"
+    ],
+    "tags": [
+      "hr",
+      "hr_operations",
+      "hris",
+      "compliance",
+      "hr"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "director_hr_ops@mapache.ai"
+  }
+}

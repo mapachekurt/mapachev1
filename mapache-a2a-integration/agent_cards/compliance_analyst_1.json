@@ -1,0 +1,34 @@
+{
+  "name": "compliance_analyst_1",
+  "description": "Compliance Analyst responsible for security functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "compliance",
+      "audit",
+      "documentation"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Compliance Analyst",
+    "department": "security",
+    "reports_to": "compliance_manager",
+    "manages": [],
+    "tags": [
+      "security",
+      "compliance",
+      "audit",
+      "documentation",
+      "security"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "compliance_analyst_1@mapache.ai"
+  }
+}

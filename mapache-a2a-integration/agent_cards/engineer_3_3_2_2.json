@@ -1,0 +1,34 @@
+{
+  "name": "engineer_3_3_2_2",
+  "description": "Software Engineer responsible for engineering functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "software_engineering",
+      "coding",
+      "problem_solving"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Software Engineer",
+    "department": "engineering",
+    "reports_to": "senior_engineer_3_3_2",
+    "manages": [],
+    "tags": [
+      "engineering",
+      "software_engineering",
+      "coding",
+      "problem_solving",
+      "engineering"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "engineer_3_3_2_2@mapache.ai"
+  }
+}

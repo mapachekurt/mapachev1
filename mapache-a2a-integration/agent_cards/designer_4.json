@@ -1,0 +1,34 @@
+{
+  "name": "designer_4",
+  "description": "Designer responsible for marketing functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "graphic_design",
+      "visual_design",
+      "creative"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Designer",
+    "department": "marketing",
+    "reports_to": "creative_manager",
+    "manages": [],
+    "tags": [
+      "marketing",
+      "graphic_design",
+      "visual_design",
+      "creative",
+      "marketing"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "designer_4@mapache.ai"
+  }
+}

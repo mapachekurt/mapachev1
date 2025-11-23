@@ -1,0 +1,38 @@
+{
+  "name": "vp_marketing",
+  "description": "VP of Marketing responsible for marketing functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "marketing_strategy",
+      "brand_management",
+      "demand_generation"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "VP of Marketing",
+    "department": "marketing",
+    "reports_to": "cmo",
+    "manages": [
+      "director_demand_gen",
+      "director_content",
+      "director_brand"
+    ],
+    "tags": [
+      "marketing",
+      "marketing_strategy",
+      "brand_management",
+      "demand_generation",
+      "marketing"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "vp_marketing@mapache.ai"
+  }
+}

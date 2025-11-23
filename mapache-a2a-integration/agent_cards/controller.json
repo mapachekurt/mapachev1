@@ -1,0 +1,38 @@
+{
+  "name": "controller",
+  "description": "Controller responsible for finance functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "financial_reporting",
+      "financial_controls",
+      "audit_compliance"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Controller",
+    "department": "finance",
+    "reports_to": "cfo",
+    "manages": [
+      "senior_accountant_1",
+      "senior_accountant_2",
+      "senior_accountant_3"
+    ],
+    "tags": [
+      "finance",
+      "financial_reporting",
+      "financial_controls",
+      "audit_compliance",
+      "finance"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "controller@mapache.ai"
+  }
+}

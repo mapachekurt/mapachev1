@@ -1,0 +1,30 @@
+# Google Agent Development Kit with A2A Protocol Support
+google-adk[a2a]>=1.6.1
+
+# Web Framework
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+
+# Data Validation
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+
+# HTTP Client
+httpx>=0.25.0
+
+# Environment Configuration
+python-dotenv>=1.0.0
+
+# Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+
+# Observability
+opentelemetry-api>=1.21.0
+opentelemetry-sdk>=1.21.0
+opentelemetry-instrumentation-fastapi>=0.42b0
+
+# Utilities
+tenacity>=8.2.3  # Retry logic
+structlog>=23.2.0  # Structured logging

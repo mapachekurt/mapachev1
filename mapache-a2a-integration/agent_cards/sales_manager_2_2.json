@@ -1,0 +1,38 @@
+{
+  "name": "sales_manager_2_2",
+  "description": "Sales Manager responsible for sales functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "sales_management",
+      "account_management",
+      "coaching"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Sales Manager",
+    "department": "sales",
+    "reports_to": "sales_director_2",
+    "manages": [
+      "account_executive_2_2_1",
+      "account_executive_2_2_2",
+      "account_executive_2_2_3"
+    ],
+    "tags": [
+      "sales",
+      "sales_management",
+      "account_management",
+      "coaching",
+      "sales"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "sales_manager_2_2@mapache.ai"
+  }
+}

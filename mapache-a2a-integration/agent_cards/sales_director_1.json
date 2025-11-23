@@ -1,0 +1,37 @@
+{
+  "name": "sales_director_1",
+  "description": "Sales Director - Region 1 responsible for sales functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "sales_management",
+      "territory_planning",
+      "team_leadership"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Sales Director - Region 1",
+    "department": "sales",
+    "reports_to": "vp_sales",
+    "manages": [
+      "sales_manager_1_1",
+      "sales_manager_1_2"
+    ],
+    "tags": [
+      "sales",
+      "sales_management",
+      "territory_planning",
+      "team_leadership",
+      "sales"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "sales_director_1@mapache.ai"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "vp_design",
+  "description": "VP of Design responsible for product functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "design_leadership",
+      "ux_strategy",
+      "design_systems"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "VP of Design",
+    "department": "product",
+    "reports_to": "vp_product",
+    "manages": [
+      "director_ux",
+      "director_ui"
+    ],
+    "tags": [
+      "product",
+      "design_leadership",
+      "ux_strategy",
+      "design_systems",
+      "product"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "vp_design@mapache.ai"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "director_operations_2",
+  "description": "Director of Operations responsible for operations functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "operations_management",
+      "project_management",
+      "analytics"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Director of Operations",
+    "department": "operations",
+    "reports_to": "vp_operations",
+    "manages": [
+      "operations_manager_2_1",
+      "operations_manager_2_2",
+      "operations_manager_2_3"
+    ],
+    "tags": [
+      "operations",
+      "operations_management",
+      "project_management",
+      "analytics",
+      "operations"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "director_operations_2@mapache.ai"
+  }
+}

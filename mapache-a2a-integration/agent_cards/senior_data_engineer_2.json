@@ -1,0 +1,38 @@
+{
+  "name": "senior_data_engineer_2",
+  "description": "Senior Data Engineer responsible for data functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "data_engineering",
+      "pipeline_development",
+      "sql"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Senior Data Engineer",
+    "department": "data",
+    "reports_to": "director_data_engineering",
+    "manages": [
+      "data_engineer_2_1",
+      "data_engineer_2_2",
+      "data_engineer_2_3"
+    ],
+    "tags": [
+      "data",
+      "data_engineering",
+      "pipeline_development",
+      "sql",
+      "data"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "senior_data_engineer_2@mapache.ai"
+  }
+}

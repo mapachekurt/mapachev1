@@ -1,0 +1,34 @@
+{
+  "name": "senior_accountant_2",
+  "description": "Senior Accountant responsible for finance functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "financial_reporting",
+      "accounts_payable",
+      "accounts_receivable"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Senior Accountant",
+    "department": "finance",
+    "reports_to": "controller",
+    "manages": [],
+    "tags": [
+      "finance",
+      "financial_reporting",
+      "accounts_payable",
+      "accounts_receivable",
+      "finance"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "senior_accountant_2@mapache.ai"
+  }
+}

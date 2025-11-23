@@ -1,0 +1,34 @@
+{
+  "name": "account_executive_1_1_3",
+  "description": "Account Executive responsible for sales functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "sales",
+      "negotiation",
+      "relationship_building"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Account Executive",
+    "department": "sales",
+    "reports_to": "sales_manager_1_1",
+    "manages": [],
+    "tags": [
+      "sales",
+      "sales",
+      "negotiation",
+      "relationship_building",
+      "sales"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "account_executive_1_1_3@mapache.ai"
+  }
+}

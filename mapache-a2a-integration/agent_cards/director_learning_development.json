@@ -1,0 +1,36 @@
+{
+  "name": "director_learning_development",
+  "description": "Director of Learning & Development responsible for hr functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "learning_development",
+      "training",
+      "career_development"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Director of Learning & Development",
+    "department": "hr",
+    "reports_to": "vp_people_ops",
+    "manages": [
+      "l_and_d_manager"
+    ],
+    "tags": [
+      "hr",
+      "learning_development",
+      "training",
+      "career_development",
+      "hr"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "director_learning_development@mapache.ai"
+  }
+}

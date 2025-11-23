@@ -1,0 +1,37 @@
+{
+  "name": "office_manager_2",
+  "description": "Office Manager - Location 2 responsible for facilities functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "office_management",
+      "facilities",
+      "coordination"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Office Manager - Location 2",
+    "department": "facilities",
+    "reports_to": "director_facilities",
+    "manages": [
+      "facilities_coordinator_2_1",
+      "facilities_coordinator_2_2"
+    ],
+    "tags": [
+      "facilities",
+      "office_management",
+      "facilities",
+      "coordination",
+      "facilities"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "office_manager_2@mapache.ai"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "recruiting_manager_2",
+  "description": "Recruiting Manager responsible for hr functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "recruiting",
+      "sourcing",
+      "interviewing"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Recruiting Manager",
+    "department": "hr",
+    "reports_to": "director_recruiting",
+    "manages": [
+      "recruiter_2_1",
+      "recruiter_2_2",
+      "recruiter_2_3",
+      "recruiter_2_4",
+      "recruiter_2_5"
+    ],
+    "tags": [
+      "hr",
+      "recruiting",
+      "sourcing",
+      "interviewing",
+      "hr"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "recruiting_manager_2@mapache.ai"
+  }
+}

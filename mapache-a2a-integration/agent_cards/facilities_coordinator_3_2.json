@@ -1,0 +1,34 @@
+{
+  "name": "facilities_coordinator_3_2",
+  "description": "Facilities Coordinator responsible for facilities functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "facilities",
+      "coordination",
+      "vendor_liaison"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Facilities Coordinator",
+    "department": "facilities",
+    "reports_to": "office_manager_3",
+    "manages": [],
+    "tags": [
+      "facilities",
+      "facilities",
+      "coordination",
+      "vendor_liaison",
+      "facilities"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "facilities_coordinator_3_2@mapache.ai"
+  }
+}

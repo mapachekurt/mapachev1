@@ -1,0 +1,34 @@
+{
+  "name": "recruiter_1_2",
+  "description": "Recruiter responsible for hr functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "recruiting",
+      "sourcing",
+      "candidate_screening"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Recruiter",
+    "department": "hr",
+    "reports_to": "recruiting_manager_1",
+    "manages": [],
+    "tags": [
+      "hr",
+      "recruiting",
+      "sourcing",
+      "candidate_screening",
+      "hr"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "recruiter_1_2@mapache.ai"
+  }
+}

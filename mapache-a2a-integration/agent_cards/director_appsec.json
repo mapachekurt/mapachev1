@@ -1,0 +1,39 @@
+{
+  "name": "director_appsec",
+  "description": "Director of Application Security responsible for security functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "application_security",
+      "secure_coding",
+      "penetration_testing"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Director of Application Security",
+    "department": "security",
+    "reports_to": "vp_security",
+    "manages": [
+      "appsec_engineer_1",
+      "appsec_engineer_2",
+      "appsec_engineer_3",
+      "appsec_engineer_4"
+    ],
+    "tags": [
+      "security",
+      "application_security",
+      "secure_coding",
+      "penetration_testing",
+      "security"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "director_appsec@mapache.ai"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "director_infrastructure",
+  "description": "Director of Infrastructure responsible for it functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "infrastructure_management",
+      "cloud",
+      "networking"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Director of Infrastructure",
+    "department": "it",
+    "reports_to": "vp_it",
+    "manages": [
+      "infrastructure_engineer_1",
+      "infrastructure_engineer_2",
+      "infrastructure_engineer_3",
+      "infrastructure_engineer_4"
+    ],
+    "tags": [
+      "it",
+      "infrastructure_management",
+      "cloud",
+      "networking",
+      "it"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "director_infrastructure@mapache.ai"
+  }
+}

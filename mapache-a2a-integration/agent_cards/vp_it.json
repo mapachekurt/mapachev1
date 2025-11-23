@@ -1,0 +1,37 @@
+{
+  "name": "vp_it",
+  "description": "VP of IT responsible for it functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "it_operations",
+      "infrastructure",
+      "service_management"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "VP of IT",
+    "department": "it",
+    "reports_to": "cto",
+    "manages": [
+      "director_it_ops",
+      "director_infrastructure"
+    ],
+    "tags": [
+      "it",
+      "it_operations",
+      "infrastructure",
+      "service_management",
+      "it"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "vp_it@mapache.ai"
+  }
+}

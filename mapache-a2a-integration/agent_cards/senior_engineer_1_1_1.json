@@ -1,0 +1,37 @@
+{
+  "name": "senior_engineer_1_1_1",
+  "description": "Senior Software Engineer responsible for engineering functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "software_engineering",
+      "system_design",
+      "mentoring"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Senior Software Engineer",
+    "department": "engineering",
+    "reports_to": "engineering_manager_1_1",
+    "manages": [
+      "engineer_1_1_1_1",
+      "engineer_1_1_1_2"
+    ],
+    "tags": [
+      "engineering",
+      "software_engineering",
+      "system_design",
+      "mentoring",
+      "engineering"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "senior_engineer_1_1_1@mapache.ai"
+  }
+}

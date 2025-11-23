@@ -1,0 +1,40 @@
+{
+  "name": "ceo",
+  "description": "Chief Executive Officer responsible for executive functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "strategic_planning",
+      "executive_leadership",
+      "decision_making"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Chief Executive Officer",
+    "department": "executive",
+    "reports_to": null,
+    "manages": [
+      "cfo",
+      "cto",
+      "cmo",
+      "coo",
+      "chro"
+    ],
+    "tags": [
+      "executive",
+      "strategic_planning",
+      "executive_leadership",
+      "decision_making",
+      "executive"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "ceo@mapache.ai"
+  }
+}

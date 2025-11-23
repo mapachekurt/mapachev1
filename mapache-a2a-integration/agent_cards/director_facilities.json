@@ -1,0 +1,38 @@
+{
+  "name": "director_facilities",
+  "description": "Director of Facilities responsible for facilities functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "facilities_management",
+      "operations",
+      "vendor_management"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Director of Facilities",
+    "department": "facilities",
+    "reports_to": "coo",
+    "manages": [
+      "office_manager_1",
+      "office_manager_2",
+      "office_manager_3"
+    ],
+    "tags": [
+      "facilities",
+      "facilities_management",
+      "operations",
+      "vendor_management",
+      "facilities"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "director_facilities@mapache.ai"
+  }
+}

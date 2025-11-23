@@ -1,0 +1,38 @@
+{
+  "name": "it_manager_2",
+  "description": "IT Manager responsible for it functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "it_operations",
+      "team_management",
+      "service_delivery"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "IT Manager",
+    "department": "it",
+    "reports_to": "director_it_ops",
+    "manages": [
+      "it_support_2_1",
+      "it_support_2_2",
+      "it_support_2_3"
+    ],
+    "tags": [
+      "it",
+      "it_operations",
+      "team_management",
+      "service_delivery",
+      "it"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "it_manager_2@mapache.ai"
+  }
+}

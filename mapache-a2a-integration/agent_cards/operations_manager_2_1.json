@@ -1,0 +1,38 @@
+{
+  "name": "operations_manager_2_1",
+  "description": "Operations Manager responsible for operations functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "operations",
+      "process_improvement",
+      "project_management"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Operations Manager",
+    "department": "operations",
+    "reports_to": "director_operations_2",
+    "manages": [
+      "operations_analyst_2_1_1",
+      "operations_analyst_2_1_2",
+      "operations_analyst_2_1_3"
+    ],
+    "tags": [
+      "operations",
+      "operations",
+      "process_improvement",
+      "project_management",
+      "operations"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "operations_manager_2_1@mapache.ai"
+  }
+}

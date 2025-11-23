@@ -1,0 +1,34 @@
+{
+  "name": "sdr_1",
+  "description": "Sales Development Representative responsible for sales functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "lead_generation",
+      "prospecting",
+      "cold_calling"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Sales Development Representative",
+    "department": "sales",
+    "reports_to": "sdr_manager",
+    "manages": [],
+    "tags": [
+      "sales",
+      "lead_generation",
+      "prospecting",
+      "cold_calling",
+      "sales"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "sdr_1@mapache.ai"
+  }
+}

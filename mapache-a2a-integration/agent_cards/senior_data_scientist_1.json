@@ -1,0 +1,37 @@
+{
+  "name": "senior_data_scientist_1",
+  "description": "Senior Data Scientist responsible for data functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "data_science",
+      "machine_learning",
+      "statistical_modeling"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Senior Data Scientist",
+    "department": "data",
+    "reports_to": "director_data_science",
+    "manages": [
+      "data_scientist_1_1",
+      "data_scientist_1_2"
+    ],
+    "tags": [
+      "data",
+      "data_science",
+      "machine_learning",
+      "statistical_modeling",
+      "data"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "senior_data_scientist_1@mapache.ai"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "vp_sales",
+  "description": "VP of Sales responsible for sales functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "sales_leadership",
+      "revenue_management",
+      "sales_strategy"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "VP of Sales",
+    "department": "sales",
+    "reports_to": "ceo",
+    "manages": [
+      "sales_director_1",
+      "sales_director_2",
+      "sales_director_3"
+    ],
+    "tags": [
+      "sales",
+      "sales_leadership",
+      "revenue_management",
+      "sales_strategy",
+      "sales"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "vp_sales@mapache.ai"
+  }
+}

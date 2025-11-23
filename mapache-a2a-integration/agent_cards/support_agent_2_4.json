@@ -1,0 +1,34 @@
+{
+  "name": "support_agent_2_4",
+  "description": "Customer Support Agent responsible for customer_success functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "customer_support",
+      "troubleshooting",
+      "communication"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Customer Support Agent",
+    "department": "customer_success",
+    "reports_to": "support_manager_2",
+    "manages": [],
+    "tags": [
+      "customer_success",
+      "customer_support",
+      "troubleshooting",
+      "communication",
+      "customer_success"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "support_agent_2_4@mapache.ai"
+  }
+}

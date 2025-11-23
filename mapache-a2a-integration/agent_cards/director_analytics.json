@@ -1,0 +1,37 @@
+{
+  "name": "director_analytics",
+  "description": "Director of Analytics responsible for data functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "business_intelligence",
+      "analytics",
+      "data_visualization"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Director of Analytics",
+    "department": "data",
+    "reports_to": "vp_data",
+    "manages": [
+      "analytics_manager_1",
+      "analytics_manager_2"
+    ],
+    "tags": [
+      "data",
+      "business_intelligence",
+      "analytics",
+      "data_visualization",
+      "data"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "director_analytics@mapache.ai"
+  }
+}

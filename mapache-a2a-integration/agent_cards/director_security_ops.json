@@ -1,0 +1,40 @@
+{
+  "name": "director_security_ops",
+  "description": "Director of Security Operations responsible for security functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "security_operations",
+      "incident_response",
+      "threat_detection"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Director of Security Operations",
+    "department": "security",
+    "reports_to": "vp_security",
+    "manages": [
+      "security_engineer_1",
+      "security_engineer_2",
+      "security_engineer_3",
+      "security_engineer_4",
+      "security_engineer_5"
+    ],
+    "tags": [
+      "security",
+      "security_operations",
+      "incident_response",
+      "threat_detection",
+      "security"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "director_security_ops@mapache.ai"
+  }
+}

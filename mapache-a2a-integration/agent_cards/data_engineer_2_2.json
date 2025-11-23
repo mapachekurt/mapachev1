@@ -1,0 +1,34 @@
+{
+  "name": "data_engineer_2_2",
+  "description": "Data Engineer responsible for data functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "data_engineering",
+      "etl",
+      "database_management"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Data Engineer",
+    "department": "data",
+    "reports_to": "senior_data_engineer_2",
+    "manages": [],
+    "tags": [
+      "data",
+      "data_engineering",
+      "etl",
+      "database_management",
+      "data"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "data_engineer_2_2@mapache.ai"
+  }
+}

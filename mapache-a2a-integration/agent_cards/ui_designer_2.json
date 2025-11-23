@@ -1,0 +1,34 @@
+{
+  "name": "ui_designer_2",
+  "description": "UI Designer responsible for product functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "ui_design",
+      "visual_design",
+      "prototyping"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "UI Designer",
+    "department": "product",
+    "reports_to": "director_ui",
+    "manages": [],
+    "tags": [
+      "product",
+      "ui_design",
+      "visual_design",
+      "prototyping",
+      "product"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "ui_designer_2@mapache.ai"
+  }
+}

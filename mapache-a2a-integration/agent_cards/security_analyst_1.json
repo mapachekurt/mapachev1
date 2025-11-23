@@ -1,0 +1,34 @@
+{
+  "name": "security_analyst_1",
+  "description": "Security Analyst responsible for security functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "security_analysis",
+      "threat_intelligence",
+      "siem"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Security Analyst",
+    "department": "security",
+    "reports_to": "director_security_ops",
+    "manages": [],
+    "tags": [
+      "security",
+      "security_analysis",
+      "threat_intelligence",
+      "siem",
+      "security"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "security_analyst_1@mapache.ai"
+  }
+}

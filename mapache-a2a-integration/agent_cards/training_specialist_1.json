@@ -1,0 +1,34 @@
+{
+  "name": "training_specialist_1",
+  "description": "Training Specialist responsible for hr functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "training",
+      "facilitation",
+      "instructional_design"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Training Specialist",
+    "department": "hr",
+    "reports_to": "l_and_d_manager",
+    "manages": [],
+    "tags": [
+      "hr",
+      "training",
+      "facilitation",
+      "instructional_design",
+      "hr"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "training_specialist_1@mapache.ai"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "compliance_attorney_1",
+  "description": "Compliance Attorney responsible for legal functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "compliance",
+      "regulatory",
+      "legal_research"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Compliance Attorney",
+    "department": "legal",
+    "reports_to": "senior_counsel_compliance",
+    "manages": [],
+    "tags": [
+      "legal",
+      "compliance",
+      "regulatory",
+      "legal_research",
+      "legal"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "compliance_attorney_1@mapache.ai"
+  }
+}

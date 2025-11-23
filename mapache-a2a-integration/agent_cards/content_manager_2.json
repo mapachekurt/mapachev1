@@ -1,0 +1,38 @@
+{
+  "name": "content_manager_2",
+  "description": "Content Manager responsible for marketing functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "content_creation",
+      "content_strategy",
+      "seo"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Content Manager",
+    "department": "marketing",
+    "reports_to": "director_content",
+    "manages": [
+      "content_writer_2_1",
+      "content_writer_2_2",
+      "content_writer_2_3"
+    ],
+    "tags": [
+      "marketing",
+      "content_creation",
+      "content_strategy",
+      "seo",
+      "marketing"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "content_manager_2@mapache.ai"
+  }
+}

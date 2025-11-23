@@ -1,0 +1,38 @@
+{
+  "name": "director_sales_ops",
+  "description": "Director of Sales Operations responsible for sales functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "sales_operations",
+      "crm_management",
+      "sales_analytics"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Director of Sales Operations",
+    "department": "sales",
+    "reports_to": "vp_sales",
+    "manages": [
+      "sales_ops_analyst_1",
+      "sales_ops_analyst_2",
+      "sales_ops_analyst_3"
+    ],
+    "tags": [
+      "sales",
+      "sales_operations",
+      "crm_management",
+      "sales_analytics",
+      "sales"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "director_sales_ops@mapache.ai"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "director_data_science",
+  "description": "Director of Data Science responsible for data functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "data_science",
+      "machine_learning",
+      "ai"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Director of Data Science",
+    "department": "data",
+    "reports_to": "vp_data",
+    "manages": [
+      "senior_data_scientist_1",
+      "senior_data_scientist_2"
+    ],
+    "tags": [
+      "data",
+      "data_science",
+      "machine_learning",
+      "ai",
+      "data"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "director_data_science@mapache.ai"
+  }
+}

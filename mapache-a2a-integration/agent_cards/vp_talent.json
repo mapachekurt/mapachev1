@@ -1,0 +1,36 @@
+{
+  "name": "vp_talent",
+  "description": "VP of Talent responsible for hr functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "talent_acquisition",
+      "recruiting_strategy",
+      "employer_branding"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "VP of Talent",
+    "department": "hr",
+    "reports_to": "chro",
+    "manages": [
+      "director_recruiting"
+    ],
+    "tags": [
+      "hr",
+      "talent_acquisition",
+      "recruiting_strategy",
+      "employer_branding",
+      "hr"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "vp_talent@mapache.ai"
+  }
+}

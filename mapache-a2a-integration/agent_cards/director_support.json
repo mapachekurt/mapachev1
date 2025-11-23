@@ -1,0 +1,37 @@
+{
+  "name": "director_support",
+  "description": "Director of Customer Support responsible for customer_success functions",
+  "version": "1.0.0",
+  "capabilities": {
+    "skills": [
+      "customer_support",
+      "support_operations",
+      "service_excellence"
+    ],
+    "tools": [],
+    "model": "gemini-2.0-flash-exp"
+  },
+  "metadata": {
+    "role": "Director of Customer Support",
+    "department": "customer_success",
+    "reports_to": "vp_customer_success",
+    "manages": [
+      "support_manager_1",
+      "support_manager_2"
+    ],
+    "tags": [
+      "customer_success",
+      "customer_support",
+      "support_operations",
+      "service_excellence",
+      "customer_success"
+    ]
+  },
+  "authentication": {
+    "type": "bearer",
+    "required": true
+  },
+  "contact": {
+    "email": "director_support@mapache.ai"
+  }
+}
