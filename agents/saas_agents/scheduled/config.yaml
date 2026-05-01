@@ -1,0 +1,57 @@
+agent_name: "scheduled_agent"
+display_name: "Scheduled"
+description: "Expert agent for Scheduled (Fergana-Labs) AI email scheduling operations and integration"
+version: "1.0.0"
+model: "gemini-2.0-flash-exp"
+tier: "Productivity & Collaboration"
+category: "scheduling"
+
+capabilities:
+  - api_integration
+  - data_synchronization
+  - workflow_automation
+  - real_time_operations
+  - error_handling
+  - security_management
+
+authentication:
+  type: "oauth"
+  current: "oauth"
+  env_var: "GOOGLE_CLIENT_ID"
+  additional_vars:
+    - "GOOGLE_CLIENT_SECRET"
+    - "ANTHROPIC_API_KEY"
+    - "DATABASE_URL"
+
+mcp_server:
+  available: false
+  source: "custom"
+
+api_config:
+  base_url: "https://github.com/Fergana-Labs/scheduled"
+  rate_limit: 1000  # requests per hour
+  docs_url: "https://github.com/Fergana-Labs/scheduled/blob/main/docs/self-hosting.md"
+  version: "v1"
+
+deployment:
+  dev:
+    endpoint: "dev-scheduled-agent"
+    project: "mapache-dev"
+  staging:
+    endpoint: "staging-scheduled-agent"
+    project: "mapache-staging"
+  prod:
+    endpoint: "prod-scheduled-agent"
+    project: "mapache-prod"
+
+monitoring:
+  health_check: true
+  metrics: true
+  logging: "structured_json"
+  alerts: true
+
+integration_status:
+  implemented: false
+  tested: false
+  deployed: false
+  production_ready: false

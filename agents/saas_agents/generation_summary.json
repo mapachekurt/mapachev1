@@ -1,5 +1,5 @@
 {
-  "total_generated": 1000,
+  "total_generated": 1001,
   "agents": [
     {
       "id": 512,
@@ -5000,6 +5000,11 @@
       "id": 1511,
       "name": "increase",
       "display": "Increase"
+    },
+    {
+      "id": 1512,
+      "name": "scheduled",
+      "display": "Scheduled"
     }
   ]
 }

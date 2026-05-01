@@ -457,6 +457,7 @@ tiers:
           - {id: 859, name: "calendarhero", display: "Calendar Hero", category: "scheduling"}
           - {id: 860, name: "savvycal", display: "SavvyCal", category: "scheduling"}
           - {id: 861, name: "rally", display: "Rally", category: "scheduling"}
+          - {id: 1512, name: "scheduled", display: "Scheduled", category: "scheduling"}
 
       video_conferencing:
         agents:
@@ -1230,5 +1231,5 @@ deployment:
 status:
   created: "2025-11-16"
   version: "1.0.0"
-  total_planned: 1000
-  agents_range: "512-1511"
+  total_planned: 1001
+  agents_range: "512-1512"
